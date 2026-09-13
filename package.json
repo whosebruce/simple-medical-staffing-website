@@ -1,0 +1,31 @@
+{
+  "name": "simple-medical-staffing-website",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Public marketing website for Simple Medical Staffing.",
+  "scripts": {
+    "dev": "next dev -H 127.0.0.1 -p 3180",
+    "typecheck": "tsc --noEmit",
+    "build": "next build && node scripts/build-pages.mjs",
+    "verify": "npm run typecheck && npm run build && node scripts/verify-site.mjs",
+    "start:static": "python3 -m http.server 3180 --directory docs"
+  },
+  "dependencies": {
+    "next": "15.5.25",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "4.1.11",
+    "@types/node": "24.1.0",
+    "@types/react": "19.1.8",
+    "@types/react-dom": "19.1.6",
+    "tailwindcss": "4.1.11",
+    "typescript": "5.8.3"
+  },
+  "overrides": {
+    "postcss": "8.5.26",
+    "nanoid": "3.3.18",
+    "sharp": "0.35.4"
+  }
+}
