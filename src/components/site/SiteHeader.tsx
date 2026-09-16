@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 
+
 const NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "Staffing Solutions", href: "/solutions" },
@@ -21,21 +22,20 @@ export function SiteHeader() {
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
-    <header className="relative z-50 bg-k-navy">
-      <div className="ks-wrap flex h-[68px] items-center gap-7 lg:h-[82px]">
+    <header className="relative z-50 border-b border-k-line bg-k-page">
+      <div className="mx-auto flex h-[76px] max-w-6xl items-center gap-7 px-6">
         <Link
           href="/"
-          className="ks-focus-on-navy flex min-h-11 flex-none items-center gap-3"
+          className="flex min-h-11 flex-none items-center gap-3 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-k-navy"
           onClick={() => setOpen(false)}
         >
           <Image
-            src="/kindred/logos/kindred-mark-white.svg"
+            src="/kindred/logos/kindred-mark.svg"
             alt=""
-            width={40}
-            height={40}
-            sizes="40px"
+            width={42}
+            height={42}
           />
-          <span className="font-display text-[15px] font-extrabold leading-[1.15] tracking-[0.02em] text-white">
+          <span className="font-display text-base font-extrabold leading-[1.15] tracking-[0.02em] text-k-navy">
             Simple Medical
             <br />
             Staffing
@@ -45,17 +45,17 @@ export function SiteHeader() {
 
         <nav
           aria-label="Primary"
-          className="ml-auto hidden items-center gap-7 lg:flex"
+          className="ml-auto hidden items-center gap-6 lg:flex"
         >
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               aria-current={isActive(link.href) ? "page" : undefined}
-              className={`ks-focus-on-navy border-b-2 py-1 font-body text-[14.5px] font-bold transition-colors ${
+              className={`border-b-2 py-1 font-body text-[15px] font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-k-navy ${
                 isActive(link.href)
-                  ? "border-k-sky text-white"
-                  : "border-transparent text-k-frost hover:text-white"
+                  ? "border-k-sky text-k-sky-ink"
+                  : "border-transparent text-k-navy hover:text-k-sky-ink"
               }`}
             >
               {link.label}
@@ -63,7 +63,7 @@ export function SiteHeader() {
           ))}
           <Link
             href="/apply"
-            className="k-sky-fill ks-focus-on-navy px-5 py-2.5 font-display text-[15px] font-bold transition-colors"
+            className="k-sky-fill rounded-[10px] px-5 py-2.5 font-display text-[15px] font-bold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-k-navy"
           >
             Apply now
           </Link>
@@ -75,18 +75,18 @@ export function SiteHeader() {
           aria-expanded={open}
           aria-controls="site-menu"
           onClick={() => setOpen((v) => !v)}
-          className="ks-focus-on-navy ml-auto flex h-11 w-11 flex-col items-center justify-center gap-1 border border-white/40 lg:hidden"
+          className="ml-auto flex h-11 w-11 flex-col items-center justify-center gap-1 rounded-[10px] border border-k-line bg-k-cloud focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-k-navy lg:hidden"
         >
-          <span aria-hidden className="block h-0.5 w-[18px] bg-white" />
-          <span aria-hidden className="block h-0.5 w-[18px] bg-white" />
-          <span aria-hidden className="block h-0.5 w-[18px] bg-white" />
+          <span aria-hidden className="block h-0.5 w-[18px] rounded bg-k-navy" />
+          <span aria-hidden className="block h-0.5 w-[18px] rounded bg-k-navy" />
+          <span aria-hidden className="block h-0.5 w-[18px] rounded bg-k-navy" />
         </button>
       </div>
 
       <nav
         id="site-menu"
         aria-label="Primary"
-        className={`${open ? "flex" : "hidden"} ks-wrap flex-col gap-1 bg-k-navy pb-5 pt-1 lg:!hidden`}
+        className={`${open ? "flex" : "hidden"} flex-col gap-1 border-b border-k-line bg-k-page px-6 pb-5 pt-2 lg:!hidden`}
       >
         {NAV_LINKS.map((link) => (
           <Link
@@ -94,8 +94,8 @@ export function SiteHeader() {
             href={link.href}
             aria-current={isActive(link.href) ? "page" : undefined}
             onClick={() => setOpen(false)}
-            className={`ks-focus-on-navy flex min-h-11 items-center border-b border-l-[3px] border-b-white/20 py-3 pl-3 font-body text-[17px] font-semibold text-white ${
-              isActive(link.href) ? "border-l-k-sky" : "border-l-transparent"
+            className={`flex min-h-11 items-center border-b border-k-cloud px-1 py-3 font-body text-[17px] font-semibold focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-k-navy ${
+              isActive(link.href) ? "text-k-sky-ink" : "text-k-navy"
             }`}
           >
             {link.label}
@@ -104,7 +104,7 @@ export function SiteHeader() {
         <Link
           href="/apply"
           onClick={() => setOpen(false)}
-          className="k-sky-fill ks-focus-on-navy mt-3 px-5 py-3.5 text-center font-display text-base font-bold transition-colors"
+          className="k-sky-fill mt-3 rounded-[10px] px-5 py-3.5 text-center font-display text-base font-bold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-k-navy"
         >
           Apply now
         </Link>

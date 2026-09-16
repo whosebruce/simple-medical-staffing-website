@@ -1,53 +1,25 @@
 import Link from "next/link";
-import { WideBand } from "@/components/site/WideBand";
+import { Circle } from "@/components/site/Circle";
 import { BUSINESS_FACTS, LEADERSHIP_ROLES } from "@/lib/brand";
-import { SITE_IMAGE_SLOTS } from "@/lib/site-media";
-export const metadata = {
-  title: "About",
-  alternates: { canonical: "/about/" },
-};
 
-const VALUES = [
-  {
-    title: "Compassionate",
-    body: "Every match affects a shift, a patient, and a career. We never forget there are people on both ends of a placement.",
-  },
-  {
-    title: "Vibrant",
-    body: "Color and energy where the industry is clinical gray — in how we show up, and how we celebrate the people we place.",
-  },
-  {
-    title: "Inclusive",
-    body: "Good matches come from listening to people. We try to do that for everyone who comes to us, whatever their role or background.",
-  },
-  {
-    title: "Reliable",
-    body: "Warmth doesn't count for much if the shift falls through. Dependability, in schedules, credentials, and paperwork, is the standard we hold ourselves to.",
-  },
-];
+export const metadata = {
+  alternates: { canonical: "/about/" }, title: "About" };
 
 export default function AboutPage() {
   return (
     <>
-      {/*
-        Cloud masthead, typographic, no photograph (§2.8). The statement and
-        the standfirst sit in two columns from lg up: this h1 is a
-        130-character sentence, and setting it full-measure at display scale
-        left the right half of the band empty — which is audit F3, the defect
-        this redesign exists to remove, coming back in a new costume.
-      */}
-      <section className="ks-cloud ks-passage">
-        <div className="ks-wrap grid gap-x-16 gap-y-7 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:items-end">
-          <div className="flex flex-col gap-5">
-            <p className="ks-eyebrow text-k-muted">
-              About Simple Medical Staffing
-            </p>
-            <h1 className="ks-h1 text-balance text-k-navy">
-              We connect reliable medical professionals with the facilities
-              that need them — and treat both like people, not line items.
-            </h1>
-          </div>
-          <p className="ks-lede text-k-muted">
+      <section className="relative overflow-hidden bg-k-cloud">
+        <Circle
+          gradient="teal-sky"
+          className="-bottom-44 right-[-140px] h-[400px] w-[400px] opacity-15"
+        />
+        <div className="relative mx-auto flex max-w-4xl flex-col gap-4.5 px-6 py-14 sm:py-20">
+          <p className="k-eyebrow text-k-sky-ink">About Simple Medical Staffing</p>
+          <h1 className="font-display text-3xl font-extrabold leading-[1.2] text-balance sm:text-[44px]">
+            We connect reliable medical professionals with the facilities that
+            need them — and treat both like people, not line items.
+          </h1>
+          <p className="text-lg leading-relaxed text-k-muted">
             Warm where the industry is transactional. Vibrant where it is
             beige. Personal where it hides behind portals. Everything we do —
             contract, per-diem, and direct placement — starts with knowing the
@@ -56,76 +28,138 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="ks-page ks-passage-tight">
-        <div className="ks-wrap">
-          <p className="ks-eyebrow text-k-muted">Our mission</p>
-          <blockquote className="mt-4 max-w-[62ch] border-l-4 border-k-sky pl-6 text-[19px] leading-[1.6] text-k-navy">
-            {BUSINESS_FACTS.mission}
-          </blockquote>
-        </div>
+      <section className="mx-auto max-w-4xl px-6 py-14 sm:py-20">
+        <p className="k-eyebrow text-k-violet-ink">Our mission</p>
+        <blockquote className="mt-4 border-l-4 border-k-sky pl-5 text-lg leading-relaxed text-k-muted">
+          {BUSINESS_FACTS.mission}
+        </blockquote>
       </section>
 
-      <section className="ks-cloud ks-passage">
-        <div className="ks-wrap">
-          <p className="ks-eyebrow text-k-muted">What we stand for</p>
-          <h2 className="ks-h2-passage mt-3 text-k-navy">
-            Warm on the surface, rigorous underneath.
-          </h2>
-          <div className="mt-11 grid gap-9 sm:grid-cols-2 lg:grid-cols-4">
-            {VALUES.map((value) => (
-              <div key={value.title} className="ks-col">
-                <h3 className="ks-h3 text-k-navy">{value.title}</h3>
-                <p className="ks-small mt-2.5 text-k-muted">{value.body}</p>
-              </div>
-            ))}
+      <section className="bg-k-cloud">
+        <div className="mx-auto max-w-6xl px-6 py-14 sm:py-20">
+          <div className="mb-11 flex max-w-[640px] flex-col gap-3">
+            <p className="k-eyebrow text-k-sky-ink">What we stand for</p>
+            <h2 className="font-display text-3xl font-extrabold sm:text-4xl">
+              Warm on the surface, rigorous underneath.
+            </h2>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="k-card flex flex-col gap-3 p-7">
+              <Circle gradient="sky-violet" className="relative h-10 w-10" />
+              <h3 className="font-display text-lg font-extrabold text-k-sky-ink">
+                Compassionate
+              </h3>
+              <p className="text-[15px] leading-relaxed text-k-muted">
+                Every match affects a shift, a patient, and a career. We never
+                forget there are people on both ends of a placement.
+              </p>
+            </div>
+            <div className="k-card flex flex-col gap-3 p-7">
+              <div
+                aria-hidden
+                className="h-10 w-10 rounded-xl"
+                style={{
+                  background: "linear-gradient(135deg, #8C5FD4, #3FA5E8)",
+                }}
+              />
+              <h3 className="font-display text-lg font-extrabold text-k-violet-ink">
+                Vibrant
+              </h3>
+              <p className="text-[15px] leading-relaxed text-k-muted">
+                Color and energy where the industry is clinical gray — in how
+                we show up, and how we celebrate the people we place.
+              </p>
+            </div>
+            <div className="k-card flex flex-col gap-3 p-7">
+              <Circle gradient="teal-sky" className="relative h-10 w-10" />
+              <h3 className="font-display text-lg font-extrabold text-k-teal-ink">
+                Inclusive
+              </h3>
+              <p className="text-[15px] leading-relaxed text-k-muted">
+                Good matches come from listening to people. We try to do that
+                for everyone who comes to us, whatever their role or
+                background.
+              </p>
+            </div>
+            <div className="k-card flex flex-col gap-3 p-7">
+              <div aria-hidden className="h-10 w-10 rounded-xl bg-k-navy" />
+              <h3 className="font-display text-lg font-extrabold">Reliable</h3>
+              <p className="text-[15px] leading-relaxed text-k-muted">
+                Warmth doesn&apos;t count for much if the shift falls through.
+                Dependability, in schedules, credentials, and paperwork, is
+                the standard we hold ourselves to.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       <section
         aria-labelledby="leadership-heading"
-        className="ks-page ks-passage"
+        className="mx-auto max-w-6xl px-6 py-14 sm:py-20"
       >
-        <div className="ks-wrap">
-          <p className="ks-eyebrow text-k-muted">Leadership</p>
-          <h2 id="leadership-heading" className="ks-h2-passage mt-3 text-k-navy">
+        <div className="mb-11 flex max-w-[640px] flex-col gap-3">
+          <p className="k-eyebrow text-k-violet-ink">Leadership</p>
+          <h2
+            id="leadership-heading"
+            className="font-display text-3xl font-extrabold sm:text-4xl"
+          >
             The people behind the matches.
           </h2>
         </div>
-
-        {LEADERSHIP_ROLES.filter((role) => role.biography).map((role) => (
-          <div key={role.title} className="ks-navy mt-11">
-            <div className="ks-wrap py-14">
-              <h3 className="ks-h2-band text-white">{role.name}</h3>
-              <p className="ks-eyebrow ks-ink-facility mt-3">{role.title}</p>
-              <div className="ks-body ks-ink-on-navy mt-7 grid gap-6 md:grid-cols-3">
-                {role.biography?.map((paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
-                ))}
-              </div>
-            </div>
-          </div>
-        ))}
-
-        <div className="ks-wrap">
-          <p className="ks-small mt-6 text-k-muted">
-            Additional leadership information will be added as the team grows.
-          </p>
-        </div>
+        <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {LEADERSHIP_ROLES.map((role) => (
+            <li
+              key={role.title}
+              className={`k-card flex flex-col gap-3 p-8 ${
+                role.biography ? "sm:col-span-2 lg:col-span-3" : ""
+              }`}
+            >
+              {role.name ? (
+                <h3 className="font-display text-2xl font-extrabold">
+                  {role.name}
+                </h3>
+              ) : (
+                <h3 className="font-display text-lg font-extrabold">
+                  {role.title}
+                </h3>
+              )}
+              {role.name ? (
+                <p className="font-body text-[15px] font-bold text-k-sky-ink">
+                  {role.title}
+                </p>
+              ) : null}
+              {role.biography ? (
+                <div className="mt-2 grid gap-4 text-[15px] leading-relaxed text-k-muted md:grid-cols-3">
+                  {role.biography.map((paragraph) => (
+                    <p key={paragraph}>{paragraph}</p>
+                  ))}
+                </div>
+              ) : null}
+            </li>
+          ))}
+        </ul>
+        <p className="mt-5 text-sm text-k-faint">
+          Additional leadership information will be added as the team grows.
+        </p>
       </section>
 
-      <WideBand slot={SITE_IMAGE_SLOTS.aboutColleagues} />
-
-      <section className="ks-navy ks-passage-tight">
-        <div className="ks-wrap flex flex-col items-start gap-6">
-          <h2 className="ks-h2-passage text-balance text-white">
+      <section className="relative overflow-hidden bg-k-navy">
+        <Circle
+          gradient="sky-violet"
+          className="-bottom-52 left-[-160px] h-[440px] w-[440px] opacity-35"
+        />
+        <Circle
+          gradient="teal-sky"
+          className="-bottom-16 left-[210px] h-[200px] w-[200px] opacity-25"
+        />
+        <div className="relative mx-auto flex max-w-4xl flex-col items-center gap-5 px-6 py-16 text-center sm:py-[90px]">
+          <h2 className="font-display text-2xl font-extrabold leading-snug text-white sm:text-4xl">
             &ldquo;{BUSINESS_FACTS.tagline}.&rdquo;
           </h2>
-          <div className="ks-actions-stack flex">
-            <Link href="/contact" className="ks-btn ks-btn-primary ks-focus-on-navy">
-              Work with us
-            </Link>
-          </div>
+          <Link href="/contact" className="k-btn-primary">
+            Work with us
+          </Link>
         </div>
       </section>
     </>

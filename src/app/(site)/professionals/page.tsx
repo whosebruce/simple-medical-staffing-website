@@ -1,114 +1,165 @@
 import Link from "next/link";
-import { Band } from "@/components/site/Band";
-import { SITE_IMAGE_SLOTS } from "@/lib/site-media";
+import Image from "next/image";
+import { Circle } from "@/components/site/Circle";
 import { STAFF_ROLES } from "@/lib/forms";
-export const metadata = {
-  title: "For Professionals",
-  alternates: { canonical: "/professionals/" },
-};
 
-const REASONS = [
-  {
-    title: "Talk to a person",
-    body: "Your questions go to a person who can answer them, not a ticket queue. We think that's what staffing should feel like.",
-  },
-  {
-    title: "Three ways to work",
-    body: "Per-diem shifts, contract assignments, or a permanent role. If what you need changes, say so and we'll talk it through.",
-  },
-  {
-    title: "Straight answers",
-    body: "Before you accept an assignment, we share what we know about it. When we don't know something, we say that too.",
-  },
-];
+export const metadata = {
+  alternates: { canonical: "/professionals/" }, title: "For Professionals" };
 
 export default function ProfessionalsPage() {
   return (
     <>
-      <Band slot={SITE_IMAGE_SLOTS.professionalsHero} priority>
-        <p className="ks-eyebrow ks-ink-professional">
-          Healthcare professionals · Careers
-        </p>
-        <h1 className="ks-h1 text-balance">
-          Your skills. Your schedule. Our job is the match.
-        </h1>
-        <p className="ks-lede ks-ink-on-navy max-w-[42ch]">
-          Contract, per-diem, or permanent. Tell us what you&apos;re looking
-          for, and a coordinator will work on the match with you.
-        </p>
-        <div className="ks-actions-stack mt-3 flex flex-wrap gap-3">
-          <Link href="/apply" className="ks-btn ks-btn-primary ks-focus-on-navy">
-            Apply now
-          </Link>
-          <Link href="/contact" className="ks-btn ks-btn-on-navy ks-focus-on-navy">
-            Ask a question
-          </Link>
-        </div>
-      </Band>
-
-      <section className="ks-page ks-passage">
-        <div className="ks-wrap">
-          <p className="ks-eyebrow text-k-muted">Why work with us</p>
-          <h2 className="ks-h2-passage mt-3 text-k-navy">
-            Treated like a professional, not a placement.
-          </h2>
-          <div className="mt-11 grid gap-9 md:grid-cols-3">
-            {REASONS.map((reason) => (
-              <div key={reason.title} className="ks-col ks-col-professional">
-                <h3 className="ks-h3 text-k-navy">{reason.title}</h3>
-                <p className="ks-small mt-2.5 text-k-muted">{reason.body}</p>
-              </div>
-            ))}
+      <section className="relative overflow-hidden bg-k-page">
+        <Circle
+          gradient="violet-sky"
+          className="-bottom-52 left-[-160px] h-[420px] w-[420px] opacity-10"
+        />
+        <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-6 py-14 sm:py-20 lg:grid-cols-2">
+          <div className="flex flex-col items-start gap-5">
+            <p className="k-eyebrow text-k-violet-ink">
+              Healthcare professionals · Careers
+            </p>
+            <h1 className="font-display text-4xl font-extrabold leading-[1.12] tracking-tight text-balance sm:text-5xl">
+              Your skills. Your schedule. Our job is the match.
+            </h1>
+            <p className="max-w-[520px] text-lg leading-relaxed text-k-muted">
+              Contract, per-diem, or permanent. Tell us what you&apos;re
+              looking for, and a coordinator will work on the match with you.
+            </p>
+            <div className="mt-2 flex flex-wrap gap-3.5">
+              <Link href="/apply" className="k-btn-primary">
+                Apply now
+              </Link>
+              <Link href="/contact" className="k-btn-outline">
+                Ask a question
+              </Link>
+            </div>
+          </div>
+          <div className="relative">
+            <Circle
+              gradient="sky-violet"
+              className="-bottom-6 -left-6 h-[120px] w-[120px] opacity-85"
+            />
+            <Image
+              src="/kindred/photos/nurse-portrait.webp"
+              alt="A nurse in a bright clinic hallway"
+              width={1024}
+              height={768}
+              priority
+              className="relative min-h-[300px] w-full rounded-[18px] object-cover object-[50%_12%] shadow-[0_12px_36px_rgba(30,58,110,0.14)]"
+            />
           </div>
         </div>
       </section>
 
-      <section className="ks-cloud ks-passage">
-        <div className="ks-wrap">
-          <p className="ks-eyebrow text-k-muted">Disciplines we staff</p>
-          <h2 className="ks-h2-passage mt-3 text-k-navy">
+      <section className="bg-k-cloud">
+        <div className="mx-auto max-w-6xl px-6 py-14 sm:py-20">
+          <div className="mb-11 flex max-w-[640px] flex-col gap-3">
+            <p className="k-eyebrow text-k-violet-ink">Why work with us</p>
+            <h2 className="font-display text-3xl font-extrabold sm:text-4xl">
+              Treated like a professional, not a placement.
+            </h2>
+          </div>
+          <div className="grid gap-6 md:grid-cols-3">
+            <div className="k-card flex flex-col gap-3 p-8">
+              <Circle gradient="sky-violet" className="relative h-11 w-11" />
+              <h3 className="font-display text-[19px] font-extrabold">
+                Talk to a person
+              </h3>
+              <p className="text-[15.5px] leading-relaxed text-k-muted">
+                Your questions go to a person who can answer them, not a
+                ticket queue. We think that&apos;s what staffing should feel
+                like.
+              </p>
+            </div>
+            <div className="k-card flex flex-col gap-3 p-8">
+              <div
+                aria-hidden
+                className="h-11 w-11 rounded-xl"
+                style={{
+                  background: "linear-gradient(135deg, #8C5FD4, #3FA5E8)",
+                }}
+              />
+              <h3 className="font-display text-[19px] font-extrabold">
+                Three ways to work
+              </h3>
+              <p className="text-[15.5px] leading-relaxed text-k-muted">
+                Per-diem shifts, contract assignments, or a permanent role.
+                If what you need changes, say so and we&apos;ll talk it
+                through.
+              </p>
+            </div>
+            <div className="k-card flex flex-col gap-3 p-8">
+              <Circle gradient="teal-sky" className="relative h-11 w-11" />
+              <h3 className="font-display text-[19px] font-extrabold">
+                Straight answers
+              </h3>
+              <p className="text-[15.5px] leading-relaxed text-k-muted">
+                Before you accept an assignment, we share what we know about
+                it. When we don&apos;t know something, we say that too.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-6 py-14 sm:py-20">
+        <div className="mb-9 flex max-w-[640px] flex-col gap-3">
+          <p className="k-eyebrow text-k-sky-ink">Disciplines we staff</p>
+          <h2 className="font-display text-3xl font-extrabold sm:text-4xl">
             Ten disciplines, one front door.
           </h2>
-          <ul className="mt-9 grid gap-x-12 sm:grid-cols-2">
-            {STAFF_ROLES.map((role) => (
-              <li
-                key={role.code}
-                className="ks-rule ks-small py-3.5 font-semibold text-k-navy"
-              >
-                {role.label}
-              </li>
-            ))}
-          </ul>
+        </div>
+        <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {STAFF_ROLES.map((role) => (
+            <li
+              key={role.code}
+              className="k-card px-4 py-3 text-[15px] font-semibold"
+            >
+              {role.label}
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="bg-k-cloud">
+        <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 py-14 sm:py-20 lg:grid-cols-2">
+          <Image
+            src="/kindred/photos/badge-welcome.webp"
+            alt="A welcoming badge moment on a first day"
+            width={1024}
+            height={768}
+            className="min-h-[300px] w-full rounded-[18px] object-cover"
+          />
+          <div className="flex flex-col items-start gap-4">
+            <p className="k-eyebrow text-k-teal-ink">Your first day</p>
+            <h2 className="font-display text-3xl font-extrabold leading-tight text-balance sm:text-4xl">
+              Your first shift shouldn&apos;t start cold.
+            </h2>
+            <p className="text-[17px] leading-relaxed text-k-muted">
+              Your coordinator goes over the assignment with you before day
+              one. And if a question comes up once you&apos;re working, you
+              can reach us by phone or email.
+            </p>
+            <Link href="/apply" className="k-btn-primary">
+              See application options
+            </Link>
+          </div>
         </div>
       </section>
 
-      <Band slot={SITE_IMAGE_SLOTS.professionalsFirstShift} flip>
-        <p className="ks-eyebrow ks-ink-professional">Your first day</p>
-        <h2 className="ks-h2-band text-balance">
-          Your first shift shouldn&apos;t start cold.
-        </h2>
-        <p className="ks-body ks-ink-on-navy max-w-[42ch]">
-          Your coordinator goes over the assignment with you before day one.
-          And if a question comes up once you&apos;re working, you can reach us
-          by phone or email.
-        </p>
-        <div className="ks-actions-stack mt-2 flex">
-          <Link href="/apply" className="ks-btn ks-btn-primary ks-focus-on-navy">
-            Start your application
-          </Link>
-        </div>
-      </Band>
-
-      <section className="ks-navy ks-passage-tight">
-        <div className="ks-wrap flex flex-col items-start gap-6">
-          <h2 className="ks-h2-passage text-balance text-white">
+      <section className="relative overflow-hidden bg-k-navy">
+        <Circle
+          gradient="sky-violet"
+          className="-top-40 right-[-140px] h-[400px] w-[400px] opacity-35"
+        />
+        <div className="relative mx-auto flex max-w-4xl flex-col items-center gap-5 px-6 py-16 text-center sm:py-[90px]">
+          <h2 className="font-display text-2xl font-extrabold leading-snug text-balance text-white sm:text-4xl">
             Bring your skills. We&apos;ll bring the right place to use them.
           </h2>
-          <div className="ks-actions-stack flex">
-            <Link href="/apply" className="ks-btn ks-btn-primary ks-focus-on-navy">
-              Apply now
-            </Link>
-          </div>
+          <Link href="/apply" className="k-btn-primary">
+            Apply now
+          </Link>
         </div>
       </section>
     </>

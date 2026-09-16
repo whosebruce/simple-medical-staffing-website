@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { BUSINESS_FACTS } from "@/lib/brand";
+import { Circle } from "./Circle";
 
 const EXPLORE = [
   { label: "Staffing Solutions", href: "/solutions" },
@@ -13,17 +14,23 @@ const EXPLORE = [
 
 export function SiteFooter() {
   return (
-    <footer className="bg-kw-header font-body text-white">
-      <div className="ks-wrap pb-9 pt-16">
+    <footer className="relative overflow-hidden bg-k-navy font-body text-white">
+      <Circle gradient="sky-violet" className="-top-40 right-[-140px] h-[380px] w-[380px] opacity-30" />
+      <Circle gradient="teal-sky" className="right-[120px] top-[60px] h-[150px] w-[150px] opacity-20" />
+      <div className="relative mx-auto max-w-6xl px-6 pb-9 pt-16">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
           <div className="flex flex-col items-start gap-4">
-            <Image
-              src="/kindred/logos/kindred-lockup-white.svg"
-              alt="Simple Medical Staffing"
-              width={120}
-              height={120}
-              sizes="120px"
-            />
+            <div className="flex items-center gap-3">
+              <Image
+                src="/kindred/logos/kindred-mark.svg"
+                alt=""
+                width={56}
+                height={56}
+                sizes="56px"
+                className="rounded-[12px] bg-white p-2"
+              />
+              <span className="font-display text-lg font-extrabold leading-tight">Simple Medical<br />Staffing</span>
+            </div>
             <p className="font-display text-[15px] font-bold">
               &ldquo;{BUSINESS_FACTS.tagline}.&rdquo;
             </p>
