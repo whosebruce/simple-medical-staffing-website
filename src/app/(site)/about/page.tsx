@@ -16,14 +16,16 @@ export default function AboutPage() {
         <div className="relative mx-auto flex max-w-4xl flex-col gap-4.5 px-6 py-14 sm:py-20">
           <p className="k-eyebrow text-k-sky-ink">About Simple Medical Staffing</p>
           <h1 className="font-display text-3xl font-extrabold leading-[1.2] text-balance sm:text-[44px]">
-            We connect reliable medical professionals with the facilities that
-            need them — and treat both like people, not line items.
+            We’re building stronger healthcare teams—one relationship at a
+            time.
           </h1>
           <p className="text-lg leading-relaxed text-k-muted">
-            Warm where the industry is transactional. Vibrant where it is
-            beige. Personal where it hides behind portals. Everything we do —
-            contract, per-diem, and direct placement — starts with knowing the
-            people on both ends of the match.
+            Simple Medical Workforce Solutions was built on a simple belief:
+            healthcare staffing should be personal. We connect qualified
+            healthcare professionals with facilities that need dependable
+            people, while building relationships with both sides of every
+            placement. Because great staffing isn’t just about filling a
+            shift—it’s about finding the right fit.
           </p>
         </div>
       </section>
@@ -104,7 +106,7 @@ export default function AboutPage() {
             id="leadership-heading"
             className="font-display text-3xl font-extrabold sm:text-4xl"
           >
-            The people behind the matches.
+            The people behind our purpose
           </h2>
         </div>
         <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -130,9 +132,16 @@ export default function AboutPage() {
                 </p>
               ) : null}
               {role.biography ? (
-                <div className="mt-2 grid gap-4 text-[15px] leading-relaxed text-k-muted md:grid-cols-3">
-                  {role.biography.map((paragraph) => (
-                    <p key={paragraph}>{paragraph}</p>
+                <div className="mt-2 grid gap-6 md:grid-cols-3">
+                  {role.biography.map((column) => (
+                    <div key={column.heading} className="flex flex-col gap-2">
+                      <h4 className="font-display text-[17px] font-extrabold text-k-navy">
+                        {column.heading}
+                      </h4>
+                      <p className="text-[15px] leading-relaxed text-k-muted">
+                        {column.body}
+                      </p>
+                    </div>
                   ))}
                 </div>
               ) : null}

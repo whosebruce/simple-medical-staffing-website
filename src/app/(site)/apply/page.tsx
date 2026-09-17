@@ -30,7 +30,7 @@ export default function ApplyPage() {
               <a href={`tel:${BUSINESS_FACTS.phone}`} className="ks-focus mt-3 inline-flex min-h-11 items-center font-display text-xl font-extrabold text-k-navy underline-offset-4 hover:underline">{BUSINESS_FACTS.phone}</a>
             </div>
             <div className="k-card p-5">
-              <p className="k-eyebrow text-k-muted">Email</p>
+              <p className="k-eyebrow text-k-muted">Email · Applications</p>
               <p className="mt-3 break-all font-semibold text-k-navy">{BUSINESS_FACTS.email}</p>
             </div>
           </div>

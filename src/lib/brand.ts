@@ -14,10 +14,20 @@ export const LEADERSHIP_ROLES = [
   {
     title: "Founder and Chief Executive Officer",
     name: "Dina Casares",
+    // Three named columns supplied by Dina on 2026-09-17 (exact copy).
     biography: [
-      "Dina Casares is the Founder and Chief Executive Officer of Simple Medical Staffing, a healthcare workforce solutions company focused on helping skilled nursing and post-acute care organizations build stable, high-performing clinical teams through staffing and strategic partnerships.",
-      "With more than two decades of healthcare experience, Dina brings together clinical practice and executive leadership. She began her career as a Certified Nursing Assistant, advanced to become a Licensed Vocational Nurse, and has served in leadership roles across home care, home health, and skilled nursing.",
-      "Her leadership philosophy centers on integrity, accountability, innovation, and service. She is building Simple Medical Staffing as a partnership-focused strategic resource for providers seeking stronger teams, more resilient operations, and better care for the people they serve.",
+      {
+        heading: "Experience",
+        body: "With more than two decades of healthcare experience, Dina Casares brings firsthand knowledge of patient care, workforce development, and healthcare leadership. She began her career as a Certified Nursing Assistant and advanced to become a Licensed Vocational Nurse, serving in leadership roles across skilled nursing and other healthcare settings.",
+      },
+      {
+        heading: "The Why",
+        body: "After seeing firsthand how staffing shortages affect healthcare professionals, leadership teams, and the quality of care, Dina knew staffing could be done differently. She founded Simple Medical to create more than another staffing agency—she wanted to build a workforce partner that understands the realities of healthcare and the people behind every shift.",
+      },
+      {
+        heading: "The Vision",
+        body: "Today, Dina is building Simple Medical around relationships, reliability, and the right fit. Her vision is to help facilities build stronger, more stable teams while ensuring healthcare professionals feel valued, supported, and respected—not simply placed.",
+      },
     ],
   },
 ] as const;

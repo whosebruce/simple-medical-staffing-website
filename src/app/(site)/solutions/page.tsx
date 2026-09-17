@@ -84,22 +84,30 @@ export default function SolutionsPage() {
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-6xl gap-6 px-6 py-14 sm:py-20 md:grid-cols-3">
-        {SERVICES.map((s) => (
-          <div
-            key={s.title}
-            className="flex flex-col gap-3.5 rounded-2xl border border-k-line p-9"
-          >
-            {s.circle}
-            <h2 className="font-display text-[22px] font-extrabold">
-              {s.title}
-            </h2>
-            <p className="leading-relaxed text-k-muted">{s.body}</p>
-            <p className="mt-auto text-[13px] font-semibold text-k-faint">
-              {s.bestFor}
-            </p>
-          </div>
-        ))}
+      <section className="mx-auto max-w-6xl px-6 py-14 sm:py-20">
+        <div className="mb-11 flex max-w-[640px] flex-col gap-3">
+          <p className="k-eyebrow text-k-sky-ink">What we offer</p>
+          <h2 className="font-display text-3xl font-extrabold sm:text-4xl">
+            Flexible solutions built around your needs.
+          </h2>
+        </div>
+        <div className="grid gap-6 md:grid-cols-3">
+          {SERVICES.map((s) => (
+            <div
+              key={s.title}
+              className="flex flex-col gap-3.5 rounded-2xl border border-k-line p-9"
+            >
+              {s.circle}
+              <h3 className="font-display text-[22px] font-extrabold">
+                {s.title}
+              </h3>
+              <p className="leading-relaxed text-k-muted">{s.body}</p>
+              <p className="mt-auto text-[13px] font-semibold text-k-faint">
+                {s.bestFor}
+              </p>
+            </div>
+          ))}
+        </div>
       </section>
 
       <section className="bg-k-cloud">
@@ -138,9 +146,10 @@ export default function SolutionsPage() {
             A partner, not a portal.
           </h2>
           <p className="text-[17px] leading-relaxed text-k-muted">
-            Directors of nursing and administrators answer for coverage and
-            quality. We want working with us to make that job easier instead
-            of adding to it.
+            Staffing shouldn&apos;t create more work for your leadership team.
+            We provide responsive, hands-on support to help you maintain
+            coverage, strengthen your workforce, and keep your focus where it
+            belongs—on quality care.
           </p>
           <Link href="/contact" className="k-btn-primary">
             Get in touch

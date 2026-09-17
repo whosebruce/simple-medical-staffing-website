@@ -20,18 +20,19 @@ export default function ProfessionalsPage() {
               Healthcare professionals · Careers
             </p>
             <h1 className="font-display text-4xl font-extrabold leading-[1.12] tracking-tight text-balance sm:text-5xl">
-              Your skills. Your schedule. Our job is the match.
+              Your skills. Your schedule. The right opportunity.
             </h1>
             <p className="max-w-[520px] text-lg leading-relaxed text-k-muted">
-              Contract, per-diem, or permanent. Tell us what you&apos;re
-              looking for, and a coordinator will work on the match with you.
+              Whether you&apos;re looking for per-diem flexibility, a contract
+              opportunity, or your next permanent role, we connect you with
+              opportunities that fit your experience, availability, and goals.
             </p>
             <div className="mt-2 flex flex-wrap gap-3.5">
               <Link href="/apply" className="k-btn-primary">
                 Apply now
               </Link>
               <Link href="/contact" className="k-btn-outline">
-                Ask a question
+                Talk to our team.
               </Link>
             </div>
           </div>
@@ -64,7 +65,7 @@ export default function ProfessionalsPage() {
             <div className="k-card flex flex-col gap-3 p-8">
               <Circle gradient="sky-violet" className="relative h-11 w-11" />
               <h3 className="font-display text-[19px] font-extrabold">
-                Talk to a person
+                Talk to a real person.
               </h3>
               <p className="text-[15.5px] leading-relaxed text-k-muted">
                 Your questions go to a person who can answer them, not a
@@ -81,7 +82,7 @@ export default function ProfessionalsPage() {
                 }}
               />
               <h3 className="font-display text-[19px] font-extrabold">
-                Three ways to work
+                Flexibility that fits your lifestyle.
               </h3>
               <p className="text-[15.5px] leading-relaxed text-k-muted">
                 Per-diem shifts, contract assignments, or a permanent role.
@@ -92,7 +93,7 @@ export default function ProfessionalsPage() {
             <div className="k-card flex flex-col gap-3 p-8">
               <Circle gradient="teal-sky" className="relative h-11 w-11" />
               <h3 className="font-display text-[19px] font-extrabold">
-                Straight answers
+                Clear, honest communication.
               </h3>
               <p className="text-[15.5px] leading-relaxed text-k-muted">
                 Before you accept an assignment, we share what we know about
@@ -105,9 +106,11 @@ export default function ProfessionalsPage() {
 
       <section className="mx-auto max-w-6xl px-6 py-14 sm:py-20">
         <div className="mb-9 flex max-w-[640px] flex-col gap-3">
-          <p className="k-eyebrow text-k-sky-ink">Disciplines we staff</p>
+          <p className="k-eyebrow text-k-sky-ink">
+            Healthcare professionals we provide.
+          </p>
           <h2 className="font-display text-3xl font-extrabold sm:text-4xl">
-            Ten disciplines, one front door.
+            The right professionals for every level of care
           </h2>
         </div>
         <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -134,7 +137,7 @@ export default function ProfessionalsPage() {
           <div className="flex flex-col items-start gap-4">
             <p className="k-eyebrow text-k-teal-ink">Your first day</p>
             <h2 className="font-display text-3xl font-extrabold leading-tight text-balance sm:text-4xl">
-              Your first shift shouldn&apos;t start cold.
+              Start confident. Stay supported.
             </h2>
             <p className="text-[17px] leading-relaxed text-k-muted">
               Your coordinator goes over the assignment with you before day
