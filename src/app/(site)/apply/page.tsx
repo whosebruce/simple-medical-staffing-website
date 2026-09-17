@@ -31,7 +31,9 @@ export default function ApplyPage() {
             </div>
             <div className="k-card p-5">
               <p className="k-eyebrow text-k-muted">Email · Applications</p>
-              <p className="mt-3 break-all font-semibold text-k-navy">{BUSINESS_FACTS.email}</p>
+              {/* The one owner-authorized contact link on the public site: a static
+                  mailto with no subject, body or query data (RESTORATION.md). */}
+              <a href={`mailto:${BUSINESS_FACTS.email}`} className="ks-focus mt-3 inline-flex min-h-11 items-center break-all font-semibold text-k-navy underline-offset-4 hover:underline">{BUSINESS_FACTS.email}</a>
             </div>
           </div>
           <p className="border-t border-k-line pt-5 text-sm leading-relaxed text-k-muted">

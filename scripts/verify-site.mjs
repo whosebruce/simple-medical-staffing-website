@@ -37,7 +37,6 @@ const forbidden = [
   /synthetic data only/i,
   /Staff sign-in \(demo\)/i,
   /pending client confirmation/i,
-  /mailto:/i,
   /applyShort/i,
   /DATABASE_URL/i,
 ];
@@ -45,6 +44,34 @@ for (const file of textFiles) {
   const text = fs.readFileSync(file, "utf8");
   for (const pattern of forbidden) {
     if (pattern.test(text)) failures.push(`${path.relative(root, file)} contains ${pattern}`);
+  }
+}
+
+// Email handlers (RESTORATION.md): the only permitted `mailto:` is the
+// owner-authorized application-contact link on /apply/ — exactly one static
+// anchor to info@simplemedicalstaffing.com with no subject/body/query data.
+// The RSC payload of that page (apply/index.txt, and the copy embedded in
+// apply/index.html) legitimately carries the same href; nowhere else may.
+const CONTACT_MAILTO = "mailto:info@simplemedicalstaffing.com";
+const applyFiles = new Set(["apply/index.html", "apply/index.txt"].map((r) => path.join(docs, r)));
+for (const file of textFiles) {
+  const text = fs.readFileSync(file, "utf8");
+  const mailtos = [...text.matchAll(/mailto:[^"'\\\s<>)]*/gi)].map((m) => m[0]);
+  if (mailtos.length === 0) continue;
+  const rel = path.relative(root, file);
+  if (!applyFiles.has(file)) {
+    failures.push(`${rel} contains mailto: outside /apply/ (${[...new Set(mailtos)].join(", ")})`);
+    continue;
+  }
+  for (const m of new Set(mailtos)) {
+    if (m !== CONTACT_MAILTO) failures.push(`${rel} contains an unexpected mailto: ${m}`);
+  }
+}
+{
+  const apply = fs.readFileSync(path.join(docs, "apply/index.html"), "utf8");
+  const anchors = [...apply.matchAll(/<a\b[^>]*href="(mailto:[^"]*)"[^>]*>/gi)].map((m) => m[1]);
+  if (anchors.length !== 1 || anchors[0] !== CONTACT_MAILTO) {
+    failures.push(`docs/apply/index.html must carry exactly one <a href="${CONTACT_MAILTO}">; found ${JSON.stringify(anchors)}`);
   }
 }
 

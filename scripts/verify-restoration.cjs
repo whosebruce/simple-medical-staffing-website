@@ -23,7 +23,9 @@ const path = require('path');
     headerBackground:getComputedStyle(document.querySelector('header')).backgroundColor,
     brokenImages:[...document.images].filter(i=>!i.complete||i.naturalWidth===0).map(i=>i.src),
     forms:document.querySelectorAll('form,input[type=file]').length,
-    privateLinks:[...document.querySelectorAll('a')].map(a=>a.getAttribute('href')).filter(h=>/^\/(admin|worker|invite|api)(\/|$)/.test(h||'')||/^mailto:/.test(h||'')),
+    privateLinks:[...document.querySelectorAll('a')].map(a=>a.getAttribute('href')).filter(h=>/^\/(admin|worker|invite|api)(\/|$)/.test(h||'')||(/^mailto:/.test(h||'')&&h!=='mailto:info@simplemedicalstaffing.com')),
+    // The one permitted email handler (RESTORATION.md): exactly one static contact link, only on /apply/.
+    contactLinks:document.querySelectorAll('a[href="mailto:info@simplemedicalstaffing.com"]').length,
     canonical:document.querySelector('link[rel=canonical]')?.getAttribute('href'),
     radii:[...document.querySelectorAll('main .k-card,main .k-btn-primary,main img')].map(e=>getComputedStyle(e).borderRadius),
     unsafeCopy:/Staff sign-in \(demo\)|pending client confirmation|Demo note:|short application.*starts your file/i.test(document.body.innerText)
@@ -38,7 +40,7 @@ const path = require('path');
    const focus=await page.evaluate(()=>{const r=document.activeElement.getBoundingClientRect();return {tag:document.activeElement.tagName,visible:r.width>0&&r.height>0&&r.left>=0&&r.right<=innerWidth};});
    if(!focus.visible)issues.push('keyboard focus outside viewport');
    await page.screenshot({path:path.join(out,`${route==='/'?'home':route.replaceAll('/','')}-${width}.png`),fullPage:true});
-   const passed=response.status()===200&&!data.overflow&&!data.brokenImages.length&&!data.forms&&!data.privateLinks.length&&!data.unsafeCopy&&data.headerLogo==='/kindred/logos/kindred-mark.svg'&&data.canonical==='https://simplemedicalstaffing.com'+route&&!issues.length;
+   const passed=response.status()===200&&!data.overflow&&!data.brokenImages.length&&!data.forms&&!data.privateLinks.length&&data.contactLinks===(route==='/apply/'?1:0)&&!data.unsafeCopy&&data.headerLogo==='/kindred/logos/kindred-mark.svg'&&data.canonical==='https://simplemedicalstaffing.com'+route&&!issues.length;
    results.push({route,width,status:response.status(),...data,focus,issues:[...issues],passed});
   }
   await page.close();

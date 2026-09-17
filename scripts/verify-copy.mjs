@@ -71,8 +71,9 @@ for (const rule of SITEWIDE_ABSENT) {
 }
 
 // Application destination: every public route's "Apply now" action resolves
-// to /apply/, and /apply/ names the real contact address without a mailto:
-// handler (the public brochure links nothing; see scripts/verify-site.mjs).
+// to /apply/, and /apply/ carries exactly one static mailto: contact link to
+// the real address (no query/body data), the only mailto on the site
+// (scripts/verify-site.mjs enforces the sitewide half).
 for (const route of PUBLIC_ROUTES) {
   const text = decode(fs.readFileSync(pageFile(route), "utf8"));
   const applyLinks = [...text.matchAll(/<a[^>]+href="([^"]*)"[^>]*>\s*Apply now\s*<\/a>/gi)];
@@ -90,14 +91,22 @@ for (const route of PUBLIC_ROUTES) {
 }
 {
   const apply = decode(fs.readFileSync(pageFile("/apply"), "utf8"));
-  const pass = apply.includes(APPLICATION_CONTACT) && !/mailto:/i.test(apply);
+  const anchors = [...apply.matchAll(/<a\b[^>]*href="(mailto:[^"]*)"[^>]*>/gi)].map((m) => m[1]);
+  const pass = anchors.length === 1 && anchors[0] === `mailto:${APPLICATION_CONTACT}`;
   if (!pass) failures += 1;
   results.push({
     id: "R13-address",
-    title: `/apply names ${APPLICATION_CONTACT} and carries no mailto handler`,
+    title: `/apply carries exactly one static <a href="mailto:${APPLICATION_CONTACT}"> (no query/body data)`,
     route: "/apply",
     pass,
+    anchors,
   });
+  for (const route of PUBLIC_ROUTES.filter((r) => r !== "/apply")) {
+    const text = decode(fs.readFileSync(pageFile(route), "utf8"));
+    const ok = !/mailto:/i.test(text);
+    if (!ok) failures += 1;
+    results.push({ id: "R13-no-other-mailto", title: "no mailto: outside /apply", route, pass: ok });
+  }
 }
 
 const out = { generatedAt: new Date().toISOString(), failures, results };

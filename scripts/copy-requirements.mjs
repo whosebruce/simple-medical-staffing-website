@@ -169,8 +169,8 @@ export const REQUIREMENTS = [
     id: "R13",
     title: "Application contact destination",
     route: "/apply",
-    present: [APPLICATION_CONTACT, "Email · Applications"],
-    absent: ["mailto:"],
+    present: [APPLICATION_CONTACT, "Email · Applications", `href="mailto:${APPLICATION_CONTACT}"`],
+    absent: [`mailto:${APPLICATION_CONTACT}?`],
   },
 ];
 
