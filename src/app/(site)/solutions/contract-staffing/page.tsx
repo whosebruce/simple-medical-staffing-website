@@ -22,13 +22,13 @@ export default function ContractStaffingPage() {
         sections={[
           {
             eyebrow: "What it is",
-            heading: "One professional, one unit, for as long as the need lasts.",
+            heading: "One professional, one unit, for a defined assignment.",
             body: (
               <>
                 <p>
                   A contract placement is a healthcare professional assigned to your facility for a defined period rather than
-                  a single shift. Over that time they work as part of your team. They learn the unit, the routines, and the
-                  people, and your permanent staff are not re-orienting someone new every week.
+                  a single shift. Over that time they work as part of your team and get to know the unit, the routines, and
+                  the people, which can give your permanent staff more continuity than shift-by-shift coverage.
                 </p>
                 <p>
                   Facilities usually turn to contract staffing when a need is real but not permanent. A leave of absence has

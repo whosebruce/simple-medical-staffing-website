@@ -36,8 +36,8 @@ const GETTING_STARTED: Faq[] = [
     q: "What should I include when I reach out?",
     a: (
       <>
-        The role you want, where you are located, and the type of schedule you are looking for. That is enough for us to
-        talk through the next step. You do not need a polished cover letter; short and plain is perfect.
+        A good starting point is the role you want, where you are located, and the type of schedule you are looking for.
+        Short and plain is perfect. A coordinator will let you know if anything else is needed for the next step.
       </>
     ),
   },
@@ -92,8 +92,7 @@ const WORK: Faq[] = [
     q: "Where is Simple Medical Staffing located?",
     a: (
       <>
-        Our office is at {BUSINESS_FACTS.address}. You do not need to visit to get started; a call or an email is how most
-        conversations begin.
+        Our address is {BUSINESS_FACTS.address}. A call or an email is how most conversations begin.
       </>
     ),
   },

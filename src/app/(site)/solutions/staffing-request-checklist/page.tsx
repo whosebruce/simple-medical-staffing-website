@@ -105,8 +105,8 @@ export default function StaffingRequestChecklistPage() {
           <p className="k-eyebrow text-k-sky-ink">The essentials</p>
           <h2 className="font-display text-3xl font-extrabold sm:text-4xl">Four things every request needs.</h2>
           <p className="text-[17px] leading-relaxed text-k-muted">
-            These four details are what we ask for on every request. With them, we can start looking for the professional who
-            fits.
+            These four details give us what we need to get started on a match. Send what you have and we&apos;ll ask about
+            the rest.
           </p>
         </div>
         <ol className="grid gap-6 sm:grid-cols-2">
@@ -128,7 +128,8 @@ export default function StaffingRequestChecklistPage() {
             <p className="k-eyebrow text-k-violet-ink">Helpful if you have it</p>
             <h2 className="font-display text-3xl font-extrabold sm:text-4xl">Details that make the match better.</h2>
             <p className="text-[17px] leading-relaxed text-k-muted">
-              None of these are required. Each one helps us look for the right person instead of an available one.
+              These are suggestions, not a form to complete. Each one helps us look for the right person instead of an
+              available one, and the team will tell you if anything specific is needed for your request.
             </p>
           </div>
           <ul className="grid gap-6 sm:grid-cols-2">

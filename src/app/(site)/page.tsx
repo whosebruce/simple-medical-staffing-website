@@ -107,8 +107,8 @@ export default function HomePage() {
             Three ways to staff, one standard of care.
           </h2>
           <p className="text-[17px] leading-relaxed text-k-muted">
-            Simple Medical Staffing is a healthcare staffing agency with an
-            office in Irvine, California. We provide contract, per-diem, and
+            Simple Medical Staffing is a healthcare staffing agency in Irvine,
+            California. We provide contract, per-diem, and
             direct placement staffing to healthcare facilities, and we connect
             healthcare professionals with roles that fit their experience,
             availability, and goals.

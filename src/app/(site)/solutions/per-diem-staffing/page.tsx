@@ -77,7 +77,7 @@ export default function PerDiemStaffingPage() {
             {
               href: "/solutions/contract-staffing",
               title: "Is the gap going to last?",
-              body: "Contract staffing places one professional with your unit for a defined period, so the team is not re-orienting someone new every week.",
+              body: "Contract staffing places one professional with your unit for a defined period, an option that can give the team more continuity than shift-by-shift coverage.",
               label: "More About Contract Staffing →",
             },
             {

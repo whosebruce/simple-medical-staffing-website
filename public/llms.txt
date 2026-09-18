@@ -1,8 +1,8 @@
 # Simple Medical Staffing
 
-> Simple Medical Staffing is a healthcare staffing agency with an office in Irvine, California. It provides contract, per-diem, and direct placement staffing for healthcare facilities and healthcare professionals. Founder and Chief Executive Officer: Dina Casares.
+> Simple Medical Staffing is a healthcare staffing agency in Irvine, California. It provides contract, per-diem, and direct placement staffing for healthcare facilities and healthcare professionals. Founder and Chief Executive Officer: Dina Casares.
 
-Office: 3333 Michelson Drive, Suite 300, Irvine, CA 92612, US
+Address: 3333 Michelson Drive, Suite 300, Irvine, CA 92612, US
 Phone: 949-317-2470
 Email: info@simplemedicalstaffing.com
 

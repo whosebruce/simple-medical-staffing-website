@@ -7,13 +7,14 @@
     "dev": "next dev -H 127.0.0.1 -p 3180",
     "typecheck": "tsc --noEmit",
     "build": "next build && node scripts/build-pages.mjs",
-    "verify": "npm run typecheck && npm run build && node scripts/verify-site.mjs && node scripts/verify-copy.mjs",
+    "verify": "npm run typecheck && npm run build && node scripts/verify-site.mjs && node scripts/verify-copy.mjs && node scripts/verify-browser-canary.cjs",
     "verify:copy": "node scripts/verify-copy.mjs",
     "start:static": "python3 -m http.server 3180 --directory docs",
     "build:images": "node scripts/build-images.mjs",
     "build:share-image": "node scripts/build-share-image.mjs",
     "verify:browser": "node scripts/verify-browser.cjs",
-    "serve:pages": "node scripts/serve-pages.mjs 3186 docs"
+    "serve:pages": "node scripts/serve-pages.mjs 3186 docs",
+    "verify:canary": "node scripts/verify-browser-canary.cjs"
   },
   "dependencies": {
     "next": "15.5.25",
