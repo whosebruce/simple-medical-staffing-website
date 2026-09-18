@@ -4,7 +4,11 @@ import { Circle } from "@/components/site/Circle";
 import { STAFF_ROLES } from "@/lib/forms";
 
 export const metadata = {
-  alternates: { canonical: "/professionals/" }, title: "For Professionals" };
+  alternates: { canonical: "/professionals/" },
+  title: "For Professionals",
+  description:
+    "Per-diem, contract, and permanent opportunities for healthcare professionals. Tell us your skills and schedule, and we'll look for the right fit.",
+};
 
 export default function ProfessionalsPage() {
   return (
@@ -29,10 +33,10 @@ export default function ProfessionalsPage() {
             </p>
             <div className="mt-2 flex flex-wrap gap-3.5">
               <Link href="/apply" className="k-btn-primary">
-                Apply now
+                Apply Now
               </Link>
               <Link href="/contact" className="k-btn-outline">
-                Talk to our team.
+                Talk to Our Team
               </Link>
             </div>
           </div>
@@ -145,7 +149,7 @@ export default function ProfessionalsPage() {
               can reach us by phone or email.
             </p>
             <Link href="/apply" className="k-btn-primary">
-              See application options
+              See Application Options
             </Link>
           </div>
         </div>
@@ -161,7 +165,7 @@ export default function ProfessionalsPage() {
             Bring your skills. We&apos;ll bring the right place to use them.
           </h2>
           <Link href="/apply" className="k-btn-primary">
-            Apply now
+            Apply Now
           </Link>
         </div>
       </section>

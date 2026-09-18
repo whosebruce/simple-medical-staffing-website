@@ -22,11 +22,11 @@ export const LEADERSHIP_ROLES = [
       },
       {
         heading: "The Why",
-        body: "After seeing firsthand how staffing shortages affect healthcare professionals, leadership teams, and the quality of care, Dina knew staffing could be done differently. She founded Simple Medical to create more than another staffing agency—she wanted to build a workforce partner that understands the realities of healthcare and the people behind every shift.",
+        body: "After seeing firsthand how staffing shortages affect healthcare professionals, leadership teams, and the quality of care, Dina knew staffing could be done differently. She founded Simple Medical to create more than another staffing agency. She wanted to build a workforce partner that understands the realities of healthcare and the people behind every shift.",
       },
       {
         heading: "The Vision",
-        body: "Today, Dina is building Simple Medical around relationships, reliability, and the right fit. Her vision is to help facilities build stronger, more stable teams while ensuring healthcare professionals feel valued, supported, and respected—not simply placed.",
+        body: "Today, Dina is building Simple Medical around relationships, reliability, and the right fit. Her vision is to help facilities build stronger, more stable teams while ensuring healthcare professionals feel valued, supported, and respected, not simply placed.",
       },
     ],
   },

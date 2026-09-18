@@ -6,8 +6,9 @@
 // artifact in docs/ (rendered HTML plus the RSC payload), so a source-only
 // change that never reached the build fails the gate.
 //
-// Strings are the owner's supplied copy verbatim, including punctuation and
-// the em dashes / curly apostrophes as supplied.
+// Strings are the owner's supplied copy as polished by the 2026-09-18
+// editorial pass: meaning, facts and terminology are the owner's; em dashes
+// were rewritten as commas, periods or colons.
 
 export const APPLICATION_CONTACT = "info@simplemedicalstaffing.com";
 
@@ -49,7 +50,7 @@ export const REQUIREMENTS = [
     route: "/solutions",
     present: [
       "A partner, not a portal.",
-      "Staffing shouldn't create more work for your leadership team. We provide responsive, hands-on support to help you maintain coverage, strengthen your workforce, and keep your focus where it belongs—on quality care.",
+      "Staffing shouldn't create more work for your leadership team. We provide responsive, hands-on support to help you maintain coverage, strengthen your workforce, and keep your focus where it belongs: on quality care.",
     ],
     absent: [
       "Directors of nursing and administrators answer for coverage and quality",
@@ -77,8 +78,8 @@ export const REQUIREMENTS = [
     id: "R08",
     title: "Professionals hero secondary action",
     route: "/professionals",
-    present: ["Talk to our team."],
-    absent: ["Ask a question"],
+    present: ["Talk to Our Team"],
+    absent: ["Ask a question", "Talk to our team."],
   },
   {
     id: "R09",
@@ -113,7 +114,7 @@ export const REQUIREMENTS = [
     title: "About headline",
     route: "/about",
     present: [
-      "We’re building stronger healthcare teams—one relationship at a time.",
+      "We’re building stronger healthcare teams, one relationship at a time.",
     ],
     absent: ["not line items"],
   },
@@ -122,7 +123,7 @@ export const REQUIREMENTS = [
     title: "About intro paragraph",
     route: "/about",
     present: [
-      "Simple Medical Workforce Solutions was built on a simple belief: healthcare staffing should be personal. We connect qualified healthcare professionals with facilities that need dependable people, while building relationships with both sides of every placement. Because great staffing isn’t just about filling a shift—it’s about finding the right fit.",
+      "Simple Medical Workforce Solutions was built on a simple belief: healthcare staffing should be personal. We connect qualified healthcare professionals with facilities that need dependable people, while building relationships with both sides of every placement. Because great staffing isn’t just about filling a shift. It’s about finding the right fit.",
     ],
     absent: ["Warm where the industry is transactional"],
   },
@@ -151,7 +152,7 @@ export const REQUIREMENTS = [
     route: "/about",
     present: [
       "The Why",
-      "After seeing firsthand how staffing shortages affect healthcare professionals, leadership teams, and the quality of care, Dina knew staffing could be done differently. She founded Simple Medical to create more than another staffing agency—she wanted to build a workforce partner that understands the realities of healthcare and the people behind every shift.",
+      "After seeing firsthand how staffing shortages affect healthcare professionals, leadership teams, and the quality of care, Dina knew staffing could be done differently. She founded Simple Medical to create more than another staffing agency. She wanted to build a workforce partner that understands the realities of healthcare and the people behind every shift.",
     ],
     absent: ["Dina brings together clinical practice and executive leadership"],
   },
@@ -161,7 +162,7 @@ export const REQUIREMENTS = [
     route: "/about",
     present: [
       "The Vision",
-      "Today, Dina is building Simple Medical around relationships, reliability, and the right fit. Her vision is to help facilities build stronger, more stable teams while ensuring healthcare professionals feel valued, supported, and respected—not simply placed.",
+      "Today, Dina is building Simple Medical around relationships, reliability, and the right fit. Her vision is to help facilities build stronger, more stable teams while ensuring healthcare professionals feel valued, supported, and respected, not simply placed.",
     ],
     absent: ["Her leadership philosophy centers on integrity"],
   },
@@ -178,3 +179,59 @@ export const REQUIREMENTS = [
 export const SITEWIDE_ABSENT = [
   { id: "R03", title: "No 'disciplines' wording sitewide", pattern: /disciplin/i },
 ];
+
+// ---------------------------------------------------------------------------
+// Editorial contract (2026-09-18 owner brief): no em dashes anywhere in the
+// generated site (visible copy, metadata, accessibility text, RSC payload),
+// one canonical Title Case label per repeated action, no period-ending
+// buttons. Mirrored in the preview application's requirement module.
+// ---------------------------------------------------------------------------
+export const CANONICAL_ACTION_LABELS = [
+  "Apply Now",
+  "Request Staffing",
+  "Find Your Next Role",
+  "Explore Staffing Solutions",
+  "See How It Works",
+  "More About How We Work",
+  "Get in Touch",
+  "Work With Us",
+  "Talk to Our Team",
+  "See Application Options",
+  "Skip to Content",
+  "Open Navigation",
+  "Close Navigation",
+];
+
+export const RETIRED_LABEL_VARIANTS = [
+  /\bApply now\b/,
+  /\bRequest staffing\b/,
+  /\bFind your next role\b/,
+  /\bExplore staffing solutions\b/,
+  /\bSee how it works\b/,
+  /\bMore about how we work\b/,
+  /\bGet in touch\b/,
+  /\bWork with us\b/,
+  /\bTalk to our team\b/,
+  /\bSee application options\b/,
+  /\bSkip to content\b/,
+  /\bOpen navigation\b/,
+  /\bClose navigation\b/,
+];
+
+export const ROUTE_LABELS = {
+  "/": ["Apply Now", "Request Staffing", "Find Your Next Role", "Explore Staffing Solutions", "See How It Works", "More About How We Work"],
+  "/solutions": ["Apply Now", "Request Staffing", "Get in Touch"],
+  "/professionals": ["Apply Now", "Talk to Our Team", "See Application Options"],
+  "/about": ["Apply Now", "Work With Us"],
+  "/contact": ["Apply Now", "See Application Options"],
+  "/apply": ["Apply Now"],
+  "/privacy": ["Apply Now"],
+};
+
+/** Per-page meta descriptions staged by the SEO audit (unique per page). */
+export const PAGE_DESCRIPTIONS = {
+  "/solutions": "Contract, per-diem, and direct-placement staffing for healthcare facilities.",
+  "/professionals": "Per-diem, contract, and permanent opportunities for healthcare professionals.",
+  "/about": "Meet founder and CEO Dina Casares.",
+  "/contact": "Call 949-317-2470 or email info@simplemedicalstaffing.com",
+};

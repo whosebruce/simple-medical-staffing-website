@@ -10,7 +10,7 @@ export default function SiteLayout({
         href="#main"
         className="sr-only bg-k-navy px-4 py-2 font-semibold text-white focus:not-sr-only focus:absolute focus:z-[60]"
       >
-        Skip to content
+        Skip to Content
       </a>
       <SiteHeader />
       <main id="main" className="flex-1">

@@ -54,7 +54,7 @@ export function SiteFooter() {
           </nav>
 
           <div className="flex flex-col items-start gap-3">
-            <h2 className="ks-eyebrow mb-1 text-k-mist">Get in touch</h2>
+            <h2 className="ks-eyebrow mb-1 text-k-mist">Get in Touch</h2>
             <address className="flex flex-col gap-2 text-[15px] not-italic leading-relaxed text-k-frost">
               <a
                 href={`tel:${BUSINESS_FACTS.phone}`}

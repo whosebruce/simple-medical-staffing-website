@@ -3,7 +3,11 @@ import { Circle } from "@/components/site/Circle";
 import { BUSINESS_FACTS } from "@/lib/brand";
 
 export const metadata = {
-  alternates: { canonical: "/contact/" }, title: "Contact" };
+  alternates: { canonical: "/contact/" },
+  title: "Contact",
+  description:
+    "Call 949-317-2470 or email info@simplemedicalstaffing.com to request staffing or talk about your next role with Simple Medical Staffing in Irvine, CA.",
+};
 
 export default function ContactPage() {
   return (
@@ -19,8 +23,8 @@ export default function ContactPage() {
             Tell us what you need.
           </h1>
           <p className="max-w-[560px] text-lg leading-relaxed text-k-muted">
-            Facility or professional — call or email directly. Short and plain
-            is perfect.
+            Whether you&apos;re a facility or a professional, call or email
+            directly. Short and plain is perfect.
           </p>
         </div>
       </section>
@@ -34,7 +38,7 @@ export default function ContactPage() {
             </h2>
             <p className="leading-relaxed text-k-muted">
               Call or email with the unit, the shift, the specialty, and the
-              start date — that&apos;s everything we need to get started on a
+              start date. That&apos;s everything we need to get started on a
               match.
             </p>
           </div>
@@ -51,7 +55,7 @@ export default function ContactPage() {
               href="/apply"
               className="k-arrow-link text-k-violet-ink hover:text-k-navy"
             >
-              See application options →
+              See Application Options →
             </Link>
           </div>
         </div>
@@ -105,7 +109,7 @@ export default function ContactPage() {
                 Ready to talk about your next role?
               </p>
               <Link href="/apply" className="k-btn-primary mt-1">
-                Apply now
+                Apply Now
               </Link>
             </div>
           </div>

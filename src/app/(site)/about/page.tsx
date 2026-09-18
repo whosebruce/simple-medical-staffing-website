@@ -3,7 +3,11 @@ import { Circle } from "@/components/site/Circle";
 import { BUSINESS_FACTS, LEADERSHIP_ROLES } from "@/lib/brand";
 
 export const metadata = {
-  alternates: { canonical: "/about/" }, title: "About" };
+  alternates: { canonical: "/about/" },
+  title: "About",
+  description:
+    "Simple Medical Staffing connects qualified healthcare professionals with facilities that need dependable people. Meet founder and CEO Dina Casares.",
+};
 
 export default function AboutPage() {
   return (
@@ -16,7 +20,7 @@ export default function AboutPage() {
         <div className="relative mx-auto flex max-w-4xl flex-col gap-4.5 px-6 py-14 sm:py-20">
           <p className="k-eyebrow text-k-sky-ink">About Simple Medical Staffing</p>
           <h1 className="font-display text-3xl font-extrabold leading-[1.2] text-balance sm:text-[44px]">
-            We’re building stronger healthcare teams—one relationship at a
+            We’re building stronger healthcare teams, one relationship at a
             time.
           </h1>
           <p className="text-lg leading-relaxed text-k-muted">
@@ -25,7 +29,7 @@ export default function AboutPage() {
             healthcare professionals with facilities that need dependable
             people, while building relationships with both sides of every
             placement. Because great staffing isn’t just about filling a
-            shift—it’s about finding the right fit.
+            shift. It’s about finding the right fit.
           </p>
         </div>
       </section>
@@ -68,8 +72,8 @@ export default function AboutPage() {
                 Vibrant
               </h3>
               <p className="text-[15px] leading-relaxed text-k-muted">
-                Color and energy where the industry is clinical gray — in how
-                we show up, and how we celebrate the people we place.
+                Color and energy where the industry is clinical gray, in how
+                we show up and how we celebrate the people we place.
               </p>
             </div>
             <div className="k-card flex flex-col gap-3 p-7">
@@ -167,7 +171,7 @@ export default function AboutPage() {
             &ldquo;{BUSINESS_FACTS.tagline}.&rdquo;
           </h2>
           <Link href="/contact" className="k-btn-primary">
-            Work with us
+            Work With Us
           </Link>
         </div>
       </section>

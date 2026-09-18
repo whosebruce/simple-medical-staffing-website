@@ -25,14 +25,15 @@ export default function HomePage() {
             </h1>
             <p className="max-w-[520px] text-lg leading-relaxed text-k-muted">
               We connect reliable medical professionals with the facilities
-              that need them — matched for fit, not just availability.
+              that need them. Every match is made for fit, not just
+              availability.
             </p>
             <div className="mt-2 flex flex-wrap gap-3.5">
               <Link href="/contact" className="k-btn-primary">
-                Request staffing
+                Request Staffing
               </Link>
               <Link href="/professionals" className="k-btn-outline">
-                Find your next role
+                Find Your Next Role
               </Link>
             </div>
           </div>
@@ -68,7 +69,7 @@ export default function HomePage() {
               href="/solutions"
               className="k-arrow-link mt-auto text-k-sky-ink hover:text-k-navy"
             >
-              Explore staffing solutions →
+              Explore Staffing Solutions →
             </Link>
           </div>
           <div className="k-card flex flex-col items-start gap-3.5 p-9">
@@ -84,7 +85,7 @@ export default function HomePage() {
               href="/professionals"
               className="k-arrow-link mt-auto text-k-violet-ink hover:text-k-navy"
             >
-              See how it works →
+              See How It Works →
             </Link>
           </div>
         </div>
@@ -146,14 +147,14 @@ export default function HomePage() {
             </h2>
             <p className="text-[17px] leading-relaxed text-k-muted">
               Every placement affects a shift, a patient, and a career. So we
-              match on fit — the unit, the team, the schedule — and work to be
-              an extension of the facilities we serve.
+              match on fit, meaning the unit, the team, and the schedule, and
+              we work to be an extension of the facilities we serve.
             </p>
             <Link
               href="/about"
               className="k-arrow-link text-k-sky-ink hover:text-k-navy"
             >
-              More about how we work →
+              More About How We Work →
             </Link>
           </div>
         </div>
@@ -174,10 +175,10 @@ export default function HomePage() {
           </h2>
           <div className="flex flex-wrap justify-center gap-3.5">
             <Link href="/contact" className="k-btn-primary">
-              Request staffing
+              Request Staffing
             </Link>
             <Link href="/apply" className="k-btn-on-dark">
-              Apply now
+              Apply Now
             </Link>
           </div>
         </div>

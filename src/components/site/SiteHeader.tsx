@@ -65,13 +65,13 @@ export function SiteHeader() {
             href="/apply"
             className="k-sky-fill rounded-[10px] px-5 py-2.5 font-display text-[15px] font-bold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-k-navy"
           >
-            Apply now
+            Apply Now
           </Link>
         </nav>
 
         <button
           type="button"
-          aria-label={open ? "Close navigation" : "Open navigation"}
+          aria-label={open ? "Close Navigation" : "Open Navigation"}
           aria-expanded={open}
           aria-controls="site-menu"
           onClick={() => setOpen((v) => !v)}
@@ -106,7 +106,7 @@ export function SiteHeader() {
           onClick={() => setOpen(false)}
           className="k-sky-fill mt-3 rounded-[10px] px-5 py-3.5 text-center font-display text-base font-bold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-k-navy"
         >
-          Apply now
+          Apply Now
         </Link>
       </nav>
     </header>

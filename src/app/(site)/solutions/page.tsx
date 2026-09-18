@@ -3,12 +3,16 @@ import Image from "next/image";
 import { Circle } from "@/components/site/Circle";
 
 export const metadata = {
-  alternates: { canonical: "/solutions/" }, title: "Staffing Solutions" };
+  alternates: { canonical: "/solutions/" },
+  title: "Staffing Solutions",
+  description:
+    "Contract, per-diem, and direct-placement staffing for healthcare facilities. Tell us the unit, the shift, and the team, and we'll look for the professional who fits.",
+};
 
 const SERVICES = [
   {
     title: "Contract staffing",
-    body: "Longer-term placements for sustained coverage — professionals who join your team, learn your unit, and stay through the assignment.",
+    body: "Longer-term placements for sustained coverage: professionals who join your team, learn your unit, and stay through the assignment.",
     bestFor: "Best for: seasonal census, leaves of absence, extended vacancies",
     circle: <Circle gradient="sky-violet" className="relative h-12 w-12" />,
   },
@@ -26,7 +30,7 @@ const SERVICES = [
   },
   {
     title: "Direct placement",
-    body: "Permanent hires selected for fit with your team — not just a resume that matches the requisition.",
+    body: "Permanent hires selected for fit with your team, not just a resume that matches the requisition.",
     bestFor: "Best for: permanent roles, hard-to-fill specialties, leadership",
     circle: <Circle gradient="teal-sky" className="relative h-12 w-12" />,
   },
@@ -79,7 +83,7 @@ export default function SolutionsPage() {
             for the professional who fits.
           </p>
           <Link href="/contact" className="k-btn-primary mt-2">
-            Request staffing
+            Request Staffing
           </Link>
         </div>
       </section>
@@ -149,10 +153,10 @@ export default function SolutionsPage() {
             Staffing shouldn&apos;t create more work for your leadership team.
             We provide responsive, hands-on support to help you maintain
             coverage, strengthen your workforce, and keep your focus where it
-            belongs—on quality care.
+            belongs: on quality care.
           </p>
           <Link href="/contact" className="k-btn-primary">
-            Get in touch
+            Get in Touch
           </Link>
         </div>
         <Image

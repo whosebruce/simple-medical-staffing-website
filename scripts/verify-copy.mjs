@@ -8,8 +8,12 @@ import fs from "node:fs";
 import path from "node:path";
 import {
   APPLICATION_CONTACT,
+  CANONICAL_ACTION_LABELS,
+  PAGE_DESCRIPTIONS,
   PUBLIC_ROUTES,
   REQUIREMENTS,
+  RETIRED_LABEL_VARIANTS,
+  ROUTE_LABELS,
   SITEWIDE_ABSENT,
 } from "./copy-requirements.mjs";
 
@@ -76,13 +80,13 @@ for (const rule of SITEWIDE_ABSENT) {
 // (scripts/verify-site.mjs enforces the sitewide half).
 for (const route of PUBLIC_ROUTES) {
   const text = decode(fs.readFileSync(pageFile(route), "utf8"));
-  const applyLinks = [...text.matchAll(/<a[^>]+href="([^"]*)"[^>]*>\s*Apply now\s*<\/a>/gi)];
+  const applyLinks = [...text.matchAll(/<a[^>]+href="([^"]*)"[^>]*>\s*Apply Now\s*<\/a>/g)];
   const wrong = applyLinks.map((m) => m[1]).filter((href) => href !== "/apply/");
   const pass = wrong.length === 0;
   if (!pass) failures += 1;
   results.push({
     id: "R13-link",
-    title: "Apply now actions resolve to /apply/",
+    title: "Apply Now actions resolve to /apply/",
     route,
     pass,
     applyLinks: applyLinks.length,
@@ -109,6 +113,45 @@ for (const route of PUBLIC_ROUTES) {
   }
 }
 
+// Editorial contract (2026-09-18): no em dash in any generated text asset,
+// canonical Title Case action labels per route, no retired variant anywhere
+// (visible text, aria-label, RSC payload), no period-ending button, and the
+// staged unique meta descriptions.
+{
+  const dashHits = textFiles
+    .filter((f) => /—/.test(fs.readFileSync(f, "utf8")))
+    .map((f) => path.relative(root, f));
+  const pass = dashHits.length === 0;
+  if (!pass) failures += 1;
+  results.push({ id: "E01", title: "no em dash in any generated text asset", route: "*", pass, hits: dashHits });
+}
+for (const route of PUBLIC_ROUTES) {
+  const html = decode(fs.readFileSync(pageFile(route), "utf8"));
+  const variantHits = RETIRED_LABEL_VARIANTS.filter((v) => v.test(html)).map(String);
+  const anchors = [...html.matchAll(/<a\b[^>]*>([\s\S]*?)<\/a>/gi)].map((m) => m[1].replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim());
+  const missing = ROUTE_LABELS[route].filter((l) => !anchors.some((a) => a === l || a === `${l} →`));
+  const periodButtons = anchors.filter((a) => /\.$/.test(a) && a.split(" ").length <= 5);
+  const lower = new Set(CANONICAL_ACTION_LABELS.map((l) => l.toLowerCase()));
+  const misspelt = anchors.map((a) => a.replace(/\s*→$/, "")).filter((a) => lower.has(a.toLowerCase()) && !CANONICAL_ACTION_LABELS.includes(a));
+  const pass = variantHits.length === 0 && missing.length === 0 && periodButtons.length === 0 && misspelt.length === 0;
+  if (!pass) failures += 1;
+  results.push({ id: "E02", title: "canonical Title Case action labels, no retired variants, no period-ending buttons", route, pass, variantHits, missing, periodButtons, misspelt });
+  if (PAGE_DESCRIPTIONS[route]) {
+    const m = html.match(/<meta name="description" content="([^"]*)"/);
+    const ok = !!m && m[1].includes(PAGE_DESCRIPTIONS[route]);
+    if (!ok) failures += 1;
+    results.push({ id: "E03", title: "page-specific meta description", route, pass: ok, description: m?.[1] ?? null });
+  }
+}
+{
+  // No two pages share a description.
+  const descs = PUBLIC_ROUTES.map((r) => [r, decode(fs.readFileSync(pageFile(r), "utf8")).match(/<meta name="description" content="([^"]*)"/)?.[1] ?? ""]);
+  const dupes = descs.filter(([, d], i) => descs.findIndex(([, e]) => e === d) !== i).map(([r]) => r);
+  const pass = dupes.length === 0;
+  if (!pass) failures += 1;
+  results.push({ id: "E04", title: "meta descriptions are unique per page", route: "*", pass, duplicates: dupes });
+}
+
 const out = { generatedAt: new Date().toISOString(), failures, results };
 const outFile = process.env.COPY_MATRIX_OUT;
 if (outFile) fs.writeFileSync(outFile, JSON.stringify(out, null, 2) + "\n");
@@ -119,6 +162,10 @@ for (const r of results) {
     r.lingering?.length ? `lingering: ${JSON.stringify(r.lingering)}` : "",
     r.hits?.length ? `hits: ${JSON.stringify(r.hits)}` : "",
     r.wrong?.length ? `wrong: ${JSON.stringify(r.wrong)}` : "",
+    r.variantHits?.length ? `variants: ${JSON.stringify(r.variantHits)}` : "",
+    r.periodButtons?.length ? `period-buttons: ${JSON.stringify(r.periodButtons)}` : "",
+    r.misspelt?.length ? `misspelt: ${JSON.stringify(r.misspelt)}` : "",
+    r.duplicates?.length ? `duplicates: ${JSON.stringify(r.duplicates)}` : "",
   ]
     .filter(Boolean)
     .join(" ");
