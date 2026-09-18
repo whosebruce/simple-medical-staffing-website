@@ -1,17 +1,20 @@
 import Link from "next/link";
 import { Circle } from "@/components/site/Circle";
+import { StructuredData } from "@/components/site/StructuredData";
 import { BUSINESS_FACTS, LEADERSHIP_ROLES } from "@/lib/brand";
+import { documentTitle, pageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  alternates: { canonical: "/about/" },
-  title: "About",
-  description:
-    "Simple Medical Staffing connects qualified healthcare professionals with facilities that need dependable people. Meet founder and CEO Dina Casares.",
-};
+const PATH = "/about/";
+const TITLE = "About";
+const DESCRIPTION =
+  "Simple Medical Staffing connects qualified healthcare professionals with facilities that need dependable people. Meet founder and CEO Dina Casares.";
+
+export const metadata = pageMetadata({ path: PATH, title: TITLE, description: DESCRIPTION });
 
 export default function AboutPage() {
   return (
     <>
+      <StructuredData path={PATH} title={documentTitle(TITLE)} description={DESCRIPTION} pageType="AboutPage" />
       <section className="relative overflow-hidden bg-k-cloud">
         <Circle
           gradient="teal-sky"
@@ -152,8 +155,20 @@ export default function AboutPage() {
             </li>
           ))}
         </ul>
-        <p className="mt-5 text-sm text-k-faint">
+        <p className="mt-5 text-sm text-k-muted">
           Additional leadership information will be added as the team grows.
+        </p>
+        <p className="mt-8 max-w-[680px] text-[17px] leading-relaxed text-k-muted">
+          Facilities can see how we work on the{" "}
+          <Link href="/solutions" className="font-bold text-k-sky-ink underline underline-offset-4 hover:text-k-navy">
+            Staffing Solutions
+          </Link>{" "}
+          page. Healthcare professionals can see the roles we place and how to
+          get started on the{" "}
+          <Link href="/professionals" className="font-bold text-k-sky-ink underline underline-offset-4 hover:text-k-navy">
+            For Professionals
+          </Link>{" "}
+          page.
         </p>
       </section>
 

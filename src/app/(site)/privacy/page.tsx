@@ -1,14 +1,17 @@
+import { StructuredData } from "@/components/site/StructuredData";
 import { BUSINESS_FACTS } from "@/lib/brand";
+import { documentTitle, pageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "Privacy",
-  description: "Privacy information for the Simple Medical Staffing public website.",
-  alternates: { canonical: "/privacy/" },
-};
+const PATH = "/privacy/";
+const TITLE = "Privacy";
+const DESCRIPTION = "Privacy information for the Simple Medical Staffing public website.";
+
+export const metadata = pageMetadata({ path: PATH, title: TITLE, description: DESCRIPTION });
 
 export default function PrivacyPage() {
   return (
     <section className="ks-page ks-passage">
+      <StructuredData path={PATH} title={documentTitle(TITLE)} description={DESCRIPTION} />
       <div className="ks-wrap-narrow">
         <p className="ks-eyebrow text-k-muted">Privacy</p>
         <h1 className="ks-h1 mt-3 text-k-navy">Website Privacy Notice</h1>

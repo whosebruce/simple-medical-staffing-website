@@ -1,0 +1,374 @@
+{
+  "generatedBy": "scripts/build-images.mjs",
+  "variantWidths": [
+    640,
+    960,
+    1280
+  ],
+  "webp": {
+    "quality": 82,
+    "effort": 6
+  },
+  "masters": {
+    "/kindred/photos/badge-welcome.webp": {
+      "width": 1536,
+      "height": 1024,
+      "bytes": 103484,
+      "sha256": "065362ef051301cf3b57fa914333f03179f509648bd011842e2433cf94ebc4d5"
+    },
+    "/kindred/photos/candid-conversation.webp": {
+      "width": 1536,
+      "height": 1024,
+      "bytes": 126286,
+      "sha256": "0627dc0cae5e6464c529cbaf9f344cee557bd35e723a33aab4386539761ad0bc"
+    },
+    "/kindred/photos/clinic-reception.webp": {
+      "width": 1536,
+      "height": 1024,
+      "bytes": 189570,
+      "sha256": "17edd01fdc50db089dbfb25ae37350c63293b8cf1a88cea97e7f8c1f49cd8fbe"
+    },
+    "/kindred/photos/nurse-portrait.webp": {
+      "width": 1024,
+      "height": 1536,
+      "bytes": 113418,
+      "sha256": "b88061973518cd25a74c4928934d9ac53c36320ccfef68292cd834d341d5a63a"
+    },
+    "/kindred/campaign/about-two-colleagues-wide.webp": {
+      "width": 1536,
+      "height": 1024,
+      "bytes": 74720,
+      "sha256": "7250c504c0de686828b086e3283d3e1909036ea14e51183a2db65be18676cf92"
+    },
+    "/kindred/campaign/facility-partner-station.webp": {
+      "width": 1536,
+      "height": 1024,
+      "bytes": 63066,
+      "sha256": "625b7a8bc51d795f68c6894fee493d5de5ab45f2f04d333bec2615df6deef96f"
+    },
+    "/kindred/campaign/first-shift-welcome.webp": {
+      "width": 1536,
+      "height": 1024,
+      "bytes": 55400,
+      "sha256": "c6e3043272171cbf468ec458b800922348c5edf500b7f71835dd9a975748374c"
+    },
+    "/kindred/campaign/home-hero-handoff.webp": {
+      "width": 1536,
+      "height": 1024,
+      "bytes": 55610,
+      "sha256": "226652def1007a6c407c74bd9c15e57d4cc577a48a566e76057d1ba2b54fa0b5"
+    }
+  },
+  "derivatives": [
+    {
+      "file": "public/kindred/photos/badge-welcome-640.webp",
+      "source": "public/kindred/photos/badge-welcome.webp",
+      "width": 640,
+      "height": 427,
+      "format": "webp",
+      "bytes": 17700,
+      "sha256": "4f51336f1e6a490db69108202f14d2cca1d27f90345a2fcdc71b3d5c9d7321bd",
+      "usage": "srcset candidate 640w for /kindred/photos/badge-welcome.webp"
+    },
+    {
+      "file": "public/kindred/photos/badge-welcome-960.webp",
+      "source": "public/kindred/photos/badge-welcome.webp",
+      "width": 960,
+      "height": 640,
+      "format": "webp",
+      "bytes": 29196,
+      "sha256": "d9a8c8b363ca5667990038e9c9799193c3fc7b557c404d0c9254aa641b7b07b3",
+      "usage": "srcset candidate 960w for /kindred/photos/badge-welcome.webp"
+    },
+    {
+      "file": "public/kindred/photos/badge-welcome-1280.webp",
+      "source": "public/kindred/photos/badge-welcome.webp",
+      "width": 1280,
+      "height": 853,
+      "format": "webp",
+      "bytes": 40844,
+      "sha256": "0217eee55af6cb006176347ffde22e41e9a367dc44a2f5c4c9a4a70f94e7a9f1",
+      "usage": "srcset candidate 1280w for /kindred/photos/badge-welcome.webp"
+    },
+    {
+      "file": "public/kindred/photos/candid-conversation-640.webp",
+      "source": "public/kindred/photos/candid-conversation.webp",
+      "width": 640,
+      "height": 427,
+      "format": "webp",
+      "bytes": 27684,
+      "sha256": "2fb2e1d4aed712f861b4f30dc58dc2b203e3f4e1cd5265b0f49182f6604d314e",
+      "usage": "srcset candidate 640w for /kindred/photos/candid-conversation.webp"
+    },
+    {
+      "file": "public/kindred/photos/candid-conversation-960.webp",
+      "source": "public/kindred/photos/candid-conversation.webp",
+      "width": 960,
+      "height": 640,
+      "format": "webp",
+      "bytes": 44604,
+      "sha256": "b96c09c0d4cda7fad1d9c671ca668e97a0844faae5deda305ad13bb86dac6f97",
+      "usage": "srcset candidate 960w for /kindred/photos/candid-conversation.webp"
+    },
+    {
+      "file": "public/kindred/photos/candid-conversation-1280.webp",
+      "source": "public/kindred/photos/candid-conversation.webp",
+      "width": 1280,
+      "height": 853,
+      "format": "webp",
+      "bytes": 62484,
+      "sha256": "d2bfc1274e9a623c2bf69763b7a2052c10136acbd3bca5df35071b09527bfea4",
+      "usage": "srcset candidate 1280w for /kindred/photos/candid-conversation.webp"
+    },
+    {
+      "file": "public/kindred/photos/clinic-reception-640.webp",
+      "source": "public/kindred/photos/clinic-reception.webp",
+      "width": 640,
+      "height": 427,
+      "format": "webp",
+      "bytes": 36902,
+      "sha256": "dd5b45033bfd00d9bd0282fc725e5163b2b4edf343532a6af993561ada4ee6fc",
+      "usage": "srcset candidate 640w for /kindred/photos/clinic-reception.webp"
+    },
+    {
+      "file": "public/kindred/photos/clinic-reception-960.webp",
+      "source": "public/kindred/photos/clinic-reception.webp",
+      "width": 960,
+      "height": 640,
+      "format": "webp",
+      "bytes": 62002,
+      "sha256": "0bd0ebc089ea63c24765f397fabf8444fbea2562fba08adb95f6be68d3bf492d",
+      "usage": "srcset candidate 960w for /kindred/photos/clinic-reception.webp"
+    },
+    {
+      "file": "public/kindred/photos/clinic-reception-1280.webp",
+      "source": "public/kindred/photos/clinic-reception.webp",
+      "width": 1280,
+      "height": 853,
+      "format": "webp",
+      "bytes": 87326,
+      "sha256": "69af6bd47a2ab25e9bf1dcb12d714ebe6f49d6396b8cc3a19bf8f48203637549",
+      "usage": "srcset candidate 1280w for /kindred/photos/clinic-reception.webp"
+    },
+    {
+      "file": "public/kindred/photos/nurse-portrait-640.webp",
+      "source": "public/kindred/photos/nurse-portrait.webp",
+      "width": 640,
+      "height": 960,
+      "format": "webp",
+      "bytes": 29794,
+      "sha256": "fdf5787bbe3354d91733fb6cd98f6c2eb0b93828d12db1839ab81f855028fcd6",
+      "usage": "srcset candidate 640w for /kindred/photos/nurse-portrait.webp"
+    },
+    {
+      "file": "public/kindred/photos/nurse-portrait-960.webp",
+      "source": "public/kindred/photos/nurse-portrait.webp",
+      "width": 960,
+      "height": 1440,
+      "format": "webp",
+      "bytes": 49056,
+      "sha256": "5e7f633464664d69c499affc8331022f78be3aaacaa24ba6c5abfb92521fd050",
+      "usage": "srcset candidate 960w for /kindred/photos/nurse-portrait.webp"
+    },
+    {
+      "file": "public/kindred/campaign/about-two-colleagues-wide-640.webp",
+      "source": "public/kindred/campaign/about-two-colleagues-wide.webp",
+      "width": 640,
+      "height": 427,
+      "format": "webp",
+      "bytes": 21008,
+      "sha256": "c7e6cb8b912320706db06690bfaf1219fbc76339e84845a5777f854ea740fdda",
+      "usage": "srcset candidate 640w for /kindred/campaign/about-two-colleagues-wide.webp"
+    },
+    {
+      "file": "public/kindred/campaign/about-two-colleagues-wide-960.webp",
+      "source": "public/kindred/campaign/about-two-colleagues-wide.webp",
+      "width": 960,
+      "height": 640,
+      "format": "webp",
+      "bytes": 35628,
+      "sha256": "d4d5035580c9779c0aabebe9fdf4972a9c005d49cdbdfa43097500036672e5f3",
+      "usage": "srcset candidate 960w for /kindred/campaign/about-two-colleagues-wide.webp"
+    },
+    {
+      "file": "public/kindred/campaign/about-two-colleagues-wide-1280.webp",
+      "source": "public/kindred/campaign/about-two-colleagues-wide.webp",
+      "width": 1280,
+      "height": 853,
+      "format": "webp",
+      "bytes": 48862,
+      "sha256": "5abcfb358303e170a31dc85fdfe5e9213a6f88f51df1536778ee2f9f5d0c2de8",
+      "usage": "srcset candidate 1280w for /kindred/campaign/about-two-colleagues-wide.webp"
+    },
+    {
+      "file": "public/kindred/campaign/facility-partner-station-640.webp",
+      "source": "public/kindred/campaign/facility-partner-station.webp",
+      "width": 640,
+      "height": 427,
+      "format": "webp",
+      "bytes": 16096,
+      "sha256": "be28faca14476aad3288dce1c32caf8c197ee584a480e9fff5d0bd817eebdb67",
+      "usage": "srcset candidate 640w for /kindred/campaign/facility-partner-station.webp"
+    },
+    {
+      "file": "public/kindred/campaign/facility-partner-station-960.webp",
+      "source": "public/kindred/campaign/facility-partner-station.webp",
+      "width": 960,
+      "height": 640,
+      "format": "webp",
+      "bytes": 28074,
+      "sha256": "a963141b19cb1b3889da7bdb387d7b98301e456494fecb50e90b219ddb3cca97",
+      "usage": "srcset candidate 960w for /kindred/campaign/facility-partner-station.webp"
+    },
+    {
+      "file": "public/kindred/campaign/facility-partner-station-1280.webp",
+      "source": "public/kindred/campaign/facility-partner-station.webp",
+      "width": 1280,
+      "height": 853,
+      "format": "webp",
+      "bytes": 39396,
+      "sha256": "916f7f46fdde3eb3d690d1ae870952ae048a0ff4c39a25482d527ad8b5250dfb",
+      "usage": "srcset candidate 1280w for /kindred/campaign/facility-partner-station.webp"
+    },
+    {
+      "file": "public/kindred/campaign/first-shift-welcome-640.webp",
+      "source": "public/kindred/campaign/first-shift-welcome.webp",
+      "width": 640,
+      "height": 427,
+      "format": "webp",
+      "bytes": 16366,
+      "sha256": "8df30b248b79af488a72ea91c8fc14876e540af1226f5f3b883f18baedf7395d",
+      "usage": "srcset candidate 640w for /kindred/campaign/first-shift-welcome.webp"
+    },
+    {
+      "file": "public/kindred/campaign/first-shift-welcome-960.webp",
+      "source": "public/kindred/campaign/first-shift-welcome.webp",
+      "width": 960,
+      "height": 640,
+      "format": "webp",
+      "bytes": 27688,
+      "sha256": "3832412d49687afcae41cad408d7d8c704f7bc2b1d54ed9619b8a7909fc851f6",
+      "usage": "srcset candidate 960w for /kindred/campaign/first-shift-welcome.webp"
+    },
+    {
+      "file": "public/kindred/campaign/first-shift-welcome-1280.webp",
+      "source": "public/kindred/campaign/first-shift-welcome.webp",
+      "width": 1280,
+      "height": 853,
+      "format": "webp",
+      "bytes": 37760,
+      "sha256": "49b2be06698285bc80f58252f3d59286b8bd1e3512e6c9f87395c9e1e4ec558f",
+      "usage": "srcset candidate 1280w for /kindred/campaign/first-shift-welcome.webp"
+    },
+    {
+      "file": "public/kindred/campaign/home-hero-handoff-640.webp",
+      "source": "public/kindred/campaign/home-hero-handoff.webp",
+      "width": 640,
+      "height": 427,
+      "format": "webp",
+      "bytes": 17364,
+      "sha256": "8c713e20da378d6799a9835123f8f9d5bdfdc23a67c2f7b6ff6d35b47e92ab7c",
+      "usage": "srcset candidate 640w for /kindred/campaign/home-hero-handoff.webp"
+    },
+    {
+      "file": "public/kindred/campaign/home-hero-handoff-960.webp",
+      "source": "public/kindred/campaign/home-hero-handoff.webp",
+      "width": 960,
+      "height": 640,
+      "format": "webp",
+      "bytes": 29276,
+      "sha256": "2db495fa989c1b8c8935f3ca7512b280f16bcac80ebb65366bb7a33028774814",
+      "usage": "srcset candidate 960w for /kindred/campaign/home-hero-handoff.webp"
+    },
+    {
+      "file": "public/kindred/campaign/home-hero-handoff-1280.webp",
+      "source": "public/kindred/campaign/home-hero-handoff.webp",
+      "width": 1280,
+      "height": 853,
+      "format": "webp",
+      "bytes": 39774,
+      "sha256": "c3a4feaa8b5c7ac992d6bd75239b57b0f64ff77eb24a36a718ce12ebd301dc17",
+      "usage": "srcset candidate 1280w for /kindred/campaign/home-hero-handoff.webp"
+    },
+    {
+      "file": "public/kindred/icons/favicon-16.png",
+      "source": "public/kindred/logos/kindred-mark.svg",
+      "width": 16,
+      "height": 16,
+      "format": "png",
+      "bytes": 513,
+      "sha256": "a480632807dea7abc7b8f07fbb5a160394b052b0780537d4a4df2145b5cbc22d",
+      "usage": "icon 16x16"
+    },
+    {
+      "file": "public/kindred/icons/favicon-32.png",
+      "source": "public/kindred/logos/kindred-mark.svg",
+      "width": 32,
+      "height": 32,
+      "format": "png",
+      "bytes": 1102,
+      "sha256": "475dc1a09fdbc9208cc1cb14b7057abd5f4b81159b7983b6c7f4d32b4de9cdbf",
+      "usage": "icon 32x32"
+    },
+    {
+      "file": "public/kindred/icons/favicon-48.png",
+      "source": "public/kindred/logos/kindred-mark.svg",
+      "width": 48,
+      "height": 48,
+      "format": "png",
+      "bytes": 1558,
+      "sha256": "66234c5604d6de71fbbf4bd384c4c22c111c958cb021e9f18bf08d5f1e3bee25",
+      "usage": "favicon.ico member"
+    },
+    {
+      "file": "public/kindred/icons/icon-192.png",
+      "source": "public/kindred/logos/kindred-mark.svg",
+      "width": 192,
+      "height": 192,
+      "format": "png",
+      "bytes": 5528,
+      "sha256": "53807ad66e5a06c99d61ac1a872c3a2b7b03f4e36d8f78d416c60e6f608f8e7e",
+      "usage": "icon 192x192 (Android/Chrome)"
+    },
+    {
+      "file": "public/kindred/icons/icon-512.png",
+      "source": "public/kindred/logos/kindred-mark.svg",
+      "width": 512,
+      "height": 512,
+      "format": "png",
+      "bytes": 16688,
+      "sha256": "8e3bbcf0a93045f1787105658f889be946135f321ab78743a078254f6b5afb15",
+      "usage": "icon 512x512"
+    },
+    {
+      "file": "public/kindred/icons/apple-touch-icon.png",
+      "source": "public/kindred/logos/kindred-mark.svg",
+      "width": 180,
+      "height": 180,
+      "format": "png",
+      "bytes": 4659,
+      "sha256": "71b574639fb7f8421e3e9b1e0a559a5cbbb5839b50c44cc39bcbaecd2aa0c4b8",
+      "usage": "apple-touch-icon 180x180 (iOS adds no transparency, so a white field is baked in)"
+    },
+    {
+      "file": "public/kindred/icons/logo-512.png",
+      "source": "public/kindred/logos/kindred-mark.svg",
+      "width": 512,
+      "height": 512,
+      "format": "png",
+      "bytes": 15548,
+      "sha256": "f02225f27eaa52554c254212492f79f0133b225a507080737f45651b45eb610e",
+      "usage": "Organization logo for JSON-LD (PNG on white, >=112px)"
+    },
+    {
+      "file": "public/favicon.ico",
+      "source": "public/kindred/logos/kindred-mark.svg",
+      "width": 48,
+      "height": 48,
+      "format": "ico(png members 16,32,48)",
+      "bytes": 3227,
+      "sha256": "c07732de90e5629e662293b91ccf187d0b7c8562b5e9449cfa2d3b51df55f145",
+      "usage": "root favicon.ico fallback"
+    }
+  ]
+}

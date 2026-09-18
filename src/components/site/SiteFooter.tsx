@@ -5,7 +5,11 @@ import { Circle } from "./Circle";
 
 const EXPLORE = [
   { label: "Staffing Solutions", href: "/solutions" },
+  { label: "Contract Staffing", href: "/solutions/contract-staffing" },
+  { label: "Per-Diem Staffing", href: "/solutions/per-diem-staffing" },
+  { label: "Direct Placement", href: "/solutions/direct-placement" },
   { label: "For Professionals", href: "/professionals" },
+  { label: "Candidate FAQ", href: "/professionals/faq" },
   { label: "About Us", href: "/about" },
   { label: "Contact", href: "/contact" },
   { label: "Apply Now", href: "/apply" },
@@ -26,7 +30,7 @@ export function SiteFooter() {
                 alt=""
                 width={56}
                 height={56}
-                sizes="56px"
+                unoptimized
                 className="rounded-[12px] bg-white p-2"
               />
               <span className="font-display text-lg font-extrabold leading-tight">Simple Medical<br />Staffing</span>

@@ -1,25 +1,34 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Circle } from "@/components/site/Circle";
+import { StructuredData } from "@/components/site/StructuredData";
+import { SERVICE_IDS } from "@/lib/schema";
+import { documentTitle, pageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  alternates: { canonical: "/solutions/" },
-  title: "Staffing Solutions",
-  description:
-    "Contract, per-diem, and direct-placement staffing for healthcare facilities. Tell us the unit, the shift, and the team, and we'll look for the professional who fits.",
-};
+const PATH = "/solutions/";
+const TITLE = "Staffing Solutions";
+const DESCRIPTION =
+  "Contract, per-diem, and direct-placement staffing for healthcare facilities. Tell us the unit, the shift, and the team, and we'll look for the professional who fits.";
+
+export const metadata = pageMetadata({ path: PATH, title: TITLE, description: DESCRIPTION });
 
 const SERVICES = [
   {
     title: "Contract staffing",
     body: "Longer-term placements for sustained coverage: professionals who join your team, learn your unit, and stay through the assignment.",
     bestFor: "Best for: seasonal census, leaves of absence, extended vacancies",
+    href: "/solutions/contract-staffing",
+    label: "More About Contract Staffing →",
+    ink: "text-k-sky-ink",
     circle: <Circle gradient="sky-violet" className="relative h-12 w-12" />,
   },
   {
     title: "Per-diem staffing",
     body: "Shift-by-shift coverage: you tell us the gap, we look for the match, you confirm it.",
     bestFor: "Best for: call-outs, census spikes, weekend and night gaps",
+    href: "/solutions/per-diem-staffing",
+    label: "More About Per-Diem Staffing →",
+    ink: "text-k-violet-ink",
     circle: (
       <div
         aria-hidden
@@ -32,6 +41,9 @@ const SERVICES = [
     title: "Direct placement",
     body: "Permanent hires selected for fit with your team, not just a resume that matches the requisition.",
     bestFor: "Best for: permanent roles, hard-to-fill specialties, leadership",
+    href: "/solutions/direct-placement",
+    label: "More About Direct Placement →",
+    ink: "text-k-teal-ink",
     circle: <Circle gradient="teal-sky" className="relative h-12 w-12" />,
   },
 ];
@@ -66,6 +78,13 @@ const STEPS = [
 export default function SolutionsPage() {
   return (
     <>
+      <StructuredData
+        path={PATH}
+        title={documentTitle(TITLE)}
+        description={DESCRIPTION}
+        pageType="CollectionPage"
+        aboutServices={[SERVICE_IDS.contract, SERVICE_IDS.perDiem, SERVICE_IDS.directPlacement]}
+      />
       <section className="relative overflow-hidden bg-k-cloud">
         <Circle
           gradient="sky-violet"
@@ -106,12 +125,28 @@ export default function SolutionsPage() {
                 {s.title}
               </h3>
               <p className="leading-relaxed text-k-muted">{s.body}</p>
-              <p className="mt-auto text-[13px] font-semibold text-k-faint">
+              <p className="mt-auto text-[13px] font-semibold text-k-muted">
                 {s.bestFor}
               </p>
+              <Link href={s.href} className={`k-arrow-link ${s.ink} hover:text-k-navy`}>
+                {s.label}
+              </Link>
             </div>
           ))}
         </div>
+        <p className="mt-8 max-w-[680px] text-[17px] leading-relaxed text-k-muted">
+          Every model draws on the same{" "}
+          <Link href="/professionals" className="font-bold text-k-sky-ink underline underline-offset-4 hover:text-k-navy">
+            healthcare professionals we provide
+          </Link>
+          , from Certified Nursing Assistants and Licensed Vocational Nurses to
+          Registered Nurses and therapy staff, and the same people-first way of
+          working described on our{" "}
+          <Link href="/about" className="font-bold text-k-sky-ink underline underline-offset-4 hover:text-k-navy">
+            About page
+          </Link>
+          .
+        </p>
       </section>
 
       <section className="bg-k-cloud">
@@ -140,6 +175,12 @@ export default function SolutionsPage() {
               </div>
             ))}
           </div>
+          <Link
+            href="/solutions/staffing-request-checklist"
+            className="k-arrow-link mt-8 inline-block text-k-sky-ink hover:text-k-navy"
+          >
+            See the Staffing Request Checklist →
+          </Link>
         </div>
       </section>
 
@@ -164,6 +205,7 @@ export default function SolutionsPage() {
           alt="A coordinator greeting a nurse at a clinic reception"
           width={1024}
           height={768}
+          sizes="(min-width: 1024px) 50vw, 100vw"
           className="min-h-[300px] w-full rounded-[18px] object-cover"
         />
       </section>

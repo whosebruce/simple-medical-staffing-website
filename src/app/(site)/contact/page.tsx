@@ -1,17 +1,20 @@
 import Link from "next/link";
 import { Circle } from "@/components/site/Circle";
+import { StructuredData } from "@/components/site/StructuredData";
 import { BUSINESS_FACTS } from "@/lib/brand";
+import { documentTitle, pageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  alternates: { canonical: "/contact/" },
-  title: "Contact",
-  description:
-    "Call 949-317-2470 or email info@simplemedicalstaffing.com to request staffing or talk about your next role with Simple Medical Staffing in Irvine, CA.",
-};
+const PATH = "/contact/";
+const TITLE = "Contact";
+const DESCRIPTION =
+  "Call 949-317-2470 or email info@simplemedicalstaffing.com to request staffing or talk about your next role with Simple Medical Staffing in Irvine, CA.";
+
+export const metadata = pageMetadata({ path: PATH, title: TITLE, description: DESCRIPTION });
 
 export default function ContactPage() {
   return (
     <>
+      <StructuredData path={PATH} title={documentTitle(TITLE)} description={DESCRIPTION} pageType="ContactPage" />
       <section className="relative overflow-hidden bg-k-cloud">
         <Circle
           gradient="sky-violet"
@@ -41,6 +44,12 @@ export default function ContactPage() {
               start date. That&apos;s everything we need to get started on a
               match.
             </p>
+            <Link
+              href="/solutions/staffing-request-checklist"
+              className="k-arrow-link text-k-sky-ink hover:text-k-navy"
+            >
+              See the Staffing Request Checklist →
+            </Link>
           </div>
           <div className="k-card flex flex-col items-start gap-3 p-8">
             <p className="k-eyebrow text-k-violet-ink">I&apos;m a professional</p>

@@ -12,10 +12,17 @@
 
 export const APPLICATION_CONTACT = "info@simplemedicalstaffing.com";
 
+// Every indexable canonical route (mirrors src/lib/site-routes.ts, which the
+// site verifier cross-checks against sitemap.xml).
 export const PUBLIC_ROUTES = [
   "/",
   "/solutions",
+  "/solutions/contract-staffing",
+  "/solutions/per-diem-staffing",
+  "/solutions/direct-placement",
+  "/solutions/staffing-request-checklist",
   "/professionals",
+  "/professionals/faq",
   "/about",
   "/contact",
   "/apply",
@@ -200,6 +207,12 @@ export const CANONICAL_ACTION_LABELS = [
   "Skip to Content",
   "Open Navigation",
   "Close Navigation",
+  // TASK-20260917-07 service pages, checklist and FAQ.
+  "More About Contract Staffing",
+  "More About Per-Diem Staffing",
+  "More About Direct Placement",
+  "See the Staffing Request Checklist",
+  "All Staffing Solutions",
 ];
 
 export const RETIRED_LABEL_VARIANTS = [
@@ -216,22 +229,40 @@ export const RETIRED_LABEL_VARIANTS = [
   /\bSkip to content\b/,
   /\bOpen navigation\b/,
   /\bClose navigation\b/,
+  /\bMore about contract staffing\b/,
+  /\bMore about per-diem staffing\b/,
+  /\bMore about direct placement\b/,
+  /\bSee the staffing request checklist\b/,
+  /\bAll staffing solutions\b/,
 ];
 
+const SERVICE_PAGE_LABELS = ["Apply Now", "Request Staffing", "See How It Works", "All Staffing Solutions"];
+
 export const ROUTE_LABELS = {
-  "/": ["Apply Now", "Request Staffing", "Find Your Next Role", "Explore Staffing Solutions", "See How It Works", "More About How We Work"],
-  "/solutions": ["Apply Now", "Request Staffing", "Get in Touch"],
+  "/": ["Apply Now", "Request Staffing", "Find Your Next Role", "Explore Staffing Solutions", "See How It Works", "More About How We Work", "More About Contract Staffing", "More About Per-Diem Staffing", "More About Direct Placement"],
+  "/solutions": ["Apply Now", "Request Staffing", "Get in Touch", "More About Contract Staffing", "More About Per-Diem Staffing", "More About Direct Placement", "See the Staffing Request Checklist"],
+  "/solutions/contract-staffing": [...SERVICE_PAGE_LABELS, "More About Per-Diem Staffing", "More About Direct Placement"],
+  "/solutions/per-diem-staffing": [...SERVICE_PAGE_LABELS, "More About Contract Staffing", "More About Direct Placement"],
+  "/solutions/direct-placement": [...SERVICE_PAGE_LABELS, "More About Contract Staffing", "More About Per-Diem Staffing"],
+  "/solutions/staffing-request-checklist": ["Apply Now", "Request Staffing", "Explore Staffing Solutions"],
   "/professionals": ["Apply Now", "Talk to Our Team", "See Application Options"],
+  "/professionals/faq": ["Apply Now", "Talk to Our Team"],
   "/about": ["Apply Now", "Work With Us"],
-  "/contact": ["Apply Now", "See Application Options"],
+  "/contact": ["Apply Now", "See Application Options", "See the Staffing Request Checklist"],
   "/apply": ["Apply Now"],
   "/privacy": ["Apply Now"],
 };
 
-/** Per-page meta descriptions staged by the SEO audit (unique per page). */
+/** Per-page meta descriptions (unique per page; substring that must be present). */
 export const PAGE_DESCRIPTIONS = {
   "/solutions": "Contract, per-diem, and direct-placement staffing for healthcare facilities.",
+  "/solutions/contract-staffing": "Contract staffing from Simple Medical Staffing: longer-term placements for sustained coverage",
+  "/solutions/per-diem-staffing": "Per-diem staffing from Simple Medical Staffing: shift-by-shift coverage",
+  "/solutions/direct-placement": "Direct placement from Simple Medical Staffing: permanent healthcare hires selected for fit",
+  "/solutions/staffing-request-checklist": "What to include when you request staffing from Simple Medical Staffing",
   "/professionals": "Per-diem, contract, and permanent opportunities for healthcare professionals.",
+  "/professionals/faq": "Answers for healthcare professionals considering Simple Medical Staffing",
   "/about": "Meet founder and CEO Dina Casares.",
   "/contact": "Call 949-317-2470 or email info@simplemedicalstaffing.com",
+  "/apply": "Express interest in per-diem, contract, or permanent healthcare roles with Simple Medical Staffing by phone or email.",
 };

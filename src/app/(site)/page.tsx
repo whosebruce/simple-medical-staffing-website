@@ -1,15 +1,22 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Circle } from "@/components/site/Circle";
+import { StructuredData } from "@/components/site/StructuredData";
+import { documentTitle, pageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  alternates: { canonical: "/" },
-  title: "The right professional, on the right shift",
-};
+const PATH = "/";
+// Title carries the verified category and office location (the previous
+// site's titles did the same); the H1 keeps the approved tagline.
+const TITLE = "Healthcare Staffing Agency in Irvine, California";
+const DESCRIPTION =
+  "Healthcare staffing for contract, per-diem, and direct-placement needs across Southern California.";
+
+export const metadata = pageMetadata({ path: PATH, title: TITLE, description: DESCRIPTION });
 
 export default function HomePage() {
   return (
     <>
+      <StructuredData path={PATH} title={documentTitle(TITLE)} description={DESCRIPTION} />
       <section className="relative overflow-hidden bg-k-page">
         <Circle
           gradient="sky-violet"
@@ -47,7 +54,9 @@ export default function HomePage() {
               alt="Two nurses in conversation at a nurses' station"
               width={1024}
               height={768}
+              sizes="(min-width: 1024px) 50vw, 100vw"
               priority
+              fetchPriority="high"
               className="relative min-h-[300px] w-full rounded-[18px] object-cover shadow-[0_12px_36px_rgba(30,58,110,0.14)]"
             />
           </div>
@@ -92,11 +101,18 @@ export default function HomePage() {
       </section>
 
       <section className="mx-auto max-w-6xl px-6 py-14 sm:py-20">
-        <div className="mb-11 flex max-w-[640px] flex-col gap-3">
+        <div className="mb-11 flex max-w-[680px] flex-col gap-3">
           <p className="k-eyebrow text-k-sky-ink">What we do</p>
           <h2 className="font-display text-3xl font-extrabold sm:text-4xl">
             Three ways to staff, one standard of care.
           </h2>
+          <p className="text-[17px] leading-relaxed text-k-muted">
+            Simple Medical Staffing is a healthcare staffing agency with an
+            office in Irvine, California. We provide contract, per-diem, and
+            direct placement staffing to healthcare facilities, and we connect
+            healthcare professionals with roles that fit their experience,
+            availability, and goals.
+          </p>
         </div>
         <div className="grid gap-6 md:grid-cols-3">
           <div className="flex flex-col gap-3 rounded-2xl border border-k-line p-8">
@@ -106,6 +122,12 @@ export default function HomePage() {
               Longer-term placements that join your team and stay through the
               assignment.
             </p>
+            <Link
+              href="/solutions/contract-staffing"
+              className="k-arrow-link mt-auto text-k-sky-ink hover:text-k-navy"
+            >
+              More About Contract Staffing →
+            </Link>
           </div>
           <div className="flex flex-col gap-3 rounded-2xl border border-k-line p-8">
             <div
@@ -117,6 +139,12 @@ export default function HomePage() {
             <p className="text-[15.5px] leading-relaxed text-k-muted">
               Shift-by-shift coverage for call-outs and census spikes.
             </p>
+            <Link
+              href="/solutions/per-diem-staffing"
+              className="k-arrow-link mt-auto text-k-violet-ink hover:text-k-navy"
+            >
+              More About Per-Diem Staffing →
+            </Link>
           </div>
           <div className="flex flex-col gap-3 rounded-2xl border border-k-line p-8">
             <Circle gradient="teal-sky" className="relative h-11 w-11" />
@@ -126,6 +154,12 @@ export default function HomePage() {
             <p className="text-[15.5px] leading-relaxed text-k-muted">
               Permanent hires matched for fit, not just credentials.
             </p>
+            <Link
+              href="/solutions/direct-placement"
+              className="k-arrow-link mt-auto text-k-teal-ink hover:text-k-navy"
+            >
+              More About Direct Placement →
+            </Link>
           </div>
         </div>
       </section>
@@ -137,6 +171,7 @@ export default function HomePage() {
             alt="A nurse clipping an ID badge onto a colleague's scrubs"
             width={1024}
             height={768}
+            sizes="(min-width: 1024px) 50vw, 100vw"
             className="min-h-[300px] w-full rounded-[18px] object-cover"
           />
           <div className="flex flex-col items-start gap-4">

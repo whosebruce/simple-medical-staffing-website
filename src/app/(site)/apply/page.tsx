@@ -1,21 +1,26 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Circle } from "@/components/site/Circle";
+import { StructuredData } from "@/components/site/StructuredData";
 import { BUSINESS_FACTS } from "@/lib/brand";
+import { documentTitle, pageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "Apply Now",
-  description: "Contact Simple Medical Staffing to discuss healthcare opportunities.",
-  alternates: { canonical: "/apply/" },
-};
+const PATH = "/apply/";
+const TITLE = "Apply Now";
+const DESCRIPTION =
+  "Express interest in per-diem, contract, or permanent healthcare roles with Simple Medical Staffing by phone or email. Our online application is being rebuilt; please do not email sensitive documents.";
+
+export const metadata = pageMetadata({ path: PATH, title: TITLE, description: DESCRIPTION });
 
 export default function ApplyPage() {
   return (
     <section className="relative overflow-hidden bg-k-cloud">
+      <StructuredData path={PATH} title={documentTitle(TITLE)} description={DESCRIPTION} />
       <Circle gradient="sky-violet" className="-top-44 left-[-160px] h-[420px] w-[420px] opacity-10" />
       <Circle gradient="teal-sky" className="-bottom-40 right-[-120px] h-[340px] w-[340px] opacity-10" />
       <div className="relative mx-auto max-w-[760px] px-6 py-10 sm:py-16">
         <div className="flex flex-col gap-6 rounded-[20px] border border-k-line bg-white p-7 shadow-[0_12px_40px_rgba(30,58,110,0.1)] sm:p-12">
-          <Image src="/kindred/logos/kindred-mark.svg" alt="" width={56} height={56} />
+          <Image src="/kindred/logos/kindred-mark.svg" alt="" width={56} height={56} unoptimized />
           <div className="flex flex-col gap-3">
             <p className="k-eyebrow text-k-violet-ink">Healthcare professionals</p>
             <h1 className="font-display text-2xl font-extrabold leading-tight sm:text-[32px]">Let&apos;s talk about your next role.</h1>
@@ -40,6 +45,14 @@ export default function ApplyPage() {
             Please do not email medical records, Social Security numbers, license images,
             patient information, or other sensitive documents. A coordinator will explain
             the secure next steps when the new application process is ready.
+          </p>
+          <p className="text-sm leading-relaxed text-k-muted">
+            Questions about the kinds of work, the roles we place, or what happens before
+            your first day are answered in the{" "}
+            <Link href="/professionals/faq" className="font-bold text-k-sky-ink underline underline-offset-4 hover:text-k-navy">
+              candidate FAQ
+            </Link>
+            .
           </p>
         </div>
       </div>

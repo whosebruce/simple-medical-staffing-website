@@ -34,6 +34,8 @@ export function SiteHeader() {
             alt=""
             width={42}
             height={42}
+            unoptimized
+            loading="eager"
           />
           <span className="font-display text-base font-extrabold leading-[1.15] tracking-[0.02em] text-k-navy">
             Simple Medical

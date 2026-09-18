@@ -1,18 +1,21 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Circle } from "@/components/site/Circle";
+import { StructuredData } from "@/components/site/StructuredData";
 import { STAFF_ROLES } from "@/lib/forms";
+import { documentTitle, pageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  alternates: { canonical: "/professionals/" },
-  title: "For Professionals",
-  description:
-    "Per-diem, contract, and permanent opportunities for healthcare professionals. Tell us your skills and schedule, and we'll look for the right fit.",
-};
+const PATH = "/professionals/";
+const TITLE = "For Professionals";
+const DESCRIPTION =
+  "Per-diem, contract, and permanent opportunities for healthcare professionals. Tell us your skills and schedule, and we'll look for the right fit.";
+
+export const metadata = pageMetadata({ path: PATH, title: TITLE, description: DESCRIPTION });
 
 export default function ProfessionalsPage() {
   return (
     <>
+      <StructuredData path={PATH} title={documentTitle(TITLE)} description={DESCRIPTION} />
       <section className="relative overflow-hidden bg-k-page">
         <Circle
           gradient="violet-sky"
@@ -50,7 +53,9 @@ export default function ProfessionalsPage() {
               alt="A nurse in a bright clinic hallway"
               width={1024}
               height={768}
+              sizes="(min-width: 1024px) 50vw, 100vw"
               priority
+              fetchPriority="high"
               className="relative min-h-[300px] w-full rounded-[18px] object-cover object-[50%_12%] shadow-[0_12px_36px_rgba(30,58,110,0.14)]"
             />
           </div>
@@ -127,6 +132,18 @@ export default function ProfessionalsPage() {
             </li>
           ))}
         </ul>
+        <p className="mt-8 max-w-[680px] text-[17px] leading-relaxed text-k-muted">
+          Wondering how to get started, what to send, or what happens before
+          your first day? The{" "}
+          <Link href="/professionals/faq" className="font-bold text-k-sky-ink underline underline-offset-4 hover:text-k-navy">
+            candidate FAQ
+          </Link>{" "}
+          answers the questions we hear most, and our{" "}
+          <Link href="/about" className="font-bold text-k-sky-ink underline underline-offset-4 hover:text-k-navy">
+            About page
+          </Link>{" "}
+          explains who we are and why we work this way.
+        </p>
       </section>
 
       <section className="bg-k-cloud">
@@ -136,6 +153,7 @@ export default function ProfessionalsPage() {
             alt="A welcoming badge moment on a first day"
             width={1024}
             height={768}
+            sizes="(min-width: 1024px) 50vw, 100vw"
             className="min-h-[300px] w-full rounded-[18px] object-cover"
           />
           <div className="flex flex-col items-start gap-4">
