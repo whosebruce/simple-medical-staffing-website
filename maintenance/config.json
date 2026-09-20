@@ -1,0 +1,24 @@
+{
+  "enabled": true,
+  "pages": [
+    "404.html",
+    "404/index.html",
+    "about/index.html",
+    "apply/index.html",
+    "contact/index.html",
+    "healthcare-staffing-about-us.html",
+    "healthcare-staffing-contact-us.html",
+    "healthcare-staffing-for-employers.html",
+    "healthcare-staffing-for-job-seekers.html",
+    "healthcare-staffing-medical-staffing.html",
+    "index.html",
+    "privacy/index.html",
+    "professionals/faq/index.html",
+    "professionals/index.html",
+    "solutions/contract-staffing/index.html",
+    "solutions/direct-placement/index.html",
+    "solutions/index.html",
+    "solutions/per-diem-staffing/index.html",
+    "solutions/staffing-request-checklist/index.html"
+  ]
+}

@@ -1,0 +1,26 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import assert from 'node:assert/strict';
+const config = JSON.parse(fs.readFileSync('maintenance/config.json','utf8'));
+assert.equal(config.enabled,true);
+const docs = path.resolve('docs');
+const html = fs.readFileSync(path.join(docs,'index.html'),'utf8');
+assert.match(html,/We’re Updating<br>Our Website/);
+assert.match(html,/Something better is coming\./);
+assert.match(html,/We’re making a few improvements to better serve our healthcare partners\./);
+assert.match(html,/href="tel:\+19493172470"/);
+assert.match(html,/href="mailto:info@simplemedicalstaffing\.com"/);
+assert.match(html,/rel="canonical" href="https:\/\/simplemedicalstaffing\.com\/"/);
+assert.match(html,/data-holding-page="holding-[a-f0-9]{16}"/);
+assert.equal((html.match(/<h1>/g)||[]).length,1);
+assert.doesNotMatch(html,/<script|<form|http-equiv="refresh"|noindex|preview\.simplemedicalstaffing|Apply Now|\{\{/i);
+const expected = new Set([...config.pages,'CNAME','.nojekyll','robots.txt','sitemap.xml','llms.txt','favicon.ico','holding-assets/holding.css','holding-assets/mark.svg','holding-assets/montserrat-latin.woff2','holding-assets/nunito-sans-latin.woff2']);
+const found=[];
+function walk(dir){for(const e of fs.readdirSync(dir,{withFileTypes:true})){const f=path.join(dir,e.name);if(e.isDirectory())walk(f);else found.push(path.relative(docs,f));}}
+walk(docs);assert.deepEqual(new Set(found),expected,'Old payloads or unexpected files remain');
+for (const page of config.pages) assert.equal(fs.readFileSync(path.join(docs,page),'utf8'),html,page);
+for (const m of html.matchAll(/(?:href|src)="(\/[^"]*)"/g)) assert.ok(fs.existsSync(path.join(docs,m[1])),m[1]);
+for (const m of fs.readFileSync(path.join(docs,'holding-assets/holding.css'),'utf8').matchAll(/url\('(\/[^']+)'\)/g)) assert.ok(fs.existsSync(path.join(docs,m[1])),m[1]);
+assert.equal(fs.readFileSync(path.join(docs,'CNAME'),'utf8').trim(),'simplemedicalstaffing.com');
+assert.doesNotMatch(fs.readFileSync(path.join(docs,'llms.txt'),'utf8'),/leadership|founder|contract staffing|preview\./i);
+console.log(JSON.stringify({passed:true,htmlPages:config.pages.length,artifactFiles:found.length,oldMarketingPayloads:false}));
