@@ -12,7 +12,7 @@ const phone = brand.match(/phone:\s*"([0-9-]+)"/)?.[1];
 const email = brand.match(/email:\s*"([a-zA-Z0-9.@_-]+)"/)?.[1];
 if (!phone || !email || phone.replace(/\D/g, '').length !== 10) throw new Error('Missing approved contact facts');
 const template = fs.readFileSync('maintenance/index.html', 'utf8');
-const inputs = ['maintenance/index.html', 'maintenance/holding.css', 'maintenance/config.json', 'src/lib/brand.ts', 'scripts/build-holding.mjs', 'public/kindred/logos/kindred-mark-navy.svg'];
+const inputs = ['maintenance/index.html', 'maintenance/holding.css', 'maintenance/config.json', 'src/lib/brand.ts', 'scripts/build-holding.mjs', 'public/kindred/logos/kindred-mark.svg'];
 const hash = createHash('sha256');for (const input of inputs) hash.update(fs.readFileSync(input));
 const release = 'holding-' + hash.digest('hex').slice(0, 16);
 const html = template.replaceAll('{{PHONE_TEL}}', '+1' + phone.replace(/\D/g, '')).replaceAll('{{PHONE}}', phone).replaceAll('{{EMAIL}}', email).replaceAll('{{RELEASE}}', release);
@@ -26,7 +26,7 @@ for (const page of config.pages) {
 }
 fs.cpSync('maintenance/assets', path.join(target, 'holding-assets'), { recursive: true });
 fs.copyFileSync('maintenance/holding.css', path.join(target, 'holding-assets/holding.css'));
-fs.copyFileSync('public/kindred/logos/kindred-mark-navy.svg', path.join(target, 'holding-assets/mark.svg'));
+fs.copyFileSync('public/kindred/logos/kindred-mark.svg', path.join(target, 'holding-assets/mark-color.svg'));
 fs.copyFileSync('public/favicon.ico', path.join(target, 'favicon.ico'));
 fs.writeFileSync(path.join(target, 'CNAME'), 'simplemedicalstaffing.com\n');
 fs.writeFileSync(path.join(target, '.nojekyll'), '');
