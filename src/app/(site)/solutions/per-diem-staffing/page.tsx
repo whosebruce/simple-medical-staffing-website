@@ -19,6 +19,8 @@ export default function PerDiemStaffingPage() {
         eyebrow="Staffing Solutions · Per-diem staffing"
         heading="Per-diem staffing, shift by shift."
         lede="Shift-by-shift coverage for call-outs, census spikes, and weekend and night gaps. You tell us the gap, we look for the match, you confirm it."
+        image="lockers"
+        imageFocus="30% 20%"
         sections={[
           {
             eyebrow: "What it is",
@@ -78,13 +80,13 @@ export default function PerDiemStaffingPage() {
               href: "/solutions/contract-staffing",
               title: "Is the gap going to last?",
               body: "Contract staffing places one professional with your unit for a defined period, an option that can give the team more continuity than shift-by-shift coverage.",
-              label: "More About Contract Staffing →",
+              label: "More About Contract Staffing\u00a0→",
             },
             {
               href: "/solutions/direct-placement",
               title: "Ready to hire permanently?",
               body: "Direct placement finds permanent hires selected for fit with your team, not just a resume that matches the requisition.",
-              label: "More About Direct Placement →",
+              label: "More About Direct Placement\u00a0→",
             },
           ],
         }}

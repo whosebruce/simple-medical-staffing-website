@@ -15,6 +15,16 @@ const CATEGORIES = Object.freeze([
   "menu-links-missing",
   "menu-close-failed",
   "focus-outside-viewport",
+  // TASK-20260923-14: header disclosure groups and social icon links.
+  "nav-parent-href",
+  "nav-group-not-collapsed",
+  "nav-group-controls",
+  "nav-group-open-failed",
+  "nav-group-links",
+  "nav-group-not-exclusive",
+  "nav-group-escape",
+  "nav-group-outside",
+  "social-links",
   "harness-error",
 ]);
 

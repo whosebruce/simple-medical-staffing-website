@@ -1,5 +1,5 @@
 {
-  "enabled": true,
+  "enabled": false,
   "pages": [
     "404.html",
     "404/index.html",

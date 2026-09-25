@@ -63,5 +63,173 @@ export const IMAGE_VARIANTS: Record<string, { master: number; widths: number[] }
       960,
       1280
     ]
+  },
+  "/kindred/library/smws-01-corridor-handoff.webp": {
+    "master": 1672,
+    "widths": [
+      640,
+      960,
+      1280
+    ]
+  },
+  "/kindred/library/smws-02-facility-partnership.webp": {
+    "master": 1672,
+    "widths": [
+      640,
+      960,
+      1280
+    ]
+  },
+  "/kindred/library/smws-05-professional-seated.webp": {
+    "master": 940,
+    "widths": [
+      640
+    ]
+  },
+  "/kindred/library/smws-06-entrance-welcome.webp": {
+    "master": 1672,
+    "widths": [
+      640,
+      960,
+      1280
+    ]
+  },
+  "/kindred/library/smws-07-community-interior.webp": {
+    "master": 1672,
+    "widths": [
+      640,
+      960,
+      1280
+    ]
+  },
+  "/kindred/library/smws-08-arranging-chairs.webp": {
+    "master": 1672,
+    "widths": [
+      640,
+      960,
+      1280
+    ]
+  },
+  "/kindred/library/smws-n01-window-lobby.webp": {
+    "master": 1672,
+    "widths": [
+      640,
+      960,
+      1280
+    ]
+  },
+  "/kindred/library/smws-n02-notebook-counter.webp": {
+    "master": 1536,
+    "widths": [
+      640,
+      960,
+      1280
+    ]
+  },
+  "/kindred/library/smws-n03-workwear-bench.webp": {
+    "master": 1254,
+    "widths": [
+      640,
+      960
+    ]
+  },
+  "/kindred/library/smws-n06-garden-path-stroll.webp": {
+    "master": 1536,
+    "widths": [
+      640,
+      960,
+      1280
+    ]
+  },
+  "/kindred/library/smws-n07-teal-shoulder-bag.webp": {
+    "master": 1024,
+    "widths": [
+      640,
+      960
+    ]
+  },
+  "/kindred/library/smws-n09-chair-handrail.webp": {
+    "master": 1254,
+    "widths": [
+      640,
+      960
+    ]
+  },
+  "/kindred/library/smws-n10-steel-counter-talk.webp": {
+    "master": 1536,
+    "widths": [
+      640,
+      960,
+      1280
+    ]
+  },
+  "/kindred/library/smws-n11-courtyard-ledge-seated.webp": {
+    "master": 1024,
+    "widths": [
+      640,
+      960
+    ]
+  },
+  "/kindred/library/smws-n13-garden-planter-talk.webp": {
+    "master": 1536,
+    "widths": [
+      640,
+      960,
+      1280
+    ]
+  },
+  "/kindred/library/smws-n16-window-wall-standing.webp": {
+    "master": 1024,
+    "widths": [
+      640,
+      960
+    ]
+  },
+  "/kindred/library/smws-n17-locker-bench-bag.webp": {
+    "master": 1536,
+    "widths": [
+      640,
+      960,
+      1280
+    ]
+  },
+  "/kindred/library/smws-n19-mural-conversation.webp": {
+    "master": 1536,
+    "widths": [
+      640,
+      960,
+      1280
+    ]
+  },
+  "/kindred/library/smws-n23-hands-on-table.webp": {
+    "master": 1254,
+    "widths": [
+      640,
+      960
+    ]
+  },
+  "/kindred/library/smws-n24-sunset-path-walk.webp": {
+    "master": 1672,
+    "widths": [
+      640,
+      960,
+      1280
+    ]
+  },
+  "/kindred/library/smws-n27-linen-shelves.webp": {
+    "master": 1536,
+    "widths": [
+      640,
+      960,
+      1280
+    ]
+  },
+  "/kindred/library/smws-n38-courtyard-bench-dusk.webp": {
+    "master": 1536,
+    "widths": [
+      640,
+      960,
+      1280
+    ]
   }
 };

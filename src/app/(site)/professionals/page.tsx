@@ -1,8 +1,10 @@
 import Link from "next/link";
-import Image from "next/image";
-import { Circle } from "@/components/site/Circle";
+import { ClosingPanel } from "@/components/site/ClosingPanel";
+import { Photo } from "@/components/site/Photo";
+import { RoleCloud } from "@/components/site/RoleCloud";
 import { StructuredData } from "@/components/site/StructuredData";
-import { STAFF_ROLES } from "@/lib/forms";
+import { Wave } from "@/components/site/Wave";
+import { KINDRED_GRADIENTS } from "@/lib/kindred-gradients";
 import { documentTitle, pageMetadata } from "@/lib/seo";
 
 const PATH = "/professionals/";
@@ -12,27 +14,44 @@ const DESCRIPTION =
 
 export const metadata = pageMetadata({ path: PATH, title: TITLE, description: DESCRIPTION });
 
+const REASONS = [
+  {
+    heading: "Talk to a real person.",
+    body: "Your questions go to a person who can answer them, not a ticket queue. We think that's what staffing should feel like.",
+    glyph: KINDRED_GRADIENTS["sky-violet"],
+    square: false,
+  },
+  {
+    heading: "Flexibility that fits your lifestyle.",
+    body: "Per-diem shifts, contract assignments, or a permanent role. If what you need changes, say so and we'll talk it through.",
+    glyph: KINDRED_GRADIENTS["violet-sky"],
+    square: true,
+  },
+  {
+    heading: "Clear, honest communication.",
+    body: "Before you accept an assignment, we share what we know about it. When we don't know something, we say that too.",
+    glyph: KINDRED_GRADIENTS["teal-sky"],
+    square: false,
+  },
+];
+
 export default function ProfessionalsPage() {
   return (
     <>
       <StructuredData path={PATH} title={documentTitle(TITLE)} description={DESCRIPTION} />
-      <section className="relative overflow-hidden bg-k-page">
-        <Circle
-          gradient="violet-sky"
-          className="-bottom-52 left-[-160px] h-[420px] w-[420px] opacity-10"
+
+      <section className="relative overflow-hidden">
+        <div
+          aria-hidden
+          className="k-aura -left-56 -top-72 h-[660px] w-[660px] bg-[radial-gradient(circle_at_35%_35%,rgba(140,95,212,0.2),rgba(63,165,232,0.12)_45%,transparent_70%)]"
         />
-        <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-6 py-14 sm:py-20 lg:grid-cols-2">
-          <div className="flex flex-col items-start gap-5">
-            <p className="k-eyebrow text-k-violet-ink">
-              Healthcare professionals · Careers
-            </p>
-            <h1 className="font-display text-4xl font-extrabold leading-[1.12] tracking-tight text-balance sm:text-5xl">
-              Your skills. Your schedule. The right opportunity.
-            </h1>
-            <p className="max-w-[520px] text-lg leading-relaxed text-k-muted">
-              Whether you&apos;re looking for per-diem flexibility, a contract
-              opportunity, or your next permanent role, we connect you with
-              opportunities that fit your experience, availability, and goals.
+        <div className="k-wrap relative grid items-center gap-12 pb-14 pt-10 sm:pt-14 lg:grid-cols-[minmax(0,1.04fr)_minmax(0,0.96fr)] lg:gap-16 lg:pb-20 lg:pt-16">
+          <div className="flex flex-col items-start gap-6">
+            <p className="k-eyebrow k-eyebrow-violet text-k-violet-ink">Healthcare professionals · Careers</p>
+            <h1 className="k-h1">Your skills. Your schedule. The right opportunity.</h1>
+            <p className="k-lede">
+              Whether you&apos;re looking for per-diem flexibility, a contract opportunity, or your next permanent role, we
+              connect you with opportunities that fit your experience, availability, and goals.
             </p>
             <div className="mt-2 flex flex-wrap gap-3.5">
               <Link href="/apply" className="k-btn-primary">
@@ -43,150 +62,105 @@ export default function ProfessionalsPage() {
               </Link>
             </div>
           </div>
-          <div className="relative">
-            <Circle
-              gradient="sky-violet"
-              className="-bottom-6 -left-6 h-[120px] w-[120px] opacity-85"
-            />
-            <Image
-              src="/kindred/photos/nurse-portrait.webp"
-              alt="A nurse in a bright clinic hallway"
-              width={1024}
-              height={768}
-              sizes="(min-width: 1024px) 50vw, 100vw"
+          <div className="k-collage mx-auto max-w-[540px] lg:max-w-none">
+            <div aria-hidden className="k-collage-ring left-auto right-0 top-auto bottom-[6%] w-[28%]" />
+            <Photo
+              image="portrait"
+              shape="arch"
               priority
-              fetchPriority="high"
-              className="relative min-h-[300px] w-full rounded-[18px] object-cover object-[50%_12%] shadow-[0_12px_36px_rgba(30,58,110,0.14)]"
+              shadow
+              className="k-collage-main left-[8%] right-auto w-[70%]"
+              focus="50% 18%"
+              sizes="(min-width: 1240px) 420px, (min-width: 1024px) 36vw, 70vw"
+            />
+            <Photo
+              image="workwear"
+              shape="circle"
+              decorative
+              className="k-collage-inset bottom-auto left-auto right-0 top-[10%] w-[34%]"
+              focus="45% 55%"
+              zoom={1.15}
+              sizes="(min-width: 1024px) 380px, 60vw"
             />
           </div>
         </div>
       </section>
 
-      <section className="bg-k-cloud">
-        <div className="mx-auto max-w-6xl px-6 py-14 sm:py-20">
-          <div className="mb-11 flex max-w-[640px] flex-col gap-3">
-            <p className="k-eyebrow text-k-violet-ink">Why work with us</p>
-            <h2 className="font-display text-3xl font-extrabold sm:text-4xl">
-              Treated like a professional, not a placement.
-            </h2>
+      <Wave top="var(--color-k-page)" bottom="var(--color-k-violet-tint)" />
+      <section className="bg-k-violet-tint pb-[clamp(64px,8vw,112px)] pt-8">
+        <div className="k-wrap grid gap-12 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:grid-rows-[auto_1fr] lg:gap-x-20 lg:gap-y-10">
+          <div className="flex flex-col items-start gap-4 lg:col-start-1 lg:row-start-1">
+            <p className="k-eyebrow k-eyebrow-violet text-k-violet-ink">Why work with us</p>
+            <h2 className="k-h2">Treated like a professional, not a placement.</h2>
           </div>
-          <div className="grid gap-6 md:grid-cols-3">
-            <div className="k-card flex flex-col gap-3 p-8">
-              <Circle gradient="sky-violet" className="relative h-11 w-11" />
-              <h3 className="font-display text-[19px] font-extrabold">
-                Talk to a real person.
-              </h3>
-              <p className="text-[15.5px] leading-relaxed text-k-muted">
-                Your questions go to a person who can answer them, not a
-                ticket queue. We think that&apos;s what staffing should feel
-                like.
-              </p>
-            </div>
-            <div className="k-card flex flex-col gap-3 p-8">
-              <div
-                aria-hidden
-                className="h-11 w-11 rounded-xl"
-                style={{
-                  background: "linear-gradient(135deg, #8C5FD4, #3FA5E8)",
-                }}
-              />
-              <h3 className="font-display text-[19px] font-extrabold">
-                Flexibility that fits your lifestyle.
-              </h3>
-              <p className="text-[15.5px] leading-relaxed text-k-muted">
-                Per-diem shifts, contract assignments, or a permanent role.
-                If what you need changes, say so and we&apos;ll talk it
-                through.
-              </p>
-            </div>
-            <div className="k-card flex flex-col gap-3 p-8">
-              <Circle gradient="teal-sky" className="relative h-11 w-11" />
-              <h3 className="font-display text-[19px] font-extrabold">
-                Clear, honest communication.
-              </h3>
-              <p className="text-[15.5px] leading-relaxed text-k-muted">
-                Before you accept an assignment, we share what we know about
-                it. When we don&apos;t know something, we say that too.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-6xl px-6 py-14 sm:py-20">
-        <div className="mb-9 flex max-w-[640px] flex-col gap-3">
-          <p className="k-eyebrow text-k-sky-ink">
-            Healthcare professionals we provide.
-          </p>
-          <h2 className="font-display text-3xl font-extrabold sm:text-4xl">
-            The right professionals for every level of care
-          </h2>
-        </div>
-        <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {STAFF_ROLES.map((role) => (
-            <li
-              key={role.code}
-              className="k-card px-4 py-3 text-[15px] font-semibold"
-            >
-              {role.label}
-            </li>
-          ))}
-        </ul>
-        <p className="mt-8 max-w-[680px] text-[17px] leading-relaxed text-k-muted">
-          Wondering how to get started, what to send, or what happens before
-          your first day? The{" "}
-          <Link href="/professionals/faq" className="font-bold text-k-sky-ink underline underline-offset-4 hover:text-k-navy">
-            candidate FAQ
-          </Link>{" "}
-          answers the questions we hear most, and our{" "}
-          <Link href="/about" className="font-bold text-k-sky-ink underline underline-offset-4 hover:text-k-navy">
-            About page
-          </Link>{" "}
-          explains who we are and why we work this way.
-        </p>
-      </section>
-
-      <section className="bg-k-cloud">
-        <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 py-14 sm:py-20 lg:grid-cols-2">
-          <Image
-            src="/kindred/photos/badge-welcome.webp"
-            alt="A welcoming badge moment on a first day"
-            width={1024}
-            height={768}
-            sizes="(min-width: 1024px) 50vw, 100vw"
-            className="min-h-[300px] w-full rounded-[18px] object-cover"
+          <ul className="k-hairlist border-y border-k-violet/20 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:self-center [&>*+*]:border-k-violet/20">
+            {REASONS.map((r) => (
+              <li key={r.heading} className="grid grid-cols-[52px_minmax(0,1fr)] gap-5 py-8 sm:gap-7">
+                <span aria-hidden className={`k-glyph${r.square ? " k-glyph-sq" : ""}`} style={{ background: r.glyph }} />
+                <div className="flex flex-col gap-2">
+                  <h3 className="k-h3 text-[1.35rem]">{r.heading}</h3>
+                  <p className="k-body">{r.body}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+          <Photo
+            image="island"
+            shape="leaf"
+            className="aspect-[4/3] w-full lg:col-start-1 lg:row-start-2"
+            focus="50% 30%"
+            sizes="(min-width: 1024px) 44vw, 100vw"
           />
-          <div className="flex flex-col items-start gap-4">
-            <p className="k-eyebrow text-k-teal-ink">Your first day</p>
-            <h2 className="font-display text-3xl font-extrabold leading-tight text-balance sm:text-4xl">
-              Start confident. Stay supported.
-            </h2>
-            <p className="text-[17px] leading-relaxed text-k-muted">
-              Your coordinator goes over the assignment with you before day
-              one. And if a question comes up once you&apos;re working, you
-              can reach us by phone or email.
+        </div>
+      </section>
+      <Wave top="var(--color-k-violet-tint)" bottom="var(--color-k-page)" flip />
+
+      <section className="k-section">
+        <div className="k-wrap">
+          <div className="relative overflow-hidden rounded-[clamp(32px,4vw,52px)] border border-k-line bg-gradient-to-br from-white via-k-cloud to-k-sky-tint px-6 py-12 sm:px-12 sm:py-16">
+            <div aria-hidden className="k-collage-ring -right-10 -top-10 left-auto w-[180px] opacity-60" />
+            <div className="relative flex max-w-[860px] flex-col items-start gap-4">
+              <p className="k-eyebrow text-k-sky-ink">Healthcare professionals we provide.</p>
+              <h2 className="k-h2">The right professionals for every level of care</h2>
+              <RoleCloud className="mt-4" />
+            </div>
+          </div>
+          <p className="k-body mt-10 max-w-[720px]">
+            Wondering how to get started, what to send, or what happens before your first day? The{" "}
+            <Link href="/professionals/faq" className="k-link">
+              candidate FAQ
+            </Link>{" "}
+            answers the questions we hear most, and our{" "}
+            <Link href="/about" className="k-link">
+              About page
+            </Link>{" "}
+            explains who we are and why we work this way.
+          </p>
+        </div>
+      </section>
+
+      <section className="pb-[clamp(64px,8vw,120px)]">
+        <div className="k-bleed k-bleed--flip">
+          <Photo image="arrival" shape="bleed" className="k-bleed-media" focus="56% 30%" sizes="(min-width: 1024px) 54vw, 100vw" />
+          <div className="k-bleed-copy flex flex-col items-start gap-5">
+            <p className="k-eyebrow k-eyebrow-teal text-k-teal-ink">Your first day</p>
+            <h2 className="k-h2">Start confident. Stay supported.</h2>
+            <p className="k-body">
+              Your coordinator goes over the assignment with you before day one. And if a question comes up once
+              you&apos;re working, you can reach us by phone or email.
             </p>
-            <Link href="/apply" className="k-btn-primary">
+            <Link href="/apply" className="k-btn-primary mt-2">
               See Application Options
             </Link>
           </div>
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-k-navy">
-        <Circle
-          gradient="sky-violet"
-          className="-top-40 right-[-140px] h-[400px] w-[400px] opacity-35"
-        />
-        <div className="relative mx-auto flex max-w-4xl flex-col items-center gap-5 px-6 py-16 text-center sm:py-[90px]">
-          <h2 className="font-display text-2xl font-extrabold leading-snug text-balance text-white sm:text-4xl">
-            Bring your skills. We&apos;ll bring the right place to use them.
-          </h2>
-          <Link href="/apply" className="k-btn-primary">
-            Apply Now
-          </Link>
-        </div>
-      </section>
+      <ClosingPanel heading="Bring your skills. We'll bring the right place to use them.">
+        <Link href="/apply" className="k-btn-primary">
+          Apply Now
+        </Link>
+      </ClosingPanel>
     </>
   );
 }

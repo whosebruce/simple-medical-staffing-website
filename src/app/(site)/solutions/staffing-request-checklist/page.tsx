@@ -1,7 +1,11 @@
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
-import { Circle } from "@/components/site/Circle";
+import { ClosingPanel } from "@/components/site/ClosingPanel";
+import { EmailText } from "@/components/site/EmailText";
+import { Photo } from "@/components/site/Photo";
+import { StepPath } from "@/components/site/StepPath";
 import { StructuredData } from "@/components/site/StructuredData";
+import { Wave } from "@/components/site/Wave";
 import { BUSINESS_FACTS } from "@/lib/brand";
 import { SERVICE_IDS } from "@/lib/schema";
 import { documentTitle, pageMetadata } from "@/lib/seo";
@@ -38,15 +42,15 @@ const HELPFUL = [
     body: (
       <>
         Whether you are looking for a{" "}
-        <Link href="/solutions/per-diem-staffing" className="font-bold text-k-sky-ink underline underline-offset-4 hover:text-k-navy">
+        <Link href="/solutions/per-diem-staffing" className="k-link">
           per-diem shift
         </Link>
         , a{" "}
-        <Link href="/solutions/contract-staffing" className="font-bold text-k-sky-ink underline underline-offset-4 hover:text-k-navy">
+        <Link href="/solutions/contract-staffing" className="k-link">
           contract placement
         </Link>{" "}
         for a defined period, or a{" "}
-        <Link href="/solutions/direct-placement" className="font-bold text-k-sky-ink underline underline-offset-4 hover:text-k-navy">
+        <Link href="/solutions/direct-placement" className="k-link">
           permanent hire
         </Link>
         . If you are not sure, describe the need and we will talk it through.
@@ -82,118 +86,128 @@ export default function StaffingRequestChecklistPage() {
         description={DESCRIPTION}
         aboutServices={[SERVICE_IDS.contract, SERVICE_IDS.perDiem, SERVICE_IDS.directPlacement]}
       />
-      <section className="relative overflow-hidden bg-k-cloud">
-        <Circle gradient="teal-sky" className="-top-40 right-[-140px] h-[400px] w-[400px] opacity-15" />
-        <div className="relative mx-auto flex max-w-6xl flex-col items-start gap-4.5 px-6 py-12 sm:py-20">
-          <Breadcrumbs path={PATH} />
-          <p className="k-eyebrow text-k-sky-ink">Staffing Solutions · For facilities</p>
-          <h1 className="max-w-[720px] font-display text-3xl font-extrabold leading-[1.15] text-balance sm:text-5xl">
-            What to include in a staffing request.
-          </h1>
-          <p className="max-w-[620px] text-lg leading-relaxed text-k-muted">
-            Unit, shift, specialty, start date. Send what you have and we&apos;ll ask about the rest. This page lists what
-            helps us start on a match right away.
-          </p>
-          <Link href="/contact" className="k-btn-primary mt-2">
-            Request Staffing
-          </Link>
+
+      <section className="relative overflow-hidden">
+        <div aria-hidden className="k-aura -left-56 -top-72 h-[620px] w-[620px]" />
+        <div className="k-wrap relative grid items-center gap-12 pb-14 pt-8 sm:pt-12 lg:grid-cols-[minmax(0,1.08fr)_minmax(0,0.92fr)] lg:gap-16 lg:pb-20 lg:pt-14">
+          <div className="flex flex-col items-start gap-6">
+            <Breadcrumbs path={PATH} />
+            <p className="k-eyebrow text-k-sky-ink">Staffing Solutions · For facilities</p>
+            <h1 className="k-h1 k-h1-long">What to include in a staffing request.</h1>
+            <p className="k-lede">
+              Unit, shift, specialty, start date. Send what you have and we&apos;ll ask about the rest. This page lists what
+              helps us start on a match right away.
+            </p>
+            <Link href="/contact" className="k-btn-primary mt-2">
+              Request Staffing
+            </Link>
+          </div>
+          <div className="relative mx-auto w-full max-w-[540px] lg:max-w-none">
+            <div aria-hidden className="k-collage-ring -bottom-6 -left-6 top-auto w-[24%]" />
+            <Photo
+              image="notebook"
+              shape="leaf"
+              priority
+              shadow
+              className="aspect-[1/0.9] w-full"
+              focus="60% 30%"
+              sizes="(min-width: 1240px) 520px, (min-width: 1024px) 42vw, 92vw"
+            />
+          </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 py-14 sm:py-20">
-        <div className="mb-9 flex max-w-[640px] flex-col gap-3">
-          <p className="k-eyebrow text-k-sky-ink">The essentials</p>
-          <h2 className="font-display text-3xl font-extrabold sm:text-4xl">Four things every request needs.</h2>
-          <p className="text-[17px] leading-relaxed text-k-muted">
-            These four details give us what we need to get started on a match. Send what you have and we&apos;ll ask about
-            the rest.
-          </p>
+      <section className="k-section pt-6">
+        <div className="k-wrap">
+          <div className="mb-10 flex max-w-[660px] flex-col items-start gap-4">
+            <p className="k-eyebrow text-k-sky-ink">The essentials</p>
+            <h2 className="k-h2">Four things every request needs.</h2>
+            <p className="k-body">
+              These four details give us what we need to get started on a match. Send what you have and we&apos;ll ask about
+              the rest.
+            </p>
+          </div>
+          <ol className="grid gap-x-12 border-t border-k-line sm:grid-cols-2">
+            {ESSENTIALS.map((item, i) => (
+              <li key={item.title} className="grid grid-cols-[52px_minmax(0,1fr)] gap-5 border-b border-k-line py-8">
+                <span aria-hidden className="k-step-num text-k-sky-ink">
+                  {i + 1}
+                </span>
+                <div className="flex flex-col gap-2">
+                  <h3 className="k-h3">{item.title}</h3>
+                  <p className="k-body">{item.body}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
         </div>
-        <ol className="grid gap-6 sm:grid-cols-2">
-          {ESSENTIALS.map((item, i) => (
-            <li key={item.title} className="k-card flex flex-col gap-2.5 p-7">
-              <p aria-hidden className="font-display text-[22px] font-extrabold text-k-sky-ink">
-                {i + 1}
-              </p>
-              <h3 className="font-display text-[19px] font-extrabold">{item.title}</h3>
-              <p className="text-[15.5px] leading-relaxed text-k-muted">{item.body}</p>
-            </li>
-          ))}
-        </ol>
       </section>
 
-      <section className="bg-k-cloud">
-        <div className="mx-auto max-w-6xl px-6 py-14 sm:py-20">
-          <div className="mb-9 flex max-w-[640px] flex-col gap-3">
-            <p className="k-eyebrow text-k-violet-ink">Helpful if you have it</p>
-            <h2 className="font-display text-3xl font-extrabold sm:text-4xl">Details that make the match better.</h2>
-            <p className="text-[17px] leading-relaxed text-k-muted">
+      <Wave top="var(--color-k-page)" bottom="var(--color-k-violet-tint)" />
+      <section className="bg-k-violet-tint pb-[clamp(64px,8vw,112px)] pt-8">
+        <div className="k-wrap">
+          <div className="mb-10 flex max-w-[660px] flex-col items-start gap-4">
+            <p className="k-eyebrow k-eyebrow-violet text-k-violet-ink">Helpful if you have it</p>
+            <h2 className="k-h2">Details that make the match better.</h2>
+            <p className="k-body">
               These are suggestions, not a form to complete. Each one helps us look for the right person instead of an
               available one, and the team will tell you if anything specific is needed for your request.
             </p>
           </div>
-          <ul className="grid gap-6 sm:grid-cols-2">
+          <ul className="grid gap-x-12 sm:grid-cols-2">
             {HELPFUL.map((item) => (
-              <li key={item.title} className="flex flex-col gap-2.5 rounded-2xl border border-k-line bg-white p-7">
-                <h3 className="font-display text-[19px] font-extrabold">{item.title}</h3>
-                <p className="text-[15.5px] leading-relaxed text-k-muted">{item.body}</p>
+              <li key={item.title} className="flex gap-4 border-t border-k-violet/20 py-7">
+                <span aria-hidden className="mt-2 h-3 w-3 flex-none rounded-full bg-gradient-to-br from-k-violet to-k-sky" />
+                <div className="flex flex-col gap-2">
+                  <h3 className="k-h3">{item.title}</h3>
+                  <p className="k-body">{item.body}</p>
+                </div>
               </li>
             ))}
           </ul>
         </div>
       </section>
+      <Wave top="var(--color-k-violet-tint)" bottom="var(--color-k-page)" flip />
 
-      <section className="mx-auto grid max-w-6xl items-start gap-12 px-6 py-14 sm:py-20 lg:grid-cols-2">
-        <div className="flex flex-col gap-4">
-          <p className="k-eyebrow text-k-teal-ink">How to send it</p>
-          <h2 className="font-display text-3xl font-extrabold sm:text-4xl">Call or email. Short and plain is perfect.</h2>
-          <p className="text-[17px] leading-relaxed text-k-muted">
-            There is no form to fill out. Call or email with the details above, in whatever order you have them, and a
-            person will pick it up from there.
-          </p>
-          <div className="mt-2 flex flex-col gap-2">
-            <a
-              href={`tel:${BUSINESS_FACTS.phone}`}
-              className="font-display text-xl font-extrabold text-k-navy underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-k-navy"
-            >
-              {BUSINESS_FACTS.phone}
-            </a>
-            <p className="break-all text-[17px] font-semibold text-k-navy">{BUSINESS_FACTS.email}</p>
-          </div>
-          <p className="text-[15px] leading-relaxed text-k-muted">
-            Please do not include patient information, medical records, or other sensitive documents in an email.
-          </p>
-        </div>
-        <div className="flex flex-col gap-5">
-          <p className="k-eyebrow text-k-sky-ink">What happens next</p>
-          {NEXT.map((step, i) => (
-            <div key={step.title} className="flex gap-4 rounded-2xl border border-k-line p-6">
-              <p aria-hidden className="font-display text-[22px] font-extrabold text-k-sky-ink">
-                {i + 2}
+      <section className="k-section">
+        <div className="k-wrap grid items-start gap-14 lg:grid-cols-2 lg:gap-20">
+          <div className="flex flex-col items-start gap-5">
+            <p className="k-eyebrow k-eyebrow-teal text-k-teal-ink">How to send it</p>
+            <h2 className="k-h2">Call or email. Short and plain is perfect.</h2>
+            <p className="k-body">
+              There is no form to fill out. Call or email with the details above, in whatever order you have them, and a
+              person will pick it up from there.
+            </p>
+            <div className="mt-1 flex w-full flex-col gap-1 rounded-[32px] bg-k-teal-tint p-7">
+              <a
+                href={`tel:${BUSINESS_FACTS.phone}`}
+                className="k-focus inline-flex min-h-11 items-center self-start font-display text-2xl font-extrabold text-k-navy underline decoration-k-teal decoration-2 underline-offset-[6px]"
+              >
+                {BUSINESS_FACTS.phone}
+              </a>
+              <p className="text-[17px] font-semibold text-k-navy">
+                <EmailText />
               </p>
-              <div className="flex flex-col gap-1.5">
-                <h3 className="font-display text-[17px] font-extrabold">{step.title}</h3>
-                <p className="text-[15px] leading-relaxed text-k-muted">{step.body}</p>
-              </div>
             </div>
-          ))}
-          <Link href="/solutions" className="k-arrow-link text-k-sky-ink hover:text-k-navy">
-            Explore Staffing Solutions →
-          </Link>
+            <p className="k-small">
+              Please do not include patient information, medical records, or other sensitive documents in an email.
+            </p>
+          </div>
+          <div className="flex flex-col items-start gap-6">
+            <p className="k-eyebrow text-k-sky-ink">What happens next</p>
+            <StepPath steps={NEXT} start={2} vertical />
+            <Link href="/solutions" className="k-arrow-link text-k-sky-ink">
+              Explore Staffing Solutions&nbsp;→
+            </Link>
+          </div>
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-k-navy">
-        <Circle gradient="sky-violet" className="-bottom-52 left-[-160px] h-[440px] w-[440px] opacity-35" />
-        <div className="relative mx-auto flex max-w-4xl flex-col items-center gap-6 px-6 py-16 text-center sm:py-24">
-          <h2 className="font-display text-3xl font-extrabold leading-snug text-balance text-white sm:text-4xl">
-            Tell us the need. We&apos;ll take it from there.
-          </h2>
-          <Link href="/contact" className="k-btn-primary">
-            Request Staffing
-          </Link>
-        </div>
-      </section>
+      <ClosingPanel heading="Tell us the need. We'll take it from there.">
+        <Link href="/contact" className="k-btn-primary">
+          Request Staffing
+        </Link>
+      </ClosingPanel>
     </>
   );
 }

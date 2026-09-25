@@ -19,6 +19,8 @@ export default function DirectPlacementPage() {
         eyebrow="Staffing Solutions · Direct placement"
         heading="Direct placement, matched for fit."
         lede="Permanent hires selected for fit with your team, not just a resume that matches the requisition."
+        image="planter"
+        imageFocus="30% 20%"
         sections={[
           {
             eyebrow: "What it is",
@@ -77,13 +79,13 @@ export default function DirectPlacementPage() {
               href: "/solutions/contract-staffing",
               title: "Need coverage while you hire?",
               body: "Contract staffing keeps the unit covered for a defined period, for leaves of absence, seasonal census, and extended vacancies.",
-              label: "More About Contract Staffing →",
+              label: "More About Contract Staffing\u00a0→",
             },
             {
               href: "/solutions/per-diem-staffing",
               title: "Just need the shift covered?",
               body: "Per-diem staffing covers call-outs, census spikes, and weekend and night gaps one shift at a time.",
-              label: "More About Per-Diem Staffing →",
+              label: "More About Per-Diem Staffing\u00a0→",
             },
           ],
         }}

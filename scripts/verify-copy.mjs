@@ -9,12 +9,14 @@ import path from "node:path";
 import {
   APPLICATION_CONTACT,
   CANONICAL_ACTION_LABELS,
+  HELD_LEGAL_ROUTES,
   PAGE_DESCRIPTIONS,
   PUBLIC_ROUTES,
   REQUIREMENTS,
   RETIRED_LABEL_VARIANTS,
   ROUTE_LABELS,
   SITEWIDE_ABSENT,
+  SITEWIDE_PRESENT,
 } from "./copy-requirements.mjs";
 
 const root = process.cwd();
@@ -54,6 +56,17 @@ for (const req of REQUIREMENTS) {
     missing,
     lingering,
   });
+}
+
+// Sitewide required strings: every public route.
+for (const rule of SITEWIDE_PRESENT) {
+  for (const route of PUBLIC_ROUTES) {
+    const text = decode(fs.readFileSync(pageFile(route), "utf8"));
+    const missing = rule.present.filter((str) => !text.includes(str));
+    const pass = missing.length === 0;
+    if (!pass) failures += 1;
+    results.push({ id: rule.id, title: rule.title, route, pass, missing });
+  }
 }
 
 // Sitewide terminology: every rendered text asset in the artifact.
@@ -150,6 +163,15 @@ for (const route of PUBLIC_ROUTES) {
   const pass = dupes.length === 0;
   if (!pass) failures += 1;
   results.push({ id: "E04", title: "meta descriptions are unique per page", route: "*", pass, duplicates: dupes });
+}
+
+// BM-20260925-33: the legal review drafts are held for owner approval, so no
+// page is generated at their routes (SITEWIDE_ABSENT L02 covers links and
+// draft wording in every text asset).
+for (const route of HELD_LEGAL_ROUTES) {
+  const pass = !fs.existsSync(path.join(docs, route.replace(/^\//, "")));
+  if (!pass) failures += 1;
+  results.push({ id: "L03", title: "held legal review draft is not in the artifact", route, pass });
 }
 
 const out = { generatedAt: new Date().toISOString(), failures, results };

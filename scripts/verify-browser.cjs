@@ -37,6 +37,33 @@ const ROUTES = [
   "/apply/",
   "/privacy/",
 ];
+// TASK-20260923-14: the audience disclosure groups in the header (the same
+// lists at every width; a panel from 1024px, an inline menu group below).
+const NAV_GROUPS = [
+  {
+    toggle: "Staffing Solutions Pages",
+    parent: ["Staffing Solutions", "/solutions/"],
+    links: [
+      ["Contract Staffing", "/solutions/contract-staffing/"],
+      ["Per-Diem Staffing", "/solutions/per-diem-staffing/"],
+      ["Direct Placement", "/solutions/direct-placement/"],
+      ["Staffing Request Checklist", "/solutions/staffing-request-checklist/"],
+      ["Request Staffing", "/contact/"],
+    ],
+  },
+  {
+    toggle: "For Professionals Pages",
+    parent: ["For Professionals", "/professionals/"],
+    links: [
+      ["Candidate FAQ", "/professionals/faq/"],
+      ["Apply Now", "/apply/"],
+    ],
+  },
+];
+const SOCIAL = [
+  ["https://www.instagram.com/simplemedicalstaffing/", "Simple Medical Staffing on Instagram (opens in a new tab)"],
+  ["https://www.facebook.com/p/Simple-Medical-Staffing-61552041984507/", "Simple Medical Staffing on Facebook (opens in a new tab)"],
+];
 const LEGACY = {
   "/healthcare-staffing-about-us": "/about/",
   "/healthcare-staffing-medical-staffing": "/solutions/",
@@ -44,7 +71,46 @@ const LEGACY = {
   "/healthcare-staffing-for-job-seekers": "/professionals/",
   "/healthcare-staffing-contact-us": "/contact/",
 };
-const WIDTHS = [1440, 768, 390, 320];
+const WIDTHS = [1440, 1280, 1024, 768, 390, 320];
+
+// Opens each disclosure group in turn inside `scope` and checks its button
+// state, its link list (label, href), one-group-at-a-time, and Escape. Adds
+// a bounded category to the sink on any mismatch (no text is recorded).
+async function checkNavGroups(page, scope, sink, { desktop }) {
+  const rowsOf = (id) =>
+    page.locator(`#${id} a`).evaluateAll((as) =>
+      as.map((a) => [a.textContent.replace(/→/g, "").replace(/\s+/g, " ").trim(), a.getAttribute("href")]),
+    );
+  const prefix = desktop ? "nav" : "menu";
+  for (const group of NAV_GROUPS) {
+    const parent = scope.getByRole("link", { name: group.parent[0], exact: true });
+    if ((await parent.getAttribute("href")) !== group.parent[1]) sink.add("nav-parent-href");
+    const toggle = scope.getByRole("button", { name: group.toggle, exact: true });
+    if ((await toggle.getAttribute("aria-expanded")) !== "false") sink.add("nav-group-not-collapsed");
+    const id = await toggle.getAttribute("aria-controls");
+    if (!id || !id.startsWith(`${prefix}-`)) sink.add("nav-group-controls");
+    await toggle.click();
+    if ((await toggle.getAttribute("aria-expanded")) !== "true" || !(await page.locator(`#${id}`).isVisible())) sink.add("nav-group-open-failed");
+    if (JSON.stringify(await rowsOf(id)) !== JSON.stringify(group.links)) sink.add("nav-group-links");
+  }
+  // One open at a time: the second toggle's click closed the first group.
+  const first = scope.getByRole("button", { name: NAV_GROUPS[0].toggle, exact: true });
+  if ((await first.getAttribute("aria-expanded")) !== "false") sink.add("nav-group-not-exclusive");
+  if (desktop) {
+    // Escape from inside the open panel closes it and returns focus to its button.
+    const last = scope.getByRole("button", { name: NAV_GROUPS[1].toggle, exact: true });
+    await page.locator(`#nav-professionals a`).first().focus();
+    await page.keyboard.press("Escape");
+    const back = await last.evaluate((el) => el === document.activeElement);
+    if ((await last.getAttribute("aria-expanded")) !== "false" || !back) sink.add("nav-group-escape");
+    // An outside press closes an open panel.
+    await first.click();
+    await page.locator("main h1").click({ position: { x: 2, y: 2 } });
+    if ((await first.getAttribute("aria-expanded")) !== "false") sink.add("nav-group-outside");
+  } else {
+    await scope.getByRole("button", { name: NAV_GROUPS[1].toggle, exact: true }).click();
+  }
+}
 const ORIGIN = "https://simplemedicalstaffing.com";
 
 async function main() {
@@ -122,7 +188,30 @@ async function main() {
             breadcrumb: document.querySelector('nav[aria-label="Breadcrumb"]')?.innerText.replace(/\s+/g, " ").trim() ?? null,
             emDashes: (document.body.innerText.match(/—/g) || []).length,
             headerLogoLoading: document.querySelector("header img")?.getAttribute("loading"),
+            outbound: [...document.querySelectorAll("a[href^='http']")].map((a) => {
+              const r = a.getBoundingClientRect();
+              return {
+                href: a.getAttribute("href"),
+                label: a.getAttribute("aria-label"),
+                target: a.getAttribute("target"),
+                rel: a.getAttribute("rel"),
+                w: r.width,
+                h: r.height,
+                glyph: !!a.querySelector('svg[aria-hidden="true"]'),
+              };
+            }),
           }));
+          // TASK-20260923-14: exactly the two social icon links leave the site,
+          // each named, 44px, opening a new tab without a referrer.
+          const expectedSocial = route === "/contact/" ? 4 : 2;
+          const socialOk =
+            data.outbound.length === expectedSocial &&
+            data.outbound.every(
+              (o) =>
+                SOCIAL.some(([href, label]) => o.href === href && o.label === label) &&
+                o.target === "_blank" && o.rel === "noopener noreferrer" && o.w >= 44 && o.h >= 44 && o.glyph,
+            );
+          if (!socialOk) sink.add("social-links");
           if (width < 1024) {
             const toggle = page.getByRole("button", { name: "Open Navigation" });
             await toggle.click();
@@ -145,6 +234,15 @@ async function main() {
           }
           const name = route === "/" ? "home" : route.replace(/^\/|\/$/g, "").replace(/\//g, "-");
           await page.screenshot({ path: path.join(out, `${name}-${width}.png`), fullPage: width !== 320 || route === "/" });
+          // TASK-20260923-14: the disclosure groups, after the plain-page checks
+          // and screenshot so neither sees an open group.
+          if (width < 1024) {
+            await page.getByRole("button", { name: "Open Navigation" }).click();
+            await checkNavGroups(page, page.locator("#site-menu"), sink, { desktop: false });
+            await page.getByRole("button", { name: "Close Navigation" }).click();
+          } else {
+            await checkNavGroups(page, page.getByRole("banner").getByRole("navigation", { name: "Primary" }).filter({ visible: true }), sink, { desktop: true });
+          }
           const unresolved = sanitizeUnresolved(unresolvedRaw, base);
           const mailtoOk = JSON.stringify(data.mailtos) === JSON.stringify(route === "/apply/" ? ["mailto:info@simplemedicalstaffing.com"] : []);
           const passed =
