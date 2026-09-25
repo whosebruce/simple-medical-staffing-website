@@ -68,6 +68,10 @@ export default function HomePage() {
                 Find Your Next Role
               </Link>
             </div>
+            <p className="k-small text-k-muted">
+              Our online platform for facilities and professionals is still being built. For now, our team handles
+              every request directly by phone and email.
+            </p>
           </div>
           <div className="k-collage mx-auto max-w-[560px] lg:max-w-none">
             <div aria-hidden className="k-collage-ring" />
