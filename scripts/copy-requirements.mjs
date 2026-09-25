@@ -196,6 +196,17 @@ export const REQUIREMENTS = [
     ],
     absent: ["Review draft", "Not Approved", "Not Binding", "For client and counsel review"],
   },
+  // BM-20260925-33 review: the home "still building" note gives the phone and
+  // email to use now (tel link plus plain-text address, no second mailto).
+  {
+    id: "H01",
+    title: "Home 'still building' note names how to reach the team now",
+    route: "/",
+    present: [
+      "Our online platform for facilities and professionals is still being built. For now, our team handles every request directly: call",
+    ],
+    absent: ["every request directly by phone and email"],
+  },
 ];
 
 /** Legal review drafts held for owner approval: nothing is generated at these routes. */

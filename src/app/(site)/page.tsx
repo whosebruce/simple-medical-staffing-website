@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { ClosingPanel } from "@/components/site/ClosingPanel";
+import { EmailText } from "@/components/site/EmailText";
 import { Photo } from "@/components/site/Photo";
 import { StructuredData } from "@/components/site/StructuredData";
 import { Wave } from "@/components/site/Wave";
+import { BUSINESS_FACTS } from "@/lib/brand";
 import { KINDRED_GRADIENTS } from "@/lib/kindred-gradients";
 import { documentTitle, pageMetadata } from "@/lib/seo";
 
@@ -68,9 +70,16 @@ export default function HomePage() {
                 Find Your Next Role
               </Link>
             </div>
+            {/* Bruce's pre-merge requirement (BM-20260925-33): the note carries the
+                phone and email to use now. Email stays plain text; the only mailto
+                on the site is on /apply/. */}
             <p className="k-small text-k-muted">
               Our online platform for facilities and professionals is still being built. For now, our team handles
-              every request directly by phone and email.
+              every request directly: call{" "}
+              <a href={`tel:${BUSINESS_FACTS.phone}`} className="k-link whitespace-nowrap">
+                {BUSINESS_FACTS.phone}
+              </a>{" "}
+              or email <EmailText className="font-semibold text-k-navy" />.
             </p>
           </div>
           <div className="k-collage mx-auto max-w-[560px] lg:max-w-none">
