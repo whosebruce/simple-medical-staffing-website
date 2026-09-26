@@ -23,7 +23,8 @@ const KINDRED = path.join(pub, "kindred");
 export const VARIANT_WIDTHS = [640, 960, 1280];
 const WEBP_OPTIONS = { quality: 82, effort: 6 };
 
-const PHOTO_DIRS = ["photos", "campaign"];
+// library/: approved Apollo originals (TASK-20260923-05, Mira-reviewed), WebP masters.
+const PHOTO_DIRS = ["photos", "campaign", "library"];
 const MARK = path.join(KINDRED, "logos", "kindred-mark.svg");
 const ICON_DIR = path.join(KINDRED, "icons");
 

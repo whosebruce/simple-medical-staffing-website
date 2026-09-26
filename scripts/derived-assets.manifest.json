@@ -57,6 +57,138 @@
       "height": 1024,
       "bytes": 55610,
       "sha256": "226652def1007a6c407c74bd9c15e57d4cc577a48a566e76057d1ba2b54fa0b5"
+    },
+    "/kindred/library/smws-01-corridor-handoff.webp": {
+      "width": 1672,
+      "height": 941,
+      "bytes": 81600,
+      "sha256": "55a53173c479118e72a9aa05f4efa3b435b2d2bc1fc2ccddcfbec28948d4afc2"
+    },
+    "/kindred/library/smws-02-facility-partnership.webp": {
+      "width": 1672,
+      "height": 941,
+      "bytes": 85028,
+      "sha256": "d7d9deae81abbb30d48bc1ab5a10f06e02a2a2ac7f1337fd0246dfec60454a5f"
+    },
+    "/kindred/library/smws-05-professional-seated.webp": {
+      "width": 940,
+      "height": 1672,
+      "bytes": 77834,
+      "sha256": "699fa98aece1f4bab1aed39b261f9a44e57e492cf494a9aedf1b6ab389320eee"
+    },
+    "/kindred/library/smws-06-entrance-welcome.webp": {
+      "width": 1672,
+      "height": 941,
+      "bytes": 105432,
+      "sha256": "bfb9f83fc1e2e4f731c9806b107e148facff63241d12bc52bdc6ebe49782d2cb"
+    },
+    "/kindred/library/smws-07-community-interior.webp": {
+      "width": 1672,
+      "height": 941,
+      "bytes": 164758,
+      "sha256": "9d1bb7d4596d7db5e02799504ec7b55e8bfe045afb2cbd9e0bb8fb477f02d240"
+    },
+    "/kindred/library/smws-08-arranging-chairs.webp": {
+      "width": 1672,
+      "height": 941,
+      "bytes": 114056,
+      "sha256": "17044d2e67e84d64e2d7f71af8d5d27e515e0799b8d32c6ca01dcc450f8deb50"
+    },
+    "/kindred/library/smws-n01-window-lobby.webp": {
+      "width": 1672,
+      "height": 941,
+      "bytes": 82914,
+      "sha256": "73ff524f3b6891e045e9acf3e2947f7db2c34c1e8e0440277268b5453e2b2115"
+    },
+    "/kindred/library/smws-n02-notebook-counter.webp": {
+      "width": 1536,
+      "height": 1024,
+      "bytes": 97236,
+      "sha256": "d095747db173bb4f9a66edfa9a604f7e3c4202ed11b17d13c0e316989a516a41"
+    },
+    "/kindred/library/smws-n03-workwear-bench.webp": {
+      "width": 1254,
+      "height": 1254,
+      "bytes": 114466,
+      "sha256": "0d329547864c874118b93f55e30f0ae94b46f0db51c15171379bcd0efa0bda44"
+    },
+    "/kindred/library/smws-n06-garden-path-stroll.webp": {
+      "width": 1536,
+      "height": 1024,
+      "bytes": 141364,
+      "sha256": "97e817dacefc84b4b2dacff3bc988b35569805e3700f0058dc7ea94408562c4e"
+    },
+    "/kindred/library/smws-n07-teal-shoulder-bag.webp": {
+      "width": 1024,
+      "height": 1536,
+      "bytes": 70042,
+      "sha256": "87f8438a711a4f2fc1e9233c32fe532d137c336b5a7112d46c85beab145c7b1b"
+    },
+    "/kindred/library/smws-n09-chair-handrail.webp": {
+      "width": 1254,
+      "height": 1254,
+      "bytes": 118914,
+      "sha256": "33655c02b2ac7152eff8127a790051790d709686a6ecd66797768689bb7d385c"
+    },
+    "/kindred/library/smws-n10-steel-counter-talk.webp": {
+      "width": 1536,
+      "height": 1024,
+      "bytes": 72802,
+      "sha256": "8a95b71f89ac1f2ab02115a3877fc6eddc6d39fc3adc79921b6085ab9d908ea2"
+    },
+    "/kindred/library/smws-n11-courtyard-ledge-seated.webp": {
+      "width": 1024,
+      "height": 1536,
+      "bytes": 114708,
+      "sha256": "b0134c215605a711278b8ef45de0ad992044196026b867d70306d101bef5b06c"
+    },
+    "/kindred/library/smws-n13-garden-planter-talk.webp": {
+      "width": 1536,
+      "height": 1024,
+      "bytes": 130600,
+      "sha256": "b648a3a1f58dbd20ed390759d8533be7f65c17a7ebf67d223473e56f4a2a28db"
+    },
+    "/kindred/library/smws-n16-window-wall-standing.webp": {
+      "width": 1024,
+      "height": 1536,
+      "bytes": 60000,
+      "sha256": "be626a284116b0ce4b1f0d7ba45e8386755c7f0b9fe6bc3d3016a203fcf9eace"
+    },
+    "/kindred/library/smws-n17-locker-bench-bag.webp": {
+      "width": 1536,
+      "height": 1024,
+      "bytes": 80136,
+      "sha256": "b8070286f88373f6a3291c20671705d672fa5f904536aa61f11bdf1ab73c8ea8"
+    },
+    "/kindred/library/smws-n19-mural-conversation.webp": {
+      "width": 1536,
+      "height": 1024,
+      "bytes": 122986,
+      "sha256": "f90bf6ca1485804abdad3a05d8e41bb4bf1fcedc982ac63c4b91a6eb0566b030"
+    },
+    "/kindred/library/smws-n23-hands-on-table.webp": {
+      "width": 1254,
+      "height": 1254,
+      "bytes": 65752,
+      "sha256": "2bd27a8c0ee0e2ae1ae6e7b64575df5a7f814cd46d295b9efa6a365fd12084f5"
+    },
+    "/kindred/library/smws-n24-sunset-path-walk.webp": {
+      "width": 1672,
+      "height": 941,
+      "bytes": 233184,
+      "sha256": "042374943fa5aae8f239914ccba1aa529d410aebb9d8d86d99a4049e6a754856"
+    },
+    "/kindred/library/smws-n27-linen-shelves.webp": {
+      "width": 1536,
+      "height": 1024,
+      "bytes": 100450,
+      "sha256": "f505f849a6a3d7e6d06123b3811ec86edb999a64cddf287687e52a75ee91ab0f"
+    },
+    "/kindred/library/smws-n38-courtyard-bench-dusk.webp": {
+      "width": 1536,
+      "height": 1024,
+      "bytes": 360816,
+      "sha256": "f73403afa9ebd8667476ead72eb951fee5ca67e62a5753bb50dd8d02d359ca3e"
     }
   },
   "derivatives": [
@@ -289,6 +421,586 @@
       "bytes": 39774,
       "sha256": "c3a4feaa8b5c7ac992d6bd75239b57b0f64ff77eb24a36a718ce12ebd301dc17",
       "usage": "srcset candidate 1280w for /kindred/campaign/home-hero-handoff.webp"
+    },
+    {
+      "file": "public/kindred/library/smws-01-corridor-handoff-640.webp",
+      "source": "public/kindred/library/smws-01-corridor-handoff.webp",
+      "width": 640,
+      "height": 360,
+      "format": "webp",
+      "bytes": 23152,
+      "sha256": "e63297e6b100f8c6056e158247b9737a4f9af448ff7802531f2a13264212d1d1",
+      "usage": "srcset candidate 640w for /kindred/library/smws-01-corridor-handoff.webp"
+    },
+    {
+      "file": "public/kindred/library/smws-01-corridor-handoff-960.webp",
+      "source": "public/kindred/library/smws-01-corridor-handoff.webp",
+      "width": 960,
+      "height": 540,
+      "format": "webp",
+      "bytes": 38114,
+      "sha256": "5366b9ec489037b4c9264a6238c3f54dfa5415ca7e9a6d364f4eaba11ade830e",
+      "usage": "srcset candidate 960w for /kindred/library/smws-01-corridor-handoff.webp"
+    },
+    {
+      "file": "public/kindred/library/smws-01-corridor-handoff-1280.webp",
+      "source": "public/kindred/library/smws-01-corridor-handoff.webp",
+      "width": 1280,
+      "height": 720,
+      "format": "webp",
+      "bytes": 51880,
+      "sha256": "7d6922861d1a0f0dc8271b185865822125f321602a07a2626f4f77814124b9e4",
+      "usage": "srcset candidate 1280w for /kindred/library/smws-01-corridor-handoff.webp"
+    },
+    {
+      "file": "public/kindred/library/smws-02-facility-partnership-640.webp",
+      "source": "public/kindred/library/smws-02-facility-partnership.webp",
+      "width": 640,
+      "height": 360,
+      "format": "webp",
+      "bytes": 22732,
+      "sha256": "8bce178ad3278b02a3c07acf6c7961cf065c28f2c5f7ae5f93e1e5a8b7061009",
+      "usage": "srcset candidate 640w for /kindred/library/smws-02-facility-partnership.webp"
+    },
+    {
+      "file": "public/kindred/library/smws-02-facility-partnership-960.webp",
+      "source": "public/kindred/library/smws-02-facility-partnership.webp",
+      "width": 960,
+      "height": 540,
+      "format": "webp",
+      "bytes": 37538,
+      "sha256": "fa2e6e7c960d6912c3a4f2502bcc82e3b95f1265d8cc96ca0c2dc33ce72c5467",
+      "usage": "srcset candidate 960w for /kindred/library/smws-02-facility-partnership.webp"
+    },
+    {
+      "file": "public/kindred/library/smws-02-facility-partnership-1280.webp",
+      "source": "public/kindred/library/smws-02-facility-partnership.webp",
+      "width": 1280,
+      "height": 720,
+      "format": "webp",
+      "bytes": 51580,
+      "sha256": "81c679cc515a3aa2a87d2b18642e082210da5d4e2e404402ab53168e5d4f431b",
+      "usage": "srcset candidate 1280w for /kindred/library/smws-02-facility-partnership.webp"
+    },
+    {
+      "file": "public/kindred/library/smws-05-professional-seated-640.webp",
+      "source": "public/kindred/library/smws-05-professional-seated.webp",
+      "width": 640,
+      "height": 1138,
+      "format": "webp",
+      "bytes": 41070,
+      "sha256": "da689d73f143801edc8f852a72a7a3119649afdbdecd601cb0376ee2fd9874aa",
+      "usage": "srcset candidate 640w for /kindred/library/smws-05-professional-seated.webp"
+    },
+    {
+      "file": "public/kindred/library/smws-06-entrance-welcome-640.webp",
+      "source": "public/kindred/library/smws-06-entrance-welcome.webp",
+      "width": 640,
+      "height": 360,
+      "format": "webp",
+      "bytes": 25720,
+      "sha256": "3b5bef5569d0b31583bbf05a8da05b1292703ea46ff8ebdbd32baa3bec254f71",
+      "usage": "srcset candidate 640w for /kindred/library/smws-06-entrance-welcome.webp"
+    },
+    {
+      "file": "public/kindred/library/smws-06-entrance-welcome-960.webp",
+      "source": "public/kindred/library/smws-06-entrance-welcome.webp",
+      "width": 960,
+      "height": 540,
+      "format": "webp",
+      "bytes": 43944,
+      "sha256": "044380901291d99f3398ea61c59007f084641c8a77e3d3f003c07a6cdeae64c4",
+      "usage": "srcset candidate 960w for /kindred/library/smws-06-entrance-welcome.webp"
+    },
+    {
+      "file": "public/kindred/library/smws-06-entrance-welcome-1280.webp",
+      "source": "public/kindred/library/smws-06-entrance-welcome.webp",
+      "width": 1280,
+      "height": 720,
+      "format": "webp",
+      "bytes": 60794,
+      "sha256": "4e2c9427b1d47a64b658c1819e71a083a6482b56ba188f76b48658decd1ba80f",
+      "usage": "srcset candidate 1280w for /kindred/library/smws-06-entrance-welcome.webp"
+    },
+    {
+      "file": "public/kindred/library/smws-07-community-interior-640.webp",
+      "source": "public/kindred/library/smws-07-community-interior.webp",
+      "width": 640,
+      "height": 360,
+      "format": "webp",
+      "bytes": 36568,
+      "sha256": "89e446f513a37de7009b49c86000548c7ff8e27c0583db5ef34c9867cdd59f72",
+      "usage": "srcset candidate 640w for /kindred/library/smws-07-community-interior.webp"
+    },
+    {
+      "file": "public/kindred/library/smws-07-community-interior-960.webp",
+      "source": "public/kindred/library/smws-07-community-interior.webp",
+      "width": 960,
+      "height": 540,
+      "format": "webp",
+      "bytes": 67240,
+      "sha256": "58d6125808759cdac92598cc4a1a5d40a655b87be96bab959bc7bf1356e78b56",
+      "usage": "srcset candidate 960w for /kindred/library/smws-07-community-interior.webp"
+    },
+    {
+      "file": "public/kindred/library/smws-07-community-interior-1280.webp",
+      "source": "public/kindred/library/smws-07-community-interior.webp",
+      "width": 1280,
+      "height": 720,
+      "format": "webp",
+      "bytes": 95702,
+      "sha256": "96e89a83c56dfc1c46e193af12a48629d2696bbc1086a042076e6e0e7d29c9d7",
+      "usage": "srcset candidate 1280w for /kindred/library/smws-07-community-interior.webp"
+    },
+    {
+      "file": "public/kindred/library/smws-08-arranging-chairs-640.webp",
+      "source": "public/kindred/library/smws-08-arranging-chairs.webp",
+      "width": 640,
+      "height": 360,
+      "format": "webp",
+      "bytes": 30156,
+      "sha256": "ea454f6d8b96fc5c6d7dff95bea1613ae144263f43298abee9d8b86a9405fef7",
+      "usage": "srcset candidate 640w for /kindred/library/smws-08-arranging-chairs.webp"
+    },
+    {
+      "file": "public/kindred/library/smws-08-arranging-chairs-960.webp",
+      "source": "public/kindred/library/smws-08-arranging-chairs.webp",
+      "width": 960,
+      "height": 540,
+      "format": "webp",
+      "bytes": 50738,
+      "sha256": "68d19866d53bc50b26796a7af3f5753a6c4d1529979a0ab29f44fce399ffc1b7",
+      "usage": "srcset candidate 960w for /kindred/library/smws-08-arranging-chairs.webp"
+    },
+    {
+      "file": "public/kindred/library/smws-08-arranging-chairs-1280.webp",
+      "source": "public/kindred/library/smws-08-arranging-chairs.webp",
+      "width": 1280,
+      "height": 720,
+      "format": "webp",
+      "bytes": 69320,
+      "sha256": "56fbae7da1b5495009d2f08e6a0f2c5a79818c637306e66a902808058252aef2",
+      "usage": "srcset candidate 1280w for /kindred/library/smws-08-arranging-chairs.webp"
+    },
+    {
+      "file": "public/kindred/library/smws-n01-window-lobby-640.webp",
+      "source": "public/kindred/library/smws-n01-window-lobby.webp",
+      "width": 640,
+      "height": 360,
+      "format": "webp",
+      "bytes": 24290,
+      "sha256": "6a22925730041ea677710682b0f5ed8dff7607a9593381f2a3d9f69bcd502a36",
+      "usage": "srcset candidate 640w for /kindred/library/smws-n01-window-lobby.webp"
+    },
+    {
+      "file": "public/kindred/library/smws-n01-window-lobby-960.webp",
+      "source": "public/kindred/library/smws-n01-window-lobby.webp",
+      "width": 960,
+      "height": 540,
+      "format": "webp",
+      "bytes": 40068,
+      "sha256": "a740a75f2ac8dac52e4e7624a3d2e4c30f8c305bbe67d26b3cbdf125ca6ec9b5",
+      "usage": "srcset candidate 960w for /kindred/library/smws-n01-window-lobby.webp"
+    },
+    {
+      "file": "public/kindred/library/smws-n01-window-lobby-1280.webp",
+      "source": "public/kindred/library/smws-n01-window-lobby.webp",
+      "width": 1280,
+      "height": 720,
+      "format": "webp",
+      "bytes": 54228,
+      "sha256": "34239a48ed4f9d023cc00ea8ce8653a4e02782b0fcb65d5c27ec2b69bc8aa373",
+      "usage": "srcset candidate 1280w for /kindred/library/smws-n01-window-lobby.webp"
+    },
+    {
+      "file": "public/kindred/library/smws-n02-notebook-counter-640.webp",
+      "source": "public/kindred/library/smws-n02-notebook-counter.webp",
+      "width": 640,
+      "height": 427,
+      "format": "webp",
+      "bytes": 27796,
+      "sha256": "88b8352fd6227b820aa6bc49b339c460ce106382f36001a1b4aeb06479103a3d",
+      "usage": "srcset candidate 640w for /kindred/library/smws-n02-notebook-counter.webp"
+    },
+    {
+      "file": "public/kindred/library/smws-n02-notebook-counter-960.webp",
+      "source": "public/kindred/library/smws-n02-notebook-counter.webp",
+      "width": 960,
+      "height": 640,
+      "format": "webp",
+      "bytes": 46834,
+      "sha256": "0ca19f575d5c3762829e73dfaedfedae66b850d943bd46b70815d422390a17a1",
+      "usage": "srcset candidate 960w for /kindred/library/smws-n02-notebook-counter.webp"
+    },
+    {
+      "file": "public/kindred/library/smws-n02-notebook-counter-1280.webp",
+      "source": "public/kindred/library/smws-n02-notebook-counter.webp",
+      "width": 1280,
+      "height": 853,
+      "format": "webp",
+      "bytes": 65210,
+      "sha256": "ab3236442dc0f531669b7c12a5b4b752c4a3f198102ebb140d47efb5f97946a7",
+      "usage": "srcset candidate 1280w for /kindred/library/smws-n02-notebook-counter.webp"
+    },
+    {
+      "file": "public/kindred/library/smws-n03-workwear-bench-640.webp",
+      "source": "public/kindred/library/smws-n03-workwear-bench.webp",
+      "width": 640,
+      "height": 640,
+      "format": "webp",
+      "bytes": 38340,
+      "sha256": "3b89dbe838dee9ef719fbcf0212ed54093ff5ed193d895dd0f130f9167244470",
+      "usage": "srcset candidate 640w for /kindred/library/smws-n03-workwear-bench.webp"
+    },
+    {
+      "file": "public/kindred/library/smws-n03-workwear-bench-960.webp",
+      "source": "public/kindred/library/smws-n03-workwear-bench.webp",
+      "width": 960,
+      "height": 960,
+      "format": "webp",
+      "bytes": 65160,
+      "sha256": "f0975509cf36399a6af7f801ccfec575562faa9bb5c2fa1abf05b9ba04f2ec85",
+      "usage": "srcset candidate 960w for /kindred/library/smws-n03-workwear-bench.webp"
+    },
+    {
+      "file": "public/kindred/library/smws-n06-garden-path-stroll-640.webp",
+      "source": "public/kindred/library/smws-n06-garden-path-stroll.webp",
+      "width": 640,
+      "height": 427,
+      "format": "webp",
+      "bytes": 42658,
+      "sha256": "c96143e480d8dff18a821ec545cae19409b6031b3f11dac96224e3e2c1654eac",
+      "usage": "srcset candidate 640w for /kindred/library/smws-n06-garden-path-stroll.webp"
+    },
+    {
+      "file": "public/kindred/library/smws-n06-garden-path-stroll-960.webp",
+      "source": "public/kindred/library/smws-n06-garden-path-stroll.webp",
+      "width": 960,
+      "height": 640,
+      "format": "webp",
+      "bytes": 70670,
+      "sha256": "f34db3962bf2f8e89ebc5644aa6756c8c1497a70cdb1c9f9e822706b9e68385a",
+      "usage": "srcset candidate 960w for /kindred/library/smws-n06-garden-path-stroll.webp"
+    },
+    {
+      "file": "public/kindred/library/smws-n06-garden-path-stroll-1280.webp",
+      "source": "public/kindred/library/smws-n06-garden-path-stroll.webp",
+      "width": 1280,
+      "height": 853,
+      "format": "webp",
+      "bytes": 98660,
+      "sha256": "26dd0cc94bab2ab414ab74f7c0ef5a39cf7979e289e5f1edcf877138597b2e0a",
+      "usage": "srcset candidate 1280w for /kindred/library/smws-n06-garden-path-stroll.webp"
+    },
+    {
+      "file": "public/kindred/library/smws-n07-teal-shoulder-bag-640.webp",
+      "source": "public/kindred/library/smws-n07-teal-shoulder-bag.webp",
+      "width": 640,
+      "height": 960,
+      "format": "webp",
+      "bytes": 35952,
+      "sha256": "bff148c722caef4ed2778f9527b464d9694fe17ee420f595d682e04c783c1dd4",
+      "usage": "srcset candidate 640w for /kindred/library/smws-n07-teal-shoulder-bag.webp"
+    },
+    {
+      "file": "public/kindred/library/smws-n07-teal-shoulder-bag-960.webp",
+      "source": "public/kindred/library/smws-n07-teal-shoulder-bag.webp",
+      "width": 960,
+      "height": 1440,
+      "format": "webp",
+      "bytes": 55652,
+      "sha256": "3e88d5445daef79295c579c997232ff5aea0e95a50906d889df6bf9486b300e1",
+      "usage": "srcset candidate 960w for /kindred/library/smws-n07-teal-shoulder-bag.webp"
+    },
+    {
+      "file": "public/kindred/library/smws-n09-chair-handrail-640.webp",
+      "source": "public/kindred/library/smws-n09-chair-handrail.webp",
+      "width": 640,
+      "height": 640,
+      "format": "webp",
+      "bytes": 26734,
+      "sha256": "c3e20a53a167b02d40fb33ce148b46833a55634a1cd1fd3a4a18f4a4ac2496f5",
+      "usage": "srcset candidate 640w for /kindred/library/smws-n09-chair-handrail.webp"
+    },
+    {
+      "file": "public/kindred/library/smws-n09-chair-handrail-960.webp",
+      "source": "public/kindred/library/smws-n09-chair-handrail.webp",
+      "width": 960,
+      "height": 960,
+      "format": "webp",
+      "bytes": 53118,
+      "sha256": "b4ea0d60deff7cba93b31c633f8bc2b6bf3d7fc076566adf9aae0819b7420949",
+      "usage": "srcset candidate 960w for /kindred/library/smws-n09-chair-handrail.webp"
+    },
+    {
+      "file": "public/kindred/library/smws-n10-steel-counter-talk-640.webp",
+      "source": "public/kindred/library/smws-n10-steel-counter-talk.webp",
+      "width": 640,
+      "height": 427,
+      "format": "webp",
+      "bytes": 22570,
+      "sha256": "165eb9bbb6d857ff36c866e278f69f06a026bfc07d80cf5954de9d85263254cf",
+      "usage": "srcset candidate 640w for /kindred/library/smws-n10-steel-counter-talk.webp"
+    },
+    {
+      "file": "public/kindred/library/smws-n10-steel-counter-talk-960.webp",
+      "source": "public/kindred/library/smws-n10-steel-counter-talk.webp",
+      "width": 960,
+      "height": 640,
+      "format": "webp",
+      "bytes": 37182,
+      "sha256": "d9d68dc8cc3bdea757476ed34fc55309aae0a3ca124cd6268b4bf02c86e1076e",
+      "usage": "srcset candidate 960w for /kindred/library/smws-n10-steel-counter-talk.webp"
+    },
+    {
+      "file": "public/kindred/library/smws-n10-steel-counter-talk-1280.webp",
+      "source": "public/kindred/library/smws-n10-steel-counter-talk.webp",
+      "width": 1280,
+      "height": 853,
+      "format": "webp",
+      "bytes": 49996,
+      "sha256": "6b359d17fe23e92fe97c6cc43c6da47a164efefcec805ed7745e98c07159e318",
+      "usage": "srcset candidate 1280w for /kindred/library/smws-n10-steel-counter-talk.webp"
+    },
+    {
+      "file": "public/kindred/library/smws-n11-courtyard-ledge-seated-640.webp",
+      "source": "public/kindred/library/smws-n11-courtyard-ledge-seated.webp",
+      "width": 640,
+      "height": 960,
+      "format": "webp",
+      "bytes": 57644,
+      "sha256": "2403f7c90ea3597ae980fc37b76f8e77ce84e64727ab4f05babe16df7a49cb86",
+      "usage": "srcset candidate 640w for /kindred/library/smws-n11-courtyard-ledge-seated.webp"
+    },
+    {
+      "file": "public/kindred/library/smws-n11-courtyard-ledge-seated-960.webp",
+      "source": "public/kindred/library/smws-n11-courtyard-ledge-seated.webp",
+      "width": 960,
+      "height": 1440,
+      "format": "webp",
+      "bytes": 91030,
+      "sha256": "898da3ca266c6853cb52edb721082defc368c2f2d51ac9aed439ae04b3a307f2",
+      "usage": "srcset candidate 960w for /kindred/library/smws-n11-courtyard-ledge-seated.webp"
+    },
+    {
+      "file": "public/kindred/library/smws-n13-garden-planter-talk-640.webp",
+      "source": "public/kindred/library/smws-n13-garden-planter-talk.webp",
+      "width": 640,
+      "height": 427,
+      "format": "webp",
+      "bytes": 40070,
+      "sha256": "9a1591a76d936874c9521e837b754d266ade57a01d42d43dee7813f2f0bd5837",
+      "usage": "srcset candidate 640w for /kindred/library/smws-n13-garden-planter-talk.webp"
+    },
+    {
+      "file": "public/kindred/library/smws-n13-garden-planter-talk-960.webp",
+      "source": "public/kindred/library/smws-n13-garden-planter-talk.webp",
+      "width": 960,
+      "height": 640,
+      "format": "webp",
+      "bytes": 66072,
+      "sha256": "ad5bfe4f17a171f4fa8e43eff41142b106bb6eea94ccc77a2579445fa1634dc0",
+      "usage": "srcset candidate 960w for /kindred/library/smws-n13-garden-planter-talk.webp"
+    },
+    {
+      "file": "public/kindred/library/smws-n13-garden-planter-talk-1280.webp",
+      "source": "public/kindred/library/smws-n13-garden-planter-talk.webp",
+      "width": 1280,
+      "height": 853,
+      "format": "webp",
+      "bytes": 90636,
+      "sha256": "02f2b6c0eb840d78585d35d085af2a4ff5603701294af3c8a6f98212d2158cf6",
+      "usage": "srcset candidate 1280w for /kindred/library/smws-n13-garden-planter-talk.webp"
+    },
+    {
+      "file": "public/kindred/library/smws-n16-window-wall-standing-640.webp",
+      "source": "public/kindred/library/smws-n16-window-wall-standing.webp",
+      "width": 640,
+      "height": 960,
+      "format": "webp",
+      "bytes": 28714,
+      "sha256": "790e86dda1f8c6367b5712180650d3453965551aea7071e294bcbfdd8b785cc9",
+      "usage": "srcset candidate 640w for /kindred/library/smws-n16-window-wall-standing.webp"
+    },
+    {
+      "file": "public/kindred/library/smws-n16-window-wall-standing-960.webp",
+      "source": "public/kindred/library/smws-n16-window-wall-standing.webp",
+      "width": 960,
+      "height": 1440,
+      "format": "webp",
+      "bytes": 45146,
+      "sha256": "7a6b1d86b09fa2f70ecb7d67f46c3d7deded3700e2cc35a207325423ddee142b",
+      "usage": "srcset candidate 960w for /kindred/library/smws-n16-window-wall-standing.webp"
+    },
+    {
+      "file": "public/kindred/library/smws-n17-locker-bench-bag-640.webp",
+      "source": "public/kindred/library/smws-n17-locker-bench-bag.webp",
+      "width": 640,
+      "height": 427,
+      "format": "webp",
+      "bytes": 24898,
+      "sha256": "ca390e7957a5daf8f49fb76131b899d377c266b966448cbf22948d93f5429dff",
+      "usage": "srcset candidate 640w for /kindred/library/smws-n17-locker-bench-bag.webp"
+    },
+    {
+      "file": "public/kindred/library/smws-n17-locker-bench-bag-960.webp",
+      "source": "public/kindred/library/smws-n17-locker-bench-bag.webp",
+      "width": 960,
+      "height": 640,
+      "format": "webp",
+      "bytes": 41224,
+      "sha256": "07565802ec769084467bbb3013b72583c8dcdd748b8daf0a3954f84a7ef62315",
+      "usage": "srcset candidate 960w for /kindred/library/smws-n17-locker-bench-bag.webp"
+    },
+    {
+      "file": "public/kindred/library/smws-n17-locker-bench-bag-1280.webp",
+      "source": "public/kindred/library/smws-n17-locker-bench-bag.webp",
+      "width": 1280,
+      "height": 853,
+      "format": "webp",
+      "bytes": 56360,
+      "sha256": "a89c6f578269c8f54b998ff9ce6310402ec42f0f4a68d52819cca7f326abbce5",
+      "usage": "srcset candidate 1280w for /kindred/library/smws-n17-locker-bench-bag.webp"
+    },
+    {
+      "file": "public/kindred/library/smws-n19-mural-conversation-640.webp",
+      "source": "public/kindred/library/smws-n19-mural-conversation.webp",
+      "width": 640,
+      "height": 427,
+      "format": "webp",
+      "bytes": 29420,
+      "sha256": "34f7647a6bc4106e72224d9a04c75c16b918c6211c52f0cfbbbb6c744b382549",
+      "usage": "srcset candidate 640w for /kindred/library/smws-n19-mural-conversation.webp"
+    },
+    {
+      "file": "public/kindred/library/smws-n19-mural-conversation-960.webp",
+      "source": "public/kindred/library/smws-n19-mural-conversation.webp",
+      "width": 960,
+      "height": 640,
+      "format": "webp",
+      "bytes": 52334,
+      "sha256": "6d622bb4c6fb6056892a34cfe9ad244b516462c2a2d8af98a931c9290d681c6a",
+      "usage": "srcset candidate 960w for /kindred/library/smws-n19-mural-conversation.webp"
+    },
+    {
+      "file": "public/kindred/library/smws-n19-mural-conversation-1280.webp",
+      "source": "public/kindred/library/smws-n19-mural-conversation.webp",
+      "width": 1280,
+      "height": 853,
+      "format": "webp",
+      "bytes": 74066,
+      "sha256": "e3ce8e9b367156b18dec05e13b9296cf69218aba31fa23818dac67c4944ffd83",
+      "usage": "srcset candidate 1280w for /kindred/library/smws-n19-mural-conversation.webp"
+    },
+    {
+      "file": "public/kindred/library/smws-n23-hands-on-table-640.webp",
+      "source": "public/kindred/library/smws-n23-hands-on-table.webp",
+      "width": 640,
+      "height": 640,
+      "format": "webp",
+      "bytes": 21288,
+      "sha256": "72e20bca7bf5797e79d01ddb1ac42a55c2f02f73656aac4644a40c553e563714",
+      "usage": "srcset candidate 640w for /kindred/library/smws-n23-hands-on-table.webp"
+    },
+    {
+      "file": "public/kindred/library/smws-n23-hands-on-table-960.webp",
+      "source": "public/kindred/library/smws-n23-hands-on-table.webp",
+      "width": 960,
+      "height": 960,
+      "format": "webp",
+      "bytes": 35770,
+      "sha256": "1bc47f2b058aa3b7ca18660a75aeccdaeecf90e1a6e9594f16a2775198648848",
+      "usage": "srcset candidate 960w for /kindred/library/smws-n23-hands-on-table.webp"
+    },
+    {
+      "file": "public/kindred/library/smws-n24-sunset-path-walk-640.webp",
+      "source": "public/kindred/library/smws-n24-sunset-path-walk.webp",
+      "width": 640,
+      "height": 360,
+      "format": "webp",
+      "bytes": 52370,
+      "sha256": "bd014ca962a06908e6db1c47f5911b7a3e421e1e0fca83d5850d8406ff4cbf59",
+      "usage": "srcset candidate 640w for /kindred/library/smws-n24-sunset-path-walk.webp"
+    },
+    {
+      "file": "public/kindred/library/smws-n24-sunset-path-walk-960.webp",
+      "source": "public/kindred/library/smws-n24-sunset-path-walk.webp",
+      "width": 960,
+      "height": 540,
+      "format": "webp",
+      "bytes": 97170,
+      "sha256": "0030b098be91cf9d3bc4bd1c0e7c45f1bbe91def80801cda0bf209dfa5ec249a",
+      "usage": "srcset candidate 960w for /kindred/library/smws-n24-sunset-path-walk.webp"
+    },
+    {
+      "file": "public/kindred/library/smws-n24-sunset-path-walk-1280.webp",
+      "source": "public/kindred/library/smws-n24-sunset-path-walk.webp",
+      "width": 1280,
+      "height": 720,
+      "format": "webp",
+      "bytes": 141806,
+      "sha256": "d04f28adadbf7e10039328a5cdbde087699fd4234d2cb0b8dfd995ad2a1336a6",
+      "usage": "srcset candidate 1280w for /kindred/library/smws-n24-sunset-path-walk.webp"
+    },
+    {
+      "file": "public/kindred/library/smws-n27-linen-shelves-640.webp",
+      "source": "public/kindred/library/smws-n27-linen-shelves.webp",
+      "width": 640,
+      "height": 427,
+      "format": "webp",
+      "bytes": 31178,
+      "sha256": "294fc0fd13a170c04d2dd82caaed8d401dce2dd72775d28f0c8fb167d4ce12b9",
+      "usage": "srcset candidate 640w for /kindred/library/smws-n27-linen-shelves.webp"
+    },
+    {
+      "file": "public/kindred/library/smws-n27-linen-shelves-960.webp",
+      "source": "public/kindred/library/smws-n27-linen-shelves.webp",
+      "width": 960,
+      "height": 640,
+      "format": "webp",
+      "bytes": 50898,
+      "sha256": "957ff2683488da3ffb37836baa32eb44a8765a04a89aa5320ad95faa3f864ce6",
+      "usage": "srcset candidate 960w for /kindred/library/smws-n27-linen-shelves.webp"
+    },
+    {
+      "file": "public/kindred/library/smws-n27-linen-shelves-1280.webp",
+      "source": "public/kindred/library/smws-n27-linen-shelves.webp",
+      "width": 1280,
+      "height": 853,
+      "format": "webp",
+      "bytes": 68918,
+      "sha256": "7729bb64fbe7cd54e9cb5ea54434852b6979fefa7124655ed88e04e19e6b064c",
+      "usage": "srcset candidate 1280w for /kindred/library/smws-n27-linen-shelves.webp"
+    },
+    {
+      "file": "public/kindred/library/smws-n38-courtyard-bench-dusk-640.webp",
+      "source": "public/kindred/library/smws-n38-courtyard-bench-dusk.webp",
+      "width": 640,
+      "height": 427,
+      "format": "webp",
+      "bytes": 75878,
+      "sha256": "f8942621090ba3f3033ed2489be11006639bc13e37c3e904c0e80585fdfa2065",
+      "usage": "srcset candidate 640w for /kindred/library/smws-n38-courtyard-bench-dusk.webp"
+    },
+    {
+      "file": "public/kindred/library/smws-n38-courtyard-bench-dusk-960.webp",
+      "source": "public/kindred/library/smws-n38-courtyard-bench-dusk.webp",
+      "width": 960,
+      "height": 640,
+      "format": "webp",
+      "bytes": 150650,
+      "sha256": "1bd771894107b4d312768914568d08dedbff90f26a37c6ef2dcc193e6781947e",
+      "usage": "srcset candidate 960w for /kindred/library/smws-n38-courtyard-bench-dusk.webp"
+    },
+    {
+      "file": "public/kindred/library/smws-n38-courtyard-bench-dusk-1280.webp",
+      "source": "public/kindred/library/smws-n38-courtyard-bench-dusk.webp",
+      "width": 1280,
+      "height": 853,
+      "format": "webp",
+      "bytes": 230624,
+      "sha256": "a6e5e72a161bae1666bb4e323f102b54a7a4be0447f6cab68722db3b53f18dde",
+      "usage": "srcset candidate 1280w for /kindred/library/smws-n38-courtyard-bench-dusk.webp"
     },
     {
       "file": "public/kindred/icons/favicon-16.png",

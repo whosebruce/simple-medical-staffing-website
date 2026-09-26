@@ -1,10 +1,12 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
-import { Circle } from "@/components/site/Circle";
+import { ClosingPanel } from "@/components/site/ClosingPanel";
+import { Photo } from "@/components/site/Photo";
+import { RoleCloud } from "@/components/site/RoleCloud";
 import { StructuredData } from "@/components/site/StructuredData";
+import { Wave } from "@/components/site/Wave";
 import { BUSINESS_FACTS } from "@/lib/brand";
-import { STAFF_ROLES } from "@/lib/forms";
 import { documentTitle, pageMetadata } from "@/lib/seo";
 
 const PATH = "/professionals/faq/";
@@ -16,7 +18,7 @@ export const metadata = pageMetadata({ path: PATH, title: TITLE, description: DE
 
 type Faq = { q: string; a: ReactNode };
 
-const link = "font-bold text-k-sky-ink underline underline-offset-4 hover:text-k-navy";
+const link = "k-link";
 
 const GETTING_STARTED: Faq[] = [
   {
@@ -78,13 +80,7 @@ const WORK: Faq[] = [
     a: (
       <>
         <span>We place healthcare professionals at every level of care, including:</span>
-        <ul className="mt-3 flex flex-wrap gap-2">
-          {STAFF_ROLES.map((role) => (
-            <li key={role.code} className="rounded-full border border-k-line bg-k-cloud px-3 py-1 text-[14px] font-semibold text-k-navy">
-              {role.label}
-            </li>
-          ))}
-        </ul>
+        <RoleCloud small className="mt-4 gap-2" />
       </>
     ),
   },
@@ -132,22 +128,24 @@ const SUPPORT: Faq[] = [
   },
 ];
 
-function FaqGroup({ eyebrow, heading, items }: { eyebrow: string; heading: string; items: Faq[] }) {
+function FaqGroup({ eyebrow, heading, items, tone }: { eyebrow: string; heading: string; items: Faq[]; tone: "violet" | "sky" | "teal" }) {
+  const eyebrowClass =
+    tone === "violet" ? "k-eyebrow-violet text-k-violet-ink" : tone === "teal" ? "k-eyebrow-teal text-k-teal-ink" : "text-k-sky-ink";
   return (
-    <section className="mx-auto max-w-4xl px-6 py-12 sm:py-16">
-      <div className="mb-8 flex flex-col gap-3">
-        <p className="k-eyebrow text-k-violet-ink">{eyebrow}</p>
-        <h2 className="font-display text-2xl font-extrabold sm:text-3xl">{heading}</h2>
+    <div className="k-wrap grid gap-8 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.6fr)] lg:gap-16">
+      <div className="k-sticky flex flex-col items-start gap-4 lg:self-start">
+        <p className={`k-eyebrow ${eyebrowClass}`}>{eyebrow}</p>
+        <h2 className="k-h2 k-h2-sm">{heading}</h2>
       </div>
-      <dl className="flex flex-col gap-5">
+      <dl className="k-hairlist border-y border-k-line">
         {items.map((item) => (
-          <div key={item.q} className="k-card flex flex-col gap-2.5 p-7">
-            <dt className="font-display text-[19px] font-extrabold">{item.q}</dt>
-            <dd className="text-[16px] leading-relaxed text-k-muted">{item.a}</dd>
+          <div key={item.q} className="flex flex-col gap-3 py-7">
+            <dt className="k-h3">{item.q}</dt>
+            <dd className="k-body">{item.a}</dd>
           </div>
         ))}
       </dl>
-    </section>
+    </div>
   );
 }
 
@@ -155,53 +153,65 @@ export default function CandidateFaqPage() {
   return (
     <>
       <StructuredData path={PATH} title={documentTitle(TITLE)} description={DESCRIPTION} />
-      <section className="relative overflow-hidden bg-k-page">
-        <Circle gradient="violet-sky" className="-bottom-52 left-[-160px] h-[420px] w-[420px] opacity-10" />
-        <div className="relative mx-auto flex max-w-4xl flex-col items-start gap-4.5 px-6 py-12 sm:py-20">
-          <Breadcrumbs path={PATH} />
-          <p className="k-eyebrow text-k-violet-ink">Healthcare professionals · Questions</p>
-          <h1 className="font-display text-3xl font-extrabold leading-[1.15] text-balance sm:text-5xl">
-            Questions healthcare professionals ask us.
-          </h1>
-          <p className="max-w-[620px] text-lg leading-relaxed text-k-muted">
-            Plain answers about getting started, the work we place, and what to expect from your coordinator. If your
-            question is not here, call or email and ask a real person.
-          </p>
-          <div className="mt-2 flex flex-wrap gap-3.5">
-            <Link href="/apply" className="k-btn-primary">
-              Apply Now
-            </Link>
-            <Link href="/contact" className="k-btn-outline">
-              Talk to Our Team
-            </Link>
+
+      <section className="relative overflow-hidden">
+        <div
+          aria-hidden
+          className="k-aura -right-56 -top-72 h-[640px] w-[640px] bg-[radial-gradient(circle_at_35%_35%,rgba(140,95,212,0.18),rgba(63,165,232,0.12)_45%,transparent_70%)]"
+        />
+        <div className="k-wrap relative grid items-center gap-12 pb-14 pt-8 sm:pt-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-16 lg:pb-20 lg:pt-14">
+          <div className="flex flex-col items-start gap-6">
+            <Breadcrumbs path={PATH} />
+            <p className="k-eyebrow k-eyebrow-violet text-k-violet-ink">Healthcare professionals · Questions</p>
+            <h1 className="k-h1 k-h1-long">Questions healthcare professionals ask us.</h1>
+            <p className="k-lede">
+              Plain answers about getting started, the work we place, and what to expect from your coordinator. If your
+              question is not here, call or email and ask a real person.
+            </p>
+            <div className="mt-2 flex flex-wrap gap-3.5">
+              <Link href="/apply" className="k-btn-primary">
+                Apply Now
+              </Link>
+              <Link href="/contact" className="k-btn-outline">
+                Talk to Our Team
+              </Link>
+            </div>
+          </div>
+          <div className="relative mx-auto w-full max-w-[460px] lg:max-w-none">
+            <div aria-hidden className="k-collage-ring -left-6 top-[8%] w-[26%]" />
+            <Photo
+              image="leaning"
+              shape="arch"
+              priority
+              shadow
+              className="aspect-[1/1.08] w-full"
+              focus="50% 2%"
+              sizes="(min-width: 1240px) 440px, (min-width: 1024px) 36vw, 92vw"
+            />
           </div>
         </div>
       </section>
 
-      <div className="bg-k-cloud">
-        <FaqGroup eyebrow="Getting started" heading="Reaching us and what to send." items={GETTING_STARTED} />
-      </div>
-      <FaqGroup eyebrow="The work" heading="Kinds of work, roles, and location." items={WORK} />
-      <div className="bg-k-cloud">
-        <FaqGroup eyebrow="Support" heading="Before, during, and after an assignment." items={SUPPORT} />
-      </div>
-
-      <section className="relative overflow-hidden bg-k-navy">
-        <Circle gradient="sky-violet" className="-top-40 right-[-140px] h-[400px] w-[400px] opacity-35" />
-        <div className="relative mx-auto flex max-w-4xl flex-col items-center gap-5 px-6 py-16 text-center sm:py-[90px]">
-          <h2 className="font-display text-2xl font-extrabold leading-snug text-balance text-white sm:text-4xl">
-            Bring your skills. We&apos;ll bring the right place to use them.
-          </h2>
-          <div className="flex flex-wrap justify-center gap-3.5">
-            <Link href="/apply" className="k-btn-primary">
-              Apply Now
-            </Link>
-            <Link href="/professionals" className="k-btn-on-dark">
-              For Professionals
-            </Link>
-          </div>
-        </div>
+      <section className="k-section-tight pt-4">
+        <FaqGroup eyebrow="Getting started" heading="Reaching us and what to send." items={GETTING_STARTED} tone="sky" />
       </section>
+      <Wave top="var(--color-k-page)" bottom="var(--color-k-violet-tint)" />
+      <section className="bg-k-violet-tint pb-[clamp(56px,7vw,96px)] pt-8">
+        <FaqGroup eyebrow="The work" heading="Kinds of work, roles, and location." items={WORK} tone="violet" />
+      </section>
+      <Wave top="var(--color-k-violet-tint)" bottom="var(--color-k-page)" flip />
+      <section className="k-section-tight">
+        <FaqGroup eyebrow="Support" heading="Before, during, and after an assignment." items={SUPPORT} tone="teal" />
+      </section>
+
+      <ClosingPanel heading="Bring your skills. We'll bring the right place to use them.">
+        <Link href="/apply" className="k-btn-primary">
+          Apply Now
+        </Link>
+        <Link href="/professionals" className="k-btn-on-dark">
+          For Professionals
+        </Link>
+      </ClosingPanel>
     </>
   );
 }

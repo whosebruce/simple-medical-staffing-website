@@ -19,6 +19,8 @@ export default function ContractStaffingPage() {
         eyebrow="Staffing Solutions · Contract staffing"
         heading="Contract staffing for sustained coverage."
         lede="Longer-term placements for the gaps that last: professionals who join your team, learn your unit, and stay through the assignment."
+        image="linens"
+        imageFocus="40% 30%"
         sections={[
           {
             eyebrow: "What it is",
@@ -78,13 +80,13 @@ export default function ContractStaffingPage() {
               href: "/solutions/per-diem-staffing",
               title: "Need a shift covered, not a season?",
               body: "Per-diem staffing covers call-outs, census spikes, and weekend and night gaps one shift at a time.",
-              label: "More About Per-Diem Staffing →",
+              label: "More About Per-Diem Staffing\u00a0→",
             },
             {
               href: "/solutions/direct-placement",
               title: "Hiring for keeps?",
               body: "Direct placement finds permanent hires selected for fit with your team, including hard-to-fill specialties and leadership.",
-              label: "More About Direct Placement →",
+              label: "More About Direct Placement\u00a0→",
             },
           ],
         }}

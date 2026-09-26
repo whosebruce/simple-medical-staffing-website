@@ -180,11 +180,94 @@ export const REQUIREMENTS = [
     present: [APPLICATION_CONTACT, "Email · Applications", `href="mailto:${APPLICATION_CONTACT}"`],
     absent: [`mailto:${APPLICATION_CONTACT}?`],
   },
+  // BM-20260925-33: the Privacy Statement and Terms and Conditions review
+  // drafts (TASK-20260923-14) are held until Bruce approves publishing them.
+  // /privacy stays the existing website privacy notice, and no Terms page is
+  // published or linked (SITEWIDE_ABSENT L02, verify-copy L03).
+  {
+    id: "L01",
+    title: "Privacy is the existing website privacy notice, not a review draft",
+    route: "/privacy",
+    present: [
+      "Website Privacy Notice",
+      "A simple public website",
+      "It does not currently accept online applications, upload documents, create user accounts, or use advertising trackers.",
+      "Do not send patient information, medical records, Social Security numbers, license images, or other sensitive documents through ordinary email.",
+    ],
+    absent: ["Review draft", "Not Approved", "Not Binding", "For client and counsel review"],
+  },
+  // BM-20260925-33 review: the home "still building" note gives the phone and
+  // email to use now (tel link plus plain-text address, no second mailto).
+  {
+    id: "H01",
+    title: "Home 'still building' note names how to reach the team now",
+    route: "/",
+    present: [
+      "Our online platform for facilities and professionals is still being built. For now, our team handles every request directly: call",
+    ],
+    absent: ["every request directly by phone and email"],
+  },
+];
+
+/** Legal review drafts held for owner approval: nothing is generated at these routes. */
+export const HELD_LEGAL_ROUTES = ["/terms"];
+
+/**
+ * The two public social profiles (src/lib/social-profiles.ts). A public
+ * profile match is not proof of ownership; Dina confirms before release.
+ */
+export const SOCIAL_LINKS = [
+  "https://www.instagram.com/simplemedicalstaffing/",
+  "https://www.facebook.com/p/Simple-Medical-Staffing-61552041984507/",
+];
+
+/**
+ * Strings every public route must carry (TASK-20260923-03 redesign): the
+ * truthful imagery disclosure (all site photographs are generated
+ * illustrations) and the multi-column footer's headings.
+ */
+export const SITEWIDE_PRESENT = [
+  {
+    id: "R20",
+    title: "Imagery disclosure in the footer",
+    present: [
+      "Images on this site are illustrative and do not show actual Simple Medical Staffing staff, healthcare professionals, or client facilities.",
+    ],
+  },
+  {
+    id: "R21",
+    title: "Footer columns",
+    present: ["For Facilities", "For Professionals", "Company", "Get in Touch", "Staffing Request Checklist"],
+  },
+  {
+    id: "S01",
+    title: "Footer social icon links (TASK-20260923-14) and the privacy link",
+    present: [
+      'href="https://www.instagram.com/simplemedicalstaffing/" target="_blank" rel="noopener noreferrer" aria-label="Simple Medical Staffing on Instagram (opens in a new tab)"',
+      'href="https://www.facebook.com/p/Simple-Medical-Staffing-61552041984507/" target="_blank" rel="noopener noreferrer" aria-label="Simple Medical Staffing on Facebook (opens in a new tab)"',
+      'href="/privacy/"',
+      ">Privacy</a>",
+    ],
+  },
+  {
+    id: "N01",
+    title: "Header disclosure buttons for the two audience parents (TASK-20260923-14)",
+    present: [
+      'aria-label="Staffing Solutions Pages"',
+      'aria-controls="nav-staffing"',
+      'aria-label="For Professionals Pages"',
+      'aria-controls="nav-professionals"',
+    ],
+  },
 ];
 
 /** Terminology that must not appear anywhere in the generated public site. */
 export const SITEWIDE_ABSENT = [
   { id: "R03", title: "No 'disciplines' wording sitewide", pattern: /disciplin/i },
+  // TASK-20260923-14: the social handle is an icon link, not plain text.
+  { id: "S02", title: "No plain-text 'Instagram @handle' line sitewide", pattern: /Instagram @/ },
+  // BM-20260925-33: the legal review drafts are held for owner approval.
+  { id: "L02", title: "No Terms page link or legal review-draft wording sitewide", pattern: /\/terms\/|Terms and Conditions|review draft/i },
 ];
 
 // ---------------------------------------------------------------------------

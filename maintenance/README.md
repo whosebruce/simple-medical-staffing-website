@@ -1,6 +1,8 @@
 # Temporary Public Holding Page
 
-The public site is temporarily replaced by the approved website-update notice. This does not change the separately hosted, protected preview.
+Status (BM-20260925-33): holding mode is off. `enabled` is `false`, so `npm run build` and `npm run verify` build and verify the full site, and `docs/` is the full-site export. It goes public only when it reaches `main`. The notes below describe the mode for when it is needed again.
+
+From 2026-09-20 the public site was temporarily replaced by the approved website-update notice. This does not change the separately hosted, protected preview.
 
 `npm run build` and `npm run verify` honor `maintenance/config.json`. When `enabled` is true, they build and verify the holding artifact only. The original Next source and full-site verifiers remain intact; they are not claimed to pass against an intentionally paused marketing site. Holding generation needs Node only, no dependency install or external font service.
 

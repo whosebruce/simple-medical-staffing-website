@@ -1,0 +1,210 @@
+{
+  "task": "TASK-20260924-03",
+  "verdict": "TASK-20260924-02 MIRA-VERDICT.json (accepted_preview_candidate only)",
+  "verdict_sha256": "9d9e6e0db83a9628aef1dd99c987160e69893bd2b69658f2e0a9cb0d98f5546b",
+  "source_root": "Apollo producer originals, TASK-20260924-02 asset library (outside this repository)",
+  "conversion": {
+    "tool": "sharp",
+    "version": "0.35.4",
+    "webp": {
+      "quality": 82,
+      "effort": 6
+    },
+    "resize": "none (native size)"
+  },
+  "note": "Generated illustrative imagery. Not actual Simple Medical Staffing staff, healthcare professionals, clients or facilities. Image-provider publication rights and client sign-off are unresolved; preview use only.",
+  "masters": [
+    {
+      "id": "N01",
+      "mira_verdict": "accepted_preview_candidate",
+      "source_file": "accepted/N01-solutions.png",
+      "source_sha256": "c74f3e454ae961ff04ac87fac782a25c210653b23de45f418fff48dd782bdee7",
+      "source_bytes": 1746704,
+      "master": "/kindred/library/smws-n01-window-lobby.webp",
+      "master_sha256": "73ff524f3b6891e045e9acf3e2947f7db2c34c1e8e0440277268b5453e2b2115",
+      "master_bytes": 82914,
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "id": "N02",
+      "mira_verdict": "accepted_preview_candidate",
+      "source_file": "accepted/N02-solutions-staffing-request-checklist.png",
+      "source_sha256": "12ba1b6200eb3cc1f9fbf383c2f1edd50ac898909f1bc020b8db657c32cb1879",
+      "source_bytes": 1966955,
+      "master": "/kindred/library/smws-n02-notebook-counter.webp",
+      "master_sha256": "d095747db173bb4f9a66edfa9a604f7e3c4202ed11b17d13c0e316989a516a41",
+      "master_bytes": 97236,
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "id": "N03",
+      "mira_verdict": "accepted_preview_candidate",
+      "source_file": "accepted/N03-professionals.png",
+      "source_sha256": "bac03ebf4d9da7f023a7564cbb41caa341296c8f8d038036d4ee312961173ab9",
+      "source_bytes": 2046387,
+      "master": "/kindred/library/smws-n03-workwear-bench.webp",
+      "master_sha256": "0d329547864c874118b93f55e30f0ae94b46f0db51c15171379bcd0efa0bda44",
+      "master_bytes": 114466,
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "id": "N06",
+      "mira_verdict": "accepted_preview_candidate",
+      "source_file": "accepted/N06-about.png",
+      "source_sha256": "3e367816a579e4d4c0ceafa531a981f2d8072b43549542ce70c33bda16a2ba8f",
+      "source_bytes": 2433097,
+      "master": "/kindred/library/smws-n06-garden-path-stroll.webp",
+      "master_sha256": "97e817dacefc84b4b2dacff3bc988b35569805e3700f0058dc7ea94408562c4e",
+      "master_bytes": 141364,
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "id": "N07",
+      "mira_verdict": "accepted_preview_candidate",
+      "source_file": "accepted/N07-professionals.png",
+      "source_sha256": "b3d6e4ebb29ad03e3cf57e93550e7d04ef0280a50524a9abd85b6c47f94f4585",
+      "source_bytes": 2013128,
+      "master": "/kindred/library/smws-n07-teal-shoulder-bag.webp",
+      "master_sha256": "87f8438a711a4f2fc1e9233c32fe532d137c336b5a7112d46c85beab145c7b1b",
+      "master_bytes": 70042,
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "id": "N09",
+      "mira_verdict": "accepted_preview_candidate",
+      "source_file": "accepted/N09-solutions.png",
+      "source_sha256": "6640c42c8803905e62f2752177a1d284a70a89c079dd0aa009b900b142b45c33",
+      "source_bytes": 2212347,
+      "master": "/kindred/library/smws-n09-chair-handrail.webp",
+      "master_sha256": "33655c02b2ac7152eff8127a790051790d709686a6ecd66797768689bb7d385c",
+      "master_bytes": 118914,
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "id": "N10",
+      "mira_verdict": "accepted_preview_candidate",
+      "source_file": "accepted/N10-solutions.png",
+      "source_sha256": "68b16b2b432e142bf92f9303825ba28ec1e16817797dbcbc9c7e068c87344a81",
+      "source_bytes": 1922133,
+      "master": "/kindred/library/smws-n10-steel-counter-talk.webp",
+      "master_sha256": "8a95b71f89ac1f2ab02115a3877fc6eddc6d39fc3adc79921b6085ab9d908ea2",
+      "master_bytes": 72802,
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "id": "N11",
+      "mira_verdict": "accepted_preview_candidate",
+      "source_file": "accepted/N11-apply.png",
+      "source_sha256": "11945ba80f08546540a50c9927723de7119c087bd33f1351a66b7117fd52f956",
+      "source_bytes": 2263234,
+      "master": "/kindred/library/smws-n11-courtyard-ledge-seated.webp",
+      "master_sha256": "b0134c215605a711278b8ef45de0ad992044196026b867d70306d101bef5b06c",
+      "master_bytes": 114708,
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "id": "N13",
+      "mira_verdict": "accepted_preview_candidate",
+      "source_file": "accepted/N13-about.png",
+      "source_sha256": "afc894da32af229a681c9543f02118a2a78622b95b9c2bc4a57e5495c97820af",
+      "source_bytes": 2291948,
+      "master": "/kindred/library/smws-n13-garden-planter-talk.webp",
+      "master_sha256": "b648a3a1f58dbd20ed390759d8533be7f65c17a7ebf67d223473e56f4a2a28db",
+      "master_bytes": 130600,
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "id": "N16",
+      "mira_verdict": "accepted_preview_candidate",
+      "source_file": "accepted/N16-professionals-faq.png",
+      "source_sha256": "e8a2bd55a30fc809dbd55b76256863ff518ab21bf28752ce5665f5c8077ec59a",
+      "source_bytes": 1978297,
+      "master": "/kindred/library/smws-n16-window-wall-standing.webp",
+      "master_sha256": "be626a284116b0ce4b1f0d7ba45e8386755c7f0b9fe6bc3d3016a203fcf9eace",
+      "master_bytes": 60000,
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "id": "N17",
+      "mira_verdict": "accepted_preview_candidate",
+      "source_file": "accepted/N17-solutions-per-diem-staffing.png",
+      "source_sha256": "5fc37c464fddd879206a41ad5018705d3eec1c677fd563d3cb57f8729558ab00",
+      "source_bytes": 1900586,
+      "master": "/kindred/library/smws-n17-locker-bench-bag.webp",
+      "master_sha256": "b8070286f88373f6a3291c20671705d672fa5f904536aa61f11bdf1ab73c8ea8",
+      "master_bytes": 80136,
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "id": "N19",
+      "mira_verdict": "accepted_preview_candidate",
+      "source_file": "accepted/N19-home.png",
+      "source_sha256": "a76e0497d92b5e50d7d3326b945cf8ecc411f4e4025cd6bfdc25e5bfbb2c226c",
+      "source_bytes": 2380926,
+      "master": "/kindred/library/smws-n19-mural-conversation.webp",
+      "master_sha256": "f90bf6ca1485804abdad3a05d8e41bb4bf1fcedc982ac63c4b91a6eb0566b030",
+      "master_bytes": 122986,
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "id": "N23",
+      "mira_verdict": "accepted_preview_candidate",
+      "source_file": "accepted/N23-about.png",
+      "source_sha256": "3ad5ddac6688900c7612f8170d84f37b1aa89b998ccb946b5b283dda1c396b55",
+      "source_bytes": 1806362,
+      "master": "/kindred/library/smws-n23-hands-on-table.webp",
+      "master_sha256": "2bd27a8c0ee0e2ae1ae6e7b64575df5a7f814cd46d295b9efa6a365fd12084f5",
+      "master_bytes": 65752,
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "id": "N24",
+      "mira_verdict": "accepted_preview_candidate",
+      "source_file": "accepted/N24-professionals.png",
+      "source_sha256": "af2ef623af7659b69b55dea0425388626974371a57eeaa25d03f3fb1649b0e19",
+      "source_bytes": 2471172,
+      "master": "/kindred/library/smws-n24-sunset-path-walk.webp",
+      "master_sha256": "042374943fa5aae8f239914ccba1aa529d410aebb9d8d86d99a4049e6a754856",
+      "master_bytes": 233184,
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "id": "N27",
+      "mira_verdict": "accepted_preview_candidate",
+      "source_file": "accepted/N27-solutions-contract-staffing.png",
+      "source_sha256": "9b55ba7768d44a8faf319d1a5f2609e336ecec2cb126ba388e182ce6694b1e0b",
+      "source_bytes": 2028468,
+      "master": "/kindred/library/smws-n27-linen-shelves.webp",
+      "master_sha256": "f505f849a6a3d7e6d06123b3811ec86edb999a64cddf287687e52a75ee91ab0f",
+      "master_bytes": 100450,
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "id": "N38",
+      "mira_verdict": "accepted_preview_candidate",
+      "source_file": "accepted/N38-about.png",
+      "source_sha256": "beb58f0a01fbbd65677c26f78765c5c43e064f7f09fdfa6ff8574b9f27f669a8",
+      "source_bytes": 3278776,
+      "master": "/kindred/library/smws-n38-courtyard-bench-dusk.webp",
+      "master_sha256": "f73403afa9ebd8667476ead72eb951fee5ca67e62a5753bb50dd8d02d359ca3e",
+      "master_bytes": 360816,
+      "width": 1536,
+      "height": 1024
+    }
+  ]
+}

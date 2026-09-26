@@ -9,10 +9,12 @@
 // JSON-LD parses on every page with resolvable @id references and the
 // verified NAP; unique titles and descriptions; per-page og:url; srcset
 // candidates exist; share image and icon set exist with expected dimensions;
-// no placeholder text.
+// no placeholder text; library masters match their provenance and no
+// photograph is placed on two canonical routes (or on a route and the 404).
+import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
-import { PUBLIC_ROUTES } from "./copy-requirements.mjs";
+import { PUBLIC_ROUTES, SOCIAL_LINKS } from "./copy-requirements.mjs";
 
 const root = process.cwd();
 const docs = path.join(root, "docs");
@@ -101,6 +103,16 @@ for (const file of textFiles) {
   }
 }
 
+// 1b. Photos that show a rendered copy of the brand mark (an ID badge or wall
+// sign) are not used on any page (TASK-20260923-03 asset review).
+const EXCLUDED_PHOTOS = [/candid-conversation/, /badge-welcome/, /clinic-reception/];
+for (const file of textFiles.filter((f) => /\.(?:html|txt)$/.test(f))) {
+  const text = read(file);
+  for (const pattern of EXCLUDED_PHOTOS) {
+    if (pattern.test(text)) fail(`${path.relative(root, file)} references excluded photo ${pattern}`);
+  }
+}
+
 // 2. Email handlers: exactly one static mailto, only on /apply/ -----------------
 const CONTACT_MAILTO = "mailto:info@simplemedicalstaffing.com";
 const applyFiles = new Set(["apply/index.html", "apply/index.txt"].map((r) => path.join(docs, r)));
@@ -142,6 +154,33 @@ for (const file of htmlFiles) {
     for (const cand of match[1].split(",")) {
       const url = cand.trim().split(/\s+/)[0];
       if (url.startsWith("/") && !resolves(url)) fail(`${path.relative(root, file)} srcset candidate missing ${url}`);
+    }
+  }
+}
+
+// 3b. Outbound links (TASK-20260923-14): the only absolute links on any page
+// are the two social profile icons, each opening a new tab without a
+// referrer, and every canonical page carries both. A public profile match is
+// not proof of ownership; the owner confirms the accounts before release.
+{
+  for (const file of htmlFiles) {
+    const rel = path.relative(root, file);
+    const anchors = [...read(file).matchAll(/<a\b[^>]*>/gi)].map((m) => m[0]);
+    for (const a of anchors) {
+      const href = attr(a, /\bhref="([^"]*)"/);
+      if (!href || !/^https?:/i.test(href)) continue;
+      if (!SOCIAL_LINKS.includes(href)) fail(`${rel} links to an unlisted outside URL ${href}`);
+      else if (!/\btarget="_blank"/.test(a) || !/\brel="noopener noreferrer"/.test(a)) {
+        fail(`${rel} social link ${href} lacks target="_blank" rel="noopener noreferrer"`);
+      }
+    }
+  }
+  for (const route of CANONICAL_ROUTES) {
+    const file = pageFile(route);
+    if (!fs.existsSync(file)) continue;
+    const html = read(file);
+    for (const url of SOCIAL_LINKS) {
+      if (!html.includes(`href="${url}"`)) fail(`${path.relative(root, file)} lacks the social link ${url}`);
     }
   }
 }
@@ -300,7 +339,9 @@ for (const [rel, [w, h]] of Object.entries(expectedPng)) {
 }
 
 // 8. Responsive hero images -------------------------------------------------------
-for (const [route, hero] of [["/", "candid-conversation"], ["/professionals/", "nurse-portrait"]]) {
+// The home hero is the campaign image home-hero-handoff (TASK-20260923-03 moved
+// it off candid-conversation, whose ID badge shows a rendered brand mark).
+for (const [route, hero] of [["/", "home-hero-handoff"], ["/professionals/", "nurse-portrait"]]) {
   const html = read(pageFile(route));
   const img = html.match(new RegExp(`<img[^>]*${hero}[^>]*>`));
   if (!img) fail(`${route} hero image ${hero} not found`);
@@ -310,6 +351,49 @@ for (const [route, hero] of [["/", "candid-conversation"], ["/professionals/", "
     if (!/fetchPriority="high"/.test(img[0])) fail(`${route} hero lacks fetchpriority=high`);
   }
   if (!/<link rel="preload" as="image" imageSrcSet=/.test(html)) fail(`${route} lacks responsive hero preload`);
+}
+
+// 9. Library provenance and photo variety (TASK-20260924-03) ---------------------
+// Every smws-nNN master is the recorded conversion of an original Mira marked
+// `accepted_preview_candidate` in TASK-20260924-02 (never a conditional or
+// rejected ID), byte-for-byte, and every one a page renders is recorded. No
+// photograph is placed on two canonical routes.
+{
+  const MIRA_ACCEPTED_IDS = new Set([
+    "N01", "N02", "N03", "N04", "N06", "N07", "N09", "N10", "N11", "N13",
+    "N16", "N17", "N19", "N23", "N24", "N27", "N28", "N32", "N37", "N38",
+  ]);
+  const provenance = JSON.parse(read(path.join(root, "scripts", "library-provenance.json")));
+  const recorded = new Set();
+  for (const m of provenance.masters) {
+    if (!MIRA_ACCEPTED_IDS.has(m.id) || m.mira_verdict !== "accepted_preview_candidate") fail(`${m.master} comes from ${m.id}, not a Mira-accepted ID`);
+    const file = path.join(root, "public", m.master);
+    if (!fs.existsSync(file)) {
+      fail(`missing library master ${m.master}`);
+      continue;
+    }
+    const digest = crypto.createHash("sha256").update(fs.readFileSync(file)).digest("hex");
+    if (digest !== m.master_sha256) fail(`${m.master} is not the recorded conversion (sha256 ${digest})`);
+    recorded.add(m.master);
+  }
+  const onDisk = fs.readdirSync(path.join(root, "public", "kindred", "library")).filter((f) => /^smws-n\d\d-.*[a-z]\.webp$/.test(f));
+  for (const f of onDisk) if (!recorded.has(`/kindred/library/${f}`)) fail(`public/kindred/library/${f} has no provenance record`);
+
+  const master = (url) => url.replace(/-(?:640|960|1280)\.webp$/, ".webp");
+  const seenOn = new Map();
+  // The 404 page is served for every unknown URL, so it is held to the same rule.
+  const placements = [...CANONICAL_ROUTES.map((route) => [route, pageFile(route)]), ["404", path.join(docs, "404.html")]];
+  for (const [route, file] of placements) {
+    // Rendered <img> tags only: the RSC payload of every page also carries the
+    // 404 boundary's markup, which is not placed on that route.
+    const imgs = [...read(file).matchAll(/<img\b[^>]*>/g)].map((m) => m[0]).join("\n");
+    const photos = new Set([...imgs.matchAll(/\/kindred\/(?:campaign|photos|library)\/[a-z0-9-]+\.(?:webp|png)/g)].map((m) => master(m[0])));
+    for (const photo of photos) {
+      if (/\/library\/smws-n\d\d-/.test(photo) && !recorded.has(photo)) fail(`${route} renders unrecorded library photo ${photo}`);
+      if (seenOn.has(photo)) fail(`${photo} is placed on both ${seenOn.get(photo)} and ${route}`);
+      else seenOn.set(photo, route);
+    }
+  }
 }
 
 if (failures.length) {
