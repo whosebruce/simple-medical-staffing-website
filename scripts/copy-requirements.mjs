@@ -26,6 +26,7 @@ export const PUBLIC_ROUTES = [
   "/about",
   "/contact",
   "/apply",
+  "/app",
   "/privacy",
 ];
 
@@ -333,6 +334,7 @@ export const ROUTE_LABELS = {
   "/about": ["Apply Now", "Work With Us"],
   "/contact": ["Apply Now", "See Application Options", "See the Staffing Request Checklist"],
   "/apply": ["Apply Now"],
+  "/app": ["Apply Now", "Talk to Our Team"],
   "/privacy": ["Apply Now"],
 };
 
@@ -347,5 +349,6 @@ export const PAGE_DESCRIPTIONS = {
   "/professionals/faq": "Answers for healthcare professionals considering Simple Medical Staffing",
   "/about": "Meet founder and CEO Dina Casares.",
   "/contact": "Call 949-317-2470 or email info@simplemedicalstaffing.com",
+  "/app": "The Simple Medical Staffing app for healthcare professionals is coming soon",
   "/apply": "Express interest in per-diem, contract, or permanent healthcare roles with Simple Medical Staffing by phone or email.",
 };
