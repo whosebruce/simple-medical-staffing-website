@@ -24,6 +24,7 @@ export const PUBLIC_ROUTES: readonly PublicRoute[] = [
   { path: "/about/", label: "About", parent: "/" },
   { path: "/contact/", label: "Contact", parent: "/" },
   { path: "/apply/", label: "Apply Now", parent: "/" },
+  { path: "/app/", label: "The App", parent: "/" },
   { path: "/privacy/", label: "Privacy", parent: "/" },
 ] as const;
 

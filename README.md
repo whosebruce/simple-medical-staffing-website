@@ -25,6 +25,7 @@ Check the file on `main` to see which mode is live.
 | `/about/` | About |
 | `/contact/` | Contact |
 | `/apply/` | Apply Now: contact options for applicants (the site collects nothing) |
+| `/app/` | The App: what the professionals' app will do, "coming soon" until it opens (then its App Store and web links) |
 | `/privacy/` | Privacy |
 
 `src/lib/site-routes.ts` is the single route registry. The sitemap, breadcrumbs, structured data and verifiers all read from it. URLs from the previous site (`healthcare-staffing-*.html`) are kept as noindex stubs that refresh to their current pages.

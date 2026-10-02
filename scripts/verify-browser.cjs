@@ -35,6 +35,7 @@ const ROUTES = [
   "/about/",
   "/contact/",
   "/apply/",
+  "/app/",
   "/privacy/",
 ];
 // TASK-20260923-14: the audience disclosure groups in the header (the same

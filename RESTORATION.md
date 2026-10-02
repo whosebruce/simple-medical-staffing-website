@@ -14,6 +14,6 @@ Scope: public brochure website only. The current full-site source is the Kindred
 - Preserve the current biography, professional-role list, patched dependencies, canonical metadata, sitemap, HTTPS domain and static-only privacy boundary.
 - Do not restore demo sign-in, applicant forms, uploads, backend code, unconfirmed leaders or placeholder text.
 - Email handlers: the only permitted one is the owner-authorized (2026-09-17) application-contact link on `/apply/`. It is exactly one static `mailto:info@simplemedicalstaffing.com` anchor with no subject, body, query or personal data. No other `mailto:` may appear on any route, and there is no form action and no upload. The sensitive-document warnings stay.
-- Check all twelve public routes at 320, 390, 768, 1024, 1280 and 1440 pixels (`scripts/verify-browser.cjs`). Confirm links, images, the mobile menu and its groups, the desktop disclosure panels, the social icon links, keyboard focus, console and network errors, and zero overflow.
+- Check all thirteen public routes at 320, 390, 768, 1024, 1280 and 1440 pixels (`scripts/verify-browser.cjs`). Confirm links, images, the mobile menu and its groups, the desktop disclosure panels, the social icon links, keyboard focus, console and network errors, and zero overflow.
 
 Historical presentation reference: the original-appearance restoration is preserved in git history before TASK-20260923-03.
