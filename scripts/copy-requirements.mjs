@@ -175,6 +175,13 @@ export const REQUIREMENTS = [
     absent: ["Her leadership philosophy centers on integrity"],
   },
   {
+    id: "T01",
+    title: "Team cards: Brandon and Alexis, first names only (Dina, 2026-10-07)",
+    route: "/about",
+    present: ["Our Team", "Brandon", "Chief Operating Officer", "Alexis", "Staffing Coordinator"],
+    absent: ["pending client confirmation"],
+  },
+  {
     id: "R13",
     title: "Application contact destination",
     route: "/apply",
