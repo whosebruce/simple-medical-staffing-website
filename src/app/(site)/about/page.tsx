@@ -51,6 +51,8 @@ const BIO_TONES = [
   { ink: "text-k-teal-ink", glyph: KINDRED_GRADIENTS["teal-sky"] },
 ];
 
+const MONOGRAM = "linear-gradient(135deg, var(--color-k-navy), var(--color-k-violet-ink))";
+
 function initials(name: string): string {
   return name
     .split(/\s+/)
@@ -136,47 +138,73 @@ export default function AboutPage() {
       <section aria-labelledby="leadership-heading" className="k-section">
         <div className="k-wrap">
           <div className="mb-10 flex max-w-[640px] flex-col items-start gap-4">
-            <p className="k-eyebrow k-eyebrow-violet text-k-violet-ink">Leadership</p>
+            <p className="k-eyebrow k-eyebrow-violet text-k-violet-ink">Our Team</p>
             <h2 id="leadership-heading" className="k-h2">
               The people behind our purpose
             </h2>
           </div>
           <ul className="flex flex-col gap-6">
-            {LEADERSHIP_ROLES.map((role) => (
-              <li
-                key={role.title}
-                className="relative rounded-[clamp(32px,4vw,48px)] border border-k-line bg-white p-7 shadow-[0_30px_70px_-50px_rgba(30,58,110,0.55)] sm:p-10 lg:p-12"
-              >
-                {/* The aura is clipped by its own decorative layer, so the card
-                    holding Dina's biography is not an overflow-clipping box
-                    around text (as in the preview, SMWS 01ba36c). */}
-                <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden rounded-[inherit]">
-                  <div className="k-aura -right-40 -top-48 h-[420px] w-[420px]" />
-                </div>
-                <div className="relative flex flex-wrap items-center gap-5">
+            {LEADERSHIP_ROLES.map((role) =>
+              role.biography ? (
+                <li
+                  key={role.title}
+                  className="relative rounded-[clamp(32px,4vw,48px)] border border-k-line bg-white p-7 shadow-[0_30px_70px_-50px_rgba(30,58,110,0.55)] sm:p-10 lg:p-12"
+                >
+                  {/* The aura is clipped by its own decorative layer, so the card
+                      holding Dina's biography is not an overflow-clipping box
+                      around text (as in the preview, SMWS 01ba36c). */}
+                  <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden rounded-[inherit]">
+                    <div className="k-aura -right-40 -top-48 h-[420px] w-[420px]" />
+                  </div>
+                  <div className="relative flex flex-wrap items-center gap-5">
+                    <span
+                      aria-hidden
+                      className="flex h-20 w-20 flex-none items-center justify-center rounded-full font-display text-2xl font-extrabold text-white ring-4 ring-k-sky-tint"
+                      style={{ background: MONOGRAM }}
+                    >
+                      {initials(role.name)}
+                    </span>
+                    <div className="flex flex-col gap-1">
+                      <h3 className="font-display text-[clamp(1.5rem,1.2rem+1vw,2rem)] font-extrabold tracking-[-0.02em]">{role.name}</h3>
+                      <p className="font-body text-[16px] font-bold text-k-violet-ink">{role.title}</p>
+                    </div>
+                  </div>
+                  <div className="relative mt-10 grid gap-10 lg:grid-cols-3 lg:gap-8">
+                    {role.biography.map((column, i) => (
+                      <div key={column.heading} className="flex flex-col items-start gap-3 border-t border-k-line pt-6">
+                        <span aria-hidden className="h-2 w-12 rounded-full" style={{ background: BIO_TONES[i % BIO_TONES.length].glyph }} />
+                        <h4 className={`font-display text-[19px] font-extrabold ${BIO_TONES[i % BIO_TONES.length].ink}`}>{column.heading}</h4>
+                        <p className="k-small text-[16px]">{column.body}</p>
+                      </div>
+                    ))}
+                  </div>
+                </li>
+              ) : null,
+            )}
+          </ul>
+          {/* Team members without a biography yet: a smaller card each, the
+              same monogram standing in for a headshot. */}
+          <ul className="mt-6 grid gap-6 sm:grid-cols-2">
+            {LEADERSHIP_ROLES.map((role) =>
+              role.biography ? null : (
+                <li
+                  key={role.title}
+                  className="flex items-center gap-5 rounded-[clamp(28px,3vw,40px)] border border-k-line bg-white p-6 shadow-[0_30px_70px_-50px_rgba(30,58,110,0.55)] sm:p-8"
+                >
                   <span
                     aria-hidden
-                    className="flex h-20 w-20 flex-none items-center justify-center rounded-full font-display text-2xl font-extrabold text-white ring-4 ring-k-sky-tint"
-                    style={{ background: "linear-gradient(135deg, var(--color-k-navy), var(--color-k-violet-ink))" }}
+                    className="flex h-16 w-16 flex-none items-center justify-center rounded-full font-display text-xl font-extrabold text-white ring-4 ring-k-sky-tint"
+                    style={{ background: MONOGRAM }}
                   >
                     {initials(role.name)}
                   </span>
                   <div className="flex flex-col gap-1">
-                    <h3 className="font-display text-[clamp(1.5rem,1.2rem+1vw,2rem)] font-extrabold tracking-[-0.02em]">{role.name}</h3>
+                    <h3 className="font-display text-[clamp(1.25rem,1.1rem+0.6vw,1.6rem)] font-extrabold tracking-[-0.02em]">{role.name}</h3>
                     <p className="font-body text-[16px] font-bold text-k-violet-ink">{role.title}</p>
                   </div>
-                </div>
-                <div className="relative mt-10 grid gap-10 lg:grid-cols-3 lg:gap-8">
-                  {role.biography.map((column, i) => (
-                    <div key={column.heading} className="flex flex-col items-start gap-3 border-t border-k-line pt-6">
-                      <span aria-hidden className="h-2 w-12 rounded-full" style={{ background: BIO_TONES[i % BIO_TONES.length].glyph }} />
-                      <h4 className={`font-display text-[19px] font-extrabold ${BIO_TONES[i % BIO_TONES.length].ink}`}>{column.heading}</h4>
-                      <p className="k-small text-[16px]">{column.body}</p>
-                    </div>
-                  ))}
-                </div>
-              </li>
-            ))}
+                </li>
+              ),
+            )}
           </ul>
           <p className="k-small mt-5">Additional leadership information will be added as the team grows.</p>
           <p className="k-body mt-8 max-w-[720px]">

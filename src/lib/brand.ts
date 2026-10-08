@@ -30,4 +30,17 @@ export const LEADERSHIP_ROLES = [
       },
     ],
   },
+  // Added for Dina on 2026-10-07 (through Bruce): first names only, no
+  // headshots yet (the monogram stands in), and no biography until each
+  // person supplies one.
+  {
+    title: "Chief Operating Officer",
+    name: "Brandon",
+    biography: null,
+  },
+  {
+    title: "Staffing Coordinator",
+    name: "Alexis",
+    biography: null,
+  },
 ] as const;
