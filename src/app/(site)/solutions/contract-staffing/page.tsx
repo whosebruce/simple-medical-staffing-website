@@ -1,12 +1,13 @@
 import { ServicePage } from "@/components/site/ServicePage";
 import { StructuredData } from "@/components/site/StructuredData";
+import { BUSINESS_FACTS } from "@/lib/brand";
 import { SERVICE_IDS } from "@/lib/schema";
 import { documentTitle, pageMetadata } from "@/lib/seo";
 
 const PATH = "/solutions/contract-staffing/";
 const TITLE = "Contract Healthcare Staffing";
 const DESCRIPTION =
-  "Contract staffing from Simple Medical Staffing: longer-term placements for sustained coverage, matched to your unit and your team. Call 949-317-2470 to request staffing.";
+  `Contract staffing from Simple Medical Staffing: longer-term placements for sustained coverage. Call ${BUSINESS_FACTS.phoneDisplay} to request staffing.`;
 
 export const metadata = pageMetadata({ path: PATH, title: TITLE, description: DESCRIPTION });
 

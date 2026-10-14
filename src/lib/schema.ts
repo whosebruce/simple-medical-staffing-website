@@ -3,8 +3,8 @@ import { SITE_ORIGIN, absoluteUrl, breadcrumbTrail, routeFor } from "./site-rout
 
 // Schema.org JSON-LD for the public site. Every value here is a fact that is
 // visible on the site (name, phone, email, address, founder name and title,
-// the three services and their on-page descriptions). Nothing is asserted that
-// the pages do not state: no ratings, hours, service area, prices, awards,
+// the approved San Diego County service area and the three services). Nothing
+// is asserted that the pages do not state: no ratings, hours, prices, awards,
 // social profiles or job postings.
 
 const ORG_ID = `${SITE_ORIGIN}/#organization`;
@@ -52,7 +52,8 @@ function organizationNodes() {
       "@id": ORG_ID,
       name: BUSINESS_FACTS.name,
       url: `${SITE_ORIGIN}/`,
-      telephone: `+1-${BUSINESS_FACTS.phone}`,
+      telephone: BUSINESS_FACTS.phoneTel,
+      areaServed: { "@type": "AdministrativeArea", name: "San Diego County" },
       email: BUSINESS_FACTS.email,
       logo: { "@id": LOGO_ID },
       image: { "@id": LOGO_ID },

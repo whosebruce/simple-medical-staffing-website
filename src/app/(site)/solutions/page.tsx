@@ -3,6 +3,7 @@ import { Photo } from "@/components/site/Photo";
 import { StepPath } from "@/components/site/StepPath";
 import { StructuredData } from "@/components/site/StructuredData";
 import { Wave } from "@/components/site/Wave";
+import { BUSINESS_FACTS } from "@/lib/brand";
 import { KINDRED_GRADIENTS } from "@/lib/kindred-gradients";
 import { SERVICE_IDS } from "@/lib/schema";
 import { documentTitle, pageMetadata } from "@/lib/seo";
@@ -10,7 +11,7 @@ import { documentTitle, pageMetadata } from "@/lib/seo";
 const PATH = "/solutions/";
 const TITLE = "Staffing Solutions";
 const DESCRIPTION =
-  "Contract, per-diem, and direct-placement staffing for healthcare facilities. Tell us the unit, the shift, and the team, and we'll look for the professional who fits.";
+  "Contract, per-diem, and direct-placement staffing for healthcare facilities. Serving all of San Diego County: SNF, rehab centers, and hospitals.";
 
 export const metadata = pageMetadata({ path: PATH, title: TITLE, description: DESCRIPTION });
 
@@ -87,6 +88,9 @@ export default function SolutionsPage() {
             <p className="k-eyebrow text-k-sky-ink">Staffing Solutions · For facilities</p>
             <h1 className="k-h1">Staffing that fits how your facility runs.</h1>
             <p className="k-lede">Tell us the unit, the shift, and the team, and we&apos;ll look for the professional who fits.</p>
+            <p className="k-small font-semibold text-k-navy">
+              {BUSINESS_FACTS.serviceArea}. {BUSINESS_FACTS.facilities}.
+            </p>
             <Link href="/contact" className="k-btn-primary mt-2">
               Request Staffing
             </Link>

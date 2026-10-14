@@ -9,11 +9,10 @@ import { KINDRED_GRADIENTS } from "@/lib/kindred-gradients";
 import { documentTitle, pageMetadata } from "@/lib/seo";
 
 const PATH = "/";
-// Title carries the verified category and office location (the previous
-// site's titles did the same); the H1 keeps the approved tagline.
-const TITLE = "Healthcare Staffing Agency in Irvine, California";
+// Title names the approved service area, not a new office location.
+const TITLE = "Healthcare Staffing Across San Diego County";
 const DESCRIPTION =
-  "Healthcare staffing for contract, per-diem, and direct-placement needs across Southern California.";
+  "Healthcare staffing serving all of San Diego County. Contract, per-diem, and direct placement for SNF, rehab centers, and hospitals.";
 
 export const metadata = pageMetadata({ path: PATH, title: TITLE, description: DESCRIPTION });
 
@@ -62,6 +61,9 @@ export default function HomePage() {
               We connect reliable medical professionals with the facilities that need them. Every match is made for
               fit, not just availability.
             </p>
+            <p className="k-small font-semibold text-k-navy">
+              {BUSINESS_FACTS.serviceArea}. {BUSINESS_FACTS.facilities}.
+            </p>
             <div className="mt-2 flex flex-wrap gap-3.5">
               <Link href="/contact" className="k-btn-primary">
                 Request Staffing
@@ -76,8 +78,8 @@ export default function HomePage() {
             <p className="k-small text-k-muted">
               Our online platform for facilities and professionals is still being built. For now, our team handles
               every request directly: call{" "}
-              <a href={`tel:${BUSINESS_FACTS.phone}`} className="k-link whitespace-nowrap">
-                {BUSINESS_FACTS.phone}
+              <a href={`tel:${BUSINESS_FACTS.phoneTel}`} className="k-link whitespace-nowrap">
+                {BUSINESS_FACTS.phoneDisplay}
               </a>{" "}
               or email <EmailText className="font-semibold text-k-navy" />.
             </p>
@@ -155,8 +157,8 @@ export default function HomePage() {
             <p className="k-eyebrow text-k-sky-ink">What we do</p>
             <h2 className="k-h2">Three ways to staff, one standard of care.</h2>
             <p className="k-body">
-              Simple Medical Staffing is a healthcare staffing agency in Irvine, California. We provide contract,
-              per-diem, and direct placement staffing to healthcare facilities, and we connect healthcare professionals
+              Simple Medical Staffing is a healthcare staffing agency serving all of San Diego County. We provide
+              contract, per-diem, and direct placement staffing for SNF, rehab centers, and hospitals, and we connect healthcare professionals
               with roles that fit their experience, availability, and goals.
             </p>
           </div>

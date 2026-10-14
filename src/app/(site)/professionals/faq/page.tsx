@@ -25,7 +25,7 @@ const GETTING_STARTED: Faq[] = [
     q: "How do I apply?",
     a: (
       <>
-        Our online application is being rebuilt, so for now the way in is a call or an email. Call {BUSINESS_FACTS.phone} or
+        Our online application is being rebuilt, so for now the way in is a call or an email. Call {BUSINESS_FACTS.phoneDisplay} or
         email {BUSINESS_FACTS.email} to express interest, and a coordinator will explain the secure next steps. The{" "}
         <Link href="/apply" className={link}>
           application options

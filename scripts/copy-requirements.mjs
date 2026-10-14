@@ -236,6 +236,11 @@ export const SOCIAL_LINKS = [
  */
 export const SITEWIDE_PRESENT = [
   {
+    id: "F01",
+    title: "Approved main line and county/facility wording",
+    present: ["+1 (760) 536-2178", "Serving all of San Diego County", "For SNF, rehab centers, and hospitals", 'href="tel:+17605362178"'],
+  },
+  {
     id: "R20",
     title: "Imagery disclosure in the footer",
     present: [
@@ -271,6 +276,7 @@ export const SITEWIDE_PRESENT = [
 
 /** Terminology that must not appear anywhere in the generated public site. */
 export const SITEWIDE_ABSENT = [
+  { id: "F02", title: "Retired main line absent sitewide", pattern: /949[\s().-]*317[\s.-]*2470/ },
   { id: "R03", title: "No 'disciplines' wording sitewide", pattern: /disciplin/i },
   // TASK-20260923-14: the social handle is an icon link, not plain text.
   { id: "S02", title: "No plain-text 'Instagram @handle' line sitewide", pattern: /Instagram @/ },
@@ -355,7 +361,7 @@ export const PAGE_DESCRIPTIONS = {
   "/professionals": "Per-diem, contract, and permanent opportunities for healthcare professionals.",
   "/professionals/faq": "Answers for healthcare professionals considering Simple Medical Staffing",
   "/about": "Meet founder and CEO Dina Casares.",
-  "/contact": "Call 949-317-2470 or email info@simplemedicalstaffing.com",
+  "/contact": "Call +1 (760) 536-2178 or email info@simplemedicalstaffing.com",
   "/app": "The Simple Medical Staffing app for healthcare professionals is coming soon",
   "/apply": "Express interest in per-diem, contract, or permanent healthcare roles with Simple Medical Staffing by phone or email.",
 };

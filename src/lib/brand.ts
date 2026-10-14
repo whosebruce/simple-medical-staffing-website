@@ -1,6 +1,10 @@
 export const BUSINESS_FACTS = {
   name: "Simple Medical Staffing",
-  phone: "949-317-2470",
+  phone: "760-536-2178",
+  phoneDisplay: "+1 (760) 536-2178",
+  phoneTel: "+17605362178",
+  serviceArea: "Serving all of San Diego County",
+  facilities: "For SNF, rehab centers, and hospitals",
   email: "info@simplemedicalstaffing.com",
   website: "simplemedicalstaffing.com",
   address: "3333 Michelson Drive, Suite 300, Irvine, CA 92612",

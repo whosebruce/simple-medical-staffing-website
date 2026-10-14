@@ -8,7 +8,7 @@ const html = fs.readFileSync(path.join(docs,'index.html'),'utf8');
 assert.match(html,/We’re Updating<br>Our Website/);
 assert.match(html,/Something better is coming\./);
 assert.match(html,/We’re making a few improvements to better serve our healthcare partners\./);
-assert.match(html,/href="tel:\+19493172470"/);
+assert.match(html,/href="tel:\+17605362178"/);
 assert.match(html,/href="mailto:info@simplemedicalstaffing\.com"/);
 assert.match(html,/rel="canonical" href="https:\/\/simplemedicalstaffing\.com\/"/);
 assert.match(html,/data-holding-page="holding-[a-f0-9]{16}"/);

@@ -65,7 +65,7 @@ export default function PrivacyPage() {
           <div className="k-marker">
             <h2 className="k-h3 text-[1.35rem]">Questions</h2>
             <p className="k-body mt-3">
-              Call {BUSINESS_FACTS.phone} or email {BUSINESS_FACTS.email} with questions about this notice or the
+              Call {BUSINESS_FACTS.phoneDisplay} or email {BUSINESS_FACTS.email} with questions about this notice or the
               information you provided directly to Simple Medical Staffing.
             </p>
           </div>

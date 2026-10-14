@@ -207,7 +207,7 @@ const titles = new Map();
 const descriptions = new Map();
 const NAP = {
   name: "Simple Medical Staffing",
-  phone: "+1-949-317-2470",
+  phone: "+17605362178",
   email: "info@simplemedicalstaffing.com",
   street: "3333 Michelson Drive, Suite 300",
 };
@@ -260,10 +260,11 @@ for (const route of CANONICAL_ROUTES) {
     const org = nodes.find((n) => n["@type"] === "EmploymentAgency");
     if (!org) fail(`${rel} JSON-LD lacks the EmploymentAgency node`);
     else {
+      if (org.areaServed?.["@type"] !== "AdministrativeArea" || org.areaServed?.name !== "San Diego County") fail(`${rel} JSON-LD lacks the approved county service area`);
       if (org.name !== NAP.name || org.telephone !== NAP.phone || org.email !== NAP.email || org.address?.streetAddress !== NAP.street || org.address?.addressLocality !== "Irvine" || org.address?.postalCode !== "92612") {
         fail(`${rel} JSON-LD NAP does not match the verified facts`);
       }
-      for (const banned of ["aggregateRating", "review", "openingHours", "openingHoursSpecification", "areaServed", "priceRange", "award", "sameAs", "geo"]) {
+      for (const banned of ["aggregateRating", "review", "openingHours", "openingHoursSpecification", "priceRange", "award", "sameAs", "geo"]) {
         if (banned in org) fail(`${rel} JSON-LD asserts unverified property ${banned}`);
       }
     }
