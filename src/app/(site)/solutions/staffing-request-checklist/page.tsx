@@ -180,10 +180,10 @@ export default function StaffingRequestChecklistPage() {
             </p>
             <div className="mt-1 flex w-full flex-col gap-1 rounded-[32px] bg-k-teal-tint p-7">
               <a
-                href={`tel:${BUSINESS_FACTS.phone}`}
+                href={`tel:${BUSINESS_FACTS.phoneTel}`}
                 className="k-focus inline-flex min-h-11 items-center self-start font-display text-2xl font-extrabold text-k-navy underline decoration-k-teal decoration-2 underline-offset-[6px]"
               >
-                {BUSINESS_FACTS.phone}
+                {BUSINESS_FACTS.phoneDisplay}
               </a>
               <p className="text-[17px] font-semibold text-k-navy">
                 <EmailText />

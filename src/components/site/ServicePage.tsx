@@ -115,10 +115,10 @@ export function ServicePage({
             <div className="rounded-[32px] border border-k-line bg-white p-7">
               <h2 className="k-h3">Call or email</h2>
               <a
-                href={`tel:${BUSINESS_FACTS.phone}`}
+                href={`tel:${BUSINESS_FACTS.phoneTel}`}
                 className="k-focus mt-2 inline-flex min-h-11 items-center font-display text-xl font-extrabold text-k-navy underline decoration-k-sky decoration-2 underline-offset-[6px]"
               >
-                {BUSINESS_FACTS.phone}
+                {BUSINESS_FACTS.phoneDisplay}
               </a>
               <p className="text-[15.5px] font-semibold text-k-navy">
                 <EmailText />

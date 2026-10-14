@@ -39,10 +39,10 @@ export default function ApplyPage() {
               <div className="flex min-w-0 flex-col items-start gap-1">
                 <p className="k-eyebrow k-eyebrow-plain text-k-muted">Call</p>
                 <a
-                  href={`tel:${BUSINESS_FACTS.phone}`}
+                  href={`tel:${BUSINESS_FACTS.phoneTel}`}
                   className="k-focus inline-flex min-h-11 items-center font-display text-xl font-extrabold text-k-navy underline decoration-k-sky decoration-2 underline-offset-[6px]"
                 >
-                  {BUSINESS_FACTS.phone}
+                  {BUSINESS_FACTS.phoneDisplay}
                 </a>
               </div>
             </div>

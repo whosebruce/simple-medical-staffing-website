@@ -65,14 +65,18 @@ export function SiteFooter() {
             <p className="max-w-[340px] text-[15.5px] leading-relaxed text-k-frost">
               Contract, per-diem, and direct-placement staffing for healthcare facilities.
             </p>
+            <p className="max-w-[340px] text-[15.5px] leading-relaxed text-k-frost">
+              {BUSINESS_FACTS.serviceArea}.<br />
+              {BUSINESS_FACTS.facilities}.
+            </p>
             <div className="mt-2 w-full max-w-[380px] rounded-[28px] bg-white/[0.07] p-6 ring-1 ring-white/15">
               <h2 className="k-eyebrow k-eyebrow-teal text-k-mist">Get in Touch</h2>
               <address className="mt-3 flex flex-col gap-1.5 text-[15.5px] not-italic leading-relaxed text-k-frost">
                 <a
-                  href={`tel:${BUSINESS_FACTS.phone}`}
+                  href={`tel:${BUSINESS_FACTS.phoneTel}`}
                   className="k-focus inline-flex min-h-11 items-center self-start font-display text-xl font-extrabold text-white underline decoration-white/30 decoration-2 underline-offset-[6px] hover:decoration-white"
                 >
-                  {BUSINESS_FACTS.phone}
+                  {BUSINESS_FACTS.phoneDisplay}
                 </a>
                 <EmailText className="font-semibold text-white" />
                 <span>{BUSINESS_FACTS.address}</span>

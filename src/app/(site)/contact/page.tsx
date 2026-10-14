@@ -10,7 +10,7 @@ import { documentTitle, pageMetadata } from "@/lib/seo";
 const PATH = "/contact/";
 const TITLE = "Contact";
 const DESCRIPTION =
-  "Call 949-317-2470 or email info@simplemedicalstaffing.com to request staffing or talk about your next role with Simple Medical Staffing in Irvine, CA.";
+  `Call ${BUSINESS_FACTS.phoneDisplay} or email info@simplemedicalstaffing.com. Serving all of San Diego County for SNF, rehab centers, and hospitals.`;
 
 export const metadata = pageMetadata({ path: PATH, title: TITLE, description: DESCRIPTION });
 
@@ -85,14 +85,19 @@ export default function ContactPage() {
               <div className="flex flex-col gap-2">
                 <h2 className="k-eyebrow text-k-sky-ink">Call or email</h2>
                 <a
-                  href={`tel:${BUSINESS_FACTS.phone}`}
+                  href={`tel:${BUSINESS_FACTS.phoneTel}`}
                   className="k-focus inline-flex min-h-11 items-center self-start font-display text-[clamp(1.6rem,1.2rem+1.2vw,2.1rem)] font-extrabold text-k-navy underline decoration-k-sky decoration-[3px] underline-offset-[8px]"
                 >
-                  {BUSINESS_FACTS.phone}
+                  {BUSINESS_FACTS.phoneDisplay}
                 </a>
                 <p className="text-[17px] font-semibold text-k-navy">
                   <EmailText />
                 </p>
+              </div>
+              <div className="mt-7 flex flex-col gap-2 border-t border-k-line pt-6">
+                <h2 className="k-eyebrow text-k-sky-ink">Service area</h2>
+                <p className="k-body">{BUSINESS_FACTS.serviceArea}.</p>
+                <p className="k-small">{BUSINESS_FACTS.facilities}.</p>
               </div>
               <div className="mt-7 flex flex-col gap-2 border-t border-k-line pt-6">
                 <h2 className="k-eyebrow k-eyebrow-violet text-k-violet-ink">Visit</h2>

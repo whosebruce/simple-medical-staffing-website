@@ -1,6 +1,6 @@
 # Simple Medical Staffing website
 
-Source for [simplemedicalstaffing.com](https://simplemedicalstaffing.com), the public website of Simple Medical Staffing, a healthcare staffing agency in Irvine, California offering contract, per-diem and direct placement staffing.
+Source for [simplemedicalstaffing.com](https://simplemedicalstaffing.com), the public website of Simple Medical Staffing, a healthcare staffing agency serving all of San Diego County, offering contract, per-diem and direct placement for SNF, rehab centers, and hospitals. The Irvine office address is unchanged.
 
 The site is a brochure: static HTML served by GitHub Pages. There are no forms, uploads, sign-in or backend, and this repository holds only public website code and media. The staffing platform itself lives in a separate private repository.
 
@@ -70,6 +70,6 @@ GitHub Pages publishes `docs/` from `main` at `simplemedicalstaffing.com` (see `
 
 ## Contact
 
-Simple Medical Staffing: 949-317-2470, info@simplemedicalstaffing.com.
+Simple Medical Staffing: +1 (760) 536-2178, info@simplemedicalstaffing.com.
 
 Built and maintained by [Bruce Works](https://bruceworks.net) for Simple Medical Staffing.
