@@ -237,8 +237,8 @@ export const SOCIAL_LINKS = [
 export const SITEWIDE_PRESENT = [
   {
     id: "F01",
-    title: "Approved main line and county/facility wording",
-    present: ["+1 (760) 536-2178", "Serving all of San Diego County", "For SNF, rehab centers, and hospitals", 'href="tel:+17605362178"'],
+    title: "Approved main line and Southern California coverage/facility wording",
+    present: ["+1 (760) 536-2178", "Serving all of Southern California", "San Diego, Orange County, Los Angeles County, and the Inland Empire", "Our primary focus is San Diego", "For SNF, rehab centers, and hospitals", 'href="tel:+17605362178"'],
   },
   {
     id: "R20",
@@ -277,6 +277,7 @@ export const SITEWIDE_PRESENT = [
 /** Terminology that must not appear anywhere in the generated public site. */
 export const SITEWIDE_ABSENT = [
   { id: "F02", title: "Retired main line absent sitewide", pattern: /949[\s().-]*317[\s.-]*2470/ },
+  { id: "F03", title: "Retired county-only service claim absent sitewide", pattern: /San Diego County/i },
   { id: "R03", title: "No 'disciplines' wording sitewide", pattern: /disciplin/i },
   // TASK-20260923-14: the social handle is an icon link, not plain text.
   { id: "S02", title: "No plain-text 'Instagram @handle' line sitewide", pattern: /Instagram @/ },

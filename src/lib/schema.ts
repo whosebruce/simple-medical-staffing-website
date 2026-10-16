@@ -3,7 +3,7 @@ import { SITE_ORIGIN, absoluteUrl, breadcrumbTrail, routeFor } from "./site-rout
 
 // Schema.org JSON-LD for the public site. Every value here is a fact that is
 // visible on the site (name, phone, email, address, founder name and title,
-// the approved San Diego County service area and the three services). Nothing
+// the approved Southern California service area and the three services). Nothing
 // is asserted that the pages do not state: no ratings, hours, prices, awards,
 // social profiles or job postings.
 
@@ -53,7 +53,13 @@ function organizationNodes() {
       name: BUSINESS_FACTS.name,
       url: `${SITE_ORIGIN}/`,
       telephone: BUSINESS_FACTS.phoneTel,
-      areaServed: { "@type": "AdministrativeArea", name: "San Diego County" },
+      areaServed: [
+        { "@type": "Place", name: "Southern California" },
+        { "@type": "Place", name: "San Diego" },
+        { "@type": "AdministrativeArea", name: "Orange County" },
+        { "@type": "AdministrativeArea", name: "Los Angeles County" },
+        { "@type": "Place", name: "Inland Empire" },
+      ],
       email: BUSINESS_FACTS.email,
       logo: { "@id": LOGO_ID },
       image: { "@id": LOGO_ID },
