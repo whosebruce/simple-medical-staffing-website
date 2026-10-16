@@ -260,7 +260,14 @@ for (const route of CANONICAL_ROUTES) {
     const org = nodes.find((n) => n["@type"] === "EmploymentAgency");
     if (!org) fail(`${rel} JSON-LD lacks the EmploymentAgency node`);
     else {
-      if (org.areaServed?.["@type"] !== "AdministrativeArea" || org.areaServed?.name !== "San Diego County") fail(`${rel} JSON-LD lacks the approved county service area`);
+      const expectedAreas = [
+        { "@type": "Place", name: "Southern California" },
+        { "@type": "Place", name: "San Diego" },
+        { "@type": "AdministrativeArea", name: "Orange County" },
+        { "@type": "AdministrativeArea", name: "Los Angeles County" },
+        { "@type": "Place", name: "Inland Empire" },
+      ];
+      if (JSON.stringify(org.areaServed) !== JSON.stringify(expectedAreas)) fail(`${rel} JSON-LD lacks the approved Southern California service areas`);
       if (org.name !== NAP.name || org.telephone !== NAP.phone || org.email !== NAP.email || org.address?.streetAddress !== NAP.street || org.address?.addressLocality !== "Irvine" || org.address?.postalCode !== "92612") {
         fail(`${rel} JSON-LD NAP does not match the verified facts`);
       }

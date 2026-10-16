@@ -1,8 +1,10 @@
 # Simple Medical Staffing
 
-> Simple Medical Staffing is a healthcare staffing agency serving all of San Diego County. It provides contract, per-diem, and direct placement for SNF, rehab centers, and hospitals, and connects healthcare professionals with roles. Founder and Chief Executive Officer: Dina Casares.
+> Simple Medical Staffing is a healthcare staffing agency serving all of Southern California. It provides contract, per-diem, and direct placement for SNF, rehab centers, and hospitals, and connects healthcare professionals with roles. Founder and Chief Executive Officer: Dina Casares.
 
-Service area: Serving all of San Diego County
+Service area: Serving all of Southern California
+Regions: San Diego, Orange County, Los Angeles County, and the Inland Empire
+Our primary focus is San Diego.
 Facilities: For SNF, rehab centers, and hospitals
 Address: 3333 Michelson Drive, Suite 300, Irvine, CA 92612, US
 Phone: +1 (760) 536-2178

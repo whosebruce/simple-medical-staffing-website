@@ -66,7 +66,7 @@ export function SiteFooter() {
               Contract, per-diem, and direct-placement staffing for healthcare facilities.
             </p>
             <p className="max-w-[340px] text-[15.5px] leading-relaxed text-k-frost">
-              {BUSINESS_FACTS.serviceArea}.<br />
+              {BUSINESS_FACTS.serviceArea}: {BUSINESS_FACTS.serviceRegions}. {BUSINESS_FACTS.primaryFocus}.<br />
               {BUSINESS_FACTS.facilities}.
             </p>
             <div className="mt-2 w-full max-w-[380px] rounded-[28px] bg-white/[0.07] p-6 ring-1 ring-white/15">

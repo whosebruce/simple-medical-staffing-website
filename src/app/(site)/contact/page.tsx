@@ -10,7 +10,7 @@ import { documentTitle, pageMetadata } from "@/lib/seo";
 const PATH = "/contact/";
 const TITLE = "Contact";
 const DESCRIPTION =
-  `Call ${BUSINESS_FACTS.phoneDisplay} or email info@simplemedicalstaffing.com. Serving all of San Diego County for SNF, rehab centers, and hospitals.`;
+  `Call ${BUSINESS_FACTS.phoneDisplay} or email info@simplemedicalstaffing.com. Serving all of Southern California for SNF, rehab centers, and hospitals.`;
 
 export const metadata = pageMetadata({ path: PATH, title: TITLE, description: DESCRIPTION });
 
@@ -96,7 +96,7 @@ export default function ContactPage() {
               </div>
               <div className="mt-7 flex flex-col gap-2 border-t border-k-line pt-6">
                 <h2 className="k-eyebrow text-k-sky-ink">Service area</h2>
-                <p className="k-body">{BUSINESS_FACTS.serviceArea}.</p>
+                <p className="k-body">{BUSINESS_FACTS.serviceArea}: {BUSINESS_FACTS.serviceRegions}. {BUSINESS_FACTS.primaryFocus}.</p>
                 <p className="k-small">{BUSINESS_FACTS.facilities}.</p>
               </div>
               <div className="mt-7 flex flex-col gap-2 border-t border-k-line pt-6">
