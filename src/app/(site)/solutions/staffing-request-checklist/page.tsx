@@ -13,7 +13,7 @@ import { documentTitle, pageMetadata } from "@/lib/seo";
 const PATH = "/solutions/staffing-request-checklist/";
 const TITLE = "Staffing Request Checklist for Facilities";
 const DESCRIPTION =
-  "What to include when you request staffing from Simple Medical Staffing: the unit, the shift, the specialty, the start date, and the details that help us find the right match.";
+  "What to include when you request staffing from Simple Medical Workforce Solutions: the unit, the shift, the specialty, the start date, and the details that help us find the right match.";
 
 export const metadata = pageMetadata({ path: PATH, title: TITLE, description: DESCRIPTION });
 

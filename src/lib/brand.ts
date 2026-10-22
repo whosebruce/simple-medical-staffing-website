@@ -1,5 +1,5 @@
 export const BUSINESS_FACTS = {
-  name: "Simple Medical Staffing",
+  name: "Simple Medical Workforce Solutions",
   phone: "760-536-2178",
   phoneDisplay: "+1 (760) 536-2178",
   phoneTel: "+17605362178",
@@ -11,7 +11,10 @@ export const BUSINESS_FACTS = {
   website: "simplemedicalstaffing.com",
   address: "3333 Michelson Drive, Suite 300, Irvine, CA 92612",
   instagram: "simplemedicalstaffing",
-  tagline: "Bringing You Success Through People",
+  // Renamed from Simple Medical Staffing on 2026-10-22 (Bruce: "lets go with workforce solutions cause
+  // they like that better"); the name and tagline are the approved facility flyer's. The domain, email
+  // address and Instagram handle keep the old name.
+  tagline: "Building Stronger Healthcare Teams",
   mission:
     "Our mission is to become an extension of every facility we serve by providing reliable healthcare professionals, innovative staffing strategies, and clinical leadership that strengthen teams, elevate quality of care, and reduce the reliance on traditional agency staffing.",
 } as const;

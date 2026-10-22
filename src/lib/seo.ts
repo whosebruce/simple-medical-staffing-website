@@ -7,10 +7,10 @@ export const SHARE_IMAGE = {
   url: "/kindred/share/og-default.png",
   width: 1200,
   height: 630,
-  alt: "Simple Medical Staffing. Bringing You Success Through People. Contract, per-diem, direct placement.",
+  alt: "Simple Medical Workforce Solutions. Building Stronger Healthcare Teams. Contract, per-diem, direct placement.",
 } as const;
 
-export const SITE_TITLE_SUFFIX = " | Simple Medical Staffing";
+export const SITE_TITLE_SUFFIX = " | Simple Medical Workforce Solutions";
 
 /** Full document title as rendered in <title> (root layout template). */
 export function documentTitle(title: string): string {
@@ -31,7 +31,7 @@ export function pageMetadata({ path, title, description }: { path: string; title
     alternates: { canonical: route.path },
     openGraph: {
       type: "website",
-      siteName: "Simple Medical Staffing",
+      siteName: "Simple Medical Workforce Solutions",
       locale: "en_US",
       url: route.path,
       title: fullTitle,

@@ -206,7 +206,7 @@ for (const file of htmlFiles) {
 const titles = new Map();
 const descriptions = new Map();
 const NAP = {
-  name: "Simple Medical Staffing",
+  name: "Simple Medical Workforce Solutions",
   phone: "+17605362178",
   email: "info@simplemedicalstaffing.com",
   street: "3333 Michelson Drive, Suite 300",

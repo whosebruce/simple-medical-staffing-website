@@ -10,7 +10,7 @@ import { documentTitle, pageMetadata } from "@/lib/seo";
 const PATH = "/about/";
 const TITLE = "About";
 const DESCRIPTION =
-  "Simple Medical Staffing connects qualified healthcare professionals with facilities that need dependable people. Meet founder and CEO Dina Casares.";
+  "Simple Medical Workforce Solutions connects qualified healthcare professionals with facilities that need dependable people. Meet founder and CEO Dina Casares.";
 
 export const metadata = pageMetadata({ path: PATH, title: TITLE, description: DESCRIPTION });
 
@@ -70,7 +70,7 @@ export default function AboutPage() {
         <div className="k-wrap relative pb-10 pt-10 sm:pt-14 lg:pt-16">
           <div className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-end lg:gap-16">
             <div className="flex flex-col items-start gap-6">
-              <p className="k-eyebrow text-k-sky-ink">About Simple Medical Staffing</p>
+              <p className="k-eyebrow text-k-sky-ink">About Simple Medical Workforce Solutions</p>
               <h1 className="k-h1 k-h1-long">We’re building stronger healthcare teams, one relationship at a time.</h1>
             </div>
             <p className="k-lede lg:pb-2">

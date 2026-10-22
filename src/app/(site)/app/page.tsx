@@ -13,7 +13,7 @@ import { documentTitle, pageMetadata } from "@/lib/seo";
 const PATH = "/app/";
 const TITLE = "The App";
 const DESCRIPTION =
-  "The Simple Medical Staffing app for healthcare professionals is coming soon: open shifts with their pay, your schedule, clocking in and out, and what you earned each week.";
+  "The Simple Medical Workforce Solutions app for healthcare professionals is coming soon: open shifts with their pay, your schedule, clocking in and out, and what you earned each week.";
 
 export const metadata = pageMetadata({ path: PATH, title: TITLE, description: DESCRIPTION });
 
@@ -38,7 +38,7 @@ export default function AppPage() {
           <Image src="/kindred/logos/kindred-mark.svg" alt="" width={56} height={56} unoptimized />
           <div className="flex flex-col items-start gap-4">
             <p className="k-eyebrow k-eyebrow-violet text-k-violet-ink">Coming soon</p>
-            <h1 className="k-h1 k-h1-long">The Simple Medical Staffing app.</h1>
+            <h1 className="k-h1 k-h1-long">The Simple Medical Workforce Solutions app.</h1>
             <p className="k-body">
               Our app for healthcare professionals is almost ready. It will work on iPhone and in your web browser. When it
               opens, the links to get it will be right here on this page.

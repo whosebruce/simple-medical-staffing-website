@@ -27,8 +27,8 @@ const description =
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_ORIGIN),
   title: {
-    default: "Simple Medical Staffing | Healthcare Staffing",
-    template: "%s | Simple Medical Staffing",
+    default: "Simple Medical Workforce Solutions | Healthcare Staffing",
+    template: "%s | Simple Medical Workforce Solutions",
   },
   description,
   icons: {
@@ -45,14 +45,14 @@ export const metadata: Metadata = {
     type: "website",
     url: "/",
     siteName: BUSINESS_FACTS.name,
-    title: "Simple Medical Staffing | Healthcare Staffing",
+    title: "Simple Medical Workforce Solutions | Healthcare Staffing",
     description,
     locale: "en_US",
     images: [SHARE_IMAGE],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Simple Medical Staffing | Healthcare Staffing",
+    title: "Simple Medical Workforce Solutions | Healthcare Staffing",
     description,
     images: [SHARE_IMAGE.url],
   },

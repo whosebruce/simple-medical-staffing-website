@@ -12,7 +12,7 @@ import { documentTitle, pageMetadata } from "@/lib/seo";
 const PATH = "/professionals/faq/";
 const TITLE = "Candidate FAQ for Healthcare Professionals";
 const DESCRIPTION =
-  "Answers for healthcare professionals considering Simple Medical Staffing: how to express interest, the kinds of work available, the roles we place, and what to expect from your coordinator.";
+  "Answers for healthcare professionals considering Simple Medical Workforce Solutions: how to express interest, the kinds of work available, the roles we place, and what to expect from your coordinator.";
 
 export const metadata = pageMetadata({ path: PATH, title: TITLE, description: DESCRIPTION });
 
@@ -85,7 +85,7 @@ const WORK: Faq[] = [
     ),
   },
   {
-    q: "Where is Simple Medical Staffing located?",
+    q: "Where is Simple Medical Workforce Solutions located?",
     a: (
       <>
         Our address is {BUSINESS_FACTS.address}. A call or an email is how most conversations begin.

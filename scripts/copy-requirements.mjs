@@ -244,7 +244,7 @@ export const SITEWIDE_PRESENT = [
     id: "R20",
     title: "Imagery disclosure in the footer",
     present: [
-      "Images on this site are illustrative and do not show actual Simple Medical Staffing staff, healthcare professionals, or client facilities.",
+      "Images on this site are illustrative and do not show actual Simple Medical Workforce Solutions staff, healthcare professionals, or client facilities.",
     ],
   },
   {
@@ -256,8 +256,8 @@ export const SITEWIDE_PRESENT = [
     id: "S01",
     title: "Footer social icon links (TASK-20260923-14) and the privacy link",
     present: [
-      'href="https://www.instagram.com/simplemedicalstaffing/" target="_blank" rel="noopener noreferrer" aria-label="Simple Medical Staffing on Instagram (opens in a new tab)"',
-      'href="https://www.facebook.com/p/Simple-Medical-Staffing-61552041984507/" target="_blank" rel="noopener noreferrer" aria-label="Simple Medical Staffing on Facebook (opens in a new tab)"',
+      'href="https://www.instagram.com/simplemedicalstaffing/" target="_blank" rel="noopener noreferrer" aria-label="Simple Medical Workforce Solutions on Instagram (opens in a new tab)"',
+      'href="https://www.facebook.com/p/Simple-Medical-Staffing-61552041984507/" target="_blank" rel="noopener noreferrer" aria-label="Simple Medical Workforce Solutions on Facebook (opens in a new tab)"',
       'href="/privacy/"',
       ">Privacy</a>",
     ],
@@ -355,14 +355,14 @@ export const ROUTE_LABELS = {
 /** Per-page meta descriptions (unique per page; substring that must be present). */
 export const PAGE_DESCRIPTIONS = {
   "/solutions": "Contract, per-diem, and direct-placement staffing for healthcare facilities.",
-  "/solutions/contract-staffing": "Contract staffing from Simple Medical Staffing: longer-term placements for sustained coverage",
-  "/solutions/per-diem-staffing": "Per-diem staffing from Simple Medical Staffing: shift-by-shift coverage",
-  "/solutions/direct-placement": "Direct placement from Simple Medical Staffing: permanent healthcare hires selected for fit",
-  "/solutions/staffing-request-checklist": "What to include when you request staffing from Simple Medical Staffing",
+  "/solutions/contract-staffing": "Contract staffing from Simple Medical Workforce Solutions: longer-term placements for sustained coverage",
+  "/solutions/per-diem-staffing": "Per-diem staffing from Simple Medical Workforce Solutions: shift-by-shift coverage",
+  "/solutions/direct-placement": "Direct placement from Simple Medical Workforce Solutions: permanent healthcare hires selected for fit",
+  "/solutions/staffing-request-checklist": "What to include when you request staffing from Simple Medical Workforce Solutions",
   "/professionals": "Per-diem, contract, and permanent opportunities for healthcare professionals.",
-  "/professionals/faq": "Answers for healthcare professionals considering Simple Medical Staffing",
+  "/professionals/faq": "Answers for healthcare professionals considering Simple Medical Workforce Solutions",
   "/about": "Meet founder and CEO Dina Casares.",
   "/contact": "Call +1 (760) 536-2178 or email info@simplemedicalstaffing.com",
-  "/app": "The Simple Medical Staffing app for healthcare professionals is coming soon",
-  "/apply": "Express interest in per-diem, contract, or permanent healthcare roles with Simple Medical Staffing by phone or email.",
+  "/app": "The Simple Medical Workforce Solutions app for healthcare professionals is coming soon",
+  "/apply": "Express interest in per-diem, contract, or permanent healthcare roles with Simple Medical Workforce Solutions by phone or email.",
 };

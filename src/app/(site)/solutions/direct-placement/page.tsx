@@ -6,7 +6,7 @@ import { documentTitle, pageMetadata } from "@/lib/seo";
 const PATH = "/solutions/direct-placement/";
 const TITLE = "Direct Placement for Healthcare Facilities";
 const DESCRIPTION =
-  "Direct placement from Simple Medical Staffing: permanent healthcare hires selected for fit with your team, for permanent roles, hard-to-fill specialties, and leadership.";
+  "Direct placement from Simple Medical Workforce Solutions: permanent healthcare hires selected for fit with your team, for permanent roles, hard-to-fill specialties, and leadership.";
 
 export const metadata = pageMetadata({ path: PATH, title: TITLE, description: DESCRIPTION });
 
