@@ -32,5 +32,5 @@ fs.writeFileSync(path.join(target, 'CNAME'), 'simplemedicalstaffing.com\n');
 fs.writeFileSync(path.join(target, '.nojekyll'), '');
 fs.writeFileSync(path.join(target, 'robots.txt'), 'User-agent: *\nAllow: /\nSitemap: https://simplemedicalstaffing.com/sitemap.xml\n');
 fs.writeFileSync(path.join(target, 'sitemap.xml'), '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://simplemedicalstaffing.com/</loc></url></urlset>\n');
-fs.writeFileSync(path.join(target, 'llms.txt'), '# Simple Medical Staffing\n\nWe’re Updating Our Website\n\nSomething better is coming. We’re making a few improvements to better serve our healthcare partners.\n\nPhone: '+phone+'\nEmail: '+email+'\n');
+fs.writeFileSync(path.join(target, 'llms.txt'), '# Simple Medical Workforce Solutions\n\nWe’re Updating Our Website\n\nSomething better is coming. We’re making a few improvements to better serve our healthcare partners.\n\nPhone: '+phone+'\nEmail: '+email+'\n');
 console.log(JSON.stringify({ mode: 'holding', release, htmlPages: config.pages.length }));

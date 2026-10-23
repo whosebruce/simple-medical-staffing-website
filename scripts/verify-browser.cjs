@@ -62,8 +62,8 @@ const NAV_GROUPS = [
   },
 ];
 const SOCIAL = [
-  ["https://www.instagram.com/simplemedicalstaffing/", "Simple Medical Staffing on Instagram (opens in a new tab)"],
-  ["https://www.facebook.com/p/Simple-Medical-Staffing-61552041984507/", "Simple Medical Staffing on Facebook (opens in a new tab)"],
+  ["https://www.instagram.com/simplemedicalstaffing/", "Simple Medical Workforce Solutions on Instagram (opens in a new tab)"],
+  ["https://www.facebook.com/p/Simple-Medical-Staffing-61552041984507/", "Simple Medical Workforce Solutions on Facebook (opens in a new tab)"],
 ];
 const LEGACY = {
   "/healthcare-staffing-about-us": "/about/",

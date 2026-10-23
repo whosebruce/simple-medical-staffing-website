@@ -40,7 +40,7 @@ export function SocialLinks({ tone }: { tone: keyof typeof TONES }) {
             href={profile.url}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label={`Simple Medical Staffing on ${profile.platform} (opens in a new tab)`}
+            aria-label={`Simple Medical Workforce Solutions on ${profile.platform} (opens in a new tab)`}
             data-social={profile.platform.toLowerCase()}
             className={`k-focus inline-flex h-11 w-11 items-center justify-center rounded-full transition-colors ${TONES[tone]}`}
           >

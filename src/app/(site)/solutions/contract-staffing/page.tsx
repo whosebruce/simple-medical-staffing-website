@@ -7,7 +7,7 @@ import { documentTitle, pageMetadata } from "@/lib/seo";
 const PATH = "/solutions/contract-staffing/";
 const TITLE = "Contract Healthcare Staffing";
 const DESCRIPTION =
-  `Contract staffing from Simple Medical Staffing: longer-term placements for sustained coverage. Call ${BUSINESS_FACTS.phoneDisplay} to request staffing.`;
+  `Contract staffing from Simple Medical Workforce Solutions: longer-term placements for sustained coverage. Call ${BUSINESS_FACTS.phoneDisplay} to request staffing.`;
 
 export const metadata = pageMetadata({ path: PATH, title: TITLE, description: DESCRIPTION });
 

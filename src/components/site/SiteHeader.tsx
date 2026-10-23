@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { KindredWordmark } from "./KindredWordmark";
 
 const NAV_LINKS = [
   { label: "Staffing Solutions", href: "/solutions" },
@@ -199,16 +200,12 @@ export function SiteHeader() {
       <div className="k-wrap flex h-[76px] items-center gap-5">
         <Link
           href="/"
-          aria-label="Simple Medical Staffing home"
+          aria-label="Simple Medical Workforce Solutions home"
           className="k-focus flex min-h-11 flex-none items-center gap-3 rounded-2xl"
           onClick={closeAll}
         >
           <Image src="/kindred/logos/kindred-mark.svg" alt="" width={44} height={44} unoptimized loading="eager" />
-          <span className="font-display text-[15px] font-extrabold leading-[1.12] tracking-[0.01em] text-k-navy">
-            Simple Medical
-            <br />
-            Staffing
-          </span>
+          <KindredWordmark className="text-[17px] text-k-navy" />
         </Link>
 
         <nav aria-label="Primary" className="ml-auto hidden items-center gap-0.5 lg:flex">

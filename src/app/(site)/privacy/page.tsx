@@ -6,7 +6,7 @@ import { documentTitle, pageMetadata } from "@/lib/seo";
 
 const PATH = "/privacy/";
 const TITLE = "Privacy";
-const DESCRIPTION = "Privacy information for the Simple Medical Staffing public website.";
+const DESCRIPTION = "Privacy information for the Simple Medical Workforce Solutions public website.";
 
 export const metadata = pageMetadata({ path: PATH, title: TITLE, description: DESCRIPTION });
 
@@ -42,7 +42,7 @@ export default function PrivacyPage() {
           <div className="k-marker">
             <h2 className="k-h3 text-[1.35rem]">A simple public website</h2>
             <p className="k-body mt-3">
-              This website provides information about Simple Medical Staffing. It does not currently accept online
+              This website provides information about Simple Medical Workforce Solutions. It does not currently accept online
               applications, upload documents, create user accounts, or use advertising trackers.
             </p>
           </div>
@@ -66,7 +66,7 @@ export default function PrivacyPage() {
             <h2 className="k-h3 text-[1.35rem]">Questions</h2>
             <p className="k-body mt-3">
               Call {BUSINESS_FACTS.phoneDisplay} or email {BUSINESS_FACTS.email} with questions about this notice or the
-              information you provided directly to Simple Medical Staffing.
+              information you provided directly to Simple Medical Workforce Solutions.
             </p>
           </div>
         </div>

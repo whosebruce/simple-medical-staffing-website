@@ -41,14 +41,17 @@ html,body{margin:0;width:1200px;height:630px;overflow:hidden}
 .row{display:flex;align-items:center;gap:34px}
 .markbox{width:128px;height:128px;border-radius:26px;background:#fff;display:flex;align-items:center;justify-content:center;flex:none}
 .markbox svg{width:96px;height:96px}
-.name{font-family:Montserrat,sans-serif;font-weight:800;font-size:64px;line-height:1.08;letter-spacing:-0.02em}
+.name{display:inline-flex;flex-direction:column;align-items:stretch;font-family:Montserrat,sans-serif;font-size:66px;line-height:1;text-transform:uppercase}
+.name .top{font-weight:800;letter-spacing:.01em;white-space:nowrap}
+.name .line{margin-top:.22em;height:.09em;background:#35b39b}
+.name .sub{margin-top:.42em;margin-right:-.26em;font-size:.53em;font-weight:700;letter-spacing:.26em;white-space:nowrap}
 .tag{margin-top:34px;font-family:Montserrat,sans-serif;font-weight:700;font-size:34px;line-height:1.25;color:#c9dcf2;max-width:900px}
 .services{margin-top:30px;font-size:26px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#8fbfea}
 .rule{position:absolute;left:0;bottom:0;height:14px;width:100%;background:linear-gradient(90deg,#3FA5E8,#8C5FD4 55%,#35B39B)}
 </style></head><body><div class="card"><div class="c1"></div><div class="c2"></div><div class="c3"></div>
 <div class="inner">
-  <div class="row"><div class="markbox">${mark.replace(/<\?xml[^>]*>/, "")}</div><div class="name">Simple Medical<br>Staffing</div></div>
-  <div class="tag">Bringing You Success Through People.</div>
+  <div class="row"><div class="markbox">${mark.replace(/<\?xml[^>]*>/, "")}</div><div class="name"><span class="top">Simple Medical</span><span class="line"></span><span class="sub">Workforce Solutions</span></div></div>
+  <div class="tag">Building Stronger Healthcare Teams.</div>
   <div class="services">Contract &nbsp;&middot;&nbsp; Per-diem &nbsp;&middot;&nbsp; Direct placement</div>
 </div><div class="rule"></div></div></body></html>`;
 

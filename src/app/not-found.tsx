@@ -14,7 +14,7 @@ export default function NotFound() {
             <p className="k-eyebrow text-k-sky-ink">404</p>
             <h1 className="k-h1 k-h1-long">That page isn&apos;t here.</h1>
             <p className="k-body">
-              Return to the Simple Medical Staffing website to find staffing and career information.
+              Return to the Simple Medical Workforce Solutions website to find staffing and career information.
             </p>
             <Link href="/" className="k-btn-primary mt-2">
               Return Home

@@ -6,7 +6,7 @@ import { documentTitle, pageMetadata } from "@/lib/seo";
 const PATH = "/solutions/per-diem-staffing/";
 const TITLE = "Per-Diem Healthcare Staffing";
 const DESCRIPTION =
-  "Per-diem staffing from Simple Medical Staffing: shift-by-shift coverage for call-outs, census spikes, and weekend and night gaps. You tell us the gap, we look for the match, you confirm it.";
+  "Per-diem staffing from Simple Medical Workforce Solutions: shift-by-shift coverage for call-outs, census spikes, and weekend and night gaps. You tell us the gap, we look for the match, you confirm it.";
 
 export const metadata = pageMetadata({ path: PATH, title: TITLE, description: DESCRIPTION });
 

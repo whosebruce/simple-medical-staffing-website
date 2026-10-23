@@ -3,6 +3,7 @@ import Image from "next/image";
 import { BUSINESS_FACTS } from "@/lib/brand";
 import { Circle } from "./Circle";
 import { EmailText } from "./EmailText";
+import { KindredWordmark } from "./KindredWordmark";
 import { SocialLinks } from "./SocialLinks";
 
 const COLUMNS = [
@@ -55,11 +56,7 @@ export function SiteFooter() {
               <span className="flex h-14 w-14 flex-none items-center justify-center rounded-[18px] bg-white">
                 <Image src="/kindred/logos/kindred-mark.svg" alt="" width={40} height={40} unoptimized />
               </span>
-              <span className="font-display text-lg font-extrabold leading-tight">
-                Simple Medical
-                <br />
-                Staffing
-              </span>
+              <KindredWordmark className="text-[19px] text-white" />
             </Link>
             <p className="font-display text-[15.5px] font-bold text-white">&ldquo;{BUSINESS_FACTS.tagline}.&rdquo;</p>
             <p className="max-w-[340px] text-[15.5px] leading-relaxed text-k-frost">
@@ -114,7 +111,7 @@ export function SiteFooter() {
             Healthcare staffing with a human connection
           </p>
           <p className="max-w-[460px] lg:justify-self-end lg:text-right">
-            Images on this site are illustrative and do not show actual Simple Medical Staffing staff, healthcare
+            Images on this site are illustrative and do not show actual Simple Medical Workforce Solutions staff, healthcare
             professionals, or client facilities.
           </p>
         </div>

@@ -10,7 +10,7 @@ import { documentTitle, pageMetadata } from "@/lib/seo";
 const PATH = "/apply/";
 const TITLE = "Apply Now";
 const DESCRIPTION =
-  "Express interest in per-diem, contract, or permanent healthcare roles with Simple Medical Staffing by phone or email. Our online application is being rebuilt; please do not email sensitive documents.";
+  "Express interest in per-diem, contract, or permanent healthcare roles with Simple Medical Workforce Solutions by phone or email. Our online application is being rebuilt; please do not email sensitive documents.";
 
 export const metadata = pageMetadata({ path: PATH, title: TITLE, description: DESCRIPTION });
 

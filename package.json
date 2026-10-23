@@ -2,7 +2,7 @@
   "name": "simple-medical-staffing-website",
   "version": "0.1.0",
   "private": true,
-  "description": "Public marketing website for Simple Medical Staffing.",
+  "description": "Public marketing website for Simple Medical Workforce Solutions.",
   "scripts": {
     "dev": "next dev -H 127.0.0.1 -p 3180",
     "typecheck": "tsc --noEmit",
