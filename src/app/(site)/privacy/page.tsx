@@ -148,9 +148,7 @@ export default function PrivacyPage() {
                 {BUSINESS_FACTS.phoneDisplay}
               </a>{" "}
               or emailing{" "}
-              <a href={`mailto:${BUSINESS_FACTS.email}`} className={`${link} break-words`}>
-                {BUSINESS_FACTS.email}
-              </a>
+              <span className="break-words font-semibold">{BUSINESS_FACTS.email}</span>
               . We confirm it&apos;s you before we act, and we answer within 45 days. California residents have these rights under
               California law, and we won&apos;t treat you differently for using them.
             </p>

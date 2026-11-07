@@ -41,9 +41,7 @@ export default function SupportPage() {
               {BUSINESS_FACTS.phoneDisplay}
             </a>{" "}
             or email{" "}
-            <a href={`mailto:${BUSINESS_FACTS.email}`} className={`${link} break-words`}>
-              {BUSINESS_FACTS.email}
-            </a>
+            <span className="break-words font-semibold">{BUSINESS_FACTS.email}</span>
             .
           </p>
         </div>
