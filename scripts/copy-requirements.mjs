@@ -28,6 +28,7 @@ export const PUBLIC_ROUTES = [
   "/apply",
   "/app",
   "/privacy",
+  "/support",
 ];
 
 export const REQUIREMENTS = [
@@ -188,21 +189,29 @@ export const REQUIREMENTS = [
     present: [APPLICATION_CONTACT, "Email · Applications", `href="mailto:${APPLICATION_CONTACT}"`],
     absent: [`mailto:${APPLICATION_CONTACT}?`],
   },
-  // BM-20260925-33: the Privacy Statement and Terms and Conditions review
-  // drafts (TASK-20260923-14) are held until Bruce approves publishing them.
-  // /privacy stays the existing website privacy notice, and no Terms page is
-  // published or linked (SITEWIDE_ABSENT L02, verify-copy L03).
+  // 2026-11-07 (App Store submission): /privacy is the privacy policy for the
+  // website AND the SMWS app (the App Store listing and the app link here), and
+  // /support is the app's help page. Still no Terms page (SITEWIDE_ABSENT L02).
   {
     id: "L01",
-    title: "Privacy is the existing website privacy notice, not a review draft",
+    title: "Privacy is the in-effect policy for the website and the SMWS app, not a review draft",
     route: "/privacy",
     present: [
-      "Website Privacy Notice",
-      "A simple public website",
-      "It does not currently accept online applications, upload documents, create user accounts, or use advertising trackers.",
-      "Do not send patient information, medical records, Social Security numbers, license images, or other sensitive documents through ordinary email.",
+      "Privacy Policy",
+      "Covers this website and the SMWS app.",
+      "operated by True Spirit, LLC",
+      "We do not sell your personal information or share it for advertising.",
+      "We delete your account within 30 days.",
+      "The app does not collect your location, contacts or browsing activity",
     ],
-    absent: ["Review draft", "Not Approved", "Not Binding", "For client and counsel review"],
+    absent: ["Review draft", "Not Approved", "Not Binding", "For client and counsel review", "Website Privacy Notice", "It does not currently accept online applications"],
+  },
+  {
+    id: "L04",
+    title: "Help page: the app's sign-in code and in-app account deletion",
+    route: "/support",
+    present: ["Help With the SMWS App", "Email Me a Sign-In Code", "Delete My Account", "We delete your account within 30 days."],
+    absent: ["Review draft"],
   },
   // BM-20260925-33 review: the home "still building" note gives the phone and
   // email to use now (tel link plus plain-text address, no second mailto).
@@ -350,6 +359,7 @@ export const ROUTE_LABELS = {
   "/apply": ["Apply Now"],
   "/app": ["Apply Now", "Talk to Our Team"],
   "/privacy": ["Apply Now"],
+  "/support": ["Apply Now"],
 };
 
 /** Per-page meta descriptions (unique per page; substring that must be present). */

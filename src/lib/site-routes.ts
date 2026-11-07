@@ -26,6 +26,7 @@ export const PUBLIC_ROUTES: readonly PublicRoute[] = [
   { path: "/apply/", label: "Apply Now", parent: "/" },
   { path: "/app/", label: "The App", parent: "/" },
   { path: "/privacy/", label: "Privacy", parent: "/" },
+  { path: "/support/", label: "Help", parent: "/" },
 ] as const;
 
 /** Paths listed in sitemap.xml: every indexable canonical page, in this order. */

@@ -33,6 +33,7 @@ const COLUMNS = [
       { label: "About Us", href: "/about" },
       { label: "Contact", href: "/contact" },
       { label: "Privacy", href: "/privacy" },
+      { label: "Help", href: "/support" },
     ],
   },
 ] as const;
