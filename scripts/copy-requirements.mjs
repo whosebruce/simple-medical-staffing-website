@@ -12,6 +12,18 @@
 
 export const APPLICATION_CONTACT = "info@simplemedicalstaffing.com";
 
+/**
+ * The live web app (src/lib/app-links.ts). Bruce, 2026-11-08: online
+ * applications are on, Sign In sits in the header and footer, and every
+ * "Apply Now" goes straight to the app's application. With the two social
+ * profiles these are the only outside links (scripts/verify-site.mjs); they
+ * open in the same tab.
+ */
+export const APP_LINKS = {
+  signIn: "https://app.simplemedicalstaffing.com/account/sign-in",
+  apply: "https://app.simplemedicalstaffing.com/apply",
+};
+
 // Every indexable canonical route (mirrors src/lib/site-routes.ts, which the
 // site verifier cross-checks against sitemap.xml).
 export const PUBLIC_ROUTES = [
@@ -213,16 +225,57 @@ export const REQUIREMENTS = [
     present: ["Help With the SMWS App", "Email Me a Sign-In Code", "Delete My Account", "We delete your account within 30 days."],
     absent: ["Review draft"],
   },
-  // BM-20260925-33 review: the home "still building" note gives the phone and
+  // BM-20260925-33 review: the home note under the hero gives the phone and
   // email to use now (tel link plus plain-text address, no second mailto).
+  // 2026-11-08 (web app open, Bruce): it no longer says the platform is
+  // "still being built"; it says professionals can apply and sign in online.
   {
     id: "H01",
-    title: "Home 'still building' note names how to reach the team now",
+    title: "Home note: professionals apply and sign in online; the phone and email for everything else",
     route: "/",
     present: [
-      "Our online platform for facilities and professionals is still being built. For now, our team handles every request directly: call",
+      "Healthcare professionals can now apply and sign in online in",
+      ">our web app</a>. For staffing requests and anything else, call",
     ],
-    absent: ["every request directly by phone and email"],
+    absent: ["still being built", "For now, our team handles every request directly", "every request directly by phone and email"],
+  },
+  // 2026-11-08 (Bruce): online applications are on. /apply stays for old
+  // links: one button into the app's application, then the phone and email,
+  // with the sensitive-documents caution. The app's /apply has no
+  // save-and-finish-later, so the page doesn't promise one.
+  {
+    id: "A01",
+    title: "Apply page: Start Your Application in the app, phone and email as the other way in",
+    route: "/apply",
+    present: [
+      "Apply online in our app. Start with a short application: the basics and the role you want. If it looks like a fit, we'll email you a private link to complete your full application.",
+      `href="${APP_LINKS.apply}"`,
+      "Start Your Application",
+      "Prefer to talk first? Call or email our team.",
+      "Please do not email medical records, Social Security numbers, license images, patient information, or other sensitive documents.",
+    ],
+    absent: ["being rebuilt", "when the new application process is ready", "Call or email to express interest"],
+  },
+  {
+    id: "A02",
+    title: "App page: the web app is open now (Sign In on the Web); the iPhone app is coming to the App Store soon",
+    route: "/app",
+    present: [
+      "Open now",
+      "Our web app is open now for healthcare professionals and our office team.",
+      "Sign In on the Web",
+      `href="${APP_LINKS.signIn}"`,
+      "What you can do in your web browser now",
+      "The iPhone app is coming to the App Store soon.",
+    ],
+    absent: ["Coming soon", "almost ready", "When it opens", "What you'll be able to do", "You don't have to wait for the app", "apps.apple.com"],
+  },
+  {
+    id: "A03",
+    title: "Candidate FAQ: how to apply online",
+    route: "/professionals/faq",
+    present: ["Apply online. Start with a short", "If it looks like a fit, we'll email you a private link to complete your full application."],
+    absent: ["being rebuilt", "for now the way in is a call or an email"],
   },
 ];
 
@@ -272,6 +325,16 @@ export const SITEWIDE_PRESENT = [
     ],
   },
   {
+    id: "N02",
+    title: "Sign In to the web app in the header (utility row, bar, menu) and footer (2026-11-08)",
+    present: [
+      `href="${APP_LINKS.signIn}" data-site-sign-in="utility"`,
+      `href="${APP_LINKS.signIn}" data-site-sign-in="inline"`,
+      `href="${APP_LINKS.signIn}" data-site-sign-in="menu"`,
+      "Staff and Professionals",
+    ],
+  },
+  {
     id: "N01",
     title: "Header disclosure buttons for the two audience parents (TASK-20260923-14)",
     present: [
@@ -292,6 +355,12 @@ export const SITEWIDE_ABSENT = [
   { id: "S02", title: "No plain-text 'Instagram @handle' line sitewide", pattern: /Instagram @/ },
   // BM-20260925-33: the legal review drafts are held for owner approval.
   { id: "L02", title: "No Terms page link or legal review-draft wording sitewide", pattern: /\/terms\/|Terms and Conditions|review draft/i },
+  // 2026-11-08: the web app and online applications are open.
+  {
+    id: "A04",
+    title: "No 'being rebuilt' / 'coming soon' / 'almost ready' / 'still being built' wording sitewide",
+    pattern: /being rebuilt|new application process is ready|almost ready|coming soon|still being built/i,
+  },
 ];
 
 // ---------------------------------------------------------------------------
@@ -314,6 +383,10 @@ export const CANONICAL_ACTION_LABELS = [
   "Skip to Content",
   "Open Navigation",
   "Close Navigation",
+  // 2026-11-08: the web app (Sign In, Start Your Application, Sign In on the Web).
+  "Sign In",
+  "Start Your Application",
+  "Sign In on the Web",
   // TASK-20260917-07 service pages, checklist and FAQ.
   "More About Contract Staffing",
   "More About Per-Diem Staffing",
@@ -341,6 +414,8 @@ export const RETIRED_LABEL_VARIANTS = [
   /\bMore about direct placement\b/,
   /\bSee the staffing request checklist\b/,
   /\bAll staffing solutions\b/,
+  /\bStart your application\b/,
+  /\bSign in on the web\b/,
 ];
 
 const SERVICE_PAGE_LABELS = ["Apply Now", "Request Staffing", "See How It Works", "All Staffing Solutions"];
@@ -356,8 +431,8 @@ export const ROUTE_LABELS = {
   "/professionals/faq": ["Apply Now", "Talk to Our Team"],
   "/about": ["Apply Now", "Work With Us"],
   "/contact": ["Apply Now", "See Application Options", "See the Staffing Request Checklist"],
-  "/apply": ["Apply Now"],
-  "/app": ["Apply Now", "Talk to Our Team"],
+  "/apply": ["Apply Now", "Start Your Application"],
+  "/app": ["Sign In on the Web", "Apply Now", "Talk to Our Team"],
   "/privacy": ["Apply Now"],
   "/support": ["Apply Now"],
 };
@@ -373,6 +448,6 @@ export const PAGE_DESCRIPTIONS = {
   "/professionals/faq": "Answers for healthcare professionals considering Simple Medical Workforce Solutions",
   "/about": "Meet founder and CEO Dina Casares.",
   "/contact": "Call +1 (760) 536-2178 or email info@simplemedicalstaffing.com",
-  "/app": "The Simple Medical Workforce Solutions app for healthcare professionals is coming soon",
-  "/apply": "Express interest in per-diem, contract, or permanent healthcare roles with Simple Medical Workforce Solutions by phone or email.",
+  "/app": "The Simple Medical Workforce Solutions web app is open now for healthcare professionals and our office team",
+  "/apply": "Apply online for per-diem, contract, or permanent healthcare roles with Simple Medical Workforce Solutions, or reach our team by phone or email.",
 };

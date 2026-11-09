@@ -14,7 +14,7 @@
 import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
-import { PUBLIC_ROUTES, SOCIAL_LINKS } from "./copy-requirements.mjs";
+import { APP_LINKS, PUBLIC_ROUTES, SOCIAL_LINKS } from "./copy-requirements.mjs";
 
 const root = process.cwd();
 const docs = path.join(root, "docs");
@@ -158,18 +158,23 @@ for (const file of htmlFiles) {
   }
 }
 
-// 3b. Outbound links (TASK-20260923-14): the only absolute links on any page
-// are the two social profile icons, each opening a new tab without a
-// referrer, and every canonical page carries both. A public profile match is
-// not proof of ownership; the owner confirms the accounts before release.
+// 3b. Outbound links (TASK-20260923-14, widened 2026-11-08): the only
+// absolute links on any page are the two social profile icons, each opening a
+// new tab without a referrer, and the web app's sign-in and application
+// (APP_LINKS), which open in the same tab. Every canonical page carries all
+// four (the app links through the header and footer). A public profile match
+// is not proof of ownership; the owner confirms the accounts before release.
 {
+  const APP_URLS = Object.values(APP_LINKS);
   for (const file of htmlFiles) {
     const rel = path.relative(root, file);
     const anchors = [...read(file).matchAll(/<a\b[^>]*>/gi)].map((m) => m[0]);
     for (const a of anchors) {
       const href = attr(a, /\bhref="([^"]*)"/);
       if (!href || !/^https?:/i.test(href)) continue;
-      if (!SOCIAL_LINKS.includes(href)) fail(`${rel} links to an unlisted outside URL ${href}`);
+      if (APP_URLS.includes(href)) {
+        if (/\btarget=/.test(a)) fail(`${rel} app link ${href} must open in the same tab (no target)`);
+      } else if (!SOCIAL_LINKS.includes(href)) fail(`${rel} links to an unlisted outside URL ${href}`);
       else if (!/\btarget="_blank"/.test(a) || !/\brel="noopener noreferrer"/.test(a)) {
         fail(`${rel} social link ${href} lacks target="_blank" rel="noopener noreferrer"`);
       }
@@ -179,8 +184,8 @@ for (const file of htmlFiles) {
     const file = pageFile(route);
     if (!fs.existsSync(file)) continue;
     const html = read(file);
-    for (const url of SOCIAL_LINKS) {
-      if (!html.includes(`href="${url}"`)) fail(`${path.relative(root, file)} lacks the social link ${url}`);
+    for (const url of [...SOCIAL_LINKS, ...APP_URLS]) {
+      if (!html.includes(`href="${url}"`)) fail(`${path.relative(root, file)} lacks the link ${url}`);
     }
   }
 }

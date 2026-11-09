@@ -25,6 +25,10 @@ const CATEGORIES = Object.freeze([
   "nav-group-escape",
   "nav-group-outside",
   "social-links",
+  // 2026-11-08: Sign In and Apply Now to the web app.
+  "app-links",
+  "sign-in-hidden",
+  "menu-sign-in",
   "harness-error",
 ]);
 

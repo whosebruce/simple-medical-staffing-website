@@ -7,6 +7,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import {
+  APP_LINKS,
   APPLICATION_CONTACT,
   CANONICAL_ACTION_LABELS,
   HELD_LEGAL_ROUTES,
@@ -87,23 +88,45 @@ for (const rule of SITEWIDE_ABSENT) {
   results.push({ id: rule.id, title: rule.title, route: "*", pass, hits });
 }
 
-// Application destination: every public route's "Apply now" action resolves
-// to /apply/, and /apply/ carries exactly one static mailto: contact link to
-// the real address (no query/body data), the only mailto on the site
-// (scripts/verify-site.mjs enforces the sitewide half).
+// Application destination (2026-11-08, online applications on): every
+// "Apply Now" and "Start Your Application" action goes to the web app's
+// application, every "Sign In" and "Sign In on the Web" to its sign-in, and
+// "See Application Options" stays on this site's /apply/. Every route carries
+// at least one Apply Now and one Sign In (the header). /apply/ carries exactly
+// one static mailto: contact link to the real address (no query/body data),
+// the only mailto on the site (scripts/verify-site.mjs enforces the sitewide
+// half).
+const LINK_DESTINATIONS = {
+  "Apply Now": APP_LINKS.apply,
+  "Start Your Application": APP_LINKS.apply,
+  "Sign In": APP_LINKS.signIn,
+  "Sign In on the Web": APP_LINKS.signIn,
+  "See Application Options": "/apply/",
+};
 for (const route of PUBLIC_ROUTES) {
   const text = decode(fs.readFileSync(pageFile(route), "utf8"));
-  const applyLinks = [...text.matchAll(/<a[^>]+href="([^"]*)"[^>]*>\s*Apply Now\s*<\/a>/g)];
-  const wrong = applyLinks.map((m) => m[1]).filter((href) => href !== "/apply/");
-  const pass = wrong.length === 0;
+  const anchors = [...text.matchAll(/<a\b([^>]*)>([\s\S]*?)<\/a>/gi)].map((m) => ({
+    href: m[1].match(/\bhref="([^"]*)"/)?.[1] ?? null,
+    label: m[2].replace(/<[^>]+>/g, "").replace(/→/g, "").replace(/\s+/g, " ").trim(),
+  }));
+  const counted = Object.fromEntries(Object.keys(LINK_DESTINATIONS).map((l) => [l, 0]));
+  const wrong = [];
+  for (const a of anchors) {
+    if (!(a.label in LINK_DESTINATIONS)) continue;
+    counted[a.label] += 1;
+    if (a.href !== LINK_DESTINATIONS[a.label]) wrong.push(`${a.label} -> ${a.href}`);
+  }
+  const absent = ["Apply Now", "Sign In"].filter((l) => counted[l] === 0);
+  const pass = wrong.length === 0 && absent.length === 0;
   if (!pass) failures += 1;
   results.push({
     id: "R13-link",
-    title: "Apply Now actions resolve to /apply/",
+    title: "Apply Now / Start Your Application go to the app's application, Sign In to its sign-in, See Application Options to /apply/",
     route,
     pass,
-    applyLinks: applyLinks.length,
+    counted,
     wrong,
+    missing: absent,
   });
 }
 {

@@ -7,7 +7,9 @@
 // Per route/width: HTTP 200, no page/console errors, no failed requests, no
 // horizontal overflow, no broken images, no forms/uploads, only the permitted
 // mailto on /apply/, canonical, one H1, keyboard focus visible, mobile menu
-// opens/closes, every internal link resolves to 200 on this server, and
+// opens/closes (with its Sign In row), a visible header Sign In, outside links
+// limited to the social icons and the web app's sign-in and application
+// (same tab), every internal link resolves to 200 on this server, and
 // screenshots. Legacy stubs: served 200, noindex, canonical + refresh target
 // reachable and not itself a redirect; the browser follows the refresh to the
 // target (non-looping).
@@ -37,7 +39,13 @@ const ROUTES = [
   "/apply/",
   "/app/",
   "/privacy/",
+  "/support/",
 ];
+// 2026-11-08: Sign In and every Apply Now go to the live web app, in the same tab.
+const APP_LINKS = {
+  signIn: "https://app.simplemedicalstaffing.com/account/sign-in",
+  apply: "https://app.simplemedicalstaffing.com/apply",
+};
 // TASK-20260923-14: the audience disclosure groups in the header (the same
 // lists at every width; a panel from 1024px, an inline menu group below).
 const NAV_GROUPS = [
@@ -57,7 +65,7 @@ const NAV_GROUPS = [
     parent: ["For Professionals", "/professionals/"],
     links: [
       ["Candidate FAQ", "/professionals/faq/"],
-      ["Apply Now", "/apply/"],
+      ["Apply Now", APP_LINKS.apply],
     ],
   },
 ];
@@ -189,6 +197,11 @@ async function main() {
             breadcrumb: document.querySelector('nav[aria-label="Breadcrumb"]')?.innerText.replace(/\s+/g, " ").trim() ?? null,
             emDashes: (document.body.innerText.match(/—/g) || []).length,
             headerLogoLoading: document.querySelector("header img")?.getAttribute("loading"),
+            // The header's Sign In that shows at this width (utility row below 1280, bar from 1280).
+            signInVisible: [...document.querySelectorAll("header a[data-site-sign-in]")].some((a) => {
+              const r = a.getBoundingClientRect();
+              return a.getAttribute("data-site-sign-in") !== "menu" && r.width > 0 && r.height >= 44 && r.left >= 0 && r.right <= innerWidth && r.top >= 0;
+            }),
             outbound: [...document.querySelectorAll("a[href^='http']")].map((a) => {
               const r = a.getBoundingClientRect();
               return {
@@ -202,23 +215,32 @@ async function main() {
               };
             }),
           }));
-          // TASK-20260923-14: exactly the two social icon links leave the site,
-          // each named, 44px, opening a new tab without a referrer.
+          // TASK-20260923-14: the two social icon links (four on /contact/),
+          // each named, 44px, opening a new tab without a referrer. 2026-11-08:
+          // every other outside link is the web app's sign-in or application,
+          // in the same tab, and each page links both.
           const expectedSocial = route === "/contact/" ? 4 : 2;
+          const appUrls = Object.values(APP_LINKS);
+          const social = data.outbound.filter((o) => !appUrls.includes(o.href));
+          const app = data.outbound.filter((o) => appUrls.includes(o.href));
           const socialOk =
-            data.outbound.length === expectedSocial &&
-            data.outbound.every(
+            social.length === expectedSocial &&
+            social.every(
               (o) =>
                 SOCIAL.some(([href, label]) => o.href === href && o.label === label) &&
                 o.target === "_blank" && o.rel === "noopener noreferrer" && o.w >= 44 && o.h >= 44 && o.glyph,
             );
           if (!socialOk) sink.add("social-links");
+          if (!appUrls.every((u) => app.some((o) => o.href === u)) || app.some((o) => o.target !== null)) sink.add("app-links");
+          if (!data.signInVisible) sink.add("sign-in-hidden");
           if (width < 1024) {
             const toggle = page.getByRole("button", { name: "Open Navigation" });
             await toggle.click();
             if ((await page.getByRole("button", { name: "Close Navigation" }).getAttribute("aria-expanded")) !== "true") sink.add("menu-open-failed");
             const menuLinks = await page.locator("#site-menu a").count();
             if (menuLinks < 6) sink.add("menu-links-missing");
+            const menuSignIn = page.locator(`#site-menu a[href="${APP_LINKS.signIn}"]`);
+            if ((await menuSignIn.count()) !== 1 || !(await menuSignIn.isVisible())) sink.add("menu-sign-in");
             await page.getByRole("button", { name: "Close Navigation" }).click();
             if ((await page.getByRole("button", { name: "Open Navigation" }).getAttribute("aria-expanded")) !== "false") sink.add("menu-close-failed");
           }
