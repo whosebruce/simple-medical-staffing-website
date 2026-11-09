@@ -6,13 +6,14 @@ import { Photo } from "@/components/site/Photo";
 import { RoleCloud } from "@/components/site/RoleCloud";
 import { StructuredData } from "@/components/site/StructuredData";
 import { Wave } from "@/components/site/Wave";
+import { APP_LINKS } from "@/lib/app-links";
 import { BUSINESS_FACTS } from "@/lib/brand";
 import { documentTitle, pageMetadata } from "@/lib/seo";
 
 const PATH = "/professionals/faq/";
 const TITLE = "Candidate FAQ for Healthcare Professionals";
 const DESCRIPTION =
-  "Answers for healthcare professionals considering Simple Medical Workforce Solutions: how to express interest, the kinds of work available, the roles we place, and what to expect from your coordinator.";
+  "Answers for healthcare professionals considering Simple Medical Workforce Solutions: how to apply, the kinds of work available, the roles we place, and what to expect from your coordinator.";
 
 export const metadata = pageMetadata({ path: PATH, title: TITLE, description: DESCRIPTION });
 
@@ -25,12 +26,17 @@ const GETTING_STARTED: Faq[] = [
     q: "How do I apply?",
     a: (
       <>
-        Our online application is being rebuilt, so for now the way in is a call or an email. Call {BUSINESS_FACTS.phoneDisplay} or
-        email {BUSINESS_FACTS.email} to express interest, and a coordinator will explain the secure next steps. The{" "}
+        Apply online. Start with a short{" "}
+        <a href={APP_LINKS.apply} className={link}>
+          online application
+        </a>
+        : the basics and the role you want. If it looks like a fit, we&apos;ll email you a private link to complete your full
+        application. You can also call {BUSINESS_FACTS.phoneDisplay} or email {BUSINESS_FACTS.email}, and a coordinator will
+        help. The{" "}
         <Link href="/apply" className={link}>
           application options
         </Link>{" "}
-        page has both contact details in one place.
+        page has every way in one place.
       </>
     ),
   },
@@ -169,9 +175,9 @@ export default function CandidateFaqPage() {
               question is not here, call or email and ask a real person.
             </p>
             <div className="mt-2 flex flex-wrap gap-3.5">
-              <Link href="/apply" className="k-btn-primary">
+              <a href={APP_LINKS.apply} className="k-btn-primary">
                 Apply Now
-              </Link>
+              </a>
               <Link href="/contact" className="k-btn-outline">
                 Talk to Our Team
               </Link>
@@ -205,9 +211,9 @@ export default function CandidateFaqPage() {
       </section>
 
       <ClosingPanel heading="Bring your skills. We'll bring the right place to use them.">
-        <Link href="/apply" className="k-btn-primary">
+        <a href={APP_LINKS.apply} className="k-btn-primary">
           Apply Now
-        </Link>
+        </a>
         <Link href="/professionals" className="k-btn-on-dark">
           For Professionals
         </Link>

@@ -3,14 +3,19 @@ import Link from "next/link";
 import { EmailText } from "@/components/site/EmailText";
 import { Photo } from "@/components/site/Photo";
 import { StructuredData } from "@/components/site/StructuredData";
+import { APP_LINKS } from "@/lib/app-links";
 import { BUSINESS_FACTS } from "@/lib/brand";
 import { KINDRED_GRADIENTS } from "@/lib/kindred-gradients";
 import { documentTitle, pageMetadata } from "@/lib/seo";
 
+// Online applications are on (Bruce, 2026-11-08). Every Apply Now on the site goes straight to the web app's
+// application; this page stays for old links: one button into the app, and the phone and email as the other way
+// in. The two-step wording is the app's own (/apply: a short application, then a private link by email); it has
+// no save-and-finish-later, so the page doesn't promise one.
 const PATH = "/apply/";
 const TITLE = "Apply Now";
 const DESCRIPTION =
-  "Express interest in per-diem, contract, or permanent healthcare roles with Simple Medical Workforce Solutions by phone or email. Our online application is being rebuilt; please do not email sensitive documents.";
+  "Apply online for per-diem, contract, or permanent healthcare roles with Simple Medical Workforce Solutions, or reach our team by phone or email. Please do not email sensitive documents.";
 
 export const metadata = pageMetadata({ path: PATH, title: TITLE, description: DESCRIPTION });
 
@@ -29,46 +34,51 @@ export default function ApplyPage() {
             <p className="k-eyebrow k-eyebrow-violet text-k-violet-ink">Healthcare professionals</p>
             <h1 className="k-h1 k-h1-long">Let&apos;s talk about your next role.</h1>
             <p className="k-body">
-              Our online application is being rebuilt. Call or email to express interest; please do not send application
-              documents or sensitive records by email.
+              Apply online in our app. Start with a short application: the basics and the role you want. If it looks like a
+              fit, we&apos;ll email you a private link to complete your full application.
             </p>
+            <a href={APP_LINKS.apply} className="k-btn-primary mt-1">
+              Start Your Application
+            </a>
           </div>
-          <div className="k-hairlist border-y border-k-line">
-            <div className="flex items-center gap-5 py-5">
-              <span aria-hidden className="k-glyph hidden h-11 w-11 sm:block" style={{ background: KINDRED_GRADIENTS["sky-violet"] }} />
-              <div className="flex min-w-0 flex-col items-start gap-1">
-                <p className="k-eyebrow k-eyebrow-plain text-k-muted">Call</p>
-                <a
-                  href={`tel:${BUSINESS_FACTS.phoneTel}`}
-                  className="k-focus inline-flex min-h-11 items-center font-display text-xl font-extrabold text-k-navy underline decoration-k-sky decoration-2 underline-offset-[6px]"
-                >
-                  {BUSINESS_FACTS.phoneDisplay}
-                </a>
+          <div className="flex flex-col gap-2">
+            <p className="k-body">Prefer to talk first? Call or email our team.</p>
+            <div className="k-hairlist border-y border-k-line">
+              <div className="flex items-center gap-5 py-5">
+                <span aria-hidden className="k-glyph hidden h-11 w-11 sm:block" style={{ background: KINDRED_GRADIENTS["sky-violet"] }} />
+                <div className="flex min-w-0 flex-col items-start gap-1">
+                  <p className="k-eyebrow k-eyebrow-plain text-k-muted">Call</p>
+                  <a
+                    href={`tel:${BUSINESS_FACTS.phoneTel}`}
+                    className="k-focus inline-flex min-h-11 items-center font-display text-xl font-extrabold text-k-navy underline decoration-k-sky decoration-2 underline-offset-[6px]"
+                  >
+                    {BUSINESS_FACTS.phoneDisplay}
+                  </a>
+                </div>
               </div>
-            </div>
-            <div className="flex items-center gap-5 py-5">
-              <span
-                aria-hidden
-                className="k-glyph k-glyph-sq hidden h-11 w-11 rounded-[14px] sm:block"
-                style={{ background: KINDRED_GRADIENTS["violet-sky"] }}
-              />
-              <div className="flex min-w-0 flex-col items-start gap-1">
-                <p className="k-eyebrow k-eyebrow-plain text-k-muted">Email · Applications</p>
-                {/* The one owner-authorized contact link on the public site: a static
-                    mailto with no subject, body or query data (RESTORATION.md). */}
-                <a
-                  href={`mailto:${BUSINESS_FACTS.email}`}
-                  className="k-focus inline-flex min-h-11 items-center font-bold text-k-navy underline decoration-k-violet decoration-2 underline-offset-[6px]"
-                >
-                  <EmailText />
-                </a>
+              <div className="flex items-center gap-5 py-5">
+                <span
+                  aria-hidden
+                  className="k-glyph k-glyph-sq hidden h-11 w-11 rounded-[14px] sm:block"
+                  style={{ background: KINDRED_GRADIENTS["violet-sky"] }}
+                />
+                <div className="flex min-w-0 flex-col items-start gap-1">
+                  <p className="k-eyebrow k-eyebrow-plain text-k-muted">Email · Applications</p>
+                  {/* The one owner-authorized contact link on the public site: a static
+                      mailto with no subject, body or query data (RESTORATION.md). */}
+                  <a
+                    href={`mailto:${BUSINESS_FACTS.email}`}
+                    className="k-focus inline-flex min-h-11 items-center font-bold text-k-navy underline decoration-k-violet decoration-2 underline-offset-[6px]"
+                  >
+                    <EmailText />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
           <p className="k-small rounded-[24px] bg-k-teal-tint px-5 py-4 text-k-navy">
             Please do not email medical records, Social Security numbers, license images, patient information, or other
-            sensitive documents. A coordinator will explain the secure next steps when the new application process is
-            ready.
+            sensitive documents. Your coordinator will explain the secure way to share anything else we need.
           </p>
           <p className="k-small">
             Questions about the kinds of work, the roles we place, or what happens before your first day are answered in the{" "}

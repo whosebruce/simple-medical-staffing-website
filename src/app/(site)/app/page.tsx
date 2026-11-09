@@ -2,18 +2,20 @@ import Image from "next/image";
 import Link from "next/link";
 import { Photo } from "@/components/site/Photo";
 import { StructuredData } from "@/components/site/StructuredData";
+import { APP_LINKS } from "@/lib/app-links";
 import { KINDRED_GRADIENTS } from "@/lib/kindred-gradients";
 import { documentTitle, pageMetadata } from "@/lib/seo";
 
 // simplemedicalstaffing.com/app (Bruce, 2026-10-01): the address Dina and Rod give professionals for the app.
-// The app itself will run at app.simplemedicalstaffing.com and on iPhone; until it opens this page says so and
-// points to the ways to work with us today. At launch, add the App Store and "Open in Your Browser" links here
-// (and list both outside URLs in scripts/verify-site.mjs, which refuses unlisted ones).
+// The web app is open at app.simplemedicalstaffing.com (Bruce, 2026-11-08): this page sends professionals and
+// the office team to its sign-in. The iPhone app is "coming to the App Store soon", with no date and no store
+// badge or link until it is live; then add its App Store link here (and list the URL in src/lib/app-links.ts and
+// scripts/copy-requirements.mjs APP_LINKS, which scripts/verify-site.mjs reads).
 
 const PATH = "/app/";
 const TITLE = "The App";
 const DESCRIPTION =
-  "The Simple Medical Workforce Solutions app for healthcare professionals is coming soon: open shifts with their pay, your schedule, clocking in and out, and what you earned each week.";
+  "The Simple Medical Workforce Solutions web app is open now for healthcare professionals and our office team: open shifts with their pay, your schedule, clocking in and out, and what you earned each week.";
 
 export const metadata = pageMetadata({ path: PATH, title: TITLE, description: DESCRIPTION });
 
@@ -37,15 +39,19 @@ export default function AppPage() {
         <div className="flex flex-col gap-7 rounded-[clamp(32px,4vw,48px)] border border-k-line bg-white p-7 shadow-[0_30px_80px_-50px_rgba(30,58,110,0.55)] sm:p-12">
           <Image src="/kindred/logos/kindred-mark.svg" alt="" width={56} height={56} unoptimized />
           <div className="flex flex-col items-start gap-4">
-            <p className="k-eyebrow k-eyebrow-violet text-k-violet-ink">Coming soon</p>
+            <p className="k-eyebrow k-eyebrow-violet text-k-violet-ink">Open now</p>
             <h1 className="k-h1 k-h1-long">The Simple Medical Workforce Solutions app.</h1>
             <p className="k-body">
-              Our app for healthcare professionals is almost ready. It will work on iPhone and in your web browser. When it
-              opens, the links to get it will be right here on this page.
+              Our web app is open now for healthcare professionals and our office team. Sign in from your web browser on a
+              phone or computer.
             </p>
+            <a href={APP_LINKS.signIn} className="k-btn-primary mt-1">
+              Sign In on the Web
+            </a>
+            <p className="k-small">The iPhone app is coming to the App Store soon.</p>
           </div>
           <div className="flex flex-col gap-1">
-            <p className="k-eyebrow k-eyebrow-plain text-k-muted">What you&apos;ll be able to do</p>
+            <p className="k-eyebrow k-eyebrow-plain text-k-muted">What you can do in your web browser now</p>
             <ul className="k-hairlist border-y border-k-line">
               {FEATURES.map((feature, i) => (
                 <li key={feature} className="flex items-center gap-5 py-4">
@@ -61,12 +67,12 @@ export default function AppPage() {
           </div>
           <div className="flex flex-col items-start gap-4">
             <p className="k-body">
-              You don&apos;t have to wait for the app to work with us. Call or email our team today to get started.
+              New to Simple Medical Workforce Solutions? Apply online, or call or email our team to get started.
             </p>
             <div className="flex flex-wrap gap-3">
-              <Link href="/apply" className="k-btn-primary">
+              <a href={APP_LINKS.apply} className="k-btn-primary">
                 Apply Now
-              </Link>
+              </a>
               <Link href="/contact" className="k-btn-outline">
                 Talk to Our Team
               </Link>

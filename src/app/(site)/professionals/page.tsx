@@ -4,6 +4,7 @@ import { Photo } from "@/components/site/Photo";
 import { RoleCloud } from "@/components/site/RoleCloud";
 import { StructuredData } from "@/components/site/StructuredData";
 import { Wave } from "@/components/site/Wave";
+import { APP_LINKS } from "@/lib/app-links";
 import { KINDRED_GRADIENTS } from "@/lib/kindred-gradients";
 import { documentTitle, pageMetadata } from "@/lib/seo";
 
@@ -54,9 +55,9 @@ export default function ProfessionalsPage() {
               connect you with opportunities that fit your experience, availability, and goals.
             </p>
             <div className="mt-2 flex flex-wrap gap-3.5">
-              <Link href="/apply" className="k-btn-primary">
+              <a href={APP_LINKS.apply} className="k-btn-primary">
                 Apply Now
-              </Link>
+              </a>
               <Link href="/contact" className="k-btn-outline">
                 Talk to Our Team
               </Link>
@@ -157,9 +158,9 @@ export default function ProfessionalsPage() {
       </section>
 
       <ClosingPanel heading="Bring your skills. We'll bring the right place to use them.">
-        <Link href="/apply" className="k-btn-primary">
+        <a href={APP_LINKS.apply} className="k-btn-primary">
           Apply Now
-        </Link>
+        </a>
       </ClosingPanel>
     </>
   );
