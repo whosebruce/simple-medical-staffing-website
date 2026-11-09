@@ -4,6 +4,7 @@ import { EmailText } from "@/components/site/EmailText";
 import { Photo } from "@/components/site/Photo";
 import { SocialLinks } from "@/components/site/SocialLinks";
 import { StructuredData } from "@/components/site/StructuredData";
+import { APP_LINKS } from "@/lib/app-links";
 import { BUSINESS_FACTS } from "@/lib/brand";
 import { documentTitle, pageMetadata } from "@/lib/seo";
 
@@ -114,9 +115,9 @@ export default function ContactPage() {
               <div className="flex flex-col items-start gap-3">
                 <p className="font-display text-xs font-bold uppercase tracking-[0.16em] text-k-mist">Ready to apply instead?</p>
                 <p className="font-display text-xl font-bold text-white">Ready to talk about your next role?</p>
-                <Link href="/apply" className="k-btn-primary mt-2">
+                <a href={APP_LINKS.apply} className="k-btn-primary mt-2">
                   Apply Now
-                </Link>
+                </a>
               </div>
             </div>
           </div>

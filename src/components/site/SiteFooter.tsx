@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { APP_LINKS } from "@/lib/app-links";
 import { BUSINESS_FACTS } from "@/lib/brand";
 import { Circle } from "./Circle";
 import { EmailText } from "./EmailText";
@@ -23,8 +24,9 @@ const COLUMNS = [
     links: [
       { label: "For Professionals", href: "/professionals" },
       { label: "Candidate FAQ", href: "/professionals/faq" },
-      { label: "Apply Now", href: "/apply" },
+      { label: "Apply Now", href: APP_LINKS.apply },
       { label: "The App", href: "/app" },
+      { label: "Sign In", href: APP_LINKS.signIn },
     ],
   },
   {
@@ -95,9 +97,16 @@ export function SiteFooter() {
                 <ul className="flex flex-col">
                   {column.links.map((link) => (
                     <li key={`${column.heading}-${link.label}`}>
-                      <Link href={link.href} className="k-footer-link">
-                        {link.label}
-                      </Link>
+                      {/* Sign In and Apply Now go to the web app (src/lib/app-links.ts): plain same-tab links. */}
+                      {/^https?:/.test(link.href) ? (
+                        <a href={link.href} className="k-footer-link">
+                          {link.label}
+                        </a>
+                      ) : (
+                        <Link href={link.href} className="k-footer-link">
+                          {link.label}
+                        </Link>
+                      )}
                     </li>
                   ))}
                 </ul>

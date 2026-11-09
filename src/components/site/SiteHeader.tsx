@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { APP_LINKS } from "@/lib/app-links";
 import { KindredWordmark } from "./KindredWordmark";
 
 const NAV_LINKS = [
@@ -22,6 +23,15 @@ const MENU_LINKS = [{ label: "Home", href: "/" }, ...NAV_LINKS] as const;
 // its pages, then its audience action on a separated row: Request Staffing
 // for facilities, Apply Now for professionals only. Button names never say
 // "menu" or "navigation" (the menu button owns those words).
+//
+// Sign In and Apply Now (Bruce, 2026-11-08) go to the live web app
+// (src/lib/app-links.ts) as plain same-tab links. Sign In is the app's
+// accepted treatment of this same header, kept secondary to the pill buttons:
+// below 1280px a 44px utility row above the bar ("Staff and Professionals ·
+// Sign In") that scrolls away (the header sticks at top: -45px, so only the
+// 76px bar stays pinned); from 1280px an underlined text link in the bar,
+// with the bar's gaps and nav padding tightened to 12px so it fits; and a row
+// in the menu below 1024px.
 type GroupId = "staffing" | "professionals";
 type NavGroup = {
   readonly id: GroupId;
@@ -46,9 +56,17 @@ const NAV_GROUPS: Readonly<Record<string, NavGroup>> = {
     id: "professionals",
     toggleLabel: "For Professionals Pages",
     pages: [{ label: "Candidate FAQ", href: "/professionals/faq" }],
-    action: { label: "Apply Now", href: "/apply" },
+    action: { label: "Apply Now", href: APP_LINKS.apply },
   },
 };
+
+function PersonGlyph() {
+  return (
+    <svg aria-hidden="true" focusable="false" viewBox="0 0 20 20" width="16" height="16" fill="currentColor">
+      <path d="M10 10a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm0 2c-3.9 0-7 2-7 4.5V18h14v-1.5C17 14 13.9 12 10 12Z" />
+    </svg>
+  );
+}
 
 function Chevron({ open }: { open: boolean }) {
   return (
@@ -99,15 +117,26 @@ function GroupLinks({
         ))}
       </ul>
       <div data-nav-cta={group.id} className="mt-1.5 border-t border-k-line pt-1.5">
-        <Link
-          href={group.action.href}
-          aria-current={isCurrent(group.action.href) ? "page" : undefined}
-          onClick={onNavigate}
-          className={`${row} justify-between gap-3 bg-k-sky-tint font-display font-extrabold hover:bg-k-cloud`}
-        >
-          {group.action.label}
-          <span aria-hidden="true">→</span>
-        </Link>
+        {/^https?:/.test(group.action.href) ? (
+          <a
+            href={group.action.href}
+            onClick={onNavigate}
+            className={`${row} justify-between gap-3 bg-k-sky-tint font-display font-extrabold hover:bg-k-cloud`}
+          >
+            {group.action.label}
+            <span aria-hidden="true">→</span>
+          </a>
+        ) : (
+          <Link
+            href={group.action.href}
+            aria-current={isCurrent(group.action.href) ? "page" : undefined}
+            onClick={onNavigate}
+            className={`${row} justify-between gap-3 bg-k-sky-tint font-display font-extrabold hover:bg-k-cloud`}
+          >
+            {group.action.label}
+            <span aria-hidden="true">→</span>
+          </Link>
+        )}
       </div>
     </>
   );
@@ -196,8 +225,22 @@ export function SiteHeader() {
   const toggleGroup = (id: GroupId) => setOpenGroup((g) => (g === id ? null : id));
 
   return (
-    <header className="sticky top-0 z-50 border-b border-k-line/80 bg-k-page/90 backdrop-blur-md">
-      <div className="k-wrap flex h-[76px] items-center gap-5">
+    <header className="sticky -top-[45px] z-50 border-b border-k-line/80 bg-k-page/90 backdrop-blur-md xl:top-0">
+      <div data-site-utility className="border-b border-k-line bg-k-cloud xl:hidden">
+        <div className="k-wrap flex items-center justify-end gap-3">
+          <span className="font-body text-[13px] font-semibold text-k-muted">Staff and Professionals</span>
+          <a
+            href={APP_LINKS.signIn}
+            data-site-sign-in="utility"
+            className="k-focus inline-flex min-h-11 items-center gap-1.5 rounded-lg font-display text-[15px] font-bold text-k-navy underline underline-offset-4 hover:text-k-sky-ink"
+          >
+            <PersonGlyph />
+            Sign In
+          </a>
+        </div>
+      </div>
+
+      <div className="k-wrap flex h-[76px] items-center gap-5 xl:gap-3">
         <Link
           href="/"
           aria-label="Simple Medical Workforce Solutions home"
@@ -220,7 +263,7 @@ export function SiteHeader() {
                   key={link.href}
                   href={link.href}
                   aria-current={isActive(link.href) ? "page" : undefined}
-                  className={`${pill} px-3.5`}
+                  className={`${pill} px-3.5 xl:px-3`}
                 >
                   {link.label}
                 </Link>
@@ -247,7 +290,7 @@ export function SiteHeader() {
                   href={link.href}
                   aria-current={isActive(link.href) ? "page" : undefined}
                   onClick={closeAll}
-                  className={`${pill} pl-3.5 pr-1`}
+                  className={`${pill} pl-3.5 pr-1 xl:pl-3`}
                 >
                   {link.label}
                 </Link>
@@ -278,12 +321,20 @@ export function SiteHeader() {
         </nav>
 
         <div className="ml-auto flex items-center gap-2.5 lg:ml-3">
+          <a
+            href={APP_LINKS.signIn}
+            data-site-sign-in="inline"
+            className="k-focus hidden min-h-11 items-center gap-1.5 rounded-lg px-1 font-display text-[15px] font-bold text-k-navy underline underline-offset-4 hover:text-k-sky-ink xl:inline-flex"
+          >
+            <PersonGlyph />
+            Sign In
+          </a>
           <Link href="/contact" className="k-btn-outline k-btn-sm hidden xl:inline-flex">
             Request Staffing
           </Link>
-          <Link href="/apply" className="k-btn-primary k-btn-sm hidden sm:inline-flex">
+          <a href={APP_LINKS.apply} className="k-btn-primary k-btn-sm hidden sm:inline-flex">
             Apply Now
-          </Link>
+          </a>
           <button
             ref={toggleRef}
             type="button"
@@ -312,7 +363,7 @@ export function SiteHeader() {
       <nav
         id="site-menu"
         aria-label="Primary"
-        className={`${open ? "block" : "hidden"} absolute inset-x-0 top-full max-h-[calc(100dvh-76px)] overflow-y-auto overscroll-contain border-b border-k-line bg-k-page shadow-[0_24px_48px_-28px_rgba(30,58,110,0.45)] lg:!hidden`}
+        className={`${open ? "block" : "hidden"} absolute inset-x-0 top-full max-h-[calc(100dvh-121px)] overflow-y-auto overscroll-contain border-b border-k-line bg-k-page shadow-[0_24px_48px_-28px_rgba(30,58,110,0.45)] lg:!hidden`}
       >
         <div className="k-wrap flex flex-col gap-1 pb-6 pt-3">
           {MENU_LINKS.map((link) => {
@@ -358,13 +409,22 @@ export function SiteHeader() {
               </div>
             );
           })}
+          <a
+            href={APP_LINKS.signIn}
+            data-site-sign-in="menu"
+            onClick={closeAll}
+            className="k-focus flex min-h-[52px] items-center gap-2 rounded-2xl px-4 font-body text-[17px] font-bold text-k-navy hover:bg-k-cloud"
+          >
+            <PersonGlyph />
+            Sign In
+          </a>
           <div className="mt-3 grid gap-2.5 min-[420px]:grid-cols-2">
             <Link href="/contact" onClick={closeAll} className="k-btn-outline">
               Request Staffing
             </Link>
-            <Link href="/apply" onClick={closeAll} className="k-btn-primary">
+            <a href={APP_LINKS.apply} onClick={closeAll} className="k-btn-primary">
               Apply Now
-            </Link>
+            </a>
           </div>
         </div>
       </nav>
