@@ -4,6 +4,7 @@ import { EmailText } from "@/components/site/EmailText";
 import { Photo } from "@/components/site/Photo";
 import { StructuredData } from "@/components/site/StructuredData";
 import { Wave } from "@/components/site/Wave";
+import { APP_LINKS } from "@/lib/app-links";
 import { BUSINESS_FACTS } from "@/lib/brand";
 import { KINDRED_GRADIENTS } from "@/lib/kindred-gradients";
 import { documentTitle, pageMetadata } from "@/lib/seo";
@@ -74,10 +75,15 @@ export default function HomePage() {
             </div>
             {/* Bruce's pre-merge requirement (BM-20260925-33): the note carries the
                 phone and email to use now. Email stays plain text; the only mailto
-                on the site is on /apply/. */}
+                on the site is on /apply/. Since 2026-11-08 the web app is open, so
+                the note says what professionals can do online instead of "still
+                being built". */}
             <p className="k-small text-k-muted">
-              Our online platform for facilities and professionals is still being built. For now, our team handles
-              every request directly: call{" "}
+              Healthcare professionals can now apply and sign in online in{" "}
+              <Link href="/app" className="k-link">
+                our web app
+              </Link>
+              . For staffing requests and anything else, call{" "}
               <a href={`tel:${BUSINESS_FACTS.phoneTel}`} className="k-link whitespace-nowrap">
                 {BUSINESS_FACTS.phoneDisplay}
               </a>{" "}
@@ -213,9 +219,9 @@ export default function HomePage() {
         <Link href="/contact" className="k-btn-primary">
           Request Staffing
         </Link>
-        <Link href="/apply" className="k-btn-on-dark">
+        <a href={APP_LINKS.apply} className="k-btn-on-dark">
           Apply Now
-        </Link>
+        </a>
       </ClosingPanel>
     </>
   );
