@@ -10,11 +10,14 @@
 // verified NAP; unique titles and descriptions; per-page og:url; srcset
 // candidates exist; share image and icon set exist with expected dimensions;
 // no placeholder text; library masters match their provenance and no
-// photograph is placed on two canonical routes (or on a route and the 404).
+// photograph is placed on two canonical routes (or on a route and the 404);
+// docs/how-to/ holds exactly the app's how-to videos, which need no page,
+// sitemap entry or link, and robots.txt keeps crawlers out of that folder only.
 import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
 import { APP_LINKS, PUBLIC_ROUTES, SOCIAL_LINKS } from "./copy-requirements.mjs";
+import { HOW_TO_DIR, listHowToVideos } from "./lib/how-to.mjs";
 
 const root = process.cwd();
 const docs = path.join(root, "docs");
@@ -204,7 +207,12 @@ for (const file of htmlFiles) {
   }
   const robots = read(path.join(docs, "robots.txt"));
   if (!/Sitemap: https:\/\/simplemedicalstaffing\.com\/sitemap\.xml/.test(robots)) fail("robots.txt does not declare the sitemap");
-  if (!/Allow: \//.test(robots) || /Disallow: \/\S/.test(robots)) fail("robots.txt must allow the whole public site");
+  // The one thing crawlers are asked to skip is the folder of how-to videos (section 10).
+  const disallowed = [...robots.matchAll(/^Disallow:[ \t]*(\S+)/gim)].map((m) => m[1]);
+  if (!/^Allow: \/$/m.test(robots) || JSON.stringify(disallowed) !== JSON.stringify([`/${HOW_TO_DIR}/`])) {
+    fail(`robots.txt must allow the whole public site and disallow only /${HOW_TO_DIR}/`);
+  }
+  if (sitemap.includes(`/${HOW_TO_DIR}/`)) fail(`sitemap.xml must not list anything under /${HOW_TO_DIR}/`);
 }
 
 // 5. Per-page metadata, JSON-LD, uniqueness --------------------------------------
@@ -409,10 +417,34 @@ for (const [route, hero] of [["/", "home-hero-handoff"], ["/professionals/", "nu
   }
 }
 
+// 10. How-to videos for the app ----------------------------------------------------
+// The app plays these by URL, so an .mp4 under /how-to/ is allowed without a
+// page, a sitemap entry or a link to it. In return the folder holds nothing
+// else: exactly the videos in public/how-to/ (named and sized as
+// scripts/lib/how-to.mjs requires), byte for byte, and no page that lists them.
+let howToVideos = [];
+{
+  try {
+    howToVideos = listHowToVideos(root);
+  } catch (e) {
+    fail(e.message);
+  }
+  const dir = path.join(docs, HOW_TO_DIR);
+  const published = fs.existsSync(dir) ? fs.readdirSync(dir).sort() : [];
+  if (JSON.stringify(published) !== JSON.stringify(howToVideos)) {
+    fail(`docs/${HOW_TO_DIR}/ holds ${JSON.stringify(published)}; it must hold exactly the videos in public/${HOW_TO_DIR}/: ${JSON.stringify(howToVideos)}`);
+  } else {
+    for (const name of published) {
+      const digest = (file) => crypto.createHash("sha256").update(fs.readFileSync(file)).digest("hex");
+      if (digest(path.join(dir, name)) !== digest(path.join(root, "public", HOW_TO_DIR, name))) fail(`docs/${HOW_TO_DIR}/${name} is not the file in public/${HOW_TO_DIR}/; rebuild docs/`);
+    }
+  }
+}
+
 if (failures.length) {
   console.error(failures.join("\n"));
   process.exit(1);
 }
 console.log(
-  `Verified ${required.length} required outputs, ${CANONICAL_ROUTES.length} canonical pages, ${Object.keys(LEGACY_STUBS).length} legacy stubs, ${htmlFiles.length} HTML files, and ${textFiles.length} text assets.`,
+  `Verified ${required.length} required outputs, ${CANONICAL_ROUTES.length} canonical pages, ${Object.keys(LEGACY_STUBS).length} legacy stubs, ${htmlFiles.length} HTML files, ${textFiles.length} text assets, and ${howToVideos.length} how-to video${howToVideos.length === 1 ? "" : "s"}.`,
 );
