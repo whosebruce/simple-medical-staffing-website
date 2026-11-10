@@ -16,15 +16,15 @@ export default function DirectPlacementPage() {
       <StructuredData path={PATH} title={documentTitle(TITLE)} description={DESCRIPTION} aboutServices={[SERVICE_IDS.directPlacement]} />
       <ServicePage
         path={PATH}
-        eyebrow="Staffing Solutions · Direct placement"
-        heading="Direct placement, matched for fit."
+        eyebrow="Staffing Solutions · Direct Placement"
+        heading="Direct Placement, Matched for Fit."
         lede="Permanent hires selected for fit with your team, not just a resume that matches the requisition."
         image="planter"
         imageFocus="30% 20%"
         sections={[
           {
-            eyebrow: "What it is",
-            heading: "A permanent hire, found the careful way.",
+            eyebrow: "What It Is",
+            heading: "A Permanent Hire, Found the Careful Way.",
             body: (
               <>
                 <p>
@@ -41,8 +41,8 @@ export default function DirectPlacementPage() {
             ),
           },
           {
-            eyebrow: "How we approach it",
-            heading: "We look past the requisition.",
+            eyebrow: "How We Approach It",
+            heading: "We Look Past the Requisition.",
             body: (
               <>
                 <p>
@@ -59,37 +59,37 @@ export default function DirectPlacementPage() {
           },
         ]}
         bestFor={{
-          heading: "Best for",
+          heading: "Best For",
           items: ["Permanent roles", "Hard-to-fill specialties", "Leadership"],
         }}
         steps={{
-          heading: "From role to hire.",
+          heading: "From Role to Hire.",
           intro: "The same four steps we use for every request, with the hire itself as the last word.",
           items: [
-            { title: "Tell us the role", body: "Unit, specialty, schedule, start date, and what the team needs from the person. Send what you have and we'll ask about the rest." },
-            { title: "We match for fit", body: "We look for candidates whose experience and goals fit the role and the team." },
-            { title: "You confirm", body: "Review the match, ask whatever you want to ask, and make the hire when you're ready." },
-            { title: "After the start date", body: "Tell us how the placement is going. We'd rather fix a placement than defend one." },
+            { title: "Tell Us the Role", body: "Unit, specialty, schedule, start date, and what the team needs from the person. Send what you have and we'll ask about the rest." },
+            { title: "We Match for Fit", body: "We look for candidates whose experience and goals fit the role and the team." },
+            { title: "You Confirm", body: "Review the match, ask whatever you want to ask, and make the hire when you're ready." },
+            { title: "After the Start Date", body: "Tell us how the placement is going. We'd rather fix a placement than defend one." },
           ],
         }}
         related={{
-          heading: "Is direct placement the right fit?",
+          heading: "Is Direct Placement the Right Fit?",
           items: [
             {
               href: "/solutions/contract-staffing",
-              title: "Need coverage while you hire?",
+              title: "Need Coverage While You Hire?",
               body: "Contract staffing keeps the unit covered for a defined period, for leaves of absence, seasonal census, and extended vacancies.",
               label: "More About Contract Staffing\u00a0→",
             },
             {
               href: "/solutions/per-diem-staffing",
-              title: "Just need the shift covered?",
+              title: "Just Need the Shift Covered?",
               body: "Per-diem staffing covers call-outs, census spikes, and weekend and night gaps one shift at a time.",
               label: "More About Per-Diem Staffing\u00a0→",
             },
           ],
         }}
-        closing="Stronger teams start with the right hire."
+        closing="Stronger Teams Start with the Right Hire."
       />
     </>
   );

@@ -20,7 +20,7 @@ const MENU_LINKS = [{ label: "Home", href: "/" }, ...NAV_LINKS] as const;
 // TASK-20260923-14: the two audience parents reveal their child pages. Each
 // parent stays a real link; a separate disclosure button opens its group (a
 // panel from 1024px, an inline group in the menu below it). A group lists
-// its pages, then its audience action on a separated row: Request Staffing
+// its pages, then its audience action on a separated row: Request Staff
 // for facilities, Apply Now for professionals only. Button names never say
 // "menu" or "navigation" (the menu button owns those words).
 //
@@ -50,7 +50,7 @@ const NAV_GROUPS: Readonly<Record<string, NavGroup>> = {
       { label: "Direct Placement", href: "/solutions/direct-placement" },
       { label: "Staffing Request Checklist", href: "/solutions/staffing-request-checklist" },
     ],
-    action: { label: "Request Staffing", href: "/contact" },
+    action: { label: "Request Staff", href: APP_LINKS.requestStaff },
   },
   "/professionals": {
     id: "professionals",
@@ -243,7 +243,7 @@ export function SiteHeader() {
       <div className="k-wrap flex h-[76px] items-center gap-5 xl:gap-3">
         <Link
           href="/"
-          aria-label="Simple Medical Workforce Solutions home"
+          aria-label="Simple Medical Workforce Solutions Home"
           className="k-focus flex min-h-11 flex-none items-center gap-3 rounded-2xl"
           onClick={closeAll}
         >
@@ -329,9 +329,12 @@ export function SiteHeader() {
             <PersonGlyph />
             Sign In
           </a>
-          <Link href="/contact" className="k-btn-outline k-btn-sm hidden xl:inline-flex">
-            Request Staffing
-          </Link>
+          {/* Shown wherever the bar has room for it beside Apply Now: with the menu button from 768px, and
+              again from 1280px. Between 1024px and 1279px the four nav links take that room, and the
+              Staffing Solutions panel carries it instead. */}
+          <a href={APP_LINKS.requestStaff} className="k-btn-outline k-btn-sm hidden md:inline-flex lg:hidden xl:inline-flex">
+            Request Staff
+          </a>
           <a href={APP_LINKS.apply} className="k-btn-primary k-btn-sm hidden sm:inline-flex">
             Apply Now
           </a>
@@ -419,9 +422,9 @@ export function SiteHeader() {
             Sign In
           </a>
           <div className="mt-3 grid gap-2.5 min-[420px]:grid-cols-2">
-            <Link href="/contact" onClick={closeAll} className="k-btn-outline">
-              Request Staffing
-            </Link>
+            <a href={APP_LINKS.requestStaff} onClick={closeAll} className="k-btn-outline">
+              Request Staff
+            </a>
             <a href={APP_LINKS.apply} onClick={closeAll} className="k-btn-primary">
               Apply Now
             </a>

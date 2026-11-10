@@ -58,16 +58,16 @@ export default function PrivacyPage() {
 
       <section className="pb-[clamp(64px,8vw,120px)] pt-6">
         <div className="k-wrap-narrow flex flex-col gap-10">
-          <Section title="Who we are">
+          <Section title="Who We Are">
             <p>
               Simple Medical Workforce Solutions (&ldquo;we&rdquo;, &ldquo;us&rdquo;) is a healthcare staffing agency in Southern
               California, operated by True Spirit, LLC. This policy covers this website and the SMWS app: the iPhone app and the
               web app at app.simplemedicalstaffing.com, where healthcare professionals apply, sign in, pick up shifts and keep
-              their records, and where our office staff run scheduling and hiring.
+              their records, where healthcare facilities request staff, and where our office staff run scheduling and hiring.
             </p>
           </Section>
 
-          <Section title="What we collect">
+          <Section title="What We Collect">
             <p>
               <strong>On this website:</strong> nothing you type. The website has no forms, accounts or advertising trackers. Our
               website host may process basic technical information, such as an IP address, browser information and request
@@ -95,6 +95,10 @@ export default function PrivacyPage() {
                 set up, and, if you turn on notifications, your device&apos;s notification token.
               </li>
               <li>Your choices, such as whether we may text you about open shifts and your notification settings.</li>
+              <li>
+                Staffing requests from facilities: the facility&apos;s name and location, your name, title, work email and phone
+                number, the roles you need, and any notes you add.
+              </li>
             </ul>
             <p>
               The app does not collect your location, contacts or browsing activity, shows no ads, and contains no advertising or
@@ -102,18 +106,19 @@ export default function PrivacyPage() {
             </p>
           </Section>
 
-          <Section title="How we use it">
+          <Section title="How We Use It">
             <ul className="flex list-disc flex-col gap-2 pl-5">
               <li>To review your application and check your credentials.</li>
               <li>To offer, book and schedule shifts, record your time and pay you.</li>
               <li>To send you sign-in codes and email about your application, shifts and account.</li>
+              <li>To contact you about a staffing request and to set up your facility as a customer.</li>
               <li>To keep accounts secure, prevent fraud and fix problems.</li>
               <li>To meet our legal, tax and healthcare staffing obligations.</li>
             </ul>
             <p>We do not sell your personal information or share it for advertising.</p>
           </Section>
 
-          <Section title="Who we share it with">
+          <Section title="Who We Share It With">
             <ul className="flex list-disc flex-col gap-2 pl-5">
               <li>
                 Healthcare facilities where you are offered or booked for a shift: your name, role, credential status and the
@@ -128,14 +133,14 @@ export default function PrivacyPage() {
             </ul>
           </Section>
 
-          <Section title="How long we keep it">
+          <Section title="How Long We Keep It">
             <p>
               We keep your account while you use it. Records of your application, credentials, shifts, hours and pay are kept as
               long as employment, tax and healthcare staffing rules require, then deleted. Backups are kept for up to a few weeks.
             </p>
           </Section>
 
-          <Section title="Deleting your account and your other choices">
+          <Section title="Deleting Your Account and Your Other Choices">
             <p>
               <strong>Delete your account in the app:</strong> sign in, open <strong>Me</strong>, then <strong>Delete My Account</strong>.
               We delete your account within 30 days. We delete your sign-in, photo, settings and the messages we sent you, and
@@ -154,7 +159,7 @@ export default function PrivacyPage() {
             </p>
           </Section>
 
-          <Section title="How we protect it">
+          <Section title="How We Protect It">
             <p>
               Information travels over encrypted connections. Sign-in codes expire after 10 minutes and work once, office staff
               confirm sign-in with a second step, and only staff whose job needs your information can see it. Please don&apos;t
@@ -167,7 +172,7 @@ export default function PrivacyPage() {
             <p>The app is for adults applying for and doing healthcare work. We don&apos;t knowingly collect information from anyone under 18.</p>
           </Section>
 
-          <Section title="Changes and questions">
+          <Section title="Changes and Questions">
             <p>
               If we change this policy, we&apos;ll post the new version here with its date, and tell app users in the app or by email
               when the change matters. Questions: call {BUSINESS_FACTS.phoneDisplay}, email {BUSINESS_FACTS.email}, or write to

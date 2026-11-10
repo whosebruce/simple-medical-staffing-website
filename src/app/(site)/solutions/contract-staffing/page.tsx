@@ -17,15 +17,15 @@ export default function ContractStaffingPage() {
       <StructuredData path={PATH} title={documentTitle(TITLE)} description={DESCRIPTION} aboutServices={[SERVICE_IDS.contract]} />
       <ServicePage
         path={PATH}
-        eyebrow="Staffing Solutions · Contract staffing"
-        heading="Contract staffing for sustained coverage."
+        eyebrow="Staffing Solutions · Contract Staffing"
+        heading="Contract Staffing for Sustained Coverage."
         lede="Longer-term placements for the gaps that last: professionals who join your team, learn your unit, and stay through the assignment."
         image="linens"
         imageFocus="40% 30%"
         sections={[
           {
-            eyebrow: "What it is",
-            heading: "One professional, one unit, for a defined assignment.",
+            eyebrow: "What It Is",
+            heading: "One Professional, One Unit, for a Defined Assignment.",
             body: (
               <>
                 <p>
@@ -42,8 +42,8 @@ export default function ContractStaffingPage() {
             ),
           },
           {
-            eyebrow: "How we approach it",
-            heading: "Matched for fit, not just availability.",
+            eyebrow: "How We Approach It",
+            heading: "Matched for Fit, Not Just Availability.",
             body: (
               <>
                 <p>
@@ -61,37 +61,37 @@ export default function ContractStaffingPage() {
           },
         ]}
         bestFor={{
-          heading: "Best for",
+          heading: "Best For",
           items: ["Seasonal census", "Leaves of absence", "Extended vacancies"],
         }}
         steps={{
-          heading: "From request to first shift.",
+          heading: "From Request to First Shift.",
           intro: "The same four steps we use for every request, with the assignment length as part of the conversation.",
           items: [
-            { title: "Tell us the need", body: "Unit, shift, specialty, start date, and how long you expect the need to last. Send what you have and we'll ask about the rest." },
-            { title: "We match for fit", body: "We look for a professional whose experience and availability fit what you described." },
-            { title: "You confirm", body: "Review the match, ask whatever you want to ask, and approve when you're ready." },
-            { title: "After the start date", body: "If something isn't working, tell us. We'd rather fix a placement than defend one." },
+            { title: "Tell Us the Need", body: "Unit, shift, specialty, start date, and how long you expect the need to last. Send what you have and we'll ask about the rest." },
+            { title: "We Match for Fit", body: "We look for a professional whose experience and availability fit what you described." },
+            { title: "You Confirm", body: "Review the match, ask whatever you want to ask, and approve when you're ready." },
+            { title: "After the Start Date", body: "If something isn't working, tell us. We'd rather fix a placement than defend one." },
           ],
         }}
         related={{
-          heading: "Is contract the right fit?",
+          heading: "Is Contract the Right Fit?",
           items: [
             {
               href: "/solutions/per-diem-staffing",
-              title: "Need a shift covered, not a season?",
+              title: "Need a Shift Covered, Not a Season?",
               body: "Per-diem staffing covers call-outs, census spikes, and weekend and night gaps one shift at a time.",
               label: "More About Per-Diem Staffing\u00a0→",
             },
             {
               href: "/solutions/direct-placement",
-              title: "Hiring for keeps?",
+              title: "Hiring for Keeps?",
               body: "Direct placement finds permanent hires selected for fit with your team, including hard-to-fill specialties and leadership.",
               label: "More About Direct Placement\u00a0→",
             },
           ],
         }}
-        closing="Steady coverage starts with the right match."
+        closing="Steady Coverage Starts with the Right Match."
       />
     </>
   );

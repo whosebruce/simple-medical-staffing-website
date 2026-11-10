@@ -110,6 +110,7 @@ body {
     font-size: clamp(1.15rem, 1rem + 0.45vw, 1.4rem);
     line-height: 1.25;
     letter-spacing: -0.015em;
+    text-wrap: balance;
   }
   .k-lede {
     font-size: clamp(1.0625rem, 1rem + 0.3vw, 1.1875rem);
@@ -127,6 +128,12 @@ body {
     line-height: 1.65;
     color: var(--color-k-muted);
   }
+  /* A paragraph should not end on a single stranded word. */
+  .k-lede,
+  .k-body,
+  .k-small {
+    text-wrap: pretty;
+  }
   .k-eyebrow {
     display: inline-flex;
     align-items: center;
@@ -137,6 +144,7 @@ body {
     letter-spacing: 0.18em;
     line-height: 1.4;
     text-transform: uppercase;
+    text-wrap: balance;
   }
   .k-eyebrow::before {
     content: "";

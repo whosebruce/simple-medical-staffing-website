@@ -16,7 +16,7 @@ const COLUMNS = [
       { label: "Per-Diem Staffing", href: "/solutions/per-diem-staffing" },
       { label: "Direct Placement", href: "/solutions/direct-placement" },
       { label: "Staffing Request Checklist", href: "/solutions/staffing-request-checklist" },
-      { label: "Request Staffing", href: "/contact" },
+      { label: "Request Staff", href: APP_LINKS.requestStaff },
     ],
   },
   {
@@ -97,7 +97,7 @@ export function SiteFooter() {
                 <ul className="flex flex-col">
                   {column.links.map((link) => (
                     <li key={`${column.heading}-${link.label}`}>
-                      {/* Sign In and Apply Now go to the web app (src/lib/app-links.ts): plain same-tab links. */}
+                      {/* Sign In, Apply Now and Request Staff go to the web app (src/lib/app-links.ts): plain same-tab links. */}
                       {/^https?:/.test(link.href) ? (
                         <a href={link.href} className="k-footer-link">
                           {link.label}
@@ -116,9 +116,9 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-14 grid gap-3 border-t border-white/20 py-7 text-[13.5px] leading-relaxed text-k-frost lg:grid-cols-[auto_auto_minmax(0,1fr)] lg:items-start lg:gap-10">
-          <p className="font-display text-xs font-semibold uppercase tracking-[0.12em] lg:whitespace-nowrap">© 2026 {BUSINESS_FACTS.name}</p>
-          <p className="font-display text-xs font-semibold uppercase tracking-[0.12em] lg:whitespace-nowrap">
-            Healthcare staffing with a human connection
+          <p className="text-balance font-display text-xs font-semibold uppercase tracking-[0.12em] lg:whitespace-nowrap">© 2026 {BUSINESS_FACTS.name}</p>
+          <p className="text-balance font-display text-xs font-semibold uppercase tracking-[0.12em] lg:whitespace-nowrap">
+            Healthcare Staffing with a Human Connection
           </p>
           <p className="max-w-[460px] lg:justify-self-end lg:text-right">
             Images on this site are illustrative and do not show actual Simple Medical Workforce Solutions staff, healthcare

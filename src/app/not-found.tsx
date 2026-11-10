@@ -12,7 +12,7 @@ export default function NotFound() {
         <div className="k-wrap relative grid items-center gap-12 py-16 sm:py-24 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-16">
           <div className="flex max-w-xl flex-col items-start gap-5">
             <p className="k-eyebrow text-k-sky-ink">404</p>
-            <h1 className="k-h1 k-h1-long">That page isn&apos;t here.</h1>
+            <h1 className="k-h1 k-h1-long">That Page Isn&apos;t Here.</h1>
             <p className="k-body">
               Return to the Simple Medical Workforce Solutions website to find staffing and career information.
             </p>
@@ -21,7 +21,7 @@ export default function NotFound() {
             </Link>
           </div>
           <div className="relative">
-            <div aria-hidden className="k-collage-ring -left-6 -top-6 z-10 w-[120px]" />
+            <div aria-hidden className="k-collage-ring -left-3 -top-6 z-10 w-[120px] sm:-left-6" />
             {/* Its own photograph: "interior" is the /privacy header. */}
             <Photo
               image="colleagues"

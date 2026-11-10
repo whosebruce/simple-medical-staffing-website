@@ -1,4 +1,5 @@
 User-Agent: *
 Allow: /
+Disallow: /how-to/
 
 Sitemap: https://simplemedicalstaffing.com/sitemap.xml

@@ -71,7 +71,7 @@ export default function AboutPage() {
           <div className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-end lg:gap-16">
             <div className="flex flex-col items-start gap-6">
               <p className="k-eyebrow text-k-sky-ink">About Simple Medical Workforce Solutions</p>
-              <h1 className="k-h1 k-h1-long">We’re building stronger healthcare teams, one relationship at a time.</h1>
+              <h1 className="k-h1 k-h1-long">We’re Building Stronger Healthcare Teams, One Relationship at a Time.</h1>
             </div>
             <p className="k-lede lg:pb-2">
               Simple Medical Workforce Solutions was built on a simple belief: healthcare staffing should be personal. We
@@ -98,7 +98,7 @@ export default function AboutPage() {
       <section className="k-section-tight">
         <div className="k-wrap grid gap-8 lg:grid-cols-[minmax(0,0.7fr)_minmax(0,1.3fr)] lg:gap-16">
           <div className="flex flex-col items-start gap-5">
-            <p className="k-eyebrow k-eyebrow-violet text-k-violet-ink">Our mission</p>
+            <p className="k-eyebrow k-eyebrow-violet text-k-violet-ink">Our Mission</p>
             <span aria-hidden className="k-quote-mark">
               &ldquo;
             </span>
@@ -114,8 +114,8 @@ export default function AboutPage() {
         <div className="k-wrap">
           <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-end lg:gap-16">
             <div className="flex flex-col items-start gap-4">
-              <p className="k-eyebrow text-k-sky-ink">What we stand for</p>
-              <h2 className="k-h2">Warm on the surface, rigorous underneath.</h2>
+              <p className="k-eyebrow text-k-sky-ink">What We Stand For</p>
+              <h2 className="k-h2">Warm on the Surface, Rigorous Underneath.</h2>
             </div>
             <div className="grid grid-cols-[1.3fr_1fr] items-end gap-4">
               <Photo image="chairs" shape="leaf" className="aspect-[4/3]" focus="45% 25%" sizes="(min-width: 1024px) 26vw, 55vw" />
@@ -140,7 +140,7 @@ export default function AboutPage() {
           <div className="mb-10 flex max-w-[640px] flex-col items-start gap-4">
             <p className="k-eyebrow k-eyebrow-violet text-k-violet-ink">Our Team</p>
             <h2 id="leadership-heading" className="k-h2">
-              The people behind our purpose
+              The People Behind Our Purpose
             </h2>
           </div>
           <ul className="flex flex-col gap-6">
@@ -223,7 +223,7 @@ export default function AboutPage() {
 
       <ClosingPanel heading={<>&ldquo;{BUSINESS_FACTS.tagline}.&rdquo;</>}>
         <Link href="/contact" className="k-btn-primary">
-          Work With Us
+          Work with Us
         </Link>
       </ClosingPanel>
     </>

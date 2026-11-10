@@ -1,4 +1,4 @@
-node_modules/
+node_modules
 .next/
 out/
 *.log
@@ -8,3 +8,4 @@ out/
 !.env.example
 .DS_Store
 evidence/
+.artifacts/polish/

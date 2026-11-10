@@ -17,11 +17,13 @@ export const APPLICATION_CONTACT = "info@simplemedicalstaffing.com";
  * applications are on, Sign In sits in the header and footer, and every
  * "Apply Now" goes straight to the app's application. With the two social
  * profiles these are the only outside links (scripts/verify-site.mjs); they
- * open in the same tab.
+ * open in the same tab. requestStaff is the facilities' counterpart of apply:
+ * every "Request Staff" goes straight to the app's staffing request form.
  */
 export const APP_LINKS = {
   signIn: "https://app.simplemedicalstaffing.com/account/sign-in",
   apply: "https://app.simplemedicalstaffing.com/apply",
+  requestStaff: "https://app.simplemedicalstaffing.com/request-staff",
 };
 
 // Every indexable canonical route (mirrors src/lib/site-routes.ts, which the
@@ -37,6 +39,7 @@ export const PUBLIC_ROUTES = [
   "/professionals/faq",
   "/about",
   "/contact",
+  "/request-staff",
   "/apply",
   "/app",
   "/privacy",
@@ -48,21 +51,21 @@ export const REQUIREMENTS = [
     id: "R01",
     title: "Professionals section heading",
     route: "/professionals",
-    present: ["The right professionals for every level of care"],
+    present: ["The Right Professionals for Every Level of Care"],
     absent: ["Ten disciplines, one front door", "one front door"],
   },
   {
     id: "R02",
     title: "Professionals section eyebrow",
     route: "/professionals",
-    present: ["Healthcare professionals we provide."],
+    present: ["Healthcare Professionals We Provide."],
     absent: ["Disciplines we staff"],
   },
   {
     id: "R04",
     title: "Solutions services heading",
     route: "/solutions",
-    present: ["Flexible solutions built around your needs."],
+    present: ["Flexible Solutions Built Around Your Needs."],
     absent: ["Three services, one way of working", "one way of working"],
   },
   {
@@ -70,7 +73,7 @@ export const REQUIREMENTS = [
     title: "Solutions partner paragraph",
     route: "/solutions",
     present: [
-      "A partner, not a portal.",
+      "A Partner, Not a Portal.",
       "Staffing shouldn't create more work for your leadership team. We provide responsive, hands-on support to help you maintain coverage, strengthen your workforce, and keep your focus where it belongs: on quality care.",
     ],
     absent: [
@@ -81,7 +84,7 @@ export const REQUIREMENTS = [
     id: "R06",
     title: "Professionals hero heading",
     route: "/professionals",
-    present: ["Your skills. Your schedule. The right opportunity."],
+    present: ["Your Skills. Your Schedule. The Right Opportunity."],
     absent: ["Our job is the match"],
   },
   {
@@ -106,28 +109,28 @@ export const REQUIREMENTS = [
     id: "R09",
     title: "Professionals card: real person",
     route: "/professionals",
-    present: ["Talk to a real person."],
+    present: ["Talk to a Real Person."],
     absent: ["Talk to a person"],
   },
   {
     id: "R10",
     title: "Professionals card: flexibility",
     route: "/professionals",
-    present: ["Flexibility that fits your lifestyle."],
+    present: ["Flexibility That Fits Your Lifestyle."],
     absent: ["Three ways to work"],
   },
   {
     id: "R11",
     title: "Professionals card: communication",
     route: "/professionals",
-    present: ["Clear, honest communication."],
+    present: ["Clear, Honest Communication."],
     absent: ["Straight answers"],
   },
   {
     id: "R12",
     title: "Professionals first-day heading",
     route: "/professionals",
-    present: ["Start confident. Stay supported."],
+    present: ["Start Confident. Stay Supported."],
     absent: ["start cold"],
   },
   {
@@ -135,7 +138,7 @@ export const REQUIREMENTS = [
     title: "About headline",
     route: "/about",
     present: [
-      "We’re building stronger healthcare teams, one relationship at a time.",
+      "We’re Building Stronger Healthcare Teams, One Relationship at a Time.",
     ],
     absent: ["not line items"],
   },
@@ -152,7 +155,7 @@ export const REQUIREMENTS = [
     id: "R16",
     title: "Leadership heading",
     route: "/about",
-    present: ["The people behind our purpose"],
+    present: ["The People Behind Our Purpose"],
     absent: ["The people behind the matches"],
   },
   {
@@ -215,6 +218,10 @@ export const REQUIREMENTS = [
       "We do not sell your personal information or share it for advertising.",
       "We delete your account within 30 days.",
       "The app does not collect your location, contacts or browsing activity",
+      // 2026-11-10: the Request Staff form in the app (owner approved).
+      "where healthcare facilities request staff",
+      "name and location, your name, title, work email and phone number, the roles you need, and any notes you add.",
+      "To contact you about a staffing request and to set up your facility as a customer.",
     ],
     absent: ["Review draft", "Not Approved", "Not Binding", "For client and counsel review", "Website Privacy Notice", "It does not currently accept online applications"],
   },
@@ -222,7 +229,7 @@ export const REQUIREMENTS = [
     id: "L04",
     title: "Help page: the app's sign-in code and in-app account deletion",
     route: "/support",
-    present: ["Help With the SMWS App", "Email Me a Sign-In Code", "Delete My Account", "We delete your account within 30 days."],
+    present: ["Help with the SMWS App", "Email Me a Sign-In Code", "Delete My Account", "We delete your account within 30 days."],
     absent: ["Review draft"],
   },
   // BM-20260925-33 review: the home note under the hero gives the phone and
@@ -231,13 +238,14 @@ export const REQUIREMENTS = [
   // "still being built"; it says professionals can apply and sign in online.
   {
     id: "H01",
-    title: "Home note: professionals apply and sign in online; the phone and email for everything else",
+    title: "Home note: professionals apply and sign in online, facilities start a staffing request online; the phone and email for everything else",
     route: "/",
     present: [
       "Healthcare professionals can now apply and sign in online in",
-      ">our web app</a>. For staffing requests and anything else, call",
+      ">our web app</a>, and facilities can",
+      ">start a staffing request online</a>. For anything else, call",
     ],
-    absent: ["still being built", "For now, our team handles every request directly", "every request directly by phone and email"],
+    absent: ["still being built", "For now, our team handles every request directly", "every request directly by phone and email", "For staffing requests and anything else"],
   },
   // 2026-11-08 (Bruce): online applications are on. /apply stays for old
   // links: one button into the app's application, then the phone and email,
@@ -256,16 +264,46 @@ export const REQUIREMENTS = [
     ],
     absent: ["being rebuilt", "when the new application process is ready", "Call or email to express interest"],
   },
+  // /request-staff is /apply for facilities: one button into the app's staffing
+  // request form, then the phone and the email (as text: the one mailto stays
+  // on /apply), with the sensitive-documents caution. It describes neither the
+  // form's questions nor a response time, so the app can change both.
+  {
+    id: "Q01",
+    title: "Request Staff page: Start Your Request in the app, phone and email as the other way in",
+    route: "/request-staff",
+    present: [
+      "Start your staffing request online. Send what you have and we'll ask about the rest.",
+      `href="${APP_LINKS.requestStaff}"`,
+      "Start Your Request",
+      "Prefer to talk first? Call or email our team.",
+      "Email · Staffing Requests",
+      "Please do not include patient information, medical records, or other sensitive documents in an email.",
+    ],
+    absent: ["mailto:", "<form"],
+  },
+  // The checklist was written when a request could only be phoned or emailed
+  // in. It must not tell a facility there is no form now that there is one.
+  {
+    id: "Q02",
+    title: "Staffing request checklist: a request can be started online, or by phone or email",
+    route: "/solutions/staffing-request-checklist",
+    present: [
+      "These are suggestions, not requirements.",
+      `href="${APP_LINKS.requestStaff}" class="k-link">start a request online</a>. Or call or email with the details above`,
+    ],
+    absent: ["There is no form to fill out", "not a form to complete"],
+  },
   {
     id: "A02",
     title: "App page: the web app is open now (Sign In on the Web); the iPhone app is coming to the App Store soon",
     route: "/app",
     present: [
-      "Open now",
+      "Open Now",
       "Our web app is open now for healthcare professionals and our office team.",
       "Sign In on the Web",
       `href="${APP_LINKS.signIn}"`,
-      "What you can do in your web browser now",
+      "What You Can Do in Your Web Browser Now",
       "The iPhone app is coming to the App Store soon.",
     ],
     absent: ["Coming soon", "almost ready", "When it opens", "What you'll be able to do", "You don't have to wait for the app", "apps.apple.com"],
@@ -371,13 +409,17 @@ export const SITEWIDE_ABSENT = [
 // ---------------------------------------------------------------------------
 export const CANONICAL_ACTION_LABELS = [
   "Apply Now",
-  "Request Staffing",
+  // The facility action is named after the app's form, which every one of
+  // these links opens.
+  "Request Staff",
+  "Start Your Request",
+  "See Staffing Request Options",
   "Find Your Next Role",
   "Explore Staffing Solutions",
   "See How It Works",
   "More About How We Work",
   "Get in Touch",
-  "Work With Us",
+  "Work with Us",
   "Talk to Our Team",
   "See Application Options",
   "Skip to Content",
@@ -416,25 +458,35 @@ export const RETIRED_LABEL_VARIANTS = [
   /\bAll staffing solutions\b/,
   /\bStart your application\b/,
   /\bSign in on the web\b/,
+  /\bRequest staff\b/,
+  /\bStart your request\b/,
+  /\bSee staffing request options\b/,
 ];
 
-const SERVICE_PAGE_LABELS = ["Apply Now", "Request Staffing", "See How It Works", "All Staffing Solutions"];
+/**
+ * Labels no link may carry any more. "Request Staffing" went to the contact
+ * page; it would now sit beside "Request Staff" with a different destination.
+ */
+export const RETIRED_ACTION_LABELS = ["Request Staffing"];
+
+const SERVICE_PAGE_LABELS = ["Apply Now", "Request Staff", "See How It Works", "All Staffing Solutions"];
 
 export const ROUTE_LABELS = {
-  "/": ["Apply Now", "Request Staffing", "Find Your Next Role", "Explore Staffing Solutions", "See How It Works", "More About How We Work", "More About Contract Staffing", "More About Per-Diem Staffing", "More About Direct Placement"],
-  "/solutions": ["Apply Now", "Request Staffing", "Get in Touch", "More About Contract Staffing", "More About Per-Diem Staffing", "More About Direct Placement", "See the Staffing Request Checklist"],
+  "/": ["Apply Now", "Request Staff", "Find Your Next Role", "Explore Staffing Solutions", "See How It Works", "More About How We Work", "More About Contract Staffing", "More About Per-Diem Staffing", "More About Direct Placement"],
+  "/solutions": ["Apply Now", "Request Staff", "Get in Touch", "More About Contract Staffing", "More About Per-Diem Staffing", "More About Direct Placement", "See the Staffing Request Checklist"],
   "/solutions/contract-staffing": [...SERVICE_PAGE_LABELS, "More About Per-Diem Staffing", "More About Direct Placement"],
   "/solutions/per-diem-staffing": [...SERVICE_PAGE_LABELS, "More About Contract Staffing", "More About Direct Placement"],
   "/solutions/direct-placement": [...SERVICE_PAGE_LABELS, "More About Contract Staffing", "More About Per-Diem Staffing"],
-  "/solutions/staffing-request-checklist": ["Apply Now", "Request Staffing", "Explore Staffing Solutions"],
-  "/professionals": ["Apply Now", "Talk to Our Team", "See Application Options"],
-  "/professionals/faq": ["Apply Now", "Talk to Our Team"],
-  "/about": ["Apply Now", "Work With Us"],
-  "/contact": ["Apply Now", "See Application Options", "See the Staffing Request Checklist"],
-  "/apply": ["Apply Now", "Start Your Application"],
-  "/app": ["Sign In on the Web", "Apply Now", "Talk to Our Team"],
-  "/privacy": ["Apply Now"],
-  "/support": ["Apply Now"],
+  "/solutions/staffing-request-checklist": ["Apply Now", "Request Staff", "Explore Staffing Solutions"],
+  "/professionals": ["Apply Now", "Request Staff", "Talk to Our Team", "See Application Options"],
+  "/professionals/faq": ["Apply Now", "Request Staff", "Talk to Our Team"],
+  "/about": ["Apply Now", "Request Staff", "Work with Us"],
+  "/contact": ["Apply Now", "Request Staff", "See Application Options", "See Staffing Request Options", "See the Staffing Request Checklist"],
+  "/request-staff": ["Apply Now", "Request Staff", "Start Your Request"],
+  "/apply": ["Apply Now", "Request Staff", "Start Your Application"],
+  "/app": ["Sign In on the Web", "Apply Now", "Request Staff", "Talk to Our Team"],
+  "/privacy": ["Apply Now", "Request Staff"],
+  "/support": ["Apply Now", "Request Staff"],
 };
 
 /** Per-page meta descriptions (unique per page; substring that must be present). */
@@ -450,4 +502,5 @@ export const PAGE_DESCRIPTIONS = {
   "/contact": "Call +1 (760) 536-2178 or email info@simplemedicalstaffing.com",
   "/app": "The Simple Medical Workforce Solutions web app is open now for healthcare professionals and our office team",
   "/apply": "Apply online for per-diem, contract, or permanent healthcare roles with Simple Medical Workforce Solutions, or reach our team by phone or email.",
+  "/request-staff": "Request healthcare staff from Simple Medical Workforce Solutions online, or reach our team by phone or email.",
 };

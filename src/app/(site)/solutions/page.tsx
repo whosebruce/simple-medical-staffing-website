@@ -3,6 +3,7 @@ import { Photo } from "@/components/site/Photo";
 import { StepPath } from "@/components/site/StepPath";
 import { StructuredData } from "@/components/site/StructuredData";
 import { Wave } from "@/components/site/Wave";
+import { APP_LINKS } from "@/lib/app-links";
 import { BUSINESS_FACTS } from "@/lib/brand";
 import { KINDRED_GRADIENTS } from "@/lib/kindred-gradients";
 import { SERVICE_IDS } from "@/lib/schema";
@@ -17,7 +18,7 @@ export const metadata = pageMetadata({ path: PATH, title: TITLE, description: DE
 
 const SERVICES = [
   {
-    title: "Contract staffing",
+    title: "Contract Staffing",
     body: "Longer-term placements for sustained coverage: professionals who join your team, learn your unit, and stay through the assignment.",
     bestFor: "Best for: seasonal census, leaves of absence, extended vacancies",
     href: "/solutions/contract-staffing",
@@ -28,7 +29,7 @@ const SERVICES = [
     offset: "",
   },
   {
-    title: "Per-diem staffing",
+    title: "Per-Diem Staffing",
     body: "Shift-by-shift coverage: you tell us the gap, we look for the match, you confirm it.",
     bestFor: "Best for: call-outs, census spikes, weekend and night gaps",
     href: "/solutions/per-diem-staffing",
@@ -39,7 +40,7 @@ const SERVICES = [
     offset: "lg:mt-12",
   },
   {
-    title: "Direct placement",
+    title: "Direct Placement",
     body: "Permanent hires selected for fit with your team, not just a resume that matches the requisition.",
     bestFor: "Best for: permanent roles, hard-to-fill specialties, leadership",
     href: "/solutions/direct-placement",
@@ -53,19 +54,19 @@ const SERVICES = [
 
 const STEPS = [
   {
-    title: "Tell us the need",
+    title: "Tell Us the Need",
     body: "Unit, shift, specialty, start date. Send what you have and we'll ask about the rest.",
   },
   {
-    title: "We match for fit",
+    title: "We Match for Fit",
     body: "We look for a professional whose experience and availability fit what you described.",
   },
   {
-    title: "You confirm",
+    title: "You Confirm",
     body: "Review the match, ask whatever you want to ask, and approve when you're ready.",
   },
   {
-    title: "After the start date",
+    title: "After the Start Date",
     body: "If something isn't working, tell us. We'd rather fix a placement than defend one.",
   },
 ];
@@ -85,15 +86,15 @@ export default function SolutionsPage() {
         <div aria-hidden className="k-aura -left-60 -top-72 h-[640px] w-[640px]" />
         <div className="k-wrap relative grid items-center gap-12 pb-14 pt-10 sm:pt-14 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-16 lg:pb-20 lg:pt-16">
           <div className="flex flex-col items-start gap-6">
-            <p className="k-eyebrow text-k-sky-ink">Staffing Solutions · For facilities</p>
-            <h1 className="k-h1">Staffing that fits how your facility runs.</h1>
+            <p className="k-eyebrow text-k-sky-ink">Staffing Solutions&nbsp;· For Facilities</p>
+            <h1 className="k-h1">Staffing That Fits How Your Facility Runs.</h1>
             <p className="k-lede">Tell us the unit, the shift, and the team, and we&apos;ll look for the professional who fits.</p>
             <p className="k-small font-semibold text-k-navy">
               {BUSINESS_FACTS.serviceArea}: {BUSINESS_FACTS.serviceRegions}. {BUSINESS_FACTS.primaryFocus}. {BUSINESS_FACTS.facilities}.
             </p>
-            <Link href="/contact" className="k-btn-primary mt-2">
-              Request Staffing
-            </Link>
+            <a href={APP_LINKS.requestStaff} className="k-btn-primary mt-2">
+              Request Staff
+            </a>
           </div>
           <div className="relative mx-auto w-full max-w-[560px] lg:max-w-none">
             <div aria-hidden className="k-collage-ring -left-3 -top-5 w-[26%] lg:-left-8" />
@@ -114,8 +115,8 @@ export default function SolutionsPage() {
       <section className="bg-k-cloud pb-[clamp(64px,8vw,112px)] pt-8">
         <div className="k-wrap">
           <div className="mb-12 flex max-w-[640px] flex-col items-start gap-4">
-            <p className="k-eyebrow text-k-sky-ink">What we offer</p>
-            <h2 className="k-h2">Flexible solutions built around your needs.</h2>
+            <p className="k-eyebrow text-k-sky-ink">What We Offer</p>
+            <h2 className="k-h2">Flexible Solutions Built Around Your Needs.</h2>
           </div>
           <div className="grid gap-6 lg:grid-cols-3">
             {SERVICES.map((s) => (
@@ -126,7 +127,7 @@ export default function SolutionsPage() {
                 <span aria-hidden className={`k-glyph${s.square ? " k-glyph-sq" : ""}`} style={{ background: s.glyph }} />
                 <h3 className="k-h3 text-[1.45rem]">{s.title}</h3>
                 <p className="k-body">{s.body}</p>
-                <p className="mt-auto rounded-2xl bg-k-cloud px-4 py-3 text-[14.5px] font-semibold leading-snug text-k-muted">
+                <p className="mt-auto text-pretty rounded-2xl bg-k-cloud px-4 py-3 text-[14.5px] font-semibold leading-snug text-k-muted">
                   {s.bestFor}
                 </p>
                 <Link href={s.href} className={`k-arrow-link ${s.ink}`}>
@@ -154,8 +155,8 @@ export default function SolutionsPage() {
       <section className="k-section">
         <div className="k-wrap">
           <div className="mb-12 flex max-w-[640px] flex-col items-start gap-4">
-            <p className="k-eyebrow text-k-sky-ink">How it works</p>
-            <h2 className="k-h2">From request to first shift.</h2>
+            <p className="k-eyebrow text-k-sky-ink">How It Works</p>
+            <h2 className="k-h2">From Request to First Shift.</h2>
           </div>
           <StepPath steps={STEPS} />
           <Link href="/solutions/staffing-request-checklist" className="k-arrow-link mt-10 text-k-sky-ink">
@@ -174,8 +175,8 @@ export default function SolutionsPage() {
             sizes="(min-width: 1024px) 54vw, 100vw"
           />
           <div className="k-bleed-copy flex flex-col items-start gap-5">
-            <p className="k-eyebrow k-eyebrow-teal text-k-teal-ink">The difference</p>
-            <h2 className="k-h2">A partner, not a portal.</h2>
+            <p className="k-eyebrow k-eyebrow-teal text-k-teal-ink">The Difference</p>
+            <h2 className="k-h2">A Partner, Not a Portal.</h2>
             <p className="k-body">
               Staffing shouldn&apos;t create more work for your leadership team. We provide responsive, hands-on support
               to help you maintain coverage, strengthen your workforce, and keep your focus where it belongs: on quality

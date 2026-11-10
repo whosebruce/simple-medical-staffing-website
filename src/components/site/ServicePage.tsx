@@ -7,6 +7,7 @@ import { Photo } from "./Photo";
 import { RoleCloud } from "./RoleCloud";
 import { StepPath, type Step } from "./StepPath";
 import { Wave } from "./Wave";
+import { APP_LINKS } from "@/lib/app-links";
 import { BUSINESS_FACTS } from "@/lib/brand";
 import { KINDRED_GRADIENTS } from "@/lib/kindred-gradients";
 import type { SiteImageKey } from "@/lib/site-media";
@@ -60,15 +61,16 @@ export function ServicePage({
         <div className="k-wrap relative grid items-center gap-12 pb-14 pt-8 sm:pt-12 lg:grid-cols-[minmax(0,1.08fr)_minmax(0,0.92fr)] lg:gap-16 lg:pb-20 lg:pt-14">
           <div className="flex flex-col items-start gap-6">
             <Breadcrumbs path={path} />
-            <p className="k-eyebrow text-k-sky-ink">{eyebrow}</p>
+            {/* The separator stays with the words before it, so a wrapped line never starts with the dot. */}
+            <p className="k-eyebrow text-k-sky-ink">{eyebrow.replaceAll(" · ", "\u00a0· ")}</p>
             <h1 className="k-h1 k-h1-long">{heading}</h1>
             <p className="k-lede">{lede}</p>
-            <Link href="/contact" className="k-btn-primary mt-2">
-              Request Staffing
-            </Link>
+            <a href={APP_LINKS.requestStaff} className="k-btn-primary mt-2">
+              Request Staff
+            </a>
           </div>
           <div className="relative mx-auto w-full max-w-[540px] lg:max-w-none">
-            <div aria-hidden className="k-collage-ring -bottom-6 -left-6 top-auto w-[24%]" />
+            <div aria-hidden className="k-collage-ring -bottom-6 -left-3 top-auto w-[24%] sm:-left-6" />
             <Photo
               image={image}
               shape="leaf"
@@ -106,14 +108,14 @@ export function ServicePage({
               </ul>
             </div>
             <div className="rounded-[32px] border border-k-line bg-white p-7">
-              <h2 className="k-h3">Healthcare professionals we provide</h2>
+              <h2 className="k-h3">Healthcare Professionals We Provide</h2>
               <RoleCloud small className="mt-4 gap-2" />
               <Link href="/professionals" className="k-arrow-link mt-3 text-k-violet-ink">
                 See How It Works&nbsp;→
               </Link>
             </div>
             <div className="rounded-[32px] border border-k-line bg-white p-7">
-              <h2 className="k-h3">Call or email</h2>
+              <h2 className="k-h3">Call or Email</h2>
               <a
                 href={`tel:${BUSINESS_FACTS.phoneTel}`}
                 className="k-focus mt-2 inline-flex min-h-11 items-center font-display text-xl font-extrabold text-k-navy underline decoration-k-sky decoration-2 underline-offset-[6px]"
@@ -133,7 +135,7 @@ export function ServicePage({
       <section className="bg-k-cloud pb-[clamp(64px,8vw,112px)] pt-8">
         <div className="k-wrap">
           <div className="mb-12 flex max-w-[660px] flex-col items-start gap-4">
-            <p className="k-eyebrow text-k-sky-ink">How it works</p>
+            <p className="k-eyebrow text-k-sky-ink">How It Works</p>
             <h2 className="k-h2">{steps.heading}</h2>
             <p className="k-body">{steps.intro}</p>
           </div>
@@ -152,7 +154,7 @@ export function ServicePage({
       <section className="k-section">
         <div className="k-wrap">
           <div className="mb-10 flex max-w-[640px] flex-col items-start gap-4">
-            <p className="k-eyebrow k-eyebrow-teal text-k-teal-ink">Other ways to staff</p>
+            <p className="k-eyebrow k-eyebrow-teal text-k-teal-ink">Other Ways to Staff</p>
             <h2 className="k-h2">{related.heading}</h2>
           </div>
           <div className="grid gap-6 md:grid-cols-2">
@@ -174,9 +176,9 @@ export function ServicePage({
       </section>
 
       <ClosingPanel heading={closing}>
-        <Link href="/contact" className="k-btn-primary">
-          Request Staffing
-        </Link>
+        <a href={APP_LINKS.requestStaff} className="k-btn-primary">
+          Request Staff
+        </a>
         <Link href="/solutions" className="k-btn-on-dark">
           All Staffing Solutions
         </Link>

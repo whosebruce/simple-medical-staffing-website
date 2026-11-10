@@ -34,7 +34,7 @@ export default function SupportPage() {
         <div aria-hidden className="k-aura -right-48 -top-64 h-[560px] w-[560px]" />
         <div className="k-wrap relative flex flex-col items-start gap-4 pb-10 pt-12 sm:pt-16">
           <p className="k-eyebrow text-k-sky-ink">Help</p>
-          <h1 className="k-h1 k-h1-long">Help With the SMWS App</h1>
+          <h1 className="k-h1 k-h1-long">Help with the SMWS App</h1>
           <p className="k-body max-w-[46rem]">
             Call us at{" "}
             <a href={`tel:${BUSINESS_FACTS.phoneTel}`} className={link}>
@@ -50,7 +50,7 @@ export default function SupportPage() {
 
       <section className="pb-[clamp(64px,8vw,120px)] pt-6">
         <div className="k-wrap-narrow flex flex-col gap-10">
-          <Section title="Signing in">
+          <Section title="Signing In">
             <p>
               The app signs you in with your email, no password. Tap <strong>I Already Have an Account</strong>, enter your email
               and tap <strong>Email Me a Sign-In Code</strong>. Type the 6-digit code from the email into the app. A code works
@@ -59,14 +59,14 @@ export default function SupportPage() {
             <p>No email? Check your spam folder, make sure it&apos;s the address you applied with, or call us.</p>
           </Section>
 
-          <Section title="New here">
+          <Section title="New Here">
             <p>
               Tap <strong>I&apos;m New Here</strong> to apply. It takes about 3 minutes, and your answers are saved so you can finish
               on any device. Our team reviews every application and contacts you about next steps.
             </p>
           </Section>
 
-          <Section title="Shifts, hours and pay">
+          <Section title="Shifts, Hours and Pay">
             <p>
               Once you&apos;re set up to work, <strong>Shifts</strong> shows open shifts and their pay, <strong>Schedule</strong>{" "}
               shows what you&apos;re booked for, and <strong>To Do</strong> shows anything you still need before you can work. If
@@ -74,7 +74,7 @@ export default function SupportPage() {
             </p>
           </Section>
 
-          <Section title="Deleting your account">
+          <Section title="Deleting Your Account">
             <p>
               Sign in, open <strong>Me</strong>, then tap <strong>Delete My Account</strong> and <strong>Ask to Delete My Account</strong>.
               We delete your account within 30 days. You can take the request back in the same place until then. If you can&apos;t
@@ -89,7 +89,7 @@ export default function SupportPage() {
             </p>
           </Section>
 
-          <Section title="Your information">
+          <Section title="Your Information">
             <p>
               Read our{" "}
               <Link href="/privacy" className={link}>

@@ -8,6 +8,8 @@ From 2026-09-20 the public site was temporarily replaced by the approved website
 
 All 19 previously published HTML files, including Apply Now, the five legacy URLs and both 404 files, carry the same notice. Old JavaScript/RSC payloads, photographs and old machine-readable marketing text are removed from the deployment artifact. Contact details come from `src/lib/brand.ts`. Fonts are the byte-identical Montserrat/Nunito Sans Latin assets from the previous verified build.
 
+The app's how-to videos (`public/how-to/`) are the one part of the full site that holding mode still publishes, at `/how-to/<name>.mp4`: the app plays them from this site, so they must not disappear while the notice is up.
+
 GitHub Pages serves known paths with HTTP 200 and unknown paths with its custom 404. This static holding mode is NOT an HTTP 503 maintenance response. There are no permanent redirects and no blanket `noindex`; pages canonicalize to the root, and the temporary sitemap lists only the root.
 
 ## Restore the website

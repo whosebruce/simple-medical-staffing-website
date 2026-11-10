@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
+import { publishHowToVideos } from './lib/how-to.mjs';
 const root = process.cwd();
 if (JSON.parse(fs.readFileSync('package.json', 'utf8')).name !== 'simple-medical-staffing-website') throw new Error('Wrong project');
 const config = JSON.parse(fs.readFileSync('maintenance/config.json', 'utf8'));
@@ -30,7 +31,9 @@ fs.copyFileSync('public/kindred/logos/kindred-mark.svg', path.join(target, 'hold
 fs.copyFileSync('public/favicon.ico', path.join(target, 'favicon.ico'));
 fs.writeFileSync(path.join(target, 'CNAME'), 'simplemedicalstaffing.com\n');
 fs.writeFileSync(path.join(target, '.nojekyll'), '');
-fs.writeFileSync(path.join(target, 'robots.txt'), 'User-agent: *\nAllow: /\nSitemap: https://simplemedicalstaffing.com/sitemap.xml\n');
+fs.writeFileSync(path.join(target, 'robots.txt'), 'User-agent: *\nAllow: /\nDisallow: /how-to/\nSitemap: https://simplemedicalstaffing.com/sitemap.xml\n');
+// The app plays its how-to videos from this site, so they stay up while the notice does.
+const videos = publishHowToVideos(root, target);
 fs.writeFileSync(path.join(target, 'sitemap.xml'), '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://simplemedicalstaffing.com/</loc></url></urlset>\n');
 fs.writeFileSync(path.join(target, 'llms.txt'), '# Simple Medical Workforce Solutions\n\nWe’re Updating Our Website\n\nSomething better is coming. We’re making a few improvements to better serve our healthcare partners.\n\nPhone: '+phone+'\nEmail: '+email+'\n');
-console.log(JSON.stringify({ mode: 'holding', release, htmlPages: config.pages.length }));
+console.log(JSON.stringify({ mode: 'holding', release, htmlPages: config.pages.length, howToVideos: videos.length }));
