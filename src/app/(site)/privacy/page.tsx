@@ -63,7 +63,7 @@ export default function PrivacyPage() {
               Simple Medical Workforce Solutions (&ldquo;we&rdquo;, &ldquo;us&rdquo;) is a healthcare staffing agency in Southern
               California, operated by True Spirit, LLC. This policy covers this website and the SMWS app: the iPhone app and the
               web app at app.simplemedicalstaffing.com, where healthcare professionals apply, sign in, pick up shifts and keep
-              their records, and where our office staff run scheduling and hiring.
+              their records, where healthcare facilities request staff, and where our office staff run scheduling and hiring.
             </p>
           </Section>
 
@@ -95,6 +95,10 @@ export default function PrivacyPage() {
                 set up, and, if you turn on notifications, your device&apos;s notification token.
               </li>
               <li>Your choices, such as whether we may text you about open shifts and your notification settings.</li>
+              <li>
+                Staffing requests from facilities: the facility&apos;s name and location, your name, title, work email and phone
+                number, the roles you need, and any notes you add.
+              </li>
             </ul>
             <p>
               The app does not collect your location, contacts or browsing activity, shows no ads, and contains no advertising or
@@ -107,6 +111,7 @@ export default function PrivacyPage() {
               <li>To review your application and check your credentials.</li>
               <li>To offer, book and schedule shifts, record your time and pay you.</li>
               <li>To send you sign-in codes and email about your application, shifts and account.</li>
+              <li>To contact you about a staffing request and to set up your facility as a customer.</li>
               <li>To keep accounts secure, prevent fraud and fix problems.</li>
               <li>To meet our legal, tax and healthcare staffing obligations.</li>
             </ul>
