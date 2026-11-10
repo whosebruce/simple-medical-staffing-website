@@ -218,6 +218,10 @@ export const REQUIREMENTS = [
       "We do not sell your personal information or share it for advertising.",
       "We delete your account within 30 days.",
       "The app does not collect your location, contacts or browsing activity",
+      // 2026-11-10: the Request Staff form in the app (owner approved).
+      "where healthcare facilities request staff",
+      "name and location, your name, title, work email and phone number, the roles you need, and any notes you add.",
+      "To contact you about a staffing request and to set up your facility as a customer.",
     ],
     absent: ["Review draft", "Not Approved", "Not Binding", "For client and counsel review", "Website Privacy Notice", "It does not currently accept online applications"],
   },
