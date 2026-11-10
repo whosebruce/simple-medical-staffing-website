@@ -22,7 +22,7 @@ Roles placed: Physical Therapist, Physical Therapy Aide, Occupational Therapist,
 - [About](https://simplemedicalstaffing.com/about/): Mission, values, and founder and CEO Dina Casares.
 - [Contact](https://simplemedicalstaffing.com/contact/): Phone, email, and office address; what to include in a staffing request.
 - [Request Staff](https://simplemedicalstaffing.com/request-staff/): For facilities: a link into the web app's staffing request form, with the phone and email as the other way in.
-- [Apply Now](https://simplemedicalstaffing.com/apply/): How healthcare professionals express interest by phone or email; what not to send by email.
+- [Apply Now](https://simplemedicalstaffing.com/apply/): How healthcare professionals apply online in the web app, or reach the team by phone or email; what not to send by email.
 
 ## Staffing Solutions in Detail
 
@@ -33,8 +33,8 @@ Roles placed: Physical Therapist, Physical Therapy Aide, Occupational Therapist,
 
 ## For Healthcare Professionals
 
-- [Candidate FAQ for Healthcare Professionals](https://simplemedicalstaffing.com/professionals/faq/): How to express interest, kinds of work available, roles placed, and what to expect from a coordinator.
+- [Candidate FAQ for Healthcare Professionals](https://simplemedicalstaffing.com/professionals/faq/): How to apply, kinds of work available, roles placed, and what to expect from a coordinator.
 
 ## Optional
 
-- [Privacy](https://simplemedicalstaffing.com/privacy/): Website privacy notice, effective September 2026.
+- [Privacy](https://simplemedicalstaffing.com/privacy/): Privacy policy for this website and the SMWS app, effective November 2026.
