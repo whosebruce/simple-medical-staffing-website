@@ -3,7 +3,11 @@
 // the app's application. These are the only outside links besides the two social profiles: APP_LINKS in
 // scripts/copy-requirements.mjs mirrors them, and scripts/verify-site.mjs refuses any other outside URL.
 // They open in the same tab (the app is ours, not a third party).
+//
+// requestStaff is the facilities' counterpart of apply: the app's public staffing request form, so every
+// "Request Staff" goes straight to it and this site still collects nothing itself.
 export const APP_LINKS = {
   signIn: "https://app.simplemedicalstaffing.com/account/sign-in",
   apply: "https://app.simplemedicalstaffing.com/apply",
+  requestStaff: "https://app.simplemedicalstaffing.com/request-staff",
 } as const;

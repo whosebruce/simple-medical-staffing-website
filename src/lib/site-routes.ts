@@ -23,6 +23,7 @@ export const PUBLIC_ROUTES: readonly PublicRoute[] = [
   { path: "/professionals/faq/", label: "Candidate FAQ", parent: "/professionals/" },
   { path: "/about/", label: "About", parent: "/" },
   { path: "/contact/", label: "Contact", parent: "/" },
+  { path: "/request-staff/", label: "Request Staff", parent: "/" },
   { path: "/apply/", label: "Apply Now", parent: "/" },
   { path: "/app/", label: "The App", parent: "/" },
   { path: "/privacy/", label: "Privacy", parent: "/" },

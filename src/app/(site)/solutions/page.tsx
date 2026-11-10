@@ -3,6 +3,7 @@ import { Photo } from "@/components/site/Photo";
 import { StepPath } from "@/components/site/StepPath";
 import { StructuredData } from "@/components/site/StructuredData";
 import { Wave } from "@/components/site/Wave";
+import { APP_LINKS } from "@/lib/app-links";
 import { BUSINESS_FACTS } from "@/lib/brand";
 import { KINDRED_GRADIENTS } from "@/lib/kindred-gradients";
 import { SERVICE_IDS } from "@/lib/schema";
@@ -91,9 +92,9 @@ export default function SolutionsPage() {
             <p className="k-small font-semibold text-k-navy">
               {BUSINESS_FACTS.serviceArea}: {BUSINESS_FACTS.serviceRegions}. {BUSINESS_FACTS.primaryFocus}. {BUSINESS_FACTS.facilities}.
             </p>
-            <Link href="/contact" className="k-btn-primary mt-2">
-              Request Staffing
-            </Link>
+            <a href={APP_LINKS.requestStaff} className="k-btn-primary mt-2">
+              Request Staff
+            </a>
           </div>
           <div className="relative mx-auto w-full max-w-[560px] lg:max-w-none">
             <div aria-hidden className="k-collage-ring -left-3 -top-5 w-[26%] lg:-left-8" />

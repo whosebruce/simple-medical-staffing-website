@@ -6,6 +6,7 @@ import { Photo } from "@/components/site/Photo";
 import { StepPath } from "@/components/site/StepPath";
 import { StructuredData } from "@/components/site/StructuredData";
 import { Wave } from "@/components/site/Wave";
+import { APP_LINKS } from "@/lib/app-links";
 import { BUSINESS_FACTS } from "@/lib/brand";
 import { SERVICE_IDS } from "@/lib/schema";
 import { documentTitle, pageMetadata } from "@/lib/seo";
@@ -98,9 +99,9 @@ export default function StaffingRequestChecklistPage() {
               Unit, shift, specialty, start date. Send what you have and we&apos;ll ask about the rest. This page lists what
               helps us start on a match right away.
             </p>
-            <Link href="/contact" className="k-btn-primary mt-2">
-              Request Staffing
-            </Link>
+            <a href={APP_LINKS.requestStaff} className="k-btn-primary mt-2">
+              Request Staff
+            </a>
           </div>
           <div className="relative mx-auto w-full max-w-[540px] lg:max-w-none">
             <div aria-hidden className="k-collage-ring -bottom-6 -left-6 top-auto w-[24%]" />
@@ -204,9 +205,9 @@ export default function StaffingRequestChecklistPage() {
       </section>
 
       <ClosingPanel heading="Tell us the need. We'll take it from there.">
-        <Link href="/contact" className="k-btn-primary">
-          Request Staffing
-        </Link>
+        <a href={APP_LINKS.requestStaff} className="k-btn-primary">
+          Request Staff
+        </a>
       </ClosingPanel>
     </>
   );

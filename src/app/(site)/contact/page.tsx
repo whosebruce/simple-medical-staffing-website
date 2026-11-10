@@ -64,9 +64,14 @@ export default function ContactPage() {
                 Call or email with the unit, the shift, the specialty, and the start date. That&apos;s everything we need to
                 get started on a match.
               </p>
-              <Link href="/solutions/staffing-request-checklist" className="k-arrow-link text-k-sky-ink">
-                See the Staffing Request Checklist&nbsp;→
-              </Link>
+              <div className="flex flex-col items-start">
+                <Link href="/request-staff" className="k-arrow-link text-k-sky-ink">
+                  See Staffing Request Options&nbsp;→
+                </Link>
+                <Link href="/solutions/staffing-request-checklist" className="k-arrow-link text-k-sky-ink">
+                  See the Staffing Request Checklist&nbsp;→
+                </Link>
+              </div>
             </article>
             <article className="k-panel flex flex-col items-start gap-4 bg-k-violet-tint p-8 sm:p-10">
               <p className="k-eyebrow k-eyebrow-violet text-k-violet-ink">I&apos;m a professional</p>

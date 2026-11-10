@@ -7,6 +7,7 @@ import { Photo } from "./Photo";
 import { RoleCloud } from "./RoleCloud";
 import { StepPath, type Step } from "./StepPath";
 import { Wave } from "./Wave";
+import { APP_LINKS } from "@/lib/app-links";
 import { BUSINESS_FACTS } from "@/lib/brand";
 import { KINDRED_GRADIENTS } from "@/lib/kindred-gradients";
 import type { SiteImageKey } from "@/lib/site-media";
@@ -63,9 +64,9 @@ export function ServicePage({
             <p className="k-eyebrow text-k-sky-ink">{eyebrow}</p>
             <h1 className="k-h1 k-h1-long">{heading}</h1>
             <p className="k-lede">{lede}</p>
-            <Link href="/contact" className="k-btn-primary mt-2">
-              Request Staffing
-            </Link>
+            <a href={APP_LINKS.requestStaff} className="k-btn-primary mt-2">
+              Request Staff
+            </a>
           </div>
           <div className="relative mx-auto w-full max-w-[540px] lg:max-w-none">
             <div aria-hidden className="k-collage-ring -bottom-6 -left-6 top-auto w-[24%]" />
@@ -174,9 +175,9 @@ export function ServicePage({
       </section>
 
       <ClosingPanel heading={closing}>
-        <Link href="/contact" className="k-btn-primary">
-          Request Staffing
-        </Link>
+        <a href={APP_LINKS.requestStaff} className="k-btn-primary">
+          Request Staff
+        </a>
         <Link href="/solutions" className="k-btn-on-dark">
           All Staffing Solutions
         </Link>

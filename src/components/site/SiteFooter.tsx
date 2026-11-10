@@ -16,7 +16,7 @@ const COLUMNS = [
       { label: "Per-Diem Staffing", href: "/solutions/per-diem-staffing" },
       { label: "Direct Placement", href: "/solutions/direct-placement" },
       { label: "Staffing Request Checklist", href: "/solutions/staffing-request-checklist" },
-      { label: "Request Staffing", href: "/contact" },
+      { label: "Request Staff", href: APP_LINKS.requestStaff },
     ],
   },
   {
@@ -97,7 +97,7 @@ export function SiteFooter() {
                 <ul className="flex flex-col">
                   {column.links.map((link) => (
                     <li key={`${column.heading}-${link.label}`}>
-                      {/* Sign In and Apply Now go to the web app (src/lib/app-links.ts): plain same-tab links. */}
+                      {/* Sign In, Apply Now and Request Staff go to the web app (src/lib/app-links.ts): plain same-tab links. */}
                       {/^https?:/.test(link.href) ? (
                         <a href={link.href} className="k-footer-link">
                           {link.label}

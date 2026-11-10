@@ -66,9 +66,9 @@ export default function HomePage() {
               {BUSINESS_FACTS.serviceArea}: {BUSINESS_FACTS.serviceRegions}. {BUSINESS_FACTS.primaryFocus}. {BUSINESS_FACTS.facilities}.
             </p>
             <div className="mt-2 flex flex-wrap gap-3.5">
-              <Link href="/contact" className="k-btn-primary">
-                Request Staffing
-              </Link>
+              <a href={APP_LINKS.requestStaff} className="k-btn-primary">
+                Request Staff
+              </a>
               <Link href="/professionals" className="k-btn-outline">
                 Find Your Next Role
               </Link>
@@ -216,9 +216,9 @@ export default function HomePage() {
       </section>
 
       <ClosingPanel heading="Stronger teams start with the right match.">
-        <Link href="/contact" className="k-btn-primary">
-          Request Staffing
-        </Link>
+        <a href={APP_LINKS.requestStaff} className="k-btn-primary">
+          Request Staff
+        </a>
         <a href={APP_LINKS.apply} className="k-btn-on-dark">
           Apply Now
         </a>
