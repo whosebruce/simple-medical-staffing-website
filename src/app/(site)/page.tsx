@@ -92,7 +92,7 @@ export default function HomePage() {
               <a href={`tel:${BUSINESS_FACTS.phoneTel}`} className="k-link whitespace-nowrap">
                 {BUSINESS_FACTS.phoneDisplay}
               </a>{" "}
-              or email <EmailText className="whitespace-nowrap font-semibold text-k-navy" />.
+              or email <EmailText whole className="font-semibold text-k-navy" />.
             </p>
           </div>
           <div className="k-collage mx-auto max-w-[560px] lg:max-w-none">
