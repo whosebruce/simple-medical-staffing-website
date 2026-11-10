@@ -234,13 +234,14 @@ export const REQUIREMENTS = [
   // "still being built"; it says professionals can apply and sign in online.
   {
     id: "H01",
-    title: "Home note: professionals apply and sign in online; the phone and email for everything else",
+    title: "Home note: professionals apply and sign in online, facilities start a staffing request online; the phone and email for everything else",
     route: "/",
     present: [
       "Healthcare professionals can now apply and sign in online in",
-      ">our web app</a>. For staffing requests and anything else, call",
+      ">our web app</a>, and facilities can",
+      ">start a staffing request online</a>. For anything else, call",
     ],
-    absent: ["still being built", "For now, our team handles every request directly", "every request directly by phone and email"],
+    absent: ["still being built", "For now, our team handles every request directly", "every request directly by phone and email", "For staffing requests and anything else"],
   },
   // 2026-11-08 (Bruce): online applications are on. /apply stays for old
   // links: one button into the app's application, then the phone and email,
@@ -276,6 +277,18 @@ export const REQUIREMENTS = [
       "Please do not include patient information, medical records, or other sensitive documents in an email.",
     ],
     absent: ["mailto:", "<form"],
+  },
+  // The checklist was written when a request could only be phoned or emailed
+  // in. It must not tell a facility there is no form now that there is one.
+  {
+    id: "Q02",
+    title: "Staffing request checklist: a request can be started online, or by phone or email",
+    route: "/solutions/staffing-request-checklist",
+    present: [
+      "These are suggestions, not requirements.",
+      `href="${APP_LINKS.requestStaff}" class="k-link">start a request online</a>. Or call or email with the details above`,
+    ],
+    absent: ["There is no form to fill out", "not a form to complete"],
   },
   {
     id: "A02",

@@ -151,7 +151,7 @@ export default function StaffingRequestChecklistPage() {
             <p className="k-eyebrow k-eyebrow-violet text-k-violet-ink">Helpful If You Have It</p>
             <h2 className="k-h2">Details That Make the Match Better.</h2>
             <p className="k-body">
-              These are suggestions, not a form to complete. Each one helps us look for the right person instead of an
+              These are suggestions, not requirements. Each one helps us look for the right person instead of an
               available one, and the team will tell you if anything specific is needed for your request.
             </p>
           </div>
@@ -176,8 +176,12 @@ export default function StaffingRequestChecklistPage() {
             <p className="k-eyebrow k-eyebrow-teal text-k-teal-ink">How to Send It</p>
             <h2 className="k-h2">Call or Email. Short and Plain Is Perfect.</h2>
             <p className="k-body">
-              There is no form to fill out. Call or email with the details above, in whatever order you have them, and a
-              person will pick it up from there.
+              You can{" "}
+              <a href={APP_LINKS.requestStaff} className="k-link">
+                start a request online
+              </a>
+              . Or call or email with the details above, in whatever order you have them, and a person will pick it up
+              from there.
             </p>
             <div className="mt-1 flex w-full flex-col gap-1 rounded-[32px] bg-k-teal-tint p-7">
               <a

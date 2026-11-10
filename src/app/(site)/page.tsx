@@ -77,13 +77,18 @@ export default function HomePage() {
                 phone and email to use now. Email stays plain text; the only mailto
                 on the site is on /apply/. Since 2026-11-08 the web app is open, so
                 the note says what professionals can do online instead of "still
-                being built". */}
+                being built". Facilities can start a request online as well, so the
+                phone and email are for everything else. */}
             <p className="k-small text-k-muted">
               Healthcare professionals can now apply and sign in online in{" "}
               <Link href="/app" className="k-link">
                 our web app
               </Link>
-              . For staffing requests and anything else, call{" "}
+              , and facilities can{" "}
+              <Link href="/request-staff" className="k-link">
+                start a staffing request online
+              </Link>
+              . For anything else, call{" "}
               <a href={`tel:${BUSINESS_FACTS.phoneTel}`} className="k-link whitespace-nowrap">
                 {BUSINESS_FACTS.phoneDisplay}
               </a>{" "}
