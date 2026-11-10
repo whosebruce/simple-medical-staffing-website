@@ -21,7 +21,7 @@ export default function NotFound() {
             </Link>
           </div>
           <div className="relative">
-            <div aria-hidden className="k-collage-ring -left-6 -top-6 z-10 w-[120px]" />
+            <div aria-hidden className="k-collage-ring -left-3 -top-6 z-10 w-[120px] sm:-left-6" />
             {/* Its own photograph: "interior" is the /privacy header. */}
             <Photo
               image="colleagues"

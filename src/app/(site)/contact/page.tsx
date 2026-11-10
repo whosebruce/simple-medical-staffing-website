@@ -119,7 +119,7 @@ export default function ContactPage() {
               <Circle gradient="sky-violet" className="k-orb -right-16 -top-20 h-[190px] w-[190px] opacity-40" />
               <div className="flex flex-col items-start gap-3">
                 <p className="font-display text-xs font-bold uppercase tracking-[0.16em] text-k-mist">Ready to Apply Instead?</p>
-                <p className="font-display text-xl font-bold text-white">Ready to Talk About Your Next Role?</p>
+                <p className="text-balance font-display text-xl font-bold text-white">Ready to Talk About Your Next Role?</p>
                 <a href={APP_LINKS.apply} className="k-btn-primary mt-2">
                   Apply Now
                 </a>

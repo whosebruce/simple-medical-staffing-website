@@ -56,7 +56,7 @@ export default function HomePage() {
         <div aria-hidden className="k-aura -right-48 -top-64 h-[680px] w-[680px]" />
         <div className="k-wrap relative grid items-center gap-12 pb-14 pt-10 sm:pt-14 lg:grid-cols-[minmax(0,1.04fr)_minmax(0,0.96fr)] lg:gap-16 lg:pb-20 lg:pt-16">
           <div className="flex flex-col items-start gap-6">
-            <p className="k-eyebrow text-k-sky-ink">Contract · Per-Diem · Direct Placement</p>
+            <p className="k-eyebrow text-k-sky-ink">Contract&nbsp;· Per-Diem&nbsp;· Direct Placement</p>
             <h1 className="k-h1">The Right Professional, on the Right Shift.</h1>
             <p className="k-lede">
               We connect reliable medical professionals with the facilities that need them. Every match is made for
@@ -87,7 +87,7 @@ export default function HomePage() {
               <a href={`tel:${BUSINESS_FACTS.phoneTel}`} className="k-link whitespace-nowrap">
                 {BUSINESS_FACTS.phoneDisplay}
               </a>{" "}
-              or email <EmailText className="font-semibold text-k-navy" />.
+              or email <EmailText className="whitespace-nowrap font-semibold text-k-navy" />.
             </p>
           </div>
           <div className="k-collage mx-auto max-w-[560px] lg:max-w-none">

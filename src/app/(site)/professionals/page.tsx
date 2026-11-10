@@ -48,7 +48,7 @@ export default function ProfessionalsPage() {
         />
         <div className="k-wrap relative grid items-center gap-12 pb-14 pt-10 sm:pt-14 lg:grid-cols-[minmax(0,1.04fr)_minmax(0,0.96fr)] lg:gap-16 lg:pb-20 lg:pt-16">
           <div className="flex flex-col items-start gap-6">
-            <p className="k-eyebrow k-eyebrow-violet text-k-violet-ink">Healthcare Professionals · Careers</p>
+            <p className="k-eyebrow k-eyebrow-violet text-wrap text-k-violet-ink">Healthcare Professionals&nbsp;· Careers</p>
             <h1 className="k-h1">Your Skills. Your Schedule. The Right Opportunity.</h1>
             <p className="k-lede">
               Whether you&apos;re looking for per-diem flexibility, a contract opportunity, or your next permanent role, we
@@ -119,7 +119,7 @@ export default function ProfessionalsPage() {
       <section className="k-section">
         <div className="k-wrap">
           <div className="relative overflow-hidden rounded-[clamp(32px,4vw,52px)] border border-k-line bg-gradient-to-br from-white via-k-cloud to-k-sky-tint px-6 py-12 sm:px-12 sm:py-16">
-            <div aria-hidden className="k-collage-ring -right-10 -top-10 left-auto w-[180px] opacity-60" />
+            <div aria-hidden className="k-collage-ring -right-10 -top-10 left-auto hidden w-[180px] opacity-60 sm:block" />
             <div className="relative flex max-w-[860px] flex-col items-start gap-4">
               <p className="k-eyebrow text-k-sky-ink">Healthcare Professionals We Provide.</p>
               <h2 className="k-h2">The Right Professionals for Every Level of Care</h2>

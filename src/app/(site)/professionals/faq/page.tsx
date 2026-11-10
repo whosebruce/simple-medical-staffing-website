@@ -168,7 +168,7 @@ export default function CandidateFaqPage() {
         <div className="k-wrap relative grid items-center gap-12 pb-14 pt-8 sm:pt-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-16 lg:pb-20 lg:pt-14">
           <div className="flex flex-col items-start gap-6">
             <Breadcrumbs path={PATH} />
-            <p className="k-eyebrow k-eyebrow-violet text-k-violet-ink">Healthcare Professionals · Questions</p>
+            <p className="k-eyebrow k-eyebrow-violet text-wrap text-k-violet-ink">Healthcare Professionals&nbsp;· Questions</p>
             <h1 className="k-h1 k-h1-long">Questions Healthcare Professionals Ask Us.</h1>
             <p className="k-lede">
               Plain answers about getting started, the work we place, and what to expect from your coordinator. If your
@@ -184,7 +184,7 @@ export default function CandidateFaqPage() {
             </div>
           </div>
           <div className="relative mx-auto w-full max-w-[460px] lg:max-w-none">
-            <div aria-hidden className="k-collage-ring -left-6 top-[8%] w-[26%]" />
+            <div aria-hidden className="k-collage-ring -left-3 top-[8%] w-[26%] sm:-left-6" />
             <Photo
               image="leaning"
               shape="arch"

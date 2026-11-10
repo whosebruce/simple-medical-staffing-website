@@ -93,7 +93,7 @@ export default function StaffingRequestChecklistPage() {
         <div className="k-wrap relative grid items-center gap-12 pb-14 pt-8 sm:pt-12 lg:grid-cols-[minmax(0,1.08fr)_minmax(0,0.92fr)] lg:gap-16 lg:pb-20 lg:pt-14">
           <div className="flex flex-col items-start gap-6">
             <Breadcrumbs path={PATH} />
-            <p className="k-eyebrow text-k-sky-ink">Staffing Solutions · For Facilities</p>
+            <p className="k-eyebrow text-k-sky-ink">Staffing Solutions&nbsp;· For Facilities</p>
             <h1 className="k-h1 k-h1-long">What to Include in a Staffing Request.</h1>
             <p className="k-lede">
               Unit, shift, specialty, start date. Send what you have and we&apos;ll ask about the rest. This page lists what
@@ -104,7 +104,7 @@ export default function StaffingRequestChecklistPage() {
             </a>
           </div>
           <div className="relative mx-auto w-full max-w-[540px] lg:max-w-none">
-            <div aria-hidden className="k-collage-ring -bottom-6 -left-6 top-auto w-[24%]" />
+            <div aria-hidden className="k-collage-ring -bottom-6 -left-3 top-auto w-[24%] sm:-left-6" />
             <Photo
               image="notebook"
               shape="leaf"

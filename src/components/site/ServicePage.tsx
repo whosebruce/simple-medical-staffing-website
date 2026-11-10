@@ -61,7 +61,8 @@ export function ServicePage({
         <div className="k-wrap relative grid items-center gap-12 pb-14 pt-8 sm:pt-12 lg:grid-cols-[minmax(0,1.08fr)_minmax(0,0.92fr)] lg:gap-16 lg:pb-20 lg:pt-14">
           <div className="flex flex-col items-start gap-6">
             <Breadcrumbs path={path} />
-            <p className="k-eyebrow text-k-sky-ink">{eyebrow}</p>
+            {/* The separator stays with the words before it, so a wrapped line never starts with the dot. */}
+            <p className="k-eyebrow text-k-sky-ink">{eyebrow.replaceAll(" · ", "\u00a0· ")}</p>
             <h1 className="k-h1 k-h1-long">{heading}</h1>
             <p className="k-lede">{lede}</p>
             <a href={APP_LINKS.requestStaff} className="k-btn-primary mt-2">
@@ -69,7 +70,7 @@ export function ServicePage({
             </a>
           </div>
           <div className="relative mx-auto w-full max-w-[540px] lg:max-w-none">
-            <div aria-hidden className="k-collage-ring -bottom-6 -left-6 top-auto w-[24%]" />
+            <div aria-hidden className="k-collage-ring -bottom-6 -left-3 top-auto w-[24%] sm:-left-6" />
             <Photo
               image={image}
               shape="leaf"

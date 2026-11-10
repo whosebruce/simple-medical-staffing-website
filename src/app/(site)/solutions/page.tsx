@@ -86,7 +86,7 @@ export default function SolutionsPage() {
         <div aria-hidden className="k-aura -left-60 -top-72 h-[640px] w-[640px]" />
         <div className="k-wrap relative grid items-center gap-12 pb-14 pt-10 sm:pt-14 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-16 lg:pb-20 lg:pt-16">
           <div className="flex flex-col items-start gap-6">
-            <p className="k-eyebrow text-k-sky-ink">Staffing Solutions · For Facilities</p>
+            <p className="k-eyebrow text-k-sky-ink">Staffing Solutions&nbsp;· For Facilities</p>
             <h1 className="k-h1">Staffing That Fits How Your Facility Runs.</h1>
             <p className="k-lede">Tell us the unit, the shift, and the team, and we&apos;ll look for the professional who fits.</p>
             <p className="k-small font-semibold text-k-navy">
@@ -127,7 +127,7 @@ export default function SolutionsPage() {
                 <span aria-hidden className={`k-glyph${s.square ? " k-glyph-sq" : ""}`} style={{ background: s.glyph }} />
                 <h3 className="k-h3 text-[1.45rem]">{s.title}</h3>
                 <p className="k-body">{s.body}</p>
-                <p className="mt-auto rounded-2xl bg-k-cloud px-4 py-3 text-[14.5px] font-semibold leading-snug text-k-muted">
+                <p className="mt-auto text-pretty rounded-2xl bg-k-cloud px-4 py-3 text-[14.5px] font-semibold leading-snug text-k-muted">
                   {s.bestFor}
                 </p>
                 <Link href={s.href} className={`k-arrow-link ${s.ink}`}>

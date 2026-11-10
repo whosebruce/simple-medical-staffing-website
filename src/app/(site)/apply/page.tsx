@@ -89,7 +89,7 @@ export default function ApplyPage() {
           </p>
         </div>
         <div className="relative mx-auto w-full max-w-[420px] lg:max-w-none">
-          <div aria-hidden className="k-collage-ring -right-6 top-[10%] left-auto w-[30%]" />
+          <div aria-hidden className="k-collage-ring -right-3 top-[10%] left-auto w-[30%] sm:-right-6" />
           <Photo
             image="ledge"
             shape="arch"
