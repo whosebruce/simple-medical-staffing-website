@@ -14,6 +14,7 @@ import {
   PAGE_DESCRIPTIONS,
   PUBLIC_ROUTES,
   REQUIREMENTS,
+  RETIRED_ACTION_LABELS,
   RETIRED_LABEL_VARIANTS,
   ROUTE_LABELS,
   SITEWIDE_ABSENT,
@@ -91,8 +92,11 @@ for (const rule of SITEWIDE_ABSENT) {
 // Application destination (2026-11-08, online applications on): every
 // "Apply Now" and "Start Your Application" action goes to the web app's
 // application, every "Sign In" and "Sign In on the Web" to its sign-in, and
-// "See Application Options" stays on this site's /apply/. Every route carries
-// at least one Apply Now and one Sign In (the header). /apply/ carries exactly
+// "See Application Options" stays on this site's /apply/. The facility actions
+// mirror them: every "Request Staff" and "Start Your Request" goes to the web
+// app's staffing request form, and "See Staffing Request Options" stays on
+// this site's /request-staff/. Every route carries at least one Apply Now, one
+// Request Staff and one Sign In (the header). /apply/ carries exactly
 // one static mailto: contact link to the real address (no query/body data),
 // the only mailto on the site (scripts/verify-site.mjs enforces the sitewide
 // half).
@@ -102,6 +106,9 @@ const LINK_DESTINATIONS = {
   "Sign In": APP_LINKS.signIn,
   "Sign In on the Web": APP_LINKS.signIn,
   "See Application Options": "/apply/",
+  "Request Staff": APP_LINKS.requestStaff,
+  "Start Your Request": APP_LINKS.requestStaff,
+  "See Staffing Request Options": "/request-staff/",
 };
 for (const route of PUBLIC_ROUTES) {
   const text = decode(fs.readFileSync(pageFile(route), "utf8"));
@@ -116,12 +123,12 @@ for (const route of PUBLIC_ROUTES) {
     counted[a.label] += 1;
     if (a.href !== LINK_DESTINATIONS[a.label]) wrong.push(`${a.label} -> ${a.href}`);
   }
-  const absent = ["Apply Now", "Sign In"].filter((l) => counted[l] === 0);
+  const absent = ["Apply Now", "Request Staff", "Sign In"].filter((l) => counted[l] === 0);
   const pass = wrong.length === 0 && absent.length === 0;
   if (!pass) failures += 1;
   results.push({
     id: "R13-link",
-    title: "Apply Now / Start Your Application go to the app's application, Sign In to its sign-in, See Application Options to /apply/",
+    title: "Apply Now / Start Your Application go to the app's application, Request Staff / Start Your Request to its request form, Sign In to its sign-in, See Application Options to /apply/, See Staffing Request Options to /request-staff/",
     route,
     pass,
     counted,
@@ -169,9 +176,10 @@ for (const route of PUBLIC_ROUTES) {
   const periodButtons = anchors.filter((a) => /\.$/.test(a) && a.split(" ").length <= 5);
   const lower = new Set(CANONICAL_ACTION_LABELS.map((l) => l.toLowerCase()));
   const misspelt = anchors.map((a) => a.replace(/\s*→$/, "")).filter((a) => lower.has(a.toLowerCase()) && !CANONICAL_ACTION_LABELS.includes(a));
-  const pass = variantHits.length === 0 && missing.length === 0 && periodButtons.length === 0 && misspelt.length === 0;
+  const retired = anchors.map((a) => a.replace(/\s*→$/, "")).filter((a) => RETIRED_ACTION_LABELS.includes(a));
+  const pass = variantHits.length === 0 && missing.length === 0 && periodButtons.length === 0 && misspelt.length === 0 && retired.length === 0;
   if (!pass) failures += 1;
-  results.push({ id: "E02", title: "canonical Title Case action labels, no retired variants, no period-ending buttons", route, pass, variantHits, missing, periodButtons, misspelt });
+  results.push({ id: "E02", title: "canonical Title Case action labels, no retired labels or variants, no period-ending buttons", route, pass, variantHits, missing, periodButtons, misspelt, retired });
   if (PAGE_DESCRIPTIONS[route]) {
     const m = html.match(/<meta name="description" content="([^"]*)"/);
     const ok = !!m && m[1].includes(PAGE_DESCRIPTIONS[route]);
@@ -210,6 +218,7 @@ for (const r of results) {
     r.variantHits?.length ? `variants: ${JSON.stringify(r.variantHits)}` : "",
     r.periodButtons?.length ? `period-buttons: ${JSON.stringify(r.periodButtons)}` : "",
     r.misspelt?.length ? `misspelt: ${JSON.stringify(r.misspelt)}` : "",
+    r.retired?.length ? `retired: ${JSON.stringify(r.retired)}` : "",
     r.duplicates?.length ? `duplicates: ${JSON.stringify(r.duplicates)}` : "",
   ]
     .filter(Boolean)

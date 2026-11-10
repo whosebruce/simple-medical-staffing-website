@@ -17,11 +17,13 @@ export const APPLICATION_CONTACT = "info@simplemedicalstaffing.com";
  * applications are on, Sign In sits in the header and footer, and every
  * "Apply Now" goes straight to the app's application. With the two social
  * profiles these are the only outside links (scripts/verify-site.mjs); they
- * open in the same tab.
+ * open in the same tab. requestStaff is the facilities' counterpart of apply:
+ * every "Request Staff" goes straight to the app's staffing request form.
  */
 export const APP_LINKS = {
   signIn: "https://app.simplemedicalstaffing.com/account/sign-in",
   apply: "https://app.simplemedicalstaffing.com/apply",
+  requestStaff: "https://app.simplemedicalstaffing.com/request-staff",
 };
 
 // Every indexable canonical route (mirrors src/lib/site-routes.ts, which the
@@ -37,6 +39,7 @@ export const PUBLIC_ROUTES = [
   "/professionals/faq",
   "/about",
   "/contact",
+  "/request-staff",
   "/apply",
   "/app",
   "/privacy",
@@ -256,6 +259,24 @@ export const REQUIREMENTS = [
     ],
     absent: ["being rebuilt", "when the new application process is ready", "Call or email to express interest"],
   },
+  // /request-staff is /apply for facilities: one button into the app's staffing
+  // request form, then the phone and the email (as text: the one mailto stays
+  // on /apply), with the sensitive-documents caution. It describes neither the
+  // form's questions nor a response time, so the app can change both.
+  {
+    id: "Q01",
+    title: "Request Staff page: Start Your Request in the app, phone and email as the other way in",
+    route: "/request-staff",
+    present: [
+      "Start your staffing request online. Send what you have and we'll ask about the rest.",
+      `href="${APP_LINKS.requestStaff}"`,
+      "Start Your Request",
+      "Prefer to talk first? Call or email our team.",
+      "Email · Staffing Requests",
+      "Please do not include patient information, medical records, or other sensitive documents in an email.",
+    ],
+    absent: ["mailto:", "<form"],
+  },
   {
     id: "A02",
     title: "App page: the web app is open now (Sign In on the Web); the iPhone app is coming to the App Store soon",
@@ -371,7 +392,11 @@ export const SITEWIDE_ABSENT = [
 // ---------------------------------------------------------------------------
 export const CANONICAL_ACTION_LABELS = [
   "Apply Now",
-  "Request Staffing",
+  // The facility action is named after the app's form, which every one of
+  // these links opens.
+  "Request Staff",
+  "Start Your Request",
+  "See Staffing Request Options",
   "Find Your Next Role",
   "Explore Staffing Solutions",
   "See How It Works",
@@ -416,25 +441,35 @@ export const RETIRED_LABEL_VARIANTS = [
   /\bAll staffing solutions\b/,
   /\bStart your application\b/,
   /\bSign in on the web\b/,
+  /\bRequest staff\b/,
+  /\bStart your request\b/,
+  /\bSee staffing request options\b/,
 ];
 
-const SERVICE_PAGE_LABELS = ["Apply Now", "Request Staffing", "See How It Works", "All Staffing Solutions"];
+/**
+ * Labels no link may carry any more. "Request Staffing" went to the contact
+ * page; it would now sit beside "Request Staff" with a different destination.
+ */
+export const RETIRED_ACTION_LABELS = ["Request Staffing"];
+
+const SERVICE_PAGE_LABELS = ["Apply Now", "Request Staff", "See How It Works", "All Staffing Solutions"];
 
 export const ROUTE_LABELS = {
-  "/": ["Apply Now", "Request Staffing", "Find Your Next Role", "Explore Staffing Solutions", "See How It Works", "More About How We Work", "More About Contract Staffing", "More About Per-Diem Staffing", "More About Direct Placement"],
-  "/solutions": ["Apply Now", "Request Staffing", "Get in Touch", "More About Contract Staffing", "More About Per-Diem Staffing", "More About Direct Placement", "See the Staffing Request Checklist"],
+  "/": ["Apply Now", "Request Staff", "Find Your Next Role", "Explore Staffing Solutions", "See How It Works", "More About How We Work", "More About Contract Staffing", "More About Per-Diem Staffing", "More About Direct Placement"],
+  "/solutions": ["Apply Now", "Request Staff", "Get in Touch", "More About Contract Staffing", "More About Per-Diem Staffing", "More About Direct Placement", "See the Staffing Request Checklist"],
   "/solutions/contract-staffing": [...SERVICE_PAGE_LABELS, "More About Per-Diem Staffing", "More About Direct Placement"],
   "/solutions/per-diem-staffing": [...SERVICE_PAGE_LABELS, "More About Contract Staffing", "More About Direct Placement"],
   "/solutions/direct-placement": [...SERVICE_PAGE_LABELS, "More About Contract Staffing", "More About Per-Diem Staffing"],
-  "/solutions/staffing-request-checklist": ["Apply Now", "Request Staffing", "Explore Staffing Solutions"],
-  "/professionals": ["Apply Now", "Talk to Our Team", "See Application Options"],
-  "/professionals/faq": ["Apply Now", "Talk to Our Team"],
-  "/about": ["Apply Now", "Work With Us"],
-  "/contact": ["Apply Now", "See Application Options", "See the Staffing Request Checklist"],
-  "/apply": ["Apply Now", "Start Your Application"],
-  "/app": ["Sign In on the Web", "Apply Now", "Talk to Our Team"],
-  "/privacy": ["Apply Now"],
-  "/support": ["Apply Now"],
+  "/solutions/staffing-request-checklist": ["Apply Now", "Request Staff", "Explore Staffing Solutions"],
+  "/professionals": ["Apply Now", "Request Staff", "Talk to Our Team", "See Application Options"],
+  "/professionals/faq": ["Apply Now", "Request Staff", "Talk to Our Team"],
+  "/about": ["Apply Now", "Request Staff", "Work With Us"],
+  "/contact": ["Apply Now", "Request Staff", "See Application Options", "See Staffing Request Options", "See the Staffing Request Checklist"],
+  "/request-staff": ["Apply Now", "Request Staff", "Start Your Request"],
+  "/apply": ["Apply Now", "Request Staff", "Start Your Application"],
+  "/app": ["Sign In on the Web", "Apply Now", "Request Staff", "Talk to Our Team"],
+  "/privacy": ["Apply Now", "Request Staff"],
+  "/support": ["Apply Now", "Request Staff"],
 };
 
 /** Per-page meta descriptions (unique per page; substring that must be present). */
@@ -450,4 +485,5 @@ export const PAGE_DESCRIPTIONS = {
   "/contact": "Call +1 (760) 536-2178 or email info@simplemedicalstaffing.com",
   "/app": "The Simple Medical Workforce Solutions web app is open now for healthcare professionals and our office team",
   "/apply": "Apply online for per-diem, contract, or permanent healthcare roles with Simple Medical Workforce Solutions, or reach our team by phone or email.",
+  "/request-staff": "Request healthcare staff from Simple Medical Workforce Solutions online, or reach our team by phone or email.",
 };

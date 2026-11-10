@@ -160,9 +160,9 @@ for (const file of htmlFiles) {
 
 // 3b. Outbound links (TASK-20260923-14, widened 2026-11-08): the only
 // absolute links on any page are the two social profile icons, each opening a
-// new tab without a referrer, and the web app's sign-in and application
-// (APP_LINKS), which open in the same tab. Every canonical page carries all
-// four (the app links through the header and footer). A public profile match
+// new tab without a referrer, and the web app's sign-in, application and
+// staffing request form (APP_LINKS), which open in the same tab. Every
+// canonical page carries all five (the app links through the header and footer). A public profile match
 // is not proof of ownership; the owner confirms the accounts before release.
 {
   const APP_URLS = Object.values(APP_LINKS);

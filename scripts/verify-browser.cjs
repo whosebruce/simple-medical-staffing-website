@@ -8,8 +8,8 @@
 // horizontal overflow, no broken images, no forms/uploads, only the permitted
 // mailto on /apply/, canonical, one H1, keyboard focus visible, mobile menu
 // opens/closes (with its Sign In row), a visible header Sign In, outside links
-// limited to the social icons and the web app's sign-in and application
-// (same tab), every internal link resolves to 200 on this server, and
+// limited to the social icons and the web app's sign-in, application and
+// staffing request form (same tab), every internal link resolves to 200 on this server, and
 // screenshots. Legacy stubs: served 200, noindex, canonical + refresh target
 // reachable and not itself a redirect; the browser follows the refresh to the
 // target (non-looping).
@@ -36,15 +36,18 @@ const ROUTES = [
   "/professionals/faq/",
   "/about/",
   "/contact/",
+  "/request-staff/",
   "/apply/",
   "/app/",
   "/privacy/",
   "/support/",
 ];
 // 2026-11-08: Sign In and every Apply Now go to the live web app, in the same tab.
+// Every Request Staff does too: the app's staffing request form is the facilities' Apply Now.
 const APP_LINKS = {
   signIn: "https://app.simplemedicalstaffing.com/account/sign-in",
   apply: "https://app.simplemedicalstaffing.com/apply",
+  requestStaff: "https://app.simplemedicalstaffing.com/request-staff",
 };
 // TASK-20260923-14: the audience disclosure groups in the header (the same
 // lists at every width; a panel from 1024px, an inline menu group below).
@@ -57,7 +60,7 @@ const NAV_GROUPS = [
       ["Per-Diem Staffing", "/solutions/per-diem-staffing/"],
       ["Direct Placement", "/solutions/direct-placement/"],
       ["Staffing Request Checklist", "/solutions/staffing-request-checklist/"],
-      ["Request Staffing", "/contact/"],
+      ["Request Staff", APP_LINKS.requestStaff],
     ],
   },
   {
@@ -217,8 +220,8 @@ async function main() {
           }));
           // TASK-20260923-14: the two social icon links (four on /contact/),
           // each named, 44px, opening a new tab without a referrer. 2026-11-08:
-          // every other outside link is the web app's sign-in or application,
-          // in the same tab, and each page links both.
+          // every other outside link is the web app's sign-in, application or
+          // staffing request form, in the same tab, and each page links all three.
           const expectedSocial = route === "/contact/" ? 4 : 2;
           const appUrls = Object.values(APP_LINKS);
           const social = data.outbound.filter((o) => !appUrls.includes(o.href));
