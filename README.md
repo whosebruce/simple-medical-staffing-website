@@ -2,7 +2,7 @@
 
 Source for [simplemedicalstaffing.com](https://simplemedicalstaffing.com), the public website of Simple Medical Workforce Solutions, a healthcare staffing agency serving all of Southern California: San Diego, Orange County, Los Angeles County, and the Inland Empire. Our primary focus is San Diego. It offers contract, per-diem and direct placement for SNF, rehab centers, and hospitals. The Irvine office address is unchanged.
 
-The site is a brochure: static HTML served by GitHub Pages. There are no forms, uploads or backend, and this repository holds only public website code and media. The staffing platform itself lives in a separate private repository; its web app at `app.simplemedicalstaffing.com` is where people sign in and apply, and this site links to it (Sign In and every Apply Now).
+The site is a brochure: static HTML served by GitHub Pages. There are no forms, uploads or backend, and this repository holds only public website code and media. The staffing platform itself lives in a separate private repository; its web app at `app.simplemedicalstaffing.com` is where people sign in, apply and request staff, and this site links to it (Sign In, every Apply Now and every Request Staff).
 
 ## Two publishing modes
 
@@ -24,6 +24,7 @@ Check the file on `main` to see which mode is live.
 | `/professionals/` | For professionals, with a candidate FAQ at `/professionals/faq/` |
 | `/about/` | About |
 | `/contact/` | Contact |
+| `/request-staff/` | Request Staff: a Start Your Request button into the web app's staffing request form, with the phone and email as the other way in (the site collects nothing) |
 | `/apply/` | Apply Now: a Start Your Application button into the web app's application, with the phone and email as the other way in (the site collects nothing; old links land here) |
 | `/app/` | The App: the web app is open (Sign In on the Web), what it does, and the iPhone app "coming to the App Store soon" (add its App Store link when it is live) |
 | `/privacy/` | Privacy |
@@ -63,7 +64,7 @@ GitHub Pages publishes `docs/` from `main` at `simplemedicalstaffing.com` (see `
 
 ## Rules for this repository
 
-- Static export only. No forms, form actions or uploads. The only links into the staffing platform are its web app's sign-in (`https://app.simplemedicalstaffing.com/account/sign-in`) and application (`https://app.simplemedicalstaffing.com/apply`), from `src/lib/app-links.ts`, opening in the same tab; never its preview or private pages. `scripts/verify-site.mjs` refuses any other outside link besides the two social profiles.
+- Static export only. No forms, form actions or uploads. The only links into the staffing platform are its web app's sign-in (`https://app.simplemedicalstaffing.com/account/sign-in`), application (`https://app.simplemedicalstaffing.com/apply`) and staffing request form (`https://app.simplemedicalstaffing.com/request-staff`), from `src/lib/app-links.ts`, opening in the same tab; never its preview or private pages. `scripts/verify-site.mjs` refuses any other outside link besides the two social profiles.
 - `/apply/` carries the one permitted `mailto:` link. No other page has one.
 - No applicant, patient, credential or client data, ever. See [`SECURITY.md`](SECURITY.md).
 - Editorial style: no em dashes, Title Case action labels.
