@@ -47,7 +47,7 @@ npm run verify         # builds and verifies that mode
 npm run start:static   # serves docs/ at http://127.0.0.1:3180
 ```
 
-In full-site mode, `npm run verify` runs `verify:site`: typecheck, the static export, a structural check of `docs/` (links, sitemap, canonical URLs, forbidden strings, the single permitted `mailto:`), the copy requirements in `scripts/copy-requirements.mjs`, and a canary for the browser verifier.
+In full-site mode, `npm run verify` runs `verify:site`: typecheck, the static export, a structural check of `docs/` (links, sitemap, canonical URLs, forbidden strings, the single permitted `mailto:`, the how-to videos folder), the copy requirements in `scripts/copy-requirements.mjs`, and a canary for the browser verifier.
 
 The browser pass is separate because it needs a running server and Playwright:
 
@@ -61,6 +61,20 @@ It loads every route at 1440, 768, 390 and 320 pixels and fails on console error
 ## Deploy
 
 GitHub Pages publishes `docs/` from `main` at `simplemedicalstaffing.com` (see `docs/CNAME`), with HTTPS enforced. Merging to `main` publishes the site, so commit the source change and the rebuilt `docs/` together.
+
+## How-to videos for the app
+
+The app's short how-to videos are hosted on this site and played inside the app from `https://simplemedicalstaffing.com/how-to/<name>.mp4`. This site only stores the files: no page lists them, they are not in the sitemap, and `robots.txt` asks search engines to stay out of `/how-to/`. The app lists the videos in its own code, so a file added here does not show up in the app until the app's code names it.
+
+To add a video:
+
+1. Film on made-up data only. Anything put in `public/how-to/` is public once it is merged: anyone with the address can watch it or download it. No real names, facilities, pay or patient details.
+2. Export it as `.mp4` and keep the file small: a short screen recording should be a few MB. The build refuses a file over 50 MB.
+3. Name it in lowercase letters, digits and hyphens, ending in `.mp4`, for example `clock-in.mp4`. The name is the address, so do not rename a video the app already plays.
+4. Put it in `public/how-to/` and run `npm run verify`, which rebuilds `docs/` and copies the video to `docs/how-to/`. Commit the video and the rebuilt `docs/` together.
+5. Add the same file name to the app's list of videos, in the app's own repository.
+
+The build stops if anything else is in that folder, apart from its `README.md` (notes for whoever adds a video, never published). Do not store the videos with Git LFS: GitHub Pages would publish the pointer file instead of the video. Holding mode publishes the videos too, so they keep playing in the app while the holding page is up.
 
 ## Rules for this repository
 
