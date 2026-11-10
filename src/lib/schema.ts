@@ -22,7 +22,7 @@ export const SERVICES = [
   {
     id: SERVICE_IDS.contract,
     path: "/solutions/contract-staffing/",
-    name: "Contract staffing",
+    name: "Contract Staffing",
     serviceType: "Contract healthcare staffing",
     description:
       "Longer-term placements for sustained coverage: professionals who join your team, learn your unit, and stay through the assignment.",
@@ -30,14 +30,14 @@ export const SERVICES = [
   {
     id: SERVICE_IDS.perDiem,
     path: "/solutions/per-diem-staffing/",
-    name: "Per-diem staffing",
+    name: "Per-Diem Staffing",
     serviceType: "Per-diem healthcare staffing",
     description: "Shift-by-shift coverage: you tell us the gap, we look for the match, you confirm it.",
   },
   {
     id: SERVICE_IDS.directPlacement,
     path: "/solutions/direct-placement/",
-    name: "Direct placement",
+    name: "Direct Placement",
     serviceType: "Direct placement healthcare staffing",
     description: "Permanent hires selected for fit with your team, not just a resume that matches the requisition.",
   },

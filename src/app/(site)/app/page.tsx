@@ -39,8 +39,8 @@ export default function AppPage() {
         <div className="flex flex-col gap-7 rounded-[clamp(32px,4vw,48px)] border border-k-line bg-white p-7 shadow-[0_30px_80px_-50px_rgba(30,58,110,0.55)] sm:p-12">
           <Image src="/kindred/logos/kindred-mark.svg" alt="" width={56} height={56} unoptimized />
           <div className="flex flex-col items-start gap-4">
-            <p className="k-eyebrow k-eyebrow-violet text-k-violet-ink">Open now</p>
-            <h1 className="k-h1 k-h1-long">The Simple Medical Workforce Solutions app.</h1>
+            <p className="k-eyebrow k-eyebrow-violet text-k-violet-ink">Open Now</p>
+            <h1 className="k-h1 k-h1-long">The Simple Medical Workforce Solutions App.</h1>
             <p className="k-body">
               Our web app is open now for healthcare professionals and our office team. Sign in from your web browser on a
               phone or computer.
@@ -51,7 +51,7 @@ export default function AppPage() {
             <p className="k-small">The iPhone app is coming to the App Store soon.</p>
           </div>
           <div className="flex flex-col gap-1">
-            <p className="k-eyebrow k-eyebrow-plain text-k-muted">What you can do in your web browser now</p>
+            <p className="k-eyebrow k-eyebrow-plain text-k-muted">What You Can Do in Your Web Browser Now</p>
             <ul className="k-hairlist border-y border-k-line">
               {FEATURES.map((feature, i) => (
                 <li key={feature} className="flex items-center gap-5 py-4">

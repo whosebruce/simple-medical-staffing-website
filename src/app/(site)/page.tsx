@@ -28,7 +28,7 @@ const SERVICES = [
     square: false,
   },
   {
-    title: "Per-diem",
+    title: "Per-Diem",
     body: "Shift-by-shift coverage for call-outs and census spikes.",
     href: "/solutions/per-diem-staffing",
     label: "More About Per-Diem Staffing\u00a0→",
@@ -37,7 +37,7 @@ const SERVICES = [
     square: true,
   },
   {
-    title: "Direct placement",
+    title: "Direct Placement",
     body: "Permanent hires matched for fit, not just credentials.",
     href: "/solutions/direct-placement",
     label: "More About Direct Placement\u00a0→",
@@ -56,8 +56,8 @@ export default function HomePage() {
         <div aria-hidden className="k-aura -right-48 -top-64 h-[680px] w-[680px]" />
         <div className="k-wrap relative grid items-center gap-12 pb-14 pt-10 sm:pt-14 lg:grid-cols-[minmax(0,1.04fr)_minmax(0,0.96fr)] lg:gap-16 lg:pb-20 lg:pt-16">
           <div className="flex flex-col items-start gap-6">
-            <p className="k-eyebrow text-k-sky-ink">Contract · Per-diem · Direct placement</p>
-            <h1 className="k-h1">The right professional, on the right shift.</h1>
+            <p className="k-eyebrow text-k-sky-ink">Contract · Per-Diem · Direct Placement</p>
+            <h1 className="k-h1">The Right Professional, on the Right Shift.</h1>
             <p className="k-lede">
               We connect reliable medical professionals with the facilities that need them. Every match is made for
               fit, not just availability.
@@ -126,8 +126,8 @@ export default function HomePage() {
               sizes="(min-width: 1024px) 34vw, (min-width: 640px) 50vw, 100vw"
             />
             <div className="flex flex-col items-start justify-center gap-4 p-8 sm:p-10">
-              <p className="k-eyebrow text-k-sky-ink">For facilities</p>
-              <h2 className="k-h2 k-h2-sm">Coverage for your units.</h2>
+              <p className="k-eyebrow text-k-sky-ink">For Facilities</p>
+              <h2 className="k-h2 k-h2-sm">Coverage for Your Units.</h2>
               <p className="k-body">Contract, per-diem, and direct placement matched to your unit and your team.</p>
               <Link href="/solutions" className="k-arrow-link text-k-sky-ink">
                 Explore Staffing Solutions&nbsp;→
@@ -143,8 +143,8 @@ export default function HomePage() {
               sizes="(min-width: 1024px) 36vw, 100vw"
             />
             <div className="flex flex-1 flex-col items-start gap-4 p-8 sm:p-10">
-              <p className="k-eyebrow k-eyebrow-violet text-k-violet-ink">For professionals</p>
-              <h2 className="k-h2 k-h2-sm">Your skills. Your schedule.</h2>
+              <p className="k-eyebrow k-eyebrow-violet text-k-violet-ink">For Professionals</p>
+              <h2 className="k-h2 k-h2-sm">Your Skills. Your Schedule.</h2>
               <p className="k-body">
                 Work with a coordinator who knows your name, your specialty, and what you want next.
               </p>
@@ -160,8 +160,8 @@ export default function HomePage() {
       <section className="k-section">
         <div className="k-wrap grid gap-12 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:grid-rows-[auto_1fr] lg:gap-x-20 lg:gap-y-10">
           <div className="flex flex-col items-start gap-5 lg:col-start-1 lg:row-start-1">
-            <p className="k-eyebrow text-k-sky-ink">What we do</p>
-            <h2 className="k-h2">Three ways to staff, one standard of care.</h2>
+            <p className="k-eyebrow text-k-sky-ink">What We Do</p>
+            <h2 className="k-h2">Three Ways to Staff, One Standard of Care.</h2>
             <p className="k-body">
               Simple Medical Workforce Solutions is a healthcare staffing agency serving all of Southern California. We provide
               contract, per-diem, and direct placement staffing for SNF, rehab centers, and hospitals, and we connect healthcare professionals
@@ -202,8 +202,8 @@ export default function HomePage() {
             sizes="(min-width: 1024px) 54vw, 100vw"
           />
           <div className="k-bleed-copy flex flex-col items-start gap-5">
-            <p className="k-eyebrow k-eyebrow-teal text-k-teal-ink">People, not paperwork</p>
-            <h2 className="k-h2">Success through people isn&apos;t our tagline. It&apos;s the staffing model.</h2>
+            <p className="k-eyebrow k-eyebrow-teal text-k-teal-ink">People, Not Paperwork</p>
+            <h2 className="k-h2">Success Through People Isn&apos;t Our Tagline. It&apos;s the Staffing Model.</h2>
             <p className="k-body">
               Every placement affects a shift, a patient, and a career. So we match on fit, meaning the unit, the team,
               and the schedule, and we work to be an extension of the facilities we serve.
@@ -215,7 +215,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <ClosingPanel heading="Stronger teams start with the right match.">
+      <ClosingPanel heading="Stronger Teams Start with the Right Match.">
         <a href={APP_LINKS.requestStaff} className="k-btn-primary">
           Request Staff
         </a>

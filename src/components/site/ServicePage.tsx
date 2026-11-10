@@ -107,14 +107,14 @@ export function ServicePage({
               </ul>
             </div>
             <div className="rounded-[32px] border border-k-line bg-white p-7">
-              <h2 className="k-h3">Healthcare professionals we provide</h2>
+              <h2 className="k-h3">Healthcare Professionals We Provide</h2>
               <RoleCloud small className="mt-4 gap-2" />
               <Link href="/professionals" className="k-arrow-link mt-3 text-k-violet-ink">
                 See How It Works&nbsp;→
               </Link>
             </div>
             <div className="rounded-[32px] border border-k-line bg-white p-7">
-              <h2 className="k-h3">Call or email</h2>
+              <h2 className="k-h3">Call or Email</h2>
               <a
                 href={`tel:${BUSINESS_FACTS.phoneTel}`}
                 className="k-focus mt-2 inline-flex min-h-11 items-center font-display text-xl font-extrabold text-k-navy underline decoration-k-sky decoration-2 underline-offset-[6px]"
@@ -134,7 +134,7 @@ export function ServicePage({
       <section className="bg-k-cloud pb-[clamp(64px,8vw,112px)] pt-8">
         <div className="k-wrap">
           <div className="mb-12 flex max-w-[660px] flex-col items-start gap-4">
-            <p className="k-eyebrow text-k-sky-ink">How it works</p>
+            <p className="k-eyebrow text-k-sky-ink">How It Works</p>
             <h2 className="k-h2">{steps.heading}</h2>
             <p className="k-body">{steps.intro}</p>
           </div>
@@ -153,7 +153,7 @@ export function ServicePage({
       <section className="k-section">
         <div className="k-wrap">
           <div className="mb-10 flex max-w-[640px] flex-col items-start gap-4">
-            <p className="k-eyebrow k-eyebrow-teal text-k-teal-ink">Other ways to staff</p>
+            <p className="k-eyebrow k-eyebrow-teal text-k-teal-ink">Other Ways to Staff</p>
             <h2 className="k-h2">{related.heading}</h2>
           </div>
           <div className="grid gap-6 md:grid-cols-2">

@@ -243,7 +243,7 @@ export function SiteHeader() {
       <div className="k-wrap flex h-[76px] items-center gap-5 xl:gap-3">
         <Link
           href="/"
-          aria-label="Simple Medical Workforce Solutions home"
+          aria-label="Simple Medical Workforce Solutions Home"
           className="k-focus flex min-h-11 flex-none items-center gap-3 rounded-2xl"
           onClick={closeAll}
         >

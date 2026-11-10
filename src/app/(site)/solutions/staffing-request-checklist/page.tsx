@@ -20,26 +20,26 @@ export const metadata = pageMetadata({ path: PATH, title: TITLE, description: DE
 
 const ESSENTIALS = [
   {
-    title: "The unit",
+    title: "The Unit",
     body: "Where the professional will work. The unit tells us about the patient population, the pace, and the kind of experience that fits.",
   },
   {
-    title: "The shift",
+    title: "The Shift",
     body: "Days, nights, weekends, or a rotation, and the hours. Availability is one half of a match; the schedule you actually need is the other.",
   },
   {
-    title: "The specialty",
+    title: "The Specialty",
     body: "The role and the specialty, for example a Registered Nurse for a skilled nursing unit or a Physical Therapist for rehab. If more than one type of professional could fill the role, say so.",
   },
   {
-    title: "The start date",
+    title: "The Start Date",
     body: "When coverage needs to begin. If the date is flexible, a range is fine. If it is fixed, tell us and we will work back from it.",
   },
 ];
 
 const HELPFUL = [
   {
-    title: "Which kind of staffing",
+    title: "Which Kind of Staffing",
     body: (
       <>
         Whether you are looking for a{" "}
@@ -59,23 +59,23 @@ const HELPFUL = [
     ),
   },
   {
-    title: "How long you expect the need to last",
+    title: "How Long You Expect the Need to Last",
     body: "A single shift, a few weeks, a season, or open ended. This shapes who we look for.",
   },
   {
-    title: "Who we should talk to",
+    title: "Who We Should Talk To",
     body: "The best person to reach about this request, and the best way to reach them. Requests move faster when the questions go to the right desk.",
   },
   {
-    title: "Anything about the team",
+    title: "Anything About the Team",
     body: "What has worked well with staff in the past, what has not, and what the people already on the unit need from the person joining them. This is the part a requisition never captures, and it is the part we match on.",
   },
 ];
 
 const NEXT = [
-  { title: "We match for fit", body: "We look for a professional whose experience and availability fit what you described." },
-  { title: "You confirm", body: "Review the match, ask whatever you want to ask, and approve when you're ready." },
-  { title: "After the start date", body: "If something isn't working, tell us. We'd rather fix a placement than defend one." },
+  { title: "We Match for Fit", body: "We look for a professional whose experience and availability fit what you described." },
+  { title: "You Confirm", body: "Review the match, ask whatever you want to ask, and approve when you're ready." },
+  { title: "After the Start Date", body: "If something isn't working, tell us. We'd rather fix a placement than defend one." },
 ];
 
 export default function StaffingRequestChecklistPage() {
@@ -93,8 +93,8 @@ export default function StaffingRequestChecklistPage() {
         <div className="k-wrap relative grid items-center gap-12 pb-14 pt-8 sm:pt-12 lg:grid-cols-[minmax(0,1.08fr)_minmax(0,0.92fr)] lg:gap-16 lg:pb-20 lg:pt-14">
           <div className="flex flex-col items-start gap-6">
             <Breadcrumbs path={PATH} />
-            <p className="k-eyebrow text-k-sky-ink">Staffing Solutions · For facilities</p>
-            <h1 className="k-h1 k-h1-long">What to include in a staffing request.</h1>
+            <p className="k-eyebrow text-k-sky-ink">Staffing Solutions · For Facilities</p>
+            <h1 className="k-h1 k-h1-long">What to Include in a Staffing Request.</h1>
             <p className="k-lede">
               Unit, shift, specialty, start date. Send what you have and we&apos;ll ask about the rest. This page lists what
               helps us start on a match right away.
@@ -121,8 +121,8 @@ export default function StaffingRequestChecklistPage() {
       <section className="k-section pt-6">
         <div className="k-wrap">
           <div className="mb-10 flex max-w-[660px] flex-col items-start gap-4">
-            <p className="k-eyebrow text-k-sky-ink">The essentials</p>
-            <h2 className="k-h2">Four things every request needs.</h2>
+            <p className="k-eyebrow text-k-sky-ink">The Essentials</p>
+            <h2 className="k-h2">Four Things Every Request Needs.</h2>
             <p className="k-body">
               These four details give us what we need to get started on a match. Send what you have and we&apos;ll ask about
               the rest.
@@ -148,8 +148,8 @@ export default function StaffingRequestChecklistPage() {
       <section className="bg-k-violet-tint pb-[clamp(64px,8vw,112px)] pt-8">
         <div className="k-wrap">
           <div className="mb-10 flex max-w-[660px] flex-col items-start gap-4">
-            <p className="k-eyebrow k-eyebrow-violet text-k-violet-ink">Helpful if you have it</p>
-            <h2 className="k-h2">Details that make the match better.</h2>
+            <p className="k-eyebrow k-eyebrow-violet text-k-violet-ink">Helpful If You Have It</p>
+            <h2 className="k-h2">Details That Make the Match Better.</h2>
             <p className="k-body">
               These are suggestions, not a form to complete. Each one helps us look for the right person instead of an
               available one, and the team will tell you if anything specific is needed for your request.
@@ -173,8 +173,8 @@ export default function StaffingRequestChecklistPage() {
       <section className="k-section">
         <div className="k-wrap grid items-start gap-14 lg:grid-cols-2 lg:gap-20">
           <div className="flex flex-col items-start gap-5">
-            <p className="k-eyebrow k-eyebrow-teal text-k-teal-ink">How to send it</p>
-            <h2 className="k-h2">Call or email. Short and plain is perfect.</h2>
+            <p className="k-eyebrow k-eyebrow-teal text-k-teal-ink">How to Send It</p>
+            <h2 className="k-h2">Call or Email. Short and Plain Is Perfect.</h2>
             <p className="k-body">
               There is no form to fill out. Call or email with the details above, in whatever order you have them, and a
               person will pick it up from there.
@@ -195,7 +195,7 @@ export default function StaffingRequestChecklistPage() {
             </p>
           </div>
           <div className="flex flex-col items-start gap-6">
-            <p className="k-eyebrow text-k-sky-ink">What happens next</p>
+            <p className="k-eyebrow text-k-sky-ink">What Happens Next</p>
             <StepPath steps={NEXT} start={2} vertical />
             <Link href="/solutions" className="k-arrow-link text-k-sky-ink">
               Explore Staffing Solutions&nbsp;→
@@ -204,7 +204,7 @@ export default function StaffingRequestChecklistPage() {
         </div>
       </section>
 
-      <ClosingPanel heading="Tell us the need. We'll take it from there.">
+      <ClosingPanel heading="Tell Us the Need. We'll Take It From There.">
         <a href={APP_LINKS.requestStaff} className="k-btn-primary">
           Request Staff
         </a>

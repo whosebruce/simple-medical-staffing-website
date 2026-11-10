@@ -67,7 +67,7 @@ GitHub Pages publishes `docs/` from `main` at `simplemedicalstaffing.com` (see `
 - Static export only. No forms, form actions or uploads. The only links into the staffing platform are its web app's sign-in (`https://app.simplemedicalstaffing.com/account/sign-in`), application (`https://app.simplemedicalstaffing.com/apply`) and staffing request form (`https://app.simplemedicalstaffing.com/request-staff`), from `src/lib/app-links.ts`, opening in the same tab; never its preview or private pages. `scripts/verify-site.mjs` refuses any other outside link besides the two social profiles.
 - `/apply/` carries the one permitted `mailto:` link. No other page has one.
 - No applicant, patient, credential or client data, ever. See [`SECURITY.md`](SECURITY.md).
-- Editorial style: no em dashes, Title Case action labels.
+- Editorial style: no em dashes. Title Case is the brand's voice for page titles, section headings, FAQ questions, buttons and button-like links, navigation and footer links, labels and card titles; real sentences (body copy, descriptions, FAQ answers, legal text) stay in sentence case. Small words (a, an, the, and, or, of, to, in, on, for, with, at, by) stay lowercase unless first or last. The casing is in the words themselves, not CSS `text-transform` (the uppercase eyebrow labels are a type treatment on top of Title Case words).
 - [`RESTORATION.md`](RESTORATION.md) records the approved Kindred design and the checks every page must pass.
 
 ## Contact

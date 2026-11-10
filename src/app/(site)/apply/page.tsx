@@ -31,8 +31,8 @@ export default function ApplyPage() {
         <div className="flex flex-col gap-7 rounded-[clamp(32px,4vw,48px)] border border-k-line bg-white p-7 shadow-[0_30px_80px_-50px_rgba(30,58,110,0.55)] sm:p-12">
           <Image src="/kindred/logos/kindred-mark.svg" alt="" width={56} height={56} unoptimized />
           <div className="flex flex-col items-start gap-4">
-            <p className="k-eyebrow k-eyebrow-violet text-k-violet-ink">Healthcare professionals</p>
-            <h1 className="k-h1 k-h1-long">Let&apos;s talk about your next role.</h1>
+            <p className="k-eyebrow k-eyebrow-violet text-k-violet-ink">Healthcare Professionals</p>
+            <h1 className="k-h1 k-h1-long">Let&apos;s Talk About Your Next Role.</h1>
             <p className="k-body">
               Apply online in our app. Start with a short application: the basics and the role you want. If it looks like a
               fit, we&apos;ll email you a private link to complete your full application.

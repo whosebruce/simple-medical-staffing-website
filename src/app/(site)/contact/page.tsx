@@ -25,7 +25,7 @@ export default function ContactPage() {
         <div className="k-wrap relative grid items-center gap-10 pb-12 pt-10 sm:pt-14 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)] lg:gap-16 lg:pb-16 lg:pt-16">
           <div className="flex flex-col items-start gap-6">
             <p className="k-eyebrow text-k-sky-ink">Contact</p>
-            <h1 className="k-h1">Tell us what you need.</h1>
+            <h1 className="k-h1">Tell Us What You Need.</h1>
             <p className="k-lede">
               Whether you&apos;re a facility or a professional, call or email directly. Short and plain is perfect.
             </p>
@@ -58,8 +58,8 @@ export default function ContactPage() {
         <div className="k-wrap grid items-start gap-6 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-8">
           <div className="grid gap-6">
             <article className="k-panel flex flex-col items-start gap-4 bg-k-sky-tint p-8 sm:p-10">
-              <p className="k-eyebrow text-k-sky-ink">I&apos;m a facility</p>
-              <h2 className="k-h3 text-[1.5rem]">Requesting staffing?</h2>
+              <p className="k-eyebrow text-k-sky-ink">I&apos;m a Facility</p>
+              <h2 className="k-h3 text-[1.5rem]">Requesting Staffing?</h2>
               <p className="k-body">
                 Call or email with the unit, the shift, the specialty, and the start date. That&apos;s everything we need to
                 get started on a match.
@@ -74,8 +74,8 @@ export default function ContactPage() {
               </div>
             </article>
             <article className="k-panel flex flex-col items-start gap-4 bg-k-violet-tint p-8 sm:p-10">
-              <p className="k-eyebrow k-eyebrow-violet text-k-violet-ink">I&apos;m a professional</p>
-              <h2 className="k-h3 text-[1.5rem]">Looking for your next role?</h2>
+              <p className="k-eyebrow k-eyebrow-violet text-k-violet-ink">I&apos;m a Professional</p>
+              <h2 className="k-h3 text-[1.5rem]">Looking for Your Next Role?</h2>
               <p className="k-body">
                 Tell us the role you want, where you&apos;re located, and the type of schedule you&apos;re looking for.
                 We&apos;ll talk through the next step.
@@ -89,7 +89,7 @@ export default function ContactPage() {
           <div className="grid gap-6">
             <div className="k-panel border border-k-line bg-white p-8 shadow-[0_30px_70px_-50px_rgba(30,58,110,0.55)] sm:p-10">
               <div className="flex flex-col gap-2">
-                <h2 className="k-eyebrow text-k-sky-ink">Call or email</h2>
+                <h2 className="k-eyebrow text-k-sky-ink">Call or Email</h2>
                 <a
                   href={`tel:${BUSINESS_FACTS.phoneTel}`}
                   className="k-focus inline-flex min-h-11 items-center self-start font-display text-[clamp(1.6rem,1.2rem+1.2vw,2.1rem)] font-extrabold text-k-navy underline decoration-k-sky decoration-[3px] underline-offset-[8px]"
@@ -101,7 +101,7 @@ export default function ContactPage() {
                 </p>
               </div>
               <div className="mt-7 flex flex-col gap-2 border-t border-k-line pt-6">
-                <h2 className="k-eyebrow text-k-sky-ink">Service area</h2>
+                <h2 className="k-eyebrow text-k-sky-ink">Service Area</h2>
                 <p className="k-body">{BUSINESS_FACTS.serviceArea}: {BUSINESS_FACTS.serviceRegions}. {BUSINESS_FACTS.primaryFocus}.</p>
                 <p className="k-small">{BUSINESS_FACTS.facilities}.</p>
               </div>
@@ -118,8 +118,8 @@ export default function ContactPage() {
             <div className="k-closing k-on-dark p-8 sm:p-10">
               <Circle gradient="sky-violet" className="k-orb -right-16 -top-20 h-[190px] w-[190px] opacity-40" />
               <div className="flex flex-col items-start gap-3">
-                <p className="font-display text-xs font-bold uppercase tracking-[0.16em] text-k-mist">Ready to apply instead?</p>
-                <p className="font-display text-xl font-bold text-white">Ready to talk about your next role?</p>
+                <p className="font-display text-xs font-bold uppercase tracking-[0.16em] text-k-mist">Ready to Apply Instead?</p>
+                <p className="font-display text-xl font-bold text-white">Ready to Talk About Your Next Role?</p>
                 <a href={APP_LINKS.apply} className="k-btn-primary mt-2">
                   Apply Now
                 </a>

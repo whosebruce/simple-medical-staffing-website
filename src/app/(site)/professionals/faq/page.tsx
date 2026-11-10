@@ -23,7 +23,7 @@ const link = "k-link";
 
 const GETTING_STARTED: Faq[] = [
   {
-    q: "How do I apply?",
+    q: "How Do I Apply?",
     a: (
       <>
         Apply online. Start with a short{" "}
@@ -41,7 +41,7 @@ const GETTING_STARTED: Faq[] = [
     ),
   },
   {
-    q: "What should I include when I reach out?",
+    q: "What Should I Include When I Reach Out?",
     a: (
       <>
         A good starting point is the role you want, where you are located, and the type of schedule you are looking for.
@@ -50,7 +50,7 @@ const GETTING_STARTED: Faq[] = [
     ),
   },
   {
-    q: "What should I not send by email?",
+    q: "What Should I Not Send by Email?",
     a: (
       <>
         Please do not email medical records, Social Security numbers, license images, patient information, or other
@@ -60,7 +60,7 @@ const GETTING_STARTED: Faq[] = [
     ),
   },
   {
-    q: "Can I see a list of current openings?",
+    q: "Can I See a List of Current Openings?",
     a: (
       <>
         We do not publish a list of openings on this website. Tell us what you are looking for and we will talk through what
@@ -72,7 +72,7 @@ const GETTING_STARTED: Faq[] = [
 
 const WORK: Faq[] = [
   {
-    q: "What kinds of work are available?",
+    q: "What Kinds of Work Are Available?",
     a: (
       <>
         Three kinds. Per-diem shifts, if you want flexibility and control over your schedule. Contract assignments, if you
@@ -82,7 +82,7 @@ const WORK: Faq[] = [
     ),
   },
   {
-    q: "Which roles do you place?",
+    q: "Which Roles Do You Place?",
     a: (
       <>
         <span>We place healthcare professionals at every level of care, including:</span>
@@ -91,7 +91,7 @@ const WORK: Faq[] = [
     ),
   },
   {
-    q: "Where is Simple Medical Workforce Solutions located?",
+    q: "Where Is Simple Medical Workforce Solutions Located?",
     a: (
       <>
         Our address is {BUSINESS_FACTS.address}. A call or an email is how most conversations begin.
@@ -102,7 +102,7 @@ const WORK: Faq[] = [
 
 const SUPPORT: Faq[] = [
   {
-    q: "Who will I actually talk to?",
+    q: "Who Will I Actually Talk To?",
     a: (
       <>
         A coordinator who knows your name, your specialty, and what you want next. Your questions go to a person who can
@@ -111,7 +111,7 @@ const SUPPORT: Faq[] = [
     ),
   },
   {
-    q: "What happens before my first day?",
+    q: "What Happens Before My First Day?",
     a: (
       <>
         Before you accept an assignment, we share what we know about it, and when we do not know something we say that too.
@@ -120,11 +120,11 @@ const SUPPORT: Faq[] = [
     ),
   },
   {
-    q: "What if a question comes up once I am working?",
+    q: "What If a Question Comes Up Once I Am Working?",
     a: <>You can reach us by phone or email. Start confident, stay supported: that is the standard we hold ourselves to.</>,
   },
   {
-    q: "What if my availability or goals change?",
+    q: "What If My Availability or Goals Change?",
     a: (
       <>
         Tell us. Per-diem, contract, or permanent, the right fit for you now may not be the right fit next year, and the
@@ -168,8 +168,8 @@ export default function CandidateFaqPage() {
         <div className="k-wrap relative grid items-center gap-12 pb-14 pt-8 sm:pt-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-16 lg:pb-20 lg:pt-14">
           <div className="flex flex-col items-start gap-6">
             <Breadcrumbs path={PATH} />
-            <p className="k-eyebrow k-eyebrow-violet text-k-violet-ink">Healthcare professionals · Questions</p>
-            <h1 className="k-h1 k-h1-long">Questions healthcare professionals ask us.</h1>
+            <p className="k-eyebrow k-eyebrow-violet text-k-violet-ink">Healthcare Professionals · Questions</p>
+            <h1 className="k-h1 k-h1-long">Questions Healthcare Professionals Ask Us.</h1>
             <p className="k-lede">
               Plain answers about getting started, the work we place, and what to expect from your coordinator. If your
               question is not here, call or email and ask a real person.
@@ -199,18 +199,18 @@ export default function CandidateFaqPage() {
       </section>
 
       <section className="k-section-tight pt-4">
-        <FaqGroup eyebrow="Getting started" heading="Reaching us and what to send." items={GETTING_STARTED} tone="sky" />
+        <FaqGroup eyebrow="Getting Started" heading="Reaching Us and What to Send." items={GETTING_STARTED} tone="sky" />
       </section>
       <Wave top="var(--color-k-page)" bottom="var(--color-k-violet-tint)" />
       <section className="bg-k-violet-tint pb-[clamp(56px,7vw,96px)] pt-8">
-        <FaqGroup eyebrow="The work" heading="Kinds of work, roles, and location." items={WORK} tone="violet" />
+        <FaqGroup eyebrow="The Work" heading="Kinds of Work, Roles, and Location." items={WORK} tone="violet" />
       </section>
       <Wave top="var(--color-k-violet-tint)" bottom="var(--color-k-page)" flip />
       <section className="k-section-tight">
-        <FaqGroup eyebrow="Support" heading="Before, during, and after an assignment." items={SUPPORT} tone="teal" />
+        <FaqGroup eyebrow="Support" heading="Before, During, and After an Assignment." items={SUPPORT} tone="teal" />
       </section>
 
-      <ClosingPanel heading="Bring your skills. We'll bring the right place to use them.">
+      <ClosingPanel heading="Bring Your Skills. We'll Bring the Right Place to Use Them.">
         <a href={APP_LINKS.apply} className="k-btn-primary">
           Apply Now
         </a>

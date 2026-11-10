@@ -16,15 +16,15 @@ export default function PerDiemStaffingPage() {
       <StructuredData path={PATH} title={documentTitle(TITLE)} description={DESCRIPTION} aboutServices={[SERVICE_IDS.perDiem]} />
       <ServicePage
         path={PATH}
-        eyebrow="Staffing Solutions · Per-diem staffing"
-        heading="Per-diem staffing, shift by shift."
+        eyebrow="Staffing Solutions · Per-Diem Staffing"
+        heading="Per-Diem Staffing, Shift by Shift."
         lede="Shift-by-shift coverage for call-outs, census spikes, and weekend and night gaps. You tell us the gap, we look for the match, you confirm it."
         image="lockers"
         imageFocus="30% 20%"
         sections={[
           {
-            eyebrow: "What it is",
-            heading: "Coverage for the shift in front of you.",
+            eyebrow: "What It Is",
+            heading: "Coverage for the Shift in Front of You.",
             body: (
               <>
                 <p>
@@ -41,8 +41,8 @@ export default function PerDiemStaffingPage() {
             ),
           },
           {
-            eyebrow: "How we approach it",
-            heading: "You confirm the match before the shift.",
+            eyebrow: "How We Approach It",
+            heading: "You Confirm the Match Before the Shift.",
             body: (
               <>
                 <p>
@@ -60,37 +60,37 @@ export default function PerDiemStaffingPage() {
           },
         ]}
         bestFor={{
-          heading: "Best for",
+          heading: "Best For",
           items: ["Call-outs", "Census spikes", "Weekend and night gaps"],
         }}
         steps={{
-          heading: "From gap to covered shift.",
+          heading: "From Gap to Covered Shift.",
           intro: "The same four steps we use for every request, focused on the shift that needs covering.",
           items: [
-            { title: "Tell us the gap", body: "Unit, shift, specialty, and the date. Send what you have and we'll ask about the rest." },
-            { title: "We match for fit", body: "We look for a professional whose experience and availability fit the shift you described." },
-            { title: "You confirm", body: "Review the match, ask whatever you want to ask, and approve before the shift." },
-            { title: "After the shift", body: "Tell us how it went. Good matches are worth repeating, and problems are worth fixing." },
+            { title: "Tell Us the Gap", body: "Unit, shift, specialty, and the date. Send what you have and we'll ask about the rest." },
+            { title: "We Match for Fit", body: "We look for a professional whose experience and availability fit the shift you described." },
+            { title: "You Confirm", body: "Review the match, ask whatever you want to ask, and approve before the shift." },
+            { title: "After the Shift", body: "Tell us how it went. Good matches are worth repeating, and problems are worth fixing." },
           ],
         }}
         related={{
-          heading: "Is per-diem the right fit?",
+          heading: "Is Per-Diem the Right Fit?",
           items: [
             {
               href: "/solutions/contract-staffing",
-              title: "Is the gap going to last?",
+              title: "Is the Gap Going to Last?",
               body: "Contract staffing places one professional with your unit for a defined period, an option that can give the team more continuity than shift-by-shift coverage.",
               label: "More About Contract Staffing\u00a0→",
             },
             {
               href: "/solutions/direct-placement",
-              title: "Ready to hire permanently?",
+              title: "Ready to Hire Permanently?",
               body: "Direct placement finds permanent hires selected for fit with your team, not just a resume that matches the requisition.",
               label: "More About Direct Placement\u00a0→",
             },
           ],
         }}
-        closing="The right professional, on the right shift."
+        closing="The Right Professional, on the Right Shift."
       />
     </>
   );
