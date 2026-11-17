@@ -45,19 +45,13 @@ const VALUES = [
   },
 ];
 
-const BIO_TONES = [
-  { ink: "text-k-sky-ink", glyph: KINDRED_GRADIENTS["sky-violet"] },
-  { ink: "text-k-violet-ink", glyph: KINDRED_GRADIENTS["violet-sky"] },
-  { ink: "text-k-teal-ink", glyph: KINDRED_GRADIENTS["teal-sky"] },
-];
-
 const MONOGRAM = "linear-gradient(135deg, var(--color-k-navy), var(--color-k-violet-ink))";
 
+// First and last initials, so a three-part name keeps a two-letter monogram
+// (Dina Casares: DC; Brandon Lee Rodriguez-Washington: BR; Alexis Amicay: AA).
 function initials(name: string): string {
-  return name
-    .split(/\s+/)
-    .map((part) => part[0])
-    .join("");
+  const parts = name.split(/\s+/);
+  return parts.length > 1 ? `${parts[0][0]}${parts[parts.length - 1][0]}` : parts[0][0];
 }
 
 export default function AboutPage() {
@@ -164,19 +158,25 @@ export default function AboutPage() {
                     >
                       {initials(role.name)}
                     </span>
-                    <div className="flex flex-col gap-1">
+                    <div className="flex min-w-0 flex-col gap-1">
+                      <p className="k-eyebrow text-k-sky-ink">{role.biography.eyebrow}</p>
                       <h3 className="font-display text-[clamp(1.5rem,1.2rem+1vw,2rem)] font-extrabold tracking-[-0.02em]">{role.name}</h3>
                       <p className="font-body text-[16px] font-bold text-k-violet-ink">{role.title}</p>
+                      <p className="k-small">{role.biography.organization}</p>
                     </div>
                   </div>
-                  <div className="relative mt-10 grid gap-10 lg:grid-cols-3 lg:gap-8">
-                    {role.biography.map((column, i) => (
-                      <div key={column.heading} className="flex flex-col items-start gap-3 border-t border-k-line pt-6">
-                        <span aria-hidden className="h-2 w-12 rounded-full" style={{ background: BIO_TONES[i % BIO_TONES.length].glyph }} />
-                        <h4 className={`font-display text-[19px] font-extrabold ${BIO_TONES[i % BIO_TONES.length].ink}`}>{column.heading}</h4>
-                        <p className="k-small text-[16px]">{column.body}</p>
-                      </div>
+                  {/* Dina's own paragraphs, in her order: one column on small
+                      screens, two balanced columns from 1024px. */}
+                  <div className="relative mt-10 border-t border-k-line pt-8 lg:columns-2 lg:gap-12">
+                    {role.biography.paragraphs.map((paragraph) => (
+                      <p key={paragraph.slice(0, 40)} className="k-small mb-5 text-[16px] break-inside-avoid">
+                        {paragraph}
+                      </p>
                     ))}
+                  </div>
+                  <div className="relative mt-3 flex flex-col items-start gap-3 border-t border-k-line pt-6">
+                    <span aria-hidden className="h-2 w-12 rounded-full" style={{ background: KINDRED_GRADIENTS["sky-violet"] }} />
+                    <p className="font-display text-[19px] font-extrabold text-k-violet-ink">{role.biography.closing}</p>
                   </div>
                 </li>
               ) : null,
@@ -198,7 +198,9 @@ export default function AboutPage() {
                   >
                     {initials(role.name)}
                   </span>
-                  <div className="flex flex-col gap-1">
+                  {/* min-w-0 + break-words: a long full name or title wraps
+                      inside the card instead of pushing it wider. */}
+                  <div className="flex min-w-0 flex-col gap-1 break-words">
                     <h3 className="font-display text-[clamp(1.25rem,1.1rem+0.6vw,1.6rem)] font-extrabold tracking-[-0.02em]">{role.name}</h3>
                     <p className="font-body text-[16px] font-bold text-k-violet-ink">{role.title}</p>
                   </div>

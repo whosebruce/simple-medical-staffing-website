@@ -158,13 +158,22 @@ export const REQUIREMENTS = [
     present: ["The People Behind Our Purpose"],
     absent: ["The people behind the matches"],
   },
+  // TASK-20261116-02: Dina's updated bio (her email of 2026-11-16, "please see
+  // my updated bio below"), her exact words. It replaced the three named
+  // columns of 2026-09-17 (Experience, The Why, The Vision), which R19 keeps
+  // out.
   {
     id: "R17",
-    title: "Dina column: Experience",
+    title: "Dina's founder bio: her exact paragraphs (2026-11-16)",
     route: "/about",
     present: [
-      "Experience",
-      "With more than two decades of healthcare experience, Dina Casares brings firsthand knowledge of patient care, workforce development, and healthcare leadership. She began her career as a Certified Nursing Assistant and advanced to become a Licensed Vocational Nurse, serving in leadership roles across skilled nursing and other healthcare settings.",
+      "With over 20 years of experience in the healthcare industry, Dina Casares is an accomplished healthcare professional, operational leader, and entrepreneur with a strong background in healthcare management, workforce development, and software technology.",
+      "Beginning her career as a Certified Nursing Assistant at a young age, Dina developed a strong foundation in patient care before advancing into leadership positions, including Director of Operations, Director of Staff Development, and roles overseeing human resources, staffing, and organizational operations.",
+      "Her professional experience spans clinical nursing, executive leadership, business operations, and software development, implementation, and training. This diverse background has equipped her with a unique perspective on the operational challenges healthcare organizations face and the role technology can play in creating more efficient, sustainable workforce solutions.",
+      "As the Founder and CEO of Simple Medical Workforce Solutions, Dina combines her extensive healthcare experience with a forward-thinking, technology-driven approach to staffing and workforce management.",
+      "Her vision extends beyond traditional staffing services. She is dedicated to building a company that connects healthcare professionals with meaningful opportunities while providing healthcare organizations with reliable staffing, innovative technology, and long-term workforce solutions.",
+      "With a leadership philosophy rooted in integrity, innovation, collaboration, and compassion, Dina is committed to creating an organization where healthcare professionals feel valued, facilities feel supported, and partnerships are built to last.",
+      "Her mission is simple: Building Stronger Healthcare Teams.",
     ],
     absent: [
       "Dina Casares is the Founder and Chief Executive Officer of Simple Medical Staffing, a healthcare workforce solutions company",
@@ -172,30 +181,54 @@ export const REQUIREMENTS = [
   },
   {
     id: "R18",
-    title: "Dina column: The Why",
+    title: "Dina's founder card header: her eyebrow, name, title and organization (2026-11-16)",
     route: "/about",
-    present: [
-      "The Why",
-      "After seeing firsthand how staffing shortages affect healthcare professionals, leadership teams, and the quality of care, Dina knew staffing could be done differently. She founded Simple Medical to create more than another staffing agency. She wanted to build a workforce partner that understands the realities of healthcare and the people behind every shift.",
-    ],
-    absent: ["Dina brings together clinical practice and executive leadership"],
+    present: ["Meet Our Founder", ">Dina Casares</h3>", ">Founder & Chief Executive Officer</p>", ">Simple Medical Workforce Solutions</p>"],
+    absent: [">Founder and Chief Executive Officer</p>"],
   },
   {
     id: "R19",
-    title: "Dina column: The Vision",
+    title: "Dina's 2026-09-17 three-column bio is retired",
     route: "/about",
-    present: [
-      "The Vision",
-      "Today, Dina is building Simple Medical around relationships, reliability, and the right fit. Her vision is to help facilities build stronger, more stable teams while ensuring healthcare professionals feel valued, supported, and respected, not simply placed.",
+    present: ["The People Behind Our Purpose"],
+    absent: [
+      "With more than two decades of healthcare experience, Dina Casares brings firsthand knowledge",
+      "advanced to become a Licensed Vocational Nurse",
+      "Dina knew staffing could be done differently",
+      "Today, Dina is building Simple Medical around relationships, reliability, and the right fit.",
+      ">The Why</h4>",
+      ">The Vision</h4>",
     ],
-    absent: ["Her leadership philosophy centers on integrity"],
   },
   {
     id: "T01",
-    title: "Team cards: Brandon and Alexis, first names only (Dina, 2026-10-07)",
+    title: "Team cards: full names and titles (Dina, 2026-11-16); bios pending, monograms stand in",
     route: "/about",
-    present: ["Our Team", "Brandon", "Chief Operating Officer", "Alexis", "Staffing Coordinator"],
-    absent: ["pending client confirmation"],
+    present: [
+      "Our Team",
+      ">Brandon Lee Rodriguez-Washington</h3>",
+      ">President/ Co-Founder</p>",
+      ">Alexis Amicay</h3>",
+      ">Director of Talent and Workforce Operations</p>",
+    ],
+    absent: ["Chief Operating Officer", "Staffing Coordinator", ">Brandon</h3>", ">Alexis</h3>", "pending client confirmation"],
+  },
+  // TASK-20261116-02: the address is a mailing address (P.O. Box), so the
+  // contact page labels it "Mailing Address" rather than "Visit", and the FAQ
+  // says "mailing address".
+  {
+    id: "C01",
+    title: "Contact page: the P.O. Box under Mailing Address, not Visit (Dina, 2026-11-16)",
+    route: "/contact",
+    present: [">Mailing Address</h2>", ">P.O. Box 606, Carlsbad, CA 92008</p>"],
+    absent: [">Visit</h2>"],
+  },
+  {
+    id: "C02",
+    title: "Candidate FAQ: the service area, then the mailing address (2026-11-16)",
+    route: "/professionals/faq",
+    present: ["Our mailing address is P.O. Box 606, Carlsbad, CA 92008."],
+    absent: ["Our address is"],
   },
   {
     id: "R13",
@@ -341,6 +374,11 @@ export const SITEWIDE_PRESENT = [
     present: ["+1 (760) 536-2178", "Serving all of Southern California", "San Diego, Orange County, Los Angeles County, and the Inland Empire", "Our primary focus is San Diego", "For SNF, rehab centers, and hospitals", 'href="tel:+17605362178"'],
   },
   {
+    id: "F04",
+    title: "Footer mailing address (Dina, 2026-11-16)",
+    present: ["Mailing Address: P.O. Box 606, Carlsbad, CA 92008"],
+  },
+  {
     id: "R20",
     title: "Imagery disclosure in the footer",
     present: [
@@ -388,6 +426,10 @@ export const SITEWIDE_PRESENT = [
 export const SITEWIDE_ABSENT = [
   { id: "F02", title: "Retired main line absent sitewide", pattern: /949[\s().-]*317[\s.-]*2470/ },
   { id: "F03", title: "Retired county-only service claim absent sitewide", pattern: /San Diego County/i },
+  // TASK-20261116-02: the retired Irvine address, in any text asset (pages, RSC payload, llms.txt, sitemap):
+  // its street, its "Irvine, CA" / "CA 92612" display, and the JSON-LD locality value. Not a bare 92612, which
+  // a random build hash could contain.
+  { id: "F05", title: "Retired Irvine address absent sitewide", pattern: /Michelson Drive|Irvine, CA|CA 92612|"Irvine/i },
   { id: "R03", title: "No 'disciplines' wording sitewide", pattern: /disciplin/i },
   // TASK-20260923-14: the social handle is an icon link, not plain text.
   { id: "S02", title: "No plain-text 'Instagram @handle' line sitewide", pattern: /Instagram @/ },

@@ -1,4 +1,4 @@
-import { BUSINESS_FACTS, LEADERSHIP_ROLES } from "./brand";
+import { BUSINESS_FACTS, LEADERSHIP_ROLES, MAILING_ADDRESS } from "./brand";
 import { SITE_ORIGIN, absoluteUrl, breadcrumbTrail, routeFor } from "./site-routes";
 
 // Schema.org JSON-LD for the public site. Every value here is a fact that is
@@ -63,13 +63,15 @@ function organizationNodes() {
       email: BUSINESS_FACTS.email,
       logo: { "@id": LOGO_ID },
       image: { "@id": LOGO_ID },
+      // A mailing address (P.O. Box, Dina 2026-11-16): schema.org's postOfficeBoxNumber, no streetAddress, so the
+      // structured data does not claim a street office.
       address: {
         "@type": "PostalAddress",
-        streetAddress: "3333 Michelson Drive, Suite 300",
-        addressLocality: "Irvine",
-        addressRegion: "CA",
-        postalCode: "92612",
-        addressCountry: "US",
+        postOfficeBoxNumber: MAILING_ADDRESS.poBox,
+        addressLocality: MAILING_ADDRESS.locality,
+        addressRegion: MAILING_ADDRESS.region,
+        postalCode: MAILING_ADDRESS.postalCode,
+        addressCountry: MAILING_ADDRESS.country,
       },
       founder: { "@id": FOUNDER_ID },
       makesOffer: SERVICES.map((s) => ({ "@type": "Offer", itemOffered: { "@id": s.id } })),

@@ -1,3 +1,14 @@
+// The public address is a MAILING address (Dina, 2026-11-16, "New address is P.O. Box 606 Carlsbad, Ca 92008").
+// It is not an office anyone can visit, so every page labels it "Mailing Address" and the JSON-LD carries a PO box,
+// not a street. It replaced 3333 Michelson Drive, Suite 300, Irvine, CA 92612.
+export const MAILING_ADDRESS = {
+  poBox: "606",
+  locality: "Carlsbad",
+  region: "CA",
+  postalCode: "92008",
+  country: "US",
+} as const;
+
 export const BUSINESS_FACTS = {
   name: "Simple Medical Workforce Solutions",
   phone: "760-536-2178",
@@ -9,7 +20,8 @@ export const BUSINESS_FACTS = {
   facilities: "For SNF, rehab centers, and hospitals",
   email: "info@simplemedicalstaffing.com",
   website: "simplemedicalstaffing.com",
-  address: "3333 Michelson Drive, Suite 300, Irvine, CA 92612",
+  address: `P.O. Box ${MAILING_ADDRESS.poBox}, ${MAILING_ADDRESS.locality}, ${MAILING_ADDRESS.region} ${MAILING_ADDRESS.postalCode}`,
+  addressLabel: "Mailing Address",
   instagram: "simplemedicalstaffing",
   // Renamed from Simple Medical Staffing on 2026-10-22 (Bruce: "lets go with workforce solutions cause
   // they like that better"); the name and tagline are the approved facility flyer's. The domain, email
@@ -19,37 +31,42 @@ export const BUSINESS_FACTS = {
     "Our mission is to become an extension of every facility we serve by providing reliable healthcare professionals, innovative staffing strategies, and clinical leadership that strengthen teams, elevate quality of care, and reduce the reliance on traditional agency staffing.",
 } as const;
 
+/** The address with its label, as one line ("Mailing Address: P.O. Box 606, Carlsbad, CA 92008"). */
+export const MAILING_ADDRESS_LINE = `${BUSINESS_FACTS.addressLabel}: ${BUSINESS_FACTS.address}`;
+
 export const LEADERSHIP_ROLES = [
   {
-    title: "Founder and Chief Executive Officer",
+    // Dina's updated bio, supplied by her on 2026-11-16 ("please see my updated bio below. I would like this
+    // updated on the website."): her exact words, including her header lines (eyebrow, title, organization).
+    // It replaced the three named columns she supplied on 2026-09-17.
+    title: "Founder & Chief Executive Officer",
     name: "Dina Casares",
-    // Three named columns supplied by Dina on 2026-09-17 (exact copy).
-    biography: [
-      {
-        heading: "Experience",
-        body: "With more than two decades of healthcare experience, Dina Casares brings firsthand knowledge of patient care, workforce development, and healthcare leadership. She began her career as a Certified Nursing Assistant and advanced to become a Licensed Vocational Nurse, serving in leadership roles across skilled nursing and other healthcare settings.",
-      },
-      {
-        heading: "The Why",
-        body: "After seeing firsthand how staffing shortages affect healthcare professionals, leadership teams, and the quality of care, Dina knew staffing could be done differently. She founded Simple Medical to create more than another staffing agency. She wanted to build a workforce partner that understands the realities of healthcare and the people behind every shift.",
-      },
-      {
-        heading: "The Vision",
-        body: "Today, Dina is building Simple Medical around relationships, reliability, and the right fit. Her vision is to help facilities build stronger, more stable teams while ensuring healthcare professionals feel valued, supported, and respected, not simply placed.",
-      },
-    ],
+    biography: {
+      eyebrow: "Meet Our Founder",
+      organization: "Simple Medical Workforce Solutions",
+      paragraphs: [
+        "With over 20 years of experience in the healthcare industry, Dina Casares is an accomplished healthcare professional, operational leader, and entrepreneur with a strong background in healthcare management, workforce development, and software technology.",
+        "Beginning her career as a Certified Nursing Assistant at a young age, Dina developed a strong foundation in patient care before advancing into leadership positions, including Director of Operations, Director of Staff Development, and roles overseeing human resources, staffing, and organizational operations.",
+        "Her professional experience spans clinical nursing, executive leadership, business operations, and software development, implementation, and training. This diverse background has equipped her with a unique perspective on the operational challenges healthcare organizations face and the role technology can play in creating more efficient, sustainable workforce solutions.",
+        "As the Founder and CEO of Simple Medical Workforce Solutions, Dina combines her extensive healthcare experience with a forward-thinking, technology-driven approach to staffing and workforce management.",
+        "Her vision extends beyond traditional staffing services. She is dedicated to building a company that connects healthcare professionals with meaningful opportunities while providing healthcare organizations with reliable staffing, innovative technology, and long-term workforce solutions.",
+        "With a leadership philosophy rooted in integrity, innovation, collaboration, and compassion, Dina is committed to creating an organization where healthcare professionals feel valued, facilities feel supported, and partnerships are built to last.",
+      ],
+      closing: "Her mission is simple: Building Stronger Healthcare Teams.",
+    },
   },
-  // Added for Dina on 2026-10-07 (through Bruce): first names only, no
-  // headshots yet (the monogram stands in), and no biography until each
-  // person supplies one.
+  // Names and titles from Dina on 2026-11-16 ("add Brandon and Alexis last name ... Brandon title, it should be
+  // President/ Co-Founder and for Alexis her title should be Director of Talent and Workforce Operations"). Her
+  // title wording is kept exactly. No headshots yet (the monogram stands in) and no biography until each person
+  // supplies one.
   {
-    title: "Chief Operating Officer",
-    name: "Brandon",
+    title: "President/ Co-Founder",
+    name: "Brandon Lee Rodriguez-Washington",
     biography: null,
   },
   {
-    title: "Staffing Coordinator",
-    name: "Alexis",
+    title: "Director of Talent and Workforce Operations",
+    name: "Alexis Amicay",
     biography: null,
   },
 ] as const;

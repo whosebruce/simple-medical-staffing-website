@@ -1,6 +1,6 @@
 # Simple Medical Workforce Solutions website
 
-Source for [simplemedicalstaffing.com](https://simplemedicalstaffing.com), the public website of Simple Medical Workforce Solutions, a healthcare staffing agency serving all of Southern California: San Diego, Orange County, Los Angeles County, and the Inland Empire. Our primary focus is San Diego. It offers contract, per-diem and direct placement for SNF, rehab centers, and hospitals. The Irvine office address is unchanged.
+Source for [simplemedicalstaffing.com](https://simplemedicalstaffing.com), the public website of Simple Medical Workforce Solutions, a healthcare staffing agency serving all of Southern California: San Diego, Orange County, Los Angeles County, and the Inland Empire. Our primary focus is San Diego. It offers contract, per-diem and direct placement for SNF, rehab centers, and hospitals. Its public address is a mailing address, P.O. Box 606, Carlsbad, CA 92008, not an office.
 
 The site is a brochure: static HTML served by GitHub Pages. There are no forms, uploads or backend, and this repository holds only public website code and media. The staffing platform itself lives in a separate private repository; its web app at `app.simplemedicalstaffing.com` is where people sign in, apply and request staff, and this site links to it (Sign In, every Apply Now and every Request Staff).
 

@@ -222,7 +222,10 @@ const NAP = {
   name: "Simple Medical Workforce Solutions",
   phone: "+17605362178",
   email: "info@simplemedicalstaffing.com",
-  street: "3333 Michelson Drive, Suite 300",
+  // 2026-11-16 (Dina): a mailing address, P.O. Box 606, Carlsbad, CA 92008. No street office is claimed.
+  poBox: "606",
+  locality: "Carlsbad",
+  postalCode: "92008",
 };
 for (const route of CANONICAL_ROUTES) {
   const file = pageFile(route);
@@ -281,7 +284,7 @@ for (const route of CANONICAL_ROUTES) {
         { "@type": "Place", name: "Inland Empire" },
       ];
       if (JSON.stringify(org.areaServed) !== JSON.stringify(expectedAreas)) fail(`${rel} JSON-LD lacks the approved Southern California service areas`);
-      if (org.name !== NAP.name || org.telephone !== NAP.phone || org.email !== NAP.email || org.address?.streetAddress !== NAP.street || org.address?.addressLocality !== "Irvine" || org.address?.postalCode !== "92612") {
+      if (org.name !== NAP.name || org.telephone !== NAP.phone || org.email !== NAP.email || org.address?.postOfficeBoxNumber !== NAP.poBox || "streetAddress" in (org.address ?? {}) || org.address?.addressLocality !== NAP.locality || org.address?.addressRegion !== "CA" || org.address?.postalCode !== NAP.postalCode) {
         fail(`${rel} JSON-LD NAP does not match the verified facts`);
       }
       for (const banned of ["aggregateRating", "review", "openingHours", "openingHoursSpecification", "priceRange", "award", "sameAs", "geo"]) {
