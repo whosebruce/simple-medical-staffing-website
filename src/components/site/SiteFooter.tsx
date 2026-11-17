@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { APP_LINKS } from "@/lib/app-links";
-import { BUSINESS_FACTS } from "@/lib/brand";
+import { BUSINESS_FACTS, MAILING_ADDRESS_LINE } from "@/lib/brand";
 import { Circle } from "./Circle";
 import { EmailText } from "./EmailText";
 import { KindredWordmark } from "./KindredWordmark";
@@ -79,7 +79,7 @@ export function SiteFooter() {
                   {BUSINESS_FACTS.phoneDisplay}
                 </a>
                 <EmailText className="font-semibold text-white" />
-                <span>{BUSINESS_FACTS.address}</span>
+                <span>{MAILING_ADDRESS_LINE}</span>
               </address>
               {/* TASK-20260923-14: icon links replace the plain-text
                   "domain · Instagram @handle" line. The domain was this

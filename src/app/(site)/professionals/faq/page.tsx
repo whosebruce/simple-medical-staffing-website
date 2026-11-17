@@ -94,7 +94,8 @@ const WORK: Faq[] = [
     q: "Where Is Simple Medical Workforce Solutions Located?",
     a: (
       <>
-        Our address is {BUSINESS_FACTS.address}. A call or an email is how most conversations begin.
+        {BUSINESS_FACTS.serviceArea}: {BUSINESS_FACTS.serviceRegions}. {BUSINESS_FACTS.primaryFocus}.{" "}
+        {`Our mailing address is ${BUSINESS_FACTS.address}.`} A call or an email is how most conversations begin.
       </>
     ),
   },

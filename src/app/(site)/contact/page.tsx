@@ -106,7 +106,8 @@ export default function ContactPage() {
                 <p className="k-small">{BUSINESS_FACTS.facilities}.</p>
               </div>
               <div className="mt-7 flex flex-col gap-2 border-t border-k-line pt-6">
-                <h2 className="k-eyebrow k-eyebrow-violet text-k-violet-ink">Visit</h2>
+                {/* A P.O. Box (Dina, 2026-11-16): a mailing address, not an office to visit. */}
+                <h2 className="k-eyebrow k-eyebrow-violet text-k-violet-ink">{BUSINESS_FACTS.addressLabel}</h2>
                 <p className="k-body">{BUSINESS_FACTS.address}</p>
               </div>
               <div className="mt-6 flex flex-col gap-2 border-t border-k-line pt-6">

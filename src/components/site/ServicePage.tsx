@@ -8,7 +8,7 @@ import { RoleCloud } from "./RoleCloud";
 import { StepPath, type Step } from "./StepPath";
 import { Wave } from "./Wave";
 import { APP_LINKS } from "@/lib/app-links";
-import { BUSINESS_FACTS } from "@/lib/brand";
+import { BUSINESS_FACTS, MAILING_ADDRESS_LINE } from "@/lib/brand";
 import { KINDRED_GRADIENTS } from "@/lib/kindred-gradients";
 import type { SiteImageKey } from "@/lib/site-media";
 
@@ -125,7 +125,7 @@ export function ServicePage({
               <p className="text-[15.5px] font-semibold text-k-navy">
                 <EmailText />
               </p>
-              <p className="k-small mt-1">{BUSINESS_FACTS.address}</p>
+              <p className="k-small mt-1">{MAILING_ADDRESS_LINE}</p>
             </div>
           </aside>
         </div>
