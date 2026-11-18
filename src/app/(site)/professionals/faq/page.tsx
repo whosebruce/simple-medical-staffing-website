@@ -94,8 +94,10 @@ const WORK: Faq[] = [
     q: "Where Is Simple Medical Workforce Solutions Located?",
     a: (
       <>
-        {BUSINESS_FACTS.serviceArea}: {BUSINESS_FACTS.serviceRegions}. {BUSINESS_FACTS.primaryFocus}.{" "}
-        {`Our mailing address is ${BUSINESS_FACTS.address}.`} A call or an email is how most conversations begin.
+        {/* No "primary focus" line and no "mailing address" (Dina, 2026-11-17). The P.O. Box isn't a place, so it
+            doesn't answer "where"; it stays on the Contact page and in the footer. */}
+        {BUSINESS_FACTS.serviceArea}: {BUSINESS_FACTS.serviceRegions}. A call or an email is how most conversations
+        begin.
       </>
     ),
   },

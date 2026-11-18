@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { APP_LINKS } from "@/lib/app-links";
-import { BUSINESS_FACTS, MAILING_ADDRESS_LINE } from "@/lib/brand";
+import { BUSINESS_FACTS } from "@/lib/brand";
 import { Circle } from "./Circle";
 import { EmailText } from "./EmailText";
 import { KindredWordmark } from "./KindredWordmark";
@@ -66,7 +66,7 @@ export function SiteFooter() {
               Contract, per-diem, and direct-placement staffing for healthcare facilities.
             </p>
             <p className="max-w-[340px] text-[15.5px] leading-relaxed text-k-frost">
-              {BUSINESS_FACTS.serviceArea}: {BUSINESS_FACTS.serviceRegions}. {BUSINESS_FACTS.primaryFocus}.<br />
+              {BUSINESS_FACTS.serviceArea}: {BUSINESS_FACTS.serviceRegions}.<br />
               {BUSINESS_FACTS.facilities}.
             </p>
             <div className="mt-2 w-full max-w-[380px] rounded-[28px] bg-white/[0.07] p-6 ring-1 ring-white/15">
@@ -79,7 +79,7 @@ export function SiteFooter() {
                   {BUSINESS_FACTS.phoneDisplay}
                 </a>
                 <EmailText className="font-semibold text-white" />
-                <span>{MAILING_ADDRESS_LINE}</span>
+                <span>{BUSINESS_FACTS.address}</span>
               </address>
               {/* TASK-20260923-14: icon links replace the plain-text
                   "domain · Instagram @handle" line. The domain was this

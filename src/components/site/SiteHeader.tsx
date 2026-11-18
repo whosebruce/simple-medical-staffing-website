@@ -32,12 +32,13 @@ const MENU_LINKS = [{ label: "Home", href: "/" }, ...NAV_LINKS] as const;
 // 76px bar stays pinned); from 1280px an underlined text link in the bar,
 // with the bar's gaps and nav padding tightened to 12px so it fits; and a row
 // in the menu below 1024px.
-type GroupId = "staffing" | "professionals";
+type GroupId = "staffing" | "professionals" | "about";
 type NavGroup = {
   readonly id: GroupId;
   readonly toggleLabel: string;
   readonly pages: readonly { readonly label: string; readonly href: string }[];
-  readonly action: { readonly label: string; readonly href: string };
+  // A group with no audience action (About) shows its pages only.
+  readonly action?: { readonly label: string; readonly href: string };
 };
 
 const NAV_GROUPS: Readonly<Record<string, NavGroup>> = {
@@ -57,6 +58,12 @@ const NAV_GROUPS: Readonly<Record<string, NavGroup>> = {
     toggleLabel: "For Professionals Pages",
     pages: [{ label: "Candidate FAQ", href: "/professionals/faq" }],
     action: { label: "Apply Now", href: APP_LINKS.apply },
+  },
+  // Dina, 2026-11-17: "Meet the Team" under About, so visitors reach the bios without scrolling.
+  "/about": {
+    id: "about",
+    toggleLabel: "About Pages",
+    pages: [{ label: "Meet the Team", href: "/about#team" }],
   },
 };
 
@@ -116,6 +123,7 @@ function GroupLinks({
           </li>
         ))}
       </ul>
+      {group.action ? (
       <div data-nav-cta={group.id} className="mt-1.5 border-t border-k-line pt-1.5">
         {/^https?:/.test(group.action.href) ? (
           <a
@@ -138,6 +146,7 @@ function GroupLinks({
           </Link>
         )}
       </div>
+      ) : null}
     </>
   );
 }

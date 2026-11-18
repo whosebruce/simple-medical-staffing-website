@@ -1,6 +1,7 @@
-// The public address is a MAILING address (Dina, 2026-11-16, "New address is P.O. Box 606 Carlsbad, Ca 92008").
-// It is not an office anyone can visit, so every page labels it "Mailing Address" and the JSON-LD carries a PO box,
-// not a street. It replaced 3333 Michelson Drive, Suite 300, Irvine, CA 92612.
+// The public address is a P.O. Box (Dina, 2026-11-16, "New address is P.O. Box 606 Carlsbad, Ca 92008").
+// It is not an office anyone can visit. Since Dina's email of 2026-11-17 it is shown with no "Mailing Address"
+// label in front of it, and the JSON-LD carries a PO box, not a street. It replaced 3333 Michelson Drive,
+// Suite 300, Irvine, CA 92612.
 export const MAILING_ADDRESS = {
   poBox: "606",
   locality: "Carlsbad",
@@ -16,12 +17,12 @@ export const BUSINESS_FACTS = {
   phoneTel: "+17605362178",
   serviceArea: "Serving all of Southern California",
   serviceRegions: "San Diego, Orange County, Los Angeles County, and the Inland Empire",
-  primaryFocus: "Our primary focus is San Diego",
+  // No "Our primary focus is San Diego" (Dina, 2026-11-17): that was an internal discussion, and facilities in the
+  // other counties shouldn't think they can't reach out. Nothing replaces it.
   facilities: "For SNF, rehab centers, and hospitals",
   email: "info@simplemedicalstaffing.com",
   website: "simplemedicalstaffing.com",
   address: `P.O. Box ${MAILING_ADDRESS.poBox}, ${MAILING_ADDRESS.locality}, ${MAILING_ADDRESS.region} ${MAILING_ADDRESS.postalCode}`,
-  addressLabel: "Mailing Address",
   instagram: "simplemedicalstaffing",
   // Renamed from Simple Medical Staffing on 2026-10-22 (Bruce: "lets go with workforce solutions cause
   // they like that better"); the name and tagline are the approved facility flyer's. The domain, email
@@ -30,9 +31,6 @@ export const BUSINESS_FACTS = {
   mission:
     "Our mission is to become an extension of every facility we serve by providing reliable healthcare professionals, innovative staffing strategies, and clinical leadership that strengthen teams, elevate quality of care, and reduce the reliance on traditional agency staffing.",
 } as const;
-
-/** The address with its label, as one line ("Mailing Address: P.O. Box 606, Carlsbad, CA 92008"). */
-export const MAILING_ADDRESS_LINE = `${BUSINESS_FACTS.addressLabel}: ${BUSINESS_FACTS.address}`;
 
 export const LEADERSHIP_ROLES = [
   {

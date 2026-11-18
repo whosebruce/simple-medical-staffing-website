@@ -153,9 +153,11 @@ export const REQUIREMENTS = [
   },
   {
     id: "R16",
-    title: "Leadership heading",
+    // Dina, 2026-11-17: "Our Purpose" wraps as a pair (a no-break space), so "Purpose" is never alone; the
+    // section is the target of the header's About > Meet the Team.
+    title: "Leadership heading, kept together, and the Meet the Team target",
     route: "/about",
-    present: ["The People Behind Our Purpose"],
+    present: ["The People Behind Our\u00a0Purpose", 'id="team"'],
     absent: ["The people behind the matches"],
   },
   // TASK-20261116-02: Dina's updated bio (her email of 2026-11-16, "please see
@@ -190,7 +192,7 @@ export const REQUIREMENTS = [
     id: "R19",
     title: "Dina's 2026-09-17 three-column bio is retired",
     route: "/about",
-    present: ["The People Behind Our Purpose"],
+    present: ["The People Behind Our\u00a0Purpose"],
     absent: [
       "With more than two decades of healthcare experience, Dina Casares brings firsthand knowledge",
       "advanced to become a Licensed Vocational Nurse",
@@ -213,22 +215,29 @@ export const REQUIREMENTS = [
     ],
     absent: ["Chief Operating Officer", "Staffing Coordinator", ">Brandon</h3>", ">Alexis</h3>", "pending client confirmation"],
   },
-  // TASK-20261116-02: the address is a mailing address (P.O. Box), so the
-  // contact page labels it "Mailing Address" rather than "Visit", and the FAQ
-  // says "mailing address".
+  // TASK-20261116-02 then Dina's email of 2026-11-17: the address is a P.O.
+  // Box, not an office ("Visit"), and it carries no "Mailing Address" label.
+  // The FAQ's "where" answer gives the service area only.
   {
     id: "C01",
-    title: "Contact page: the P.O. Box under Mailing Address, not Visit (Dina, 2026-11-16)",
+    title: "Contact page: the P.O. Box with no label, not Visit (Dina, 2026-11-17)",
     route: "/contact",
-    present: [">Mailing Address</h2>", ">P.O. Box 606, Carlsbad, CA 92008</p>"],
-    absent: [">Visit</h2>"],
+    present: [">P.O. Box 606, Carlsbad, CA 92008</p>"],
+    absent: [">Visit</h2>", ">Mailing Address</h2>"],
   },
   {
     id: "C02",
-    title: "Candidate FAQ: the service area, then the mailing address (2026-11-16)",
+    title: "Candidate FAQ: the service area, no mailing address line (Dina, 2026-11-17)",
     route: "/professionals/faq",
-    present: ["Our mailing address is P.O. Box 606, Carlsbad, CA 92008."],
-    absent: ["Our address is"],
+    present: ["A call or an email is how most conversations"],
+    absent: ["Our address is", "Our mailing address is"],
+  },
+  {
+    id: "N03",
+    title: "Header: About opens Meet the Team (Dina, 2026-11-17)",
+    route: "/",
+    present: ['href="/about/#team"', ">Meet the Team<", 'aria-label="About Pages"'],
+    absent: [],
   },
   {
     id: "R13",
@@ -371,12 +380,12 @@ export const SITEWIDE_PRESENT = [
   {
     id: "F01",
     title: "Approved main line and Southern California coverage/facility wording",
-    present: ["+1 (760) 536-2178", "Serving all of Southern California", "San Diego, Orange County, Los Angeles County, and the Inland Empire", "Our primary focus is San Diego", "For SNF, rehab centers, and hospitals", 'href="tel:+17605362178"'],
+    present: ["+1 (760) 536-2178", "Serving all of Southern California", "San Diego, Orange County, Los Angeles County, and the Inland Empire", "For SNF, rehab centers, and hospitals", 'href="tel:+17605362178"'],
   },
   {
     id: "F04",
-    title: "Footer mailing address (Dina, 2026-11-16)",
-    present: ["Mailing Address: P.O. Box 606, Carlsbad, CA 92008"],
+    title: "Footer P.O. Box, no label (Dina, 2026-11-17)",
+    present: ["P.O. Box 606, Carlsbad, CA 92008"],
   },
   {
     id: "R20",
@@ -424,6 +433,10 @@ export const SITEWIDE_PRESENT = [
 
 /** Terminology that must not appear anywhere in the generated public site. */
 export const SITEWIDE_ABSENT = [
+  // Dina, 2026-11-17: no "primary focus" claim (other counties should feel free to reach out) and no
+  // "Mailing Address" label next to the P.O. Box, in any text asset.
+  { id: "F07", title: "No primary-focus line sitewide (Dina, 2026-11-17)", pattern: /primary focus/i },
+  { id: "F08", title: "No Mailing Address label sitewide (Dina, 2026-11-17)", pattern: /mailing address/i },
   { id: "F02", title: "Retired main line absent sitewide", pattern: /949[\s().-]*317[\s.-]*2470/ },
   { id: "F03", title: "Retired county-only service claim absent sitewide", pattern: /San Diego County/i },
   // TASK-20261116-02: the retired Irvine address, in any text asset (pages, RSC payload, llms.txt, sitemap):

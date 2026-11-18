@@ -4,9 +4,8 @@
 
 Service area: Serving all of Southern California
 Regions: San Diego, Orange County, Los Angeles County, and the Inland Empire
-Our primary focus is San Diego.
 Facilities: For SNF, rehab centers, and hospitals
-Mailing address: P.O. Box 606, Carlsbad, CA 92008, US
+P.O. Box: 606, Carlsbad, CA 92008, US
 Phone: +1 (760) 536-2178
 Email: info@simplemedicalstaffing.com
 
@@ -20,7 +19,7 @@ Roles placed: Physical Therapist, Physical Therapy Aide, Occupational Therapist,
 - [Staffing Solutions](https://simplemedicalstaffing.com/solutions/): The three staffing models, who each is best for, and the four-step process from request to first shift.
 - [For Professionals](https://simplemedicalstaffing.com/professionals/): Per-diem, contract, and permanent opportunities; the roles placed; what to expect from a coordinator.
 - [About](https://simplemedicalstaffing.com/about/): Mission, values, and founder and CEO Dina Casares.
-- [Contact](https://simplemedicalstaffing.com/contact/): Phone, email, and mailing address; what to include in a staffing request.
+- [Contact](https://simplemedicalstaffing.com/contact/): Phone, email, and P.O. Box; what to include in a staffing request.
 - [Request Staff](https://simplemedicalstaffing.com/request-staff/): For facilities: a link into the web app's staffing request form, with the phone and email as the other way in.
 - [Apply Now](https://simplemedicalstaffing.com/apply/): How healthcare professionals apply online in the web app, or reach the team by phone or email; what not to send by email.
 
