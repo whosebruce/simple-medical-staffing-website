@@ -129,12 +129,15 @@ export default function AboutPage() {
       </section>
       <Wave top="var(--color-k-cloud)" bottom="var(--color-k-page)" flip />
 
-      <section aria-labelledby="leadership-heading" className="k-section">
+      {/* id="team": the header's About > Meet the Team jumps here (Dina, 2026-11-17). */}
+      <section id="team" aria-labelledby="leadership-heading" className="k-section">
         <div className="k-wrap">
-          <div className="mb-10 flex max-w-[640px] flex-col items-start gap-4">
+          <div className="mb-10 flex max-w-[640px] flex-col items-start gap-4 lg:max-w-none">
             <p className="k-eyebrow k-eyebrow-violet text-k-violet-ink">Our Team</p>
+            {/* Dina, 2026-11-17: "Purpose" must never sit alone on the next line. From 1024px the heading has room
+                for one line; below that, "Our Purpose" is joined by a no-break space so they wrap together. */}
             <h2 id="leadership-heading" className="k-h2">
-              The People Behind Our Purpose
+              {"The People Behind Our\u00a0Purpose"}
             </h2>
           </div>
           <ul className="flex flex-col gap-6">

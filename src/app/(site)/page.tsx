@@ -63,7 +63,7 @@ export default function HomePage() {
               fit, not just availability.
             </p>
             <p className="k-small font-semibold text-k-navy">
-              {BUSINESS_FACTS.serviceArea}: {BUSINESS_FACTS.serviceRegions}. {BUSINESS_FACTS.primaryFocus}. {BUSINESS_FACTS.facilities}.
+              {BUSINESS_FACTS.serviceArea}: {BUSINESS_FACTS.serviceRegions}. {BUSINESS_FACTS.facilities}.
             </p>
             <div className="mt-2 flex flex-wrap gap-3.5">
               <a href={APP_LINKS.requestStaff} className="k-btn-primary">

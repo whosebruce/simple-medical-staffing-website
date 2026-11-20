@@ -222,7 +222,7 @@ const NAP = {
   name: "Simple Medical Workforce Solutions",
   phone: "+17605362178",
   email: "info@simplemedicalstaffing.com",
-  // 2026-11-16 (Dina): a mailing address, P.O. Box 606, Carlsbad, CA 92008. No street office is claimed.
+  // 2026-11-16 (Dina): P.O. Box 606, Carlsbad, CA 92008, shown with no label since 2026-11-17. No street office is claimed.
   poBox: "606",
   locality: "Carlsbad",
   postalCode: "92008",

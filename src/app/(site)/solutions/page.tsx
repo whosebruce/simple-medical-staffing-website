@@ -90,7 +90,7 @@ export default function SolutionsPage() {
             <h1 className="k-h1">Staffing That Fits How Your Facility Runs.</h1>
             <p className="k-lede">Tell us the unit, the shift, and the team, and we&apos;ll look for the professional who fits.</p>
             <p className="k-small font-semibold text-k-navy">
-              {BUSINESS_FACTS.serviceArea}: {BUSINESS_FACTS.serviceRegions}. {BUSINESS_FACTS.primaryFocus}. {BUSINESS_FACTS.facilities}.
+              {BUSINESS_FACTS.serviceArea}: {BUSINESS_FACTS.serviceRegions}. {BUSINESS_FACTS.facilities}.
             </p>
             <a href={APP_LINKS.requestStaff} className="k-btn-primary mt-2">
               Request Staff
